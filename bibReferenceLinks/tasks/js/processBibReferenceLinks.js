@@ -24,7 +24,7 @@ var bibTypes = {
 var sourceUUID = UUID.randomUUID().toString();
 var instanceUUID = UUID.randomUUID().toString();
 
-var bibReferenceLinks = [
+var returnObj = [
   {
     folioReference: sourceUUID,
     externalReference: args.BIB_ID,
@@ -36,5 +36,3 @@ var bibReferenceLinks = [
     type: bibTypes[args.SCHEMA].INSTANCE
   }
 ];
-
-var returnObj = bibReferenceLinks;
