@@ -8,7 +8,6 @@
     "{{mod-workflow}}/streamingExtractorTask/cdc967aa-39d4-4750-923b-f215986139b5",
     "{{mod-workflow}}/streamingExtractorTask/a3a1546a-5630-4407-91bc-46829f2e7d75",
     "{{mod-workflow}}/processorTask/bcd1bf07-9728-4d5d-91f4-df3c931cd939",
-    "{{mod-workflow}}/accumulatorTask/5f54ec45-4619-48cd-a035-114b992c41e3",
     "{{mod-workflow}}/streamingRequestTask/c343f22c-cbb7-4362-919b-55919a86b38b"
   ],
   "startTrigger": "{{mod-workflow}}/eventTrigger/3ae89970-0ad7-11ea-9a5d-536d128b1924"

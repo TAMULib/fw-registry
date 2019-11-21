@@ -1,9 +1,0 @@
-{
-  "id": "26509f7f-1e9a-4a25-a9d5-7897cadfa4cc",
-  "name": "Accumulate Bib Referenece Links",
-  "delegate": "streamAccumulationDelegate",
-  "deserializeAs": "AccumulatorTask",
-  "streaming": false,
-  "accumulateTo": 2500,
-  "delayDuration": 5
-}

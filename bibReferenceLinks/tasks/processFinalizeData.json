@@ -1,9 +1,0 @@
-{
-  "id": "54ff9ff6-4490-42dc-b204-adacaafb1d47",
-  "name": "finalizeData",
-  "delegate": "streamingProcessDelegate",
-  "deserializeAs": "ProcessorTask",
-  "streaming": false,
-  "script": "processFinalizeData.js",
-  "scriptType": "JS"
-}

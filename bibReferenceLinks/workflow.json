@@ -8,8 +8,6 @@
     "{{mod-workflow}}/streamingExtractorTask/8b975c46-5cc4-4db9-8603-f9bf6c249d2b",
     "{{mod-workflow}}/streamingExtractorTask/6e47c670-302a-43f9-b77a-d8213c0c263f",
     "{{mod-workflow}}/processorTask/4009a864-633c-4faa-8219-902bc85183f8",
-    "{{mod-workflow}}/accumulatorTask/26509f7f-1e9a-4a25-a9d5-7897cadfa4cc",
-    "{{mod-workflow}}/processorTask/54ff9ff6-4490-42dc-b204-adacaafb1d47",
     "{{mod-workflow}}/streamingRequestTask/ae4f0bb8-cc41-4d92-b29f-f7fcf97cd3b3"
   ],
   "startTrigger": "{{mod-workflow}}/eventTrigger/f2f043a0-0556-11ea-823a-5390ca978abc"

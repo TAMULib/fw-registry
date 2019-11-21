@@ -1,9 +1,0 @@
-{
-  "id": "5f54ec45-4619-48cd-a035-114b992c41e3",
-  "name": "Accumulate Holding Referenece Links",
-  "delegate": "streamAccumulationDelegate",
-  "deserializeAs": "AccumulatorTask",
-  "streaming": false,
-  "accumulateTo": 5000,
-  "delayDuration": 5
-}
