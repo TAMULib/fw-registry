@@ -10,8 +10,8 @@
       "targetProperty": "/BIB_ID"
     },
     {
-      "sourceProperty": "/SCHEMA",
-      "targetProperty": "/SCHEMA"
+      "sourceProperty": "/SOURCE_SCHEMA",
+      "targetProperty": "/SOURCE_SCHEMA"
     }
   ],
   "enhancementMappings": [],
