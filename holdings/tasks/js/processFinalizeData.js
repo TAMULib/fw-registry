@@ -1,3 +1,5 @@
 returnObj = {
-  holdingsRecords: args
+  holdings: {
+    holdingsRecords: args
+  }
 };

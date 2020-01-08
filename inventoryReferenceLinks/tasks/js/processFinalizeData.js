@@ -1,1 +1,3 @@
-returnObj = [].concat.apply([], args);
+returnObj = {
+  referenceLinks: [].concat.apply([], args)
+};

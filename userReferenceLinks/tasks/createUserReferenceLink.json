@@ -4,5 +4,8 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks"
+  "requests": [{
+    "storageDestination": "{{mod-external-reference-resolver-internal}}/batch/referenceLinks",
+    "sourceProperty": "referenceLinks"
+  }]
 }

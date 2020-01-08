@@ -5,4 +5,6 @@ for (var i = 0; i < args.vendorRequestBody.contacts.length; i++) {
 }
 args.vendorRequestBody.contacts = cleanContact;
 
-returnObj = args.vendorRequestBody;
+returnObj = {
+  vendor: args.vendorRequestBody
+};

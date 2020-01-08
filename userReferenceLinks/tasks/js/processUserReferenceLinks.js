@@ -51,4 +51,6 @@ if (args.SCHEMA === 'AMDB' && args.MSDB_EXTERNAL_SYSTEM_ID) {
   ]);
 }
 
-returnObj = userReferenceLinks;
+returnObj = {
+  referenceLinks: userReferenceLinks
+};

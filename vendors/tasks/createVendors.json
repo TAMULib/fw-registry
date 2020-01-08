@@ -4,5 +4,8 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{mod-organizations-storage}}/organizations-storage/organizations"
+  "requests": [{
+    "storageDestination": "{{mod-organizations-storage}}/organizations-storage/organizations",
+    "sourceProperty": "vendor"
+  }]
 }

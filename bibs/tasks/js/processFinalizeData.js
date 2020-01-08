@@ -32,21 +32,18 @@ var counter = Math.ceil(lastBibIndex / {{bibBatchSize}});
 var total = Math.ceil(lastBibTotal / {{bibBatchSize}});
 var contentType = 'MARC_JSON';
 
-print(JSON.stringify({
-  recordsMetadata: {
-    last: last,
-    counter: counter,
-    total: total,
-    contentType: contentType
-  }
-}));
+var recordsMetadata = {
+  last: last,
+  counter: counter,
+  total: total,
+  contentType: contentType
+};
+
+print(JSON.stringify(recordsMetadata));
 
 returnObj = {
-  recordsMetadata: {
-    last: last,
-    counter: counter,
-    total: total,
-    contentType: contentType
-  },
-  initialRecords: initialRecords
+  bibs: {
+    recordsMetadata: recordsMetadata,
+    initialRecords: initialRecords
+  }
 };

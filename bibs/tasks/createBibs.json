@@ -4,5 +4,8 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{okapi}}/change-manager/jobExecutions/{{jobExecutionId}}/records"
+  "requests": [{
+    "storageDestination": "{{okapi}}/change-manager/jobExecutions/{{jobExecutionId}}/records",
+    "sourceProperty": "bibs"
+  }]
 }

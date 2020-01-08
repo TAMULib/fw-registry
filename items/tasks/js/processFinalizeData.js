@@ -1,3 +1,5 @@
 returnObj = {
-  items: args
+  items: {
+    items: args
+  }
 };

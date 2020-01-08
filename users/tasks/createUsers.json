@@ -4,5 +4,8 @@
   "delegate": "streamingRequestDelegate",
   "deserializeAs": "StreamingRequestTask",
   "streaming": false,
-  "storageDestination": "{{okapi}}/user-import"
+  "requests": [{
+    "storageDestination": "{{okapi}}/user-import",
+    "sourceProperty": "users"
+  }]
 }
