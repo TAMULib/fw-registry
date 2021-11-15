@@ -34,7 +34,7 @@ var jobExecution = {
 
 var sourceRecord = {
   id: sourceRecordId,
-  recordType: 'MARC',
+  recordType: 'MARC_BIB',
   snapshotId: snapshotId,
   matchedId:  instanceObj.id,
   externalIdsHolder: {
