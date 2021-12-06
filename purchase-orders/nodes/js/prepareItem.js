@@ -34,7 +34,9 @@ itemObj.temporaryLocationId = findLocationIdByName(tempLocation);
 
 itemObj.materialTypeId = findMaterialTypeIdByName(materialType);
 
-itemObj.barcode = marcOrderDataObj.barcode;
+if (marcOrderDataObj.barcode) {
+  itemObj.barcode = marcOrderDataObj.barcode.trim()
+}
 
 itemObj.status = { name: 'Available' };
 
