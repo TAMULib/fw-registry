@@ -26,7 +26,7 @@ function tranform(patrons) {
     personal.middleName = patron.personal_middleName;
     personal.email = 'folio_user@library.tamu.edu';
     personal.phone = FormatUtility.normalizePhoneNumber(patron.personal_phone);
-    personal.preferredContactTypeId = '002';
+    personal.preferredContactTypeId = 'email';
 
     if (patron.addresses_permanent_addressLine1) {
       var permanentAddress = {};
