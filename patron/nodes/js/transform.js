@@ -73,6 +73,10 @@ var others = tranform(JSON.parse(otherPatrons));
 
 var users = employees.concat(students).concat(others);
 
+print(employees.length + " employees being imported");
+print(students.length + " students being imported");
+print(others.length + " others being imported");
+
 var userImportCollection = {
   users: users,
   totalRecords: users.length,
