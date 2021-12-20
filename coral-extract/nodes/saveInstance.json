@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/instance-storage/instances",
+    "url": "{{okapi-internal}}/instance-storage/instances",
     "method": "POST",
     "accept": "application/json",
     "bodyTemplate": "${instance}"

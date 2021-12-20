@@ -4,7 +4,7 @@
   "description": "Okapi Login",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/authn/login",
+    "url": "{{okapi-internal}}/authn/login",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

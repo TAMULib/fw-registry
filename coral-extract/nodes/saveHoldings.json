@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/holdings-storage/holdings",
+    "url": "{{okapi-internal}}/holdings-storage/holdings",
     "method": "POST",
     "accept": "application/json",
     "bodyTemplate": "${holdings}"
