@@ -4,7 +4,7 @@
   "description": "Retrieve the Loan Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/loan-types?limit=999",
+    "url": "{{okapi-internal}}/loan-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },

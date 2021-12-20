@@ -4,7 +4,7 @@
   "description": "Retrieve the fund by code.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/finance/funds?limit=1&offset=0&query=(code==\"${marcOrderData.fundCode}\")",
+    "url": "{{okapi-internal}}/finance/funds?limit=1&offset=0&query=(code==\"${marcOrderData.fundCode}\")",
     "method": "GET",
     "accept": "application/json"
   },

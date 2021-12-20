@@ -4,7 +4,7 @@
   "description": "Retrieve the Items of Instance Holdings by the Purchase Order Line.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/item-storage/items?query=(holdingsRecordId==\"${holdingsRecordId}\")",
+    "url": "{{okapi-internal}}/item-storage/items?query=(holdingsRecordId==\"${holdingsRecordId}\")",
     "method": "GET",
     "accept": "application/json"
   },

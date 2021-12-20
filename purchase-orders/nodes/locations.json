@@ -4,7 +4,7 @@
   "description": "Retrieve the Locations.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/locations?limit=999",
+    "url": "{{okapi-internal}}/locations?limit=999",
     "method": "GET",
     "accept": "application/json"
   },

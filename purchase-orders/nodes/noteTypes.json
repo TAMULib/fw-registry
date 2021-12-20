@@ -4,7 +4,7 @@
   "description": "Retrieve the Note Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/note-types?limit=999",
+    "url": "{{okapi-internal}}/note-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },
