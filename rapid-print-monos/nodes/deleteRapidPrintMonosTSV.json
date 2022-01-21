@@ -1,0 +1,11 @@
+{
+  "id": "e39c2905-7ca6-49d8-8639-264fd8f00119",
+  "name": "Delete Rapid Print Monos TSV",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "/mnt/workflows/rapid/rapid_print_monos.txt",
+  "op": "DELETE",
+  "asyncBefore": true
+}

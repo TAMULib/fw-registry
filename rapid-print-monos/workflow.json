@@ -16,6 +16,7 @@
     "{{mod-workflow}}/databaseQueryTask/304e4191-c7a8-423c-8318-59920a5d0843",
     "{{mod-workflow}}/databaseDisconnectTask/65693a0e-ad69-4f9e-9783-74a557d08422",
     "{{mod-workflow}}/compressFileTask/2d4019f2-43f0-40d7-80eb-7c5614a33ab5",
+    "{{mod-workflow}}/fileTask/e39c2905-7ca6-49d8-8639-264fd8f00119",
     "{{mod-workflow}}/endEvent/21ba4ec8-75d2-4cc1-8706-410eadd42bce"
   ],
   "initialContext": {}
