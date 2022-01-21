@@ -1,0 +1,11 @@
+{
+  "id": "5299bf7e-d5f9-4fde-98c4-d322a7391a17",
+  "name": "Delete Rapid Print Serials TSV",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "path": "/mnt/workflows/rapid/rapid_print_serials.txt",
+  "op": "DELETE",
+  "asyncBefore": true
+}
