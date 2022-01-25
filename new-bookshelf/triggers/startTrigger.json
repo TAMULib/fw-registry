@@ -1,0 +1,9 @@
+{
+  "id": "2871bafc-9dfa-4e01-8271-0813e3591146",
+  "name": "New Bookshelf Trigger",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/new-bookshelf/start"
+}
