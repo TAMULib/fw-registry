@@ -29,7 +29,6 @@ var findMaterialTypeIdByName = function (materialTypeName) {
 itemObj.permanentLoanTypeId = findLoanTypeIdByName(permLoanType);
 itemObj.temporaryLoanTypeId = findLoanTypeIdByName(tempLoanType);
 
-itemObj.permanentLocationId = findLocationIdByName(permLocation);
 itemObj.temporaryLocationId = findLocationIdByName(tempLocation);
 
 itemObj.materialTypeId = findMaterialTypeIdByName(materialType);
