@@ -81,7 +81,7 @@ var userImportCollection = {
   users: users,
   totalRecords: users.length,
   deactivateMissingUsers: false,
-  updateOnlyPresentFields: true
+  updateOnlyPresentFields: false
 };
 
 execution.setVariableLocal('userImportCollection', S(JSON.stringify(userImportCollection)));
