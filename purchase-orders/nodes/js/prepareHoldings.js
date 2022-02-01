@@ -42,7 +42,6 @@ if (electronic) {
   holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(eHoldingsType);
 } else {
   holdingsObj.permanentLocationId = findLocationIdByName(permLocation);
-  holdingsObj.temporaryLocationId = findLocationIdByName(tempLocation);
 }
 
 holdingsObj.callNumber = marcOrderDataObj.callNumber;
