@@ -1,0 +1,8 @@
+{
+  "id": "61d81c51-5535-4676-90a5-86c37bd87919",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/new-bookshelf/start"
+}
