@@ -15,6 +15,11 @@
     "{{mod-workflow}}/scriptTask/1c93c66c-c707-47fd-9eee-9f4602aa8fdd",
     "{{mod-workflow}}/databaseConnectionTask/a14e0944-1ac1-427d-972e-a42554a6b7fd",
     "{{mod-workflow}}/queryTask/1554364a-f73a-41ee-b61b-8c1d8755d021",
+
+    "{{mod-workflow}}/fileTask/c84671cc-d215-11ec-9d64-0242ac120002",
+    "{{mod-workflow}}/scriptTask/c846744c-d215-11ec-9d64-0242ac120002",
+    "{{mod-workflow}}/fileTask/c84675aa-d215-11ec-9d64-0242ac120002",
+
     "{{mod-workflow}}/databaseConnectionTask/4da067f3-37d2-493c-af81-a877d34fa4c7",
     "{{mod-workflow}}/compressFileTask/8e802921-9a6e-4a73-9a7e-3834fde8de4e",
     "{{mod-workflow}}/fileTask/1a63114b-b47d-4d93-8c27-5a8d2d509406",

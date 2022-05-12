@@ -1,0 +1,8 @@
+{
+  "id": "c846744c-d215-11ec-9d64-0242ac120002",
+  "name": "Verify Shelflist Query Results",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "verifyQueryResults.js"
+}

@@ -1,0 +1,20 @@
+{
+  "id": "c84671cc-d215-11ec-9d64-0242ac120002",
+  "name": "Delete Shelftlist (holdings level) Report file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "queryResults",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable":  {},
+  "path": "/mnt/workflows/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
+  "op": "WRITE",
+  "asyncBefore": true
+}
