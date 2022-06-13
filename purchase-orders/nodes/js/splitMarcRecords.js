@@ -7,5 +7,5 @@ var reportObj = {
   records: []
 };
 
-execution.setVariableLocal('records', Variables.objectValue(records, true).create());
+execution.setVariable('records', Variables.objectValue(records).create());
 execution.setVariable('report', S(JSON.stringify(reportObj)));
