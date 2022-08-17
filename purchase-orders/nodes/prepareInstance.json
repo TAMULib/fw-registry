@@ -4,5 +4,6 @@
   "description": "",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "prepareInstance.js"
+  "code": "prepareInstance.js",
+  "asyncBefore": true
 }
