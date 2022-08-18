@@ -2,6 +2,7 @@ var instanceObj = JSON.parse(instance);
 
 if (logLevel === 'DEBUG') {
   print('\nholdingsResponse = ' + holdingsResponse + '\n');
+  print('\nholdingsType = ' + holdingsType + '\n');
 }
 
 var holdingsObj = JSON.parse(holdingsResponse).holdingsRecords[0];
@@ -49,6 +50,8 @@ holdingsObj.callNumberTypeId = callNumberTypeId;
 holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
 holdingsObj.discoverySuppress = false;
+
+holdingsObj._version = 1;
 
 if (logLevel === 'DEBUG') {
   print('\nholdings = ' + JSON.stringify(holdingsObj) + '\n');
