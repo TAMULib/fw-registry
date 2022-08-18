@@ -9,6 +9,7 @@ if (logLevel === 'DEBUG') {
   print('\nfundsResponse = ' + fundsResponse + '\n');
   print('\nexpenseClassesResponse = ' + expenseClassesResponse + '\n');
   print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n');
+  print('\nacquisitionMethodsResponse = ' + acquisitionMethodsResponse + '\n');
 }
 
 var poNumber = JSON.parse(poNumberResponse).poNumber;
@@ -25,9 +26,35 @@ var locations = JSON.parse(locationsResponse).locations;
 
 var materialTypes = JSON.parse(materialTypesResponse).mtypes;
 
+var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+
+var acquisitionMethods = JSON.parse(acquisitionMethodsResponse).acquisitionMethods;
+
 var marcOrderDataObj = JSON.parse(marcOrderData);
 
 var electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
+
+var findLocationIdByName = function (locationName) {
+  for (var i = 0; i < locations.length; ++i) {
+    if (locationName === locations[i].name) return locations[i].id;
+  }
+};
+
+var findMaterialTypeIdByName = function (materialTypeName) {
+  for (var i = 0; i < materialTypes.length; ++i) {
+    if (materialTypeName === materialTypes[i].name) return materialTypes[i].id;
+  }
+};
+
+var findAcquisitionMethodByValue = function (acquisitionMethodValue) {
+  for (var i = 0; i < acquisitionMethods.length; ++i) {
+    if (acquisitionMethodValue === acquisitionMethods[i].value) return acquisitionMethods[i].id;
+  }
+};
+
+var acquisitionMethod = findAcquisitionMethodByValue(marcOrderDataObj.acquisitionMethod);
+
+print('\nacquisitionMethodFromMARC = ' + marcOrderDataObj.acquisitionMethod + ' (' + acquisitionMethod + ')\n');
 
 var orderLine = {
   id: orderLineId,
@@ -49,7 +76,7 @@ var orderLine = {
   description: marcOrderDataObj.internalNote,
   selector: marcOrderDataObj.selector,
   requester: marcOrderDataObj.requester,
-  acquisitionMethod: marcOrderDataObj.acquisitionMethod
+  acquisitionMethod: acquisitionMethod
 };
 
 var compositePoLines = [
@@ -70,17 +97,7 @@ var compositePurchaseOrder = {
 
 var tagList = [];
 
-var findLocationIdByName = function (locationName) {
-  for (var i = 0; i < locations.length; ++i) {
-    if (locationName === locations[i].name) return locations[i].id;
-  }
-};
 
-var findMaterialTypeIdByName = function (materialTypeName) {
-  for (var i = 0; i < materialTypes.length; ++i) {
-    if (materialTypeName === materialTypes[i].name) return materialTypes[i].id;
-  }
-};
 
 if (electronic) {
   orderLine.orderFormat = 'Electronic Resource';

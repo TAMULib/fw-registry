@@ -1,0 +1,10 @@
+{
+  "id": "9f90e981-553d-4b27-a34a-47f56611c49e",
+  "name": "Request Acquisition Methods For Purchase Order Line Fork",
+  "description": "",
+  "deserializeAs": "ParallelGateway",
+  "nodes": [
+    "{{mod-workflow}}/requestTask/26586e32-7a3f-4b43-9128-b59e8c57846b",
+    "{{mod-workflow}}/parallelGateway/372aad6f-1fd7-447e-ab43-9c1c1ae9623f"
+  ]
+}

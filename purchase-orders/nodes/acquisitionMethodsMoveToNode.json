@@ -1,0 +1,11 @@
+{
+  "id": "989d0a8b-df95-4437-b4cf-f4211178b7ae",
+  "name": "Acquisition Methods",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_b4440bc5_6fe8_4bf3_aa41_57debe0a813f",
+  "nodes": [
+    "{{mod-workflow}}/requestTask/26586e32-7a3f-4b43-9128-b59e8c57846b",
+    "{{mod-workflow}}/connectTo/925e098a-b353-40bb-8d94-c2c96515c978"
+  ]
+}

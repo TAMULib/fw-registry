@@ -1,0 +1,19 @@
+{
+  "id": "26586e32-7a3f-4b43-9128-b59e8c57846b",
+  "name": "Request Acquisition Methods",
+  "description": "Retrieve the acquisition methods.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/orders/acquisition-methods?limit=999",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "acquisitionMethodsResponse",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

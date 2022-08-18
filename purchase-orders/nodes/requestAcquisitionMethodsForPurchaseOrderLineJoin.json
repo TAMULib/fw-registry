@@ -1,0 +1,7 @@
+{
+  "id": "372aad6f-1fd7-447e-ab43-9c1c1ae9623f",
+  "name": "Request Acquisition Methods For Purchase Order Line Join",
+  "description": "",
+  "deserializeAs": "ParallelGateway",
+  "nodes": []
+}
