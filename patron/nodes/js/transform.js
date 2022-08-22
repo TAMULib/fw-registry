@@ -21,6 +21,8 @@ function tranform(patrons) {
     userImport.active = patron.active;
     userImport.patronGroup = patron.patronGroup;
 
+    userImport.expirationDate = patron.expirationDate;
+
     personal.lastName = patron.personal_lastName;
     personal.firstName = patron.personal_firstName;
     personal.middleName = patron.personal_middleName;
