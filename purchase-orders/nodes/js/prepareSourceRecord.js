@@ -46,7 +46,8 @@ var sourceRecord = {
   snapshotId: snapshotId,
   matchedId:  instanceObj.id,
   externalIdsHolder: {
-    instanceId: instanceObj.id
+    instanceId: instanceObj.id,
+    instanceHrid: instanceObj.hrid
   },
   rawRecord: {
     id: sourceRecordId,
