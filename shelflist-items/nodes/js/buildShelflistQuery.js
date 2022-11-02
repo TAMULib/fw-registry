@@ -18,11 +18,19 @@ if (logLevel === 'DEBUG') {
   print('updatedDateEnd = ' + updatedDateEnd + '\n');
 }
 
+var cte = 'WITH oclc_identifiers AS ('
+          + '\n\tSELECT instance_id, STRING_AGG (identifier, \',\') AS value FROM folio_reporting.instance_identifiers WHERE identifier_type_name = \'OCLC\' GROUP BY instance_id'
+          + '\n), isbn_identifiers AS ('
+          + '\n\tSELECT instance_id, STRING_AGG (identifier, \',\') AS value FROM folio_reporting.instance_identifiers WHERE identifier_type_name = \'ISBN\' GROUP BY instance_id'
+          + '\n)';
+
 var from = 'folio_reporting.item_ext item_ext'
             + '\n\tinner join folio_reporting.holdings_ext holdings_ext on item_ext.holdings_record_id =  holdings_ext.holdings_id'
             + '\n\tleft join mis.item_history history on item_ext.item_id = history.item_id'
             + '\n\tleft join folio_reporting.instance_ext instance_ext on instance_ext.instance_id = holdings_ext.instance_id'
             + '\n\tleft join folio_reporting.instance_publication instance_pub on instance_pub.instance_id = instance_ext.instance_id'
+            + '\n\tleft join oclc_identifiers oclc on oclc.instance_id = instance_ext.instance_id'
+            + '\n\tleft join isbn_identifiers isbn on isbn.instance_id = instance_ext.instance_id'
             + '\n\tleft join public.inventory_items ii on ii.id = item_ext.item_id';
 
 var where = 'TRUE';
@@ -126,7 +134,8 @@ if (updatedDateEnd != '') {
   where += '\n\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
-var shelflistQuery = '\n'
+var shelflistQuery = '\n\n'
+       + cte
        + '\nSELECT DISTINCT'
        + '\n\titem_ext.item_hrid AS item_hrid,'
        + '\n\titem_ext.barcode AS barcode,'
@@ -152,7 +161,9 @@ var shelflistQuery = '\n'
        + '\n\tcast(to_timestamp(item_ext.created_date::text,\'YYYY-MM-DD\') at time zone \'America/Chicago\' as date) as create_date,'
        + '\n\tcast(to_timestamp(item_ext.updated_date::text,\'YYYY-MM-DD\') at time zone \'America/Chicago\' as date) as update_date,'
        + '\n\tii.effective_shelving_order COLLATE '+decodeURI("%22")+'C'+decodeURI("%22")+' AS shelving_order,'
-       + '\n\tholdings_ext.holdings_hrid AS holdings_hrid'
+       + '\n\tholdings_ext.holdings_hrid AS holdings_hrid,'
+       + '\n\toclc.value AS oclc,'
+       + '\n\tisbn.value AS isbn'
        + '\nFROM ' + from
        + '\nWHERE ' + where
        + '\nORDER BY item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
