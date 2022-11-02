@@ -99,7 +99,7 @@ if (itemStatusArray) {
 }
 
 if (callNumber) {
-  where += '\n\t\tAND item_ext.effective_call_number = ' + callNumber;
+  where += '\n\t\tAND item_ext.effective_call_number = \'' + callNumber + '\'';
 }
 
 if (suppressHoldings) {
