@@ -93,7 +93,7 @@ if (itemStatusArray) {
   normalizeArray(itemStatusArray);
 
   if (itemStatusArray.length > 0) {
-    where += '\n\tAND item_ext.tatus_name IN (\'' + itemStatusArray.join('\',\'') + '\')';
+    where += '\n\tAND item_ext.status_name IN (\'' + itemStatusArray.join('\',\'') + '\')';
   }
 }
 
