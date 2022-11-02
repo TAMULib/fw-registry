@@ -97,6 +97,10 @@ if (itemStatusArray) {
   }
 }
 
+if (callNumber) {
+  where += '\n\t\tAND item_ext.effective_call_number = ' + callNumber;
+}
+
 if (suppressHoldings) {
   where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (suppressHoldings === 't' ? 'true' : 'false');
 }
