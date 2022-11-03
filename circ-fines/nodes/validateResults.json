@@ -1,8 +1,0 @@
-{
-  "id": "5c861b7c-d0a3-11ec-9d64-0242ac120002",
-  "name": "Validates the query results",
-  "description": "",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "validateResults.js"
-}

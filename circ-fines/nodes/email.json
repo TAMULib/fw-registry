@@ -7,13 +7,18 @@
     {
       "key": "timestamp",
       "type": "PROCESS"
+    },
+    {
+      "key": "count",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
   "mailTo": "{{circ-fines-mail-to}}",
   "mailFrom": "{{circ-fines-mail-from}}",
   "mailSubject": "Daily Fees/Fines Paid Report",
-  "mailText": "Daily Fees/Fines Paid TSV file attached",
+  "mailText": "${(count > 0)?then('Daily Fees/Fines Paid TSV file attached', 'No results to report')}",
   "attachmentPath": "/mnt/workflows/circ-fines/feefines-report-${timestamp}.tsv",
+  "includeAttachment": "${(count > 0)?then('true', 'false')}",
   "asyncBefore": true
 }
