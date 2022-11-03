@@ -9,7 +9,10 @@
       "type": "PROCESS"
     }
   ],
-  "outputVariable": {},
+  "outputVariable": {
+    "key": "count",
+    "type": "PROCESS"
+  },
   "outputPath": "/mnt/workflows/circ-fines/feefines-report-${timestamp}.tsv",
   "resultType": "TSV",
   "designation": "ldp",
