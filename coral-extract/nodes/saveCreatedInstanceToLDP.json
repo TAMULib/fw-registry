@@ -17,6 +17,6 @@
   ],
   "outputVariable": {},
   "designation": "ldp",
-  "query": "INSERT INTO mis.coral_instances (coralid, instance_id) values (${coralItem.coralid}, '${instance.id}')",
+  "query": "INSERT INTO mis.coral_instances (coralid, instanceid) values (${coralItem.coralid}, '${instance.id}')",
   "asyncBefore": true
 }

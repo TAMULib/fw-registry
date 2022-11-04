@@ -217,7 +217,7 @@ CONSTRAINT coral_extract_pkey PRIMARY KEY (coralid)
 
 CREATE TABLE mis.coral_instances (
 coralid int2 NOT NULL,
-instance_id varchar(36) NULL,
+instanceid varchar(36) NULL,
 CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 );
 ```
