@@ -1,0 +1,22 @@
+{
+  "id": "b32e9dcc-992a-471e-8f76-769c215d3060",
+  "name": "Save Coral Id from created instance to LDP",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "coralItem",
+      "type": "PROCESS",
+      "spin": true
+    },
+    {
+      "key": "instance",
+      "type": "LOCAL",
+      "spin": true
+    }
+  ],
+  "outputVariable": {},
+  "designation": "ldp",
+  "query": "INSERT INTO mis.coral_instances (coralid, instanceid) values (${coralItem.coralid}, '${instance.id}')",
+  "asyncBefore": true
+}
