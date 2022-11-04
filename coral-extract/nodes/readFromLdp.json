@@ -10,6 +10,6 @@
     "spin": true
   },
   "designation": "ldp",
-  "query": "SELECT c.* FROM mis.coral_extract c WHERE status = 'ACTIVE' AND natureOfContentTerm IN ('Database', 'Dataset', 'Proceedings', 'Tool', 'Website') AND title IS NOT NULL AND electronicAccess IS NOT NULL AND coralId IN (SELECT coralid FROM mis.coral_extract EXCEPT SELECT cast(substring(uri, position('resource=' IN uri)+9) AS integer) FROM folio_reporting.instance_electronic_access WHERE uri LIKE '%coral.library.tamu.edu/resourcelink.php?resource=%')",
+  "query": "SELECT c.* FROM mis.coral_extract c WHERE status = 'ACTIVE' AND natureOfContentTerm IN ('Database', 'Dataset', 'Proceedings', 'Tool', 'Website') AND title IS NOT NULL AND electronicAccess IS NOT NULL AND coralId IN (SELECT coralid FROM mis.coral_extract EXCEPT SELECT coralid FROM mis.coral_instances)",
   "asyncBefore": true
 }

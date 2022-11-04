@@ -12,6 +12,6 @@
   ],
   "outputVariable": {},
   "designation": "ldp",
-  "query": "INSERT INTO mis.coral_extract (coralId, contributor, title, publisher, summary, natureOfContentTerm, electronicAccess, status) values (${extractItem.coralId}, '${extractItem.contributor}', '${extractItem.title}', '${extractItem.publisher}', '${extractItem.summary}', '${extractItem.natureOfContentTerm}', '${extractItem.electronicAccess}', '${extractItem.status}')",
+  "query": "INSERT INTO mis.coral_extract (coralid, contributor, title, publisher, summary, natureOfContentTerm, electronicAccess, status) values (${extractItem.coralId}, '${extractItem.contributor}', '${extractItem.title}', '${extractItem.publisher}', '${extractItem.summary}', '${extractItem.natureOfContentTerm}', '${extractItem.electronicAccess}', '${extractItem.status}')",
   "asyncBefore": true
 }

@@ -17,7 +17,11 @@
       "asJson": true
     }
   ],
-  "outputVariable": {},
+  "outputVariable": {
+    "key": "instance",
+    "type": "LOCAL",
+    "spin": true
+  },
   "headerOutputVariables": [],
   "asyncBefore": true
 }
