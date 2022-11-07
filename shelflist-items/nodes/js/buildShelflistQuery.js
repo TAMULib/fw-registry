@@ -10,6 +10,7 @@ if (logLevel === 'DEBUG') {
   print('loanType = ' + loanType + '\n');
   print('materialType = ' + materialType + '\n');
   print('itemStatus = ' + itemStatus + '\n');
+  print('issuance = ' + issuance + '\n');
   print('suppressHoldings = ' + suppressHoldings + '\n');
   print('suppressItem = ' + suppressItem + '\n');
   print('createdDateStart = ' + createdDateStart + '\n');
@@ -113,6 +114,10 @@ if (callNumber) {
   where += '\n\t\tAND item_ext.effective_call_number = \'' + callNumber + '\'';
 }
 
+if (issuance != '') {
+  where += '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+}
+
 if (suppressHoldings) {
   where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (suppressHoldings === 't' ? 'true' : 'false');
 }
@@ -155,6 +160,7 @@ var shelflistQuery = '\n\n'
        + '\n\titem_ext.status_name,'
        + '\n\tinstance_pub.publisher,'
        + '\n\tinstance_pub.date_of_publication AS publication_date,'
+       + '\n\tinstance_ext.mode_of_issuance_name AS mode_of_issuance,'
        + '\n\tCASE WHEN item_ext.temporary_loan_type_name is null THEN item_ext.permanent_loan_type_name'
        + '\n\tELSE item_ext.temporary_loan_type_name'
        + '\n\tEND as loan_type,'
