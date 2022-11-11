@@ -152,6 +152,111 @@ fw activate circ-fines
 
 Rapid ILS Print Serials Monthly Report. (Scheduled)
 
+This utilizes LDP, which must have table `mis.tamu_sfx_extract` manually created.
+
+SFX TSV file mapping. Following https://knowledge.exlibrisgroup.com/SFX/Knowledge_Articles/What_are_the_column_descriptions_for_advanced_tab_delimited_text_exports_using_the_export_tool.
+
+```
+ A TITLE_SORTABLE
+ B TITLE
+ C TITLE_NON_FILING_CHARACTER
+ D ISSN
+ E OBJECT_ID
+ F TARGET_PUBLIC_NAME
+ G THRESHOLD
+ H EISSN
+ I ABBREVIATED_TITLE
+ J TARGET_SERVICE_TYPE
+ K LCCN
+ L OBJECT_PORTFOLIO_ID
+ M Mu
+ N Ny
+ O Oa
+ P Ph
+ Q LOCAL_THRESHOLD
+ R GLOBAL_THRESHOLD
+ S TARGET_ID
+ T TAGET_SERVICE_ID
+ U OBJECT_PORTFOLIO_ID
+ V CATEGORIES
+ W LOCAL_ATTRIBUTE
+ X ISBN
+ Y EISBN
+ Z PUBLISHER
+AA PLACE_OF_PUBLICATION
+AB DATE_OF_PUBLICATION
+AC OBJECT_TYPE
+AD ACTIVIATION_STATUS_FOR_THE_DEFAULT_INSTITUTE
+AE INSTITUTE_ID
+AF INSTITUTE_NAME
+AG INSTITUTE_AVAILABILITY
+AH LANGUAGE
+AI MAIN_TITLE
+AJ FULL_ORIGINAL_TITLE
+AK ADDITIONAL_ISBNS
+AL ADDITIONAL_EISBNS
+AM AUTHOR
+AN OWNER
+AO THRESHOLD_LOCAL
+AP PARSE_PARAM
+AQ IS_FREE
+AR
+AS
+AT
+AU
+AV
+AW
+AX
+```
+
+```sql
+CREATE TABLE mis.tamu_sfx_extract (
+ TITLE_SORTABLE varchar(400) NULL,
+ TITLE varchar(400) NULL,
+ TITLE_NON_FILING_CHARACTER numeric(2, 0) NULL,
+ ISSN varchar(20) NULL,
+ OBJECT_ID numeric(20, 0) NOT NULL,
+ TARGET_PUBLIC_NAME varchar(256) NULL,
+ THRESHOLD varchar(1000) NULL,
+ EISSN varchar(20) NULL,
+ ABBREVIATED_TITLE varchar(1000) NULL,
+ TARGET_SERVICE_TYPE varchar(20) NULL,
+ LCCN varchar(40) NULL,
+ OBJECT_PORTFOLIO_ID numeric(20, 0) NULL,
+ Mu varchar(856) NULL,
+ Ny varchar(856) NULL,
+ Oa varchar(856) NULL,
+ Ph varchar(245) NULL,
+ LOCAL_THRESHOLD varchar(1000) NULL,
+ GLOBAL_THRESHOLD varchar(1000) NULL,
+ TARGET_ID numeric(20, 0) NULL,
+ TAGET_SERVICE_ID numeric(20, 0) NULL,
+ OBJECT_PORTFOLIO_ID_2 numeric(40, 0) NULL,
+ CATEGORIES varchar(400) NULL,
+ LOCAL_ATTRIBUTE varchar(1) NULL,
+ ISBN varchar(17) NULL,
+ EISBN varchar(17) NULL,
+ PUBLISHER varchar(255) NULL,
+ PLACE_OF_PUBLICATION varchar(255) NULL,
+ DATE_OF_PUBLICATION numeric(4, 0) NULL,
+ OBJECT_TYPE varchar(20) NULL,
+ ACTIVIATION_STATUS_FOR_THE_DEFAULT_INSTITUTE varchar(8) NULL,
+ INSTITUTE_ID numeric(1, 0) NULL,
+ INSTITUTE_NAME varchar(50) NULL,
+ INSTITUTE_AVAILABILITY varchar(8) NULL,
+ LANGUAGE varchar(3) NULL,
+ MAIN_TITLE varchar(400) NULL,
+ FULL_ORIGINAL_TITLE varchar(400) NULL,
+ ADDITIONAL_ISBNS varchar(35) NULL,
+ ADDITIONAL_EISBNS varchar(35) NULL,
+ AUTHOR varchar(1000) NULL,
+ OWNER varchar(3) NULL,
+ THRESHOLD_LOCAL varchar(1000) NULL,
+ PARSE_PARAM varchar(256) NULL,
+ IS_FREE numeric(1, 0) NULL
+);
+```
+
 ```
 fw config set ldp-url ***
 fw config set ldp-user ***
