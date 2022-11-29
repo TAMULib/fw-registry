@@ -11,6 +11,7 @@ if (logLevel === 'DEBUG') {
   print('materialType = ' + materialType + '\n');
   print('itemStatus = ' + itemStatus + '\n');
   print('issuance = ' + issuance + '\n');
+  print('suppressInstance = ' + suppressInstance + '\n');
   print('suppressHoldings = ' + suppressHoldings + '\n');
   print('suppressItem = ' + suppressItem + '\n');
   print('createdDateStart = ' + createdDateStart + '\n');
@@ -116,6 +117,10 @@ if (callNumber) {
 
 if (issuance != '') {
   where += '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+}
+
+if (suppressInstance) {
+  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (suppressInstance === 't' ? 'true' : 'false');
 }
 
 if (suppressHoldings) {
