@@ -1,0 +1,19 @@
+{
+  "id": "9908e4c0-6c48-4b2f-a487-a0398f74549f",
+  "name": "Quick Javascript Test",
+  "description": "Test workflow",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/613f670b-ae88-462a-a19a-bb2af8b65279",
+    "{{mod-workflow}}/scriptTask/76ddfc54-0d05-42c2-a0a7-4efa16f63f66",
+    "{{mod-workflow}}/endEvent/b9b00b03-89f1-4a02-a8fb-e0ea0e6eb021"
+  ],
+  "initialContext": {}
+}

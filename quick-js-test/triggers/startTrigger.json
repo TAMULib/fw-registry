@@ -1,0 +1,9 @@
+{
+    "id": "41604db9-e588-40c3-8798-afb348a61230",
+    "name": "Quick Javascript Test Start Trigger",
+    "description": "REST Post Endpoint",
+    "type": "MESSAGE_CORRELATE",
+    "method": "POST",
+    "deserializeAs": "EventTrigger",
+    "pathPattern": "/events/workflow/quick-js-test/start"
+  }

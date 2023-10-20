@@ -1,0 +1,8 @@
+{
+  "id": "76ddfc54-0d05-42c2-a0a7-4efa16f63f66",
+  "name": "Run Script",
+  "description": "Process the script.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "runScript.js"
+}
