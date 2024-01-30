@@ -1,0 +1,12 @@
+{
+    "id": "e189ef88-9f24-4cc8-85b5-a3c6c04222f9",
+    "name": "Start",
+    "description": " Start workflow to email list of checked out items from a given call number range.",
+    "type": "SCHEDULED",
+    "deserializeAs": "StartEvent",
+    "expression": "/events/workflow/books-call-number/start"
+}
+
+
+
+  

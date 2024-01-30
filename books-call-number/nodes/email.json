@@ -1,0 +1,24 @@
+{
+    "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
+    "name": "Send list of checked out items by call number via email",
+    "description": "",
+    "deserializeAs": "EmailTask",
+    "inputVariables": [
+      {
+        "key": "timestamp",
+        "type": "PROCESS"
+      },
+      {
+        "key": "tenantId",
+        "type": "PROCESS"
+      }
+    ],
+    "outputVariable": {},
+    "mailTo": "{{bcn-mail-to}}",
+    "mailFrom": "{{bcn-mail-from}}",
+    "mailSubject": "TAMU Checked Out Books By Call Number Report",
+    "mailText": "TAMU checked out books by call number list attached",
+    "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "asyncBefore": true
+}
+  
