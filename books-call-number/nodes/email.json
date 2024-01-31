@@ -1,6 +1,6 @@
 {
     "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
-    "name": "Send list of checked out items by call number via email",
+    "name": "Send list of checked out items",
     "description": "",
     "deserializeAs": "EmailTask",
     "inputVariables": [
