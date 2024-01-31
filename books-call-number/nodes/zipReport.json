@@ -1,0 +1,25 @@
+{
+    "id": "6b08fa16-772e-4587-81db-5121f1489990",
+    "name": "Compressed book report",
+    "description": "",
+    "deserializeAs": "CompressFileTask",
+    "inputVariables": [
+      {
+        "key": "timestamp",
+        "type": "PROCESS"
+      },
+      {
+        "key": "tenantId",
+        "type": "PROCESS"
+      }
+    ],
+    "outputVariable": {},
+    "source": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "destination": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "format": "ZIP",
+    "container": "NONE",
+    "asyncBefore": true
+  }
+  
+
+

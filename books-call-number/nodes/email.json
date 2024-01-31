@@ -4,14 +4,18 @@
     "description": "",
     "deserializeAs": "EmailTask",
     "inputVariables": [
-      {
-        "key": "timestamp",
-        "type": "PROCESS"
-      },
-      {
-        "key": "tenantId",
-        "type": "PROCESS"
-      }
+        {
+          "key": "emailTo",
+          "type": "PROCESS"
+        },
+        {
+          "key": "emailFrom",
+          "type": "PROCESS"
+        },
+        {
+          "key": "timestamp",
+          "type": "PROCESS"
+        }
     ],
     "outputVariable": {},
     "mailTo": "{{bcn-mail-to}}",

@@ -17,7 +17,9 @@
       "{{mod-workflow}}/databaseConnectionTask/c29c2be7-26ce-45e5-811d-3f3c17ae1c67",
       "{{mod-workflow}}/databaseQueryTask/78ae1271-bcf8-452f-a3de-7e4583ba8017",
       "{{mod-workflow}}/databaseDisconnectTask/b51f2623-b612-488a-9a10-8e2d548a9e3b",
+      "{{mod-workflow}}/compressFileTask/6b08fa16-772e-4587-81db-5121f1489990",
       "{{mod-workflow}}/emailTask/2fff188a-9bf3-43f7-939f-fcce0c4387dd",
+      "{{mod-workflow}}/fileTask/349d1628-5f30-412d-a6c0-c9466175f0dd",
       "{{mod-workflow}}/endEvent/3e768a3f-4129-449e-b6ab-53482a7fa9af"
     ],
     "initialContext": {}

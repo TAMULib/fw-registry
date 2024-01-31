@@ -1,0 +1,20 @@
+{
+    "id": "349d1628-5f30-412d-a6c0-c9466175f0dd",
+    "name": "Delete book Report file",
+    "description": "",
+    "deserializeAs": "FileTask",
+    "inputVariables": [
+      {
+        "key": "timestamp",
+        "type": "PROCESS"
+      },
+      {
+        "key": "tenantId",
+        "type": "PROCESS"
+      }
+    ],
+    "outputVariable": {},
+    "path": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "op": "DELETE",
+    "asyncBefore": true
+  }
