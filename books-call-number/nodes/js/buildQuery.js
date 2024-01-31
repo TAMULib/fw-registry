@@ -5,27 +5,37 @@ if (logLevel === 'DEBUG') {
     print('emailFrom = ' + emailFrom + '\n');
     print('emailTo = ' + emailTo + '\n');
   }
-  
-  var bookReportQuery = '\n'       
-         + '\nWITH MaxLength AS ('
-         + '\n\tSELECT MAX(LENGTH(he.call_number)) AS max_len'
-         + '\n\tFROM folio_reporting.holdings_ext he'
-         + '\n)'
+
+  var where = 'TRUE';
+
+  if (startRange) {
+    where += '\n\t\tUPPER(he.call_number) >= UPPER(\'' + startRange + '\')';
+  }
+
+  if (endRange) {
+    where += '\n\t\tAND UPPER(he.call_number) <= RPAD(UPPER(\''+ endRange + '\'), max_len, \'ÿ\')';
+  }
+  var cte = 'WITH MaxLength AS ('
+            + '\n\tSELECT MAX(LENGTH(he.call_number)) AS max_len'
+            + '\n\tFROM folio_reporting.holdings_ext he'
+            + ')';
+  var where = '';
+  var booksCallNumberQuery = '\n\n'
+         + cte
          + '\nSELECT he.call_number'
          + '\n\tFROM folio_reporting.item_ext ie'
          + '\n\tJOIN folio_reporting.holdings_ext he ON ie.holdings_record_id = he.holdings_id'
          + '\n\tCROSS JOIN MaxLength'
-         + '\nWHERE UPPER(he.call_number) >= UPPER(\'a\')'
-         + '\n\tAND UPPER(he.call_number) <= RPAD(UPPER(\'b9\'), max_len, \'ÿ\')'
+         + '\nWHERE ' + where
          + '\nORDER BY he.call_number';
   
   if (logLevel === 'DEBUG') {
-    print('\bookReportQuery = ' + bookReportQuery);
+    print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
   }
   
   var queryWrapper = {
-    sql: bookReportQuery
+    sql: booksCallNumberQuery
   };
   
-  execution.setVariableLocal('bookReportQuery', S(JSON.stringify(queryWrapper)));
+  execution.setVariableLocal('booksCallNumberQuery', S(JSON.stringify(queryWrapper)));
   

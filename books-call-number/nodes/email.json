@@ -26,7 +26,7 @@
     "mailFrom": "{{bcn-mail-from}}",
     "mailSubject": "TAMU Checked Out Books By Call Number Report",
     "mailText": "TAMU checked out books by call number list attached",
-    "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
     "asyncBefore": true
 }
   

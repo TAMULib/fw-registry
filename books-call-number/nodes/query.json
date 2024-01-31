@@ -1,6 +1,6 @@
 {
     "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
-    "name": "Query list of books.",
+    "name": "Query list of books by call number.",
     "description": "",
     "deserializeAs": "DatabaseQueryTask",
     "inputVariables": [
@@ -17,10 +17,13 @@
           "type": "PROCESS"
         }
     ],
-    "outputVariable": { },
+  "outputVariable": {
+    "key": "booksCallNumberResponse",
+    "type": "LOCAL"
+  },
     "designation": "ldp",
-    "query": "WITH MaxLength AS (SELECT MAX(LENGTH(he.call_number)) AS max_len FROM folio_reporting.holdings_ext he) SELECT * FROM folio_reporting.item_ext ie JOIN folio_reporting.holdings_ext he ON ie.holdings_record_id = he.holdings_id CROSS JOIN MaxLength WHERE UPPER(he.call_number) >= UPPER('a') AND UPPER(he.call_number) <= RPAD(UPPER('b9'), max_len, 'ÿ') ORDER BY he.call_number;",
-    "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
+    "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
     "resultType": "CSV",
     "includeHeader": true,
     "asyncBefore": true

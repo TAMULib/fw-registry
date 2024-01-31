@@ -14,7 +14,7 @@
       }
     ],
     "outputVariable": {},
-    "path": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.tsv",
+    "path": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
     "op": "DELETE",
     "asyncBefore": true
   }
