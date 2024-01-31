@@ -15,6 +15,10 @@
         {
           "key": "timestamp",
           "type": "PROCESS"
+        },
+        {
+          "key": "tenantId",
+          "type": "PROCESS"
         }
     ],
     "outputVariable": {},
