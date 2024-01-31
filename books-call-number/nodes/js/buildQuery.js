@@ -38,4 +38,5 @@ if (logLevel === 'DEBUG') {
   };
   
   execution.setVariableLocal('booksCallNumberQuery', S(JSON.stringify(queryWrapper)));
+
   
