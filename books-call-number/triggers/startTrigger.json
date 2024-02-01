@@ -1,0 +1,9 @@
+{
+  "id": "5667fdf5-fb58-4680-8091-60b64a450fb6",
+  "name": "FOLIO Create Book Report Workflow Trigger",
+  "description": "Trigger for starting Book Report Workflow.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/books-call-number/start"
+}
