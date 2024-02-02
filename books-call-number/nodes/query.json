@@ -17,10 +17,6 @@
           "type": "PROCESS"
         }
     ],
-  "outputVariable": {
-    "key": "booksCallNumberResponse",
-    "type": "LOCAL"
-  },
     "designation": "ldp",
     "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
     "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",

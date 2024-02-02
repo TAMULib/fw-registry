@@ -15,7 +15,7 @@
     ],
     "outputVariable": {},
     "source": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
-    "destination": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
+    "destination": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
     "format": "ZIP",
     "container": "NONE",
     "asyncBefore": true
