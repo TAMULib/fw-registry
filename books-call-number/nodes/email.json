@@ -1,33 +1,33 @@
 {
-    "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
-    "name": "Send list of checked out items",
-    "description": "",
-    "deserializeAs": "EmailTask",
-    "inputVariables": [
-        {
-          "key": "emailTo",
-          "type": "PROCESS"
-        },
-        {
-          "key": "emailFrom",
-          "type": "PROCESS"
-        },
-        {
-          "key": "timestamp",
-          "type": "PROCESS"
-        },
-        {
-          "key": "tenantId",
-          "type": "PROCESS"
-        }
-    ],
-    "outputVariable": {},
-    "mailTo": "{{bcn-mail-to}}",
-    "mailFrom": "{{bcn-mail-from}}",
-    "mailSubject": "TAMU Checked Out Books By Call Number Report",
-    "mailText": "TAMU checked out books by call number list attached",
-    "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
-    "asyncBefore": true
+  "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
+  "name": "Send list of checked out items",
+  "description": "",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "emailFrom",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "{{bcn-mail-to}}",
+  "mailFrom": "{{bcn-mail-from}}",
+  "mailSubject": "TAMU Checked Out Books By Call Number Report",
+  "mailText": "TAMU checked out books by call number list attached",
+  "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
+  "asyncBefore": true
 }
 
   

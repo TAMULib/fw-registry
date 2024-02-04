@@ -1,26 +1,26 @@
 {
-    "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
-    "name": "Query list of books by call number.",
-    "description": "",
-    "deserializeAs": "DatabaseQueryTask",
-    "inputVariables": [
-        {
-          "key": "booksCallNumberQuery",
-          "type": "LOCAL"
-        },
-        {
-          "key": "tenantId",
-          "type": "PROCESS"
-        },
-        {
-          "key": "timestamp",
-          "type": "PROCESS"
-        }
-    ],
-    "designation": "ldp",
-    "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
-    "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
-    "resultType": "CSV",
-    "includeHeader": true,
-    "asyncBefore": true
-  }
+  "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
+  "name": "Query list of books by call number.",
+  "description": "",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "booksCallNumberQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "designation": "ldp",
+  "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
+  "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "asyncBefore": true
+}
