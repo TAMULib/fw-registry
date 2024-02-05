@@ -1,0 +1,8 @@
+{
+  "id": "bf7143c2-b5f1-4de1-98bd-06c4429cf069",
+  "name": "Start",
+  "description": "Start Workflow to remove books from Evans NBS.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/remove-books-from-nbs/start"
+}

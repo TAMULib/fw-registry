@@ -1,0 +1,25 @@
+{
+    "id": "1d66dfe9-95ef-4ad6-bb3a-b20953c19674",
+    "name": "Remove Books From Evans Newbook Shelf",
+    "description": "This workflow will remove books from the new book shelf by a list of barcodes.",
+    "versionTag": "1.0",
+    "historyTimeToLive": 90,
+    "deploymentId": null,
+    "active": false,
+    "setup": {
+      "asyncBefore": false,
+      "asyncAfter": false
+    },
+    "nodes": [
+      "{{mod-workflow}}/startEvent/bf7143c2-b5f1-4de1-98bd-06c4429cf069",
+      "{{mod-workflow}}/scriptTask/0e636437-1f47-4f2d-a11e-1cb7ee2a30f1",
+      "{{mod-workflow}}/databaseConnectionTask/d829fbaa-13ba-46cc-b247-fe7505820e69",
+      "{{mod-workflow}}/databaseQueryTask/f08897cd-e5c6-401b-9cab-6849ece0a3aa",
+      "{{mod-workflow}}/databaseDisconnectTask/609a0102-77a8-4809-a03d-dd379845aec2",
+      "{{mod-workflow}}/emailTask/efc2d48a-54b2-46d6-bce0-7f4c5eec433b",
+      "{{mod-workflow}}/fileTask/19209cc8-28a4-4c9a-908c-cd9ae31cae6a",
+      "{{mod-workflow}}/endEvent/997e56ba-3821-4422-b491-e89ba8a5739d"
+    ],
+    "initialContext": {}
+  }
+  

@@ -1,0 +1,20 @@
+{
+  "id": "7e95d7c3-6a22-4708-8294-ce3a46aa33f5",
+  "name": "Read Input CSV File.",
+  "description": "Load the CSV file containing a single column of barcodes.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "barcodeFilePath",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "barCodeCsv",
+    "type": "PROCESS",
+    "asTransient": true
+  },
+  "path": "./test_barcode.csv",
+  "op": "READ",
+  "asyncBefore": true
+}
