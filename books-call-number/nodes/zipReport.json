@@ -1,7 +1,7 @@
 {
   "id": "6b08fa16-772e-4587-81db-5121f1489990",
-  "name": "Compressed book report",
-  "description": "",
+  "name": "Compress book report",
+  "description": "Compress book report utilizing ZIP format",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {

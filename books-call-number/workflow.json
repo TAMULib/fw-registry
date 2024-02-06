@@ -1,7 +1,7 @@
 {
   "id": "57f4ad52-6b52-42a9-adaf-91c1fc37089d",
   "name": "Generate list of checked out books Workflow",
-  "description": "",
+  "description": "Generate email containing list of checked-out books by call number.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
   "deploymentId": null,

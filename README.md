@@ -457,3 +457,33 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'username="***"' \
   --form 'password="***"'
 ```
+
+## books-call-number
+
+### Books Checked Out By Call Number Report Workflow
+
+This workflow will take a range of call numbers and for each call number in that range it will identify which ones are currently checked out.
+And this will create list of such checked out call numbers and email to a specified recipient.
+
+The inputs should be:
+
+`Email` the email address of the report recipient
+`Range Start` - The beginning of the call number range.
+`Range End` - The end of the call number range
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+```shell
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set bcn-mail-to ***
+fw config set bcn-mail-from ***
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+```
+
+To build and activate:
+```shell
+fw build books-call-number
+fw activate books-call-number
+```
+User can inititate form submission from catalog_reports Book-Call-Number Report.

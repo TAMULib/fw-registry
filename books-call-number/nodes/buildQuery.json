@@ -1,7 +1,7 @@
 {
   "id": "b78799bb-4e37-420b-bc06-eaf21ba8200e",
-  "name": "Build Query taking the 2 input parameters",
-  "description": "",
+  "name": "Build Query",
+  "description": "Build Query using input parameters - startRange and endRange.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "buildQuery.js"

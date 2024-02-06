@@ -1,7 +1,7 @@
 {
   "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
   "name": "Query list of books by call number.",
-  "description": "",
+  "description": "Query books by specied call number range provided.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
