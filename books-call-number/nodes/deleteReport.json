@@ -17,5 +17,4 @@
   "path": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
   "op": "DELETE",
   "asyncBefore": true
-  }
-  
+}
