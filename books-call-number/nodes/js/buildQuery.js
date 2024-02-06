@@ -18,7 +18,7 @@ var cte =
   'WITH MaxLength AS (' +
   '\n\tSELECT MAX(LENGTH(he.call_number)) AS max_len' +
   '\n\tFROM folio_reporting.holdings_ext he' +
-  ')';
+')';
 
 var booksCallNumberQuery =
   '\n\n' + cte +

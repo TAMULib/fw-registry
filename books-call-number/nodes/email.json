@@ -1,6 +1,6 @@
 {
   "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
-  "name": "Email checked-out items list",
+  "name": "Email Items",
   "description": "Email list of checked-out books by call number as an attachment.",
   "deserializeAs": "EmailTask",
   "inputVariables": [
@@ -29,5 +29,3 @@
   "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
   "asyncBefore": true
 }
-
-  

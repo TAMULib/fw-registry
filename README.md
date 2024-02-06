@@ -462,16 +462,23 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ### Books Checked Out By Call Number Report Workflow
 
-This workflow will take a range of call numbers and for each call number in that range it will identify which ones are currently checked out.
-And this will create list of such checked out call numbers and email to a specified recipient.
+This workflow queries checked-out books within a specific call number range, generates a list, and emails this list to the specified recipient.
 
-The inputs should be:
+These variables are required when triggering the workflow:
 
-`Email` the email address of the report recipient
-`Range Start` - The beginning of the call number range.
-`Range End` - The end of the call number range
+| Variable Name  | Allowed Values | Short Description |
+| -------------- | -------------- | ----------------- |
+| emailTo        | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| startRange     | string         | Start Range of call number. |
+| endRange       | string         | End range of call number. |
+| username       | string         | Okapi login username. |
+| password       | string         | Okapi login password. |
+| ldp-user       | string         | LDP login username. |
+| ldp-password   | string         | LDP login password. |
+| ldp-url        | URL            | LDP URL. |
 
 This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+
 ```shell
 fw config set ldp-url ***
 fw config set ldp-user ***
@@ -486,4 +493,17 @@ To build and activate:
 fw build books-call-number
 fw activate books-call-number
 ```
-User can inititate form submission from catalog_reports Book-Call-Number Report.
+User inititates form submission from catalog_reports Book-Call-Number Report.
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'logLevel="INFO"' \
+  --form 'emailFrom="folio@k1000.library.tamu.edu"' \
+  --form 'emailTo="recipient@tamu.edu"' \
+  --form 'startRange="a0"' \
+  --form 'endRange="b9"' \
+  --form 'username="***"' \
+  --form 'password="***"'
+```
