@@ -1,0 +1,26 @@
+{
+  "id": "f08897cd-e5c6-401b-9cab-6849ece0a3aa",
+  "name": "Query by Call Number",
+  "description": "Query books by specied call number range provided.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "barcodeQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "designation": "ldp",
+  "query": "${barcodeQuery.prop('sql').stringValue()}",
+  "outputPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "asyncBefore": true
+}
