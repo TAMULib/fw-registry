@@ -1,4 +1,4 @@
-var MappingUtility = Java.type("org.folio.rest.utility.MappingUtility");
+var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 
 if (logLevel === 'DEBUG') {
   print('\ninstance = ' + instance + '\n');

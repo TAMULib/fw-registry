@@ -1,5 +1,5 @@
-var FormatUtility = Java.type('org.folio.rest.utility.FormatUtility');
-var MappingUtility = Java.type('org.folio.rest.utility.MappingUtility');
+var FormatUtility = Java.type('org.folio.rest.camunda.utility.FormatUtility');
+var MappingUtility = Java.type('org.folio.rest.camunda.utility.MappingUtility');
 var UUID = Java.type('java.util.UUID');
 var StringUtils = Java.type('org.apache.commons.lang3.StringUtils');
 var idsJson = MappingUtility.mapCsvToJson(rowsCsv);

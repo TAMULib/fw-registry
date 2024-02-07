@@ -1,4 +1,4 @@
-var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
+var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
 var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(record.stringValue(), ['050', '090', '245', '947', '980']));
 

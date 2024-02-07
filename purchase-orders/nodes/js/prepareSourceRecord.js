@@ -1,5 +1,5 @@
 var UUID = Java.type("java.util.UUID");
-var MarcUtility = Java.type("org.folio.rest.utility.MarcUtility");
+var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
 var sourceRecordId = UUID.randomUUID().toString();
 var snapshotId = UUID.randomUUID().toString();

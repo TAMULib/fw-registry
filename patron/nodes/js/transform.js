@@ -1,4 +1,4 @@
-var FormatUtility = Java.type("org.folio.rest.utility.FormatUtility");
+var FormatUtility = Java.type("org.folio.rest.camunda.utility.FormatUtility");
 
 function tranform(patrons) {
   var users = [];
