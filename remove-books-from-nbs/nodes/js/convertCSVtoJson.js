@@ -1,9 +1,9 @@
 var MappingUtility = Java.type("org.folio.rest.utility.MappingUtility");
-var barCodeJSON = MappingUtility.mapCsvToJson(barCodeCsv);
+var barcodesJSON = MappingUtility.mapCsvToJson(barcodesCSV);
 
 if (logLevel === "DEBUG") {
-  print('\nbarCode = ' + barCodeJSON + '\n');
+  print('\nbarcodes = ' + barcodesJSON + '\n');
 }
+execution.setVariable('barcodes', barcodesJSON);
 
-execution.setVariable('barCode', S(barCodeJSON));
 

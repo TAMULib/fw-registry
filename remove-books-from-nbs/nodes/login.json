@@ -1,0 +1,34 @@
+{
+  "id": "3e0cab86-7c83-4078-a752-2c2381c3c60b",
+  "name": "Login",
+  "description": "Get Token for Remove Books from New Bookshelf.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi}}/authn/login",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
+  },
+  "inputVariables": [
+    {
+      "key": "username",
+      "type": "PROCESS"
+    },
+    {
+      "key": "password",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [
+    {
+      "key": "X-Okapi-Token",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "loginResponse",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}
