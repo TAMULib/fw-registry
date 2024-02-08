@@ -1,12 +1,23 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
+var barcodesArr = JSON.parse(barcodes);
+print('\n To print barcodes\n');
+print(barcodesArr);
+print('\nBarcodes length: ', + barcodesArr.length);
+var barcodeList = '';
+
+for (var i = 0; i <= barcodesArr.length - 1; i++) {
+  var elem = barcodesArr[i];
+  if (!!elem.barcode.trim()) {
+      barcodeList += '\'';
+      barcodeList += elem.barcode.trim();
+      barcodeList += '\'';
+      if (i < barcodesArr.length - 1) {
+        barcodeList += ',';
+      }
+  }
 }
 
-var where = 'TRUE';
-// TODO - retrieve barcodes from the csv file
-var barCodes = ['A14840670567', 'A14839898356', 'A14851397118'];
-
-const barCodeList = barcodes.map(barcode => `'${barcode}'`).join(', ');
+print('\n To print barcodeList\n');
+print(barcodeList);
 
 var barcodeQuery =
   '\nUPDATE folio_reporting.item_ext' +
@@ -15,13 +26,11 @@ var barcodeQuery =
   '\n\ttemporary_location_name = NULL,' +
   '\n\ttemporary_loan_type_id = NULL,' +
   '\n\ttemporary_loan_type_name = NULL' +
-  '\nWHERE barcode IN (' + barCodeList + ')' +
+  '\nWHERE barcode IN (' + barcodeList + ')' +
   '\n\tAND effective_location_name = \'Evans nbs\'' +
   '\n\tAND EXTRACT(DAY FROM (CURRENT_DATE - updated_date)::interval) > 30';
 
-if (logLevel === 'DEBUG') {
-  print('\nbarcodeQuery = ' + barcodeQuery);
-}
+print('\nbarcodeQuery = ' + barcodeQuery);
 
 var queryWrapper = {
   sql: barcodeQuery,

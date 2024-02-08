@@ -19,8 +19,6 @@
   ],
   "designation": "ldp",
   "query": "${barcodeQuery.prop('sql').stringValue()}",
-  "outputPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.csv",
-  "resultType": "CSV",
   "includeHeader": true,
   "asyncBefore": true
 }
