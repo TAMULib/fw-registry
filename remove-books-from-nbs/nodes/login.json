@@ -1,25 +1,15 @@
 {
-  "id": "3e0cab86-7c83-4078-a752-2c2381c3c60b",
+  "id": "ee264ed1-f09b-43fd-8cb0-82fd19929529",
   "name": "Login",
   "description": "Get Token for Remove Books from New Bookshelf.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi}}/authn/login",
+    "url": "https://folio-okapi-test.library.tamu.edu/authn/login",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
+    "bodyTemplate": "{\"username\": \"tamu_admin\",\"password\": \"${password}\"}"
   },
-  "inputVariables": [
-    {
-      "key": "username",
-      "type": "PROCESS"
-    },
-    {
-      "key": "password",
-      "type": "PROCESS"
-    }
-  ],
   "headerOutputVariables": [
     {
       "key": "X-Okapi-Token",

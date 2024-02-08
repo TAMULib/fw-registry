@@ -3,18 +3,12 @@
   "name": "Read CSV File",
   "description": "Read CSV file containing list of barcodes.",
   "deserializeAs": "FileTask",
-  "inputVariables": [
-    {
-      "key": "inputFilePath",
-      "type": "PROCESS"
-    }
-  ],
   "outputVariable": {
     "key": "barcodesCSV",
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "${inputFilePath}",
+  "path": "/mnt/workflows/tamu/remove-books-from-nbs/barcodes.csv",
   "op": "READ",
   "asyncBefore": true
 }
