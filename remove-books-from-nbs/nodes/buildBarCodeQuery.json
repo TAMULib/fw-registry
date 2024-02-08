@@ -1,8 +1,0 @@
-{
-  "id": "0e636437-1f47-4f2d-a11e-1cb7ee2a30f1",
-  "name": "Query by barcode",
-  "description": "Query to remove books from Evans new bookshelf",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "buildBarcodeQuery.js"
-}
