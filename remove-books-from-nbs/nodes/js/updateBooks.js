@@ -1,3 +1,5 @@
+var UUID = Java.type('java.util.UUID');
+var StringEscapeUtils = Java.type('org.apache.commons.lang.StringEscapeUtils');
 print('====== updateBooks.js Start ======\n');
 var barcodesArr = JSON.parse(barcodes);
 var okapiToken = loginResponse;
@@ -8,9 +10,14 @@ print('\nBarcodes length: ', + barcodesArr.length);
 
 print (`okapiToken: ${okapiToken}`);
 
-// items.effectiveLocationId==“07a4e97e-9941-4f60-ad25-577bb6672c08”
+var safe = function (str) {
+  return StringEscapeUtils.escapeJson(str);
+};
 
 var validationArray = [];
+
+print('printing validationArray below');
+print(validationArray);
 
 while (barcodesArr.length > 1) {
   var barcodeObject = barcodesArr.shift();
@@ -27,4 +34,6 @@ while (barcodesArr.length > 1) {
   };
 }
 
+print('printing validationObject below');
+print(validationObject);
 print('====== updateBooks.js End ======\n');
