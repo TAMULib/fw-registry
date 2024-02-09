@@ -15,7 +15,9 @@
     "{{mod-workflow}}/fileTask/f60766f0-3348-4101-abd9-de6dd6b0819f",
     "{{mod-workflow}}/scriptTask/02cdf90c-8ca4-4aef-8bb5-a9c0242a9fd6",
     "{{mod-workflow}}/requestTask/ee264ed1-f09b-43fd-8cb0-82fd19929529",
-    "{{mod-workflow}}/scriptTask/0e636437-1f47-4f2d-a11e-1cb7ee2a30f1"
+    "{{mod-workflow}}/scriptTask/0e636437-1f47-4f2d-a11e-1cb7ee2a30f1",
+    "{{mod-workflow}}/requestTask/4b927e9b-b4dd-40d1-9074-01c1459fe8ef",
+    "{{mod-workflow}}/scriptTask/cc684b6a-e020-4eab-9ccf-1425cafc6f85"
   ],
   "initialContext": {}
 }

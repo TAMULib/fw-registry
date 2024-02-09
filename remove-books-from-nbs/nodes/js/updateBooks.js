@@ -37,3 +37,6 @@ while (barcodesArr.length > 1) {
 print('printing validationObject below');
 print(validationObject);
 print('====== updateBooks.js End ======\n');
+
+execution.setVariable('barcode', barcodesJSON);
+execution.setVariable('barcode', JSON.stringify(barcode));

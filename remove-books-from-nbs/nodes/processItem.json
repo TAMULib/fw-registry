@@ -1,0 +1,8 @@
+{
+  "id": "cc684b6a-e020-4eab-9ccf-1425cafc6f85",
+  "name": "Process Item",
+  "description": "Process an Item, determining if it still needs to be updated and if so then populate the Item accordingly.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processItem.js"
+}
