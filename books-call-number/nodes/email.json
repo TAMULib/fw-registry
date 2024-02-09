@@ -5,11 +5,11 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
+      "key": "bcn-mail-to",
       "type": "PROCESS"
     },
     {
-      "key": "emailFrom",
+      "key": "bcn-mail-from",
       "type": "PROCESS"
     },
     {
