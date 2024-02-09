@@ -476,6 +476,8 @@ These variables are required when triggering the workflow:
 | ldp-user       | string         | LDP login username. |
 | ldp-password   | string         | LDP login password. |
 | ldp-url        | URL            | LDP URL. |
+| bcn-mail-to    | e-mail address | An e-mail address used for testing the workflow. |
+| bcn-mail-from  | e-mail address | An e-mail address used on behalf of the workflow. |
 
 This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
