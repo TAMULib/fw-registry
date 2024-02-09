@@ -4,5 +4,5 @@
   "description": "Remove Books from Evans NBS via Okapi API",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "updateBooks.js"
+  "code": "updateBook.js"
 }

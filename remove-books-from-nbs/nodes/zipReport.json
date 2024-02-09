@@ -1,0 +1,22 @@
+{
+  "id": "2b69397a-3a60-405d-8032-8d47bd57f664",
+  "name": "Compress Barcode Report",
+  "description": "",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodes-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodes-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

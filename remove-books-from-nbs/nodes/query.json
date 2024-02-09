@@ -17,6 +17,13 @@
       "type": "PROCESS"
     }
   ],
+  "outputVariables" :
+    {
+      "key": "itemIdResponse",
+      "type": "PROCESS",
+      "spin" : true
+    }
+  ,
   "designation": "ldp",
   "query": "${barcodeQuery.prop('sql').stringValue()}",
   "includeHeader": true,

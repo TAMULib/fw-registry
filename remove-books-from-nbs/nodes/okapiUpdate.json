@@ -1,23 +1,24 @@
 {
-  "id": "daa0f2b8-fe57-4cfc-8fe2-23a405c4d1cb",
+  "id": "097d0a12-6512-48ff-ac32-cc13833d66cf",
   "name": "Request Item",
   "description": "Request the Item by its given Item ID.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/inventory/items/${itemId}", 
+    "url": "{{okapi-internal}}/item-storage/items/${itemObject.id}", 
     "method": "PUT",
     "accept": "application/json"
   },
+  "bodyTemplate" : "${itemObject}",
   "inputVariables": [
     {
-    "key": "barcode",
+    "key": "itemObject",
     "type": "PROCESS",
     "spin": true
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
-    "key": "itemResponse",
+    "key": "itemUpdateResponse",
     "type": "LOCAL",
     "spin": true
   },

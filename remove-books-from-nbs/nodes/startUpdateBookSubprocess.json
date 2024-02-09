@@ -1,0 +1,8 @@
+{
+  "id": "578f31a6-c985-40ad-a8c2-d7be10d24309",
+  "name": "Start Book Update Subprocess",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}

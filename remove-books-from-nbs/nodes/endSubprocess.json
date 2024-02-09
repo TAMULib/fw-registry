@@ -1,0 +1,8 @@
+{
+  "id": "0d58a79a-04bf-4abb-9789-ae898e1292f0",
+  "name": "End Book Update Subprocess",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "EndEvent",
+  "asyncBefore": true
+}

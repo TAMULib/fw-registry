@@ -1,0 +1,19 @@
+{
+  "id": "33a74da3-db19-4718-a71f-461e1cdd723f",
+  "name": "Book Update Subprocess",
+  "description": "Subprocess to update a book",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/578f31a6-c985-40ad-a8c2-d7be10d24309",
+    "{{mod-workflow}}/scriptTask/1ae0bfc4-c1ea-4005-a039-58db7799eb34",
+    "{{mod-workflow}}/requestTask/097d0a12-6512-48ff-ac32-cc13833d66cf",
+    "{{mod-workflow}}/scriptTask/1554c2d0-e690-470c-8996-c4d93aa5ebbd",
+    "{{mod-workflow}}/endEvent/0d58a79a-04bf-4abb-9789-ae898e1292f0"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${itemIdResponse.elements()}",
+    "inputDataName": "itemObject",
+    "parallel": false
+  }
+}

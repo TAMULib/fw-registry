@@ -1,0 +1,8 @@
+{
+  "id": "1554c2d0-e690-470c-8996-c4d93aa5ebbd",
+  "name": "Log Okapi Results Subprocess",
+  "description": "log okapi results from book update subprocess",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "logResults.js"
+}

@@ -5,11 +5,11 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
+      "key": "rbfn-mail-to",
       "type": "PROCESS"
     },
     {
-      "key": "emailFrom",
+      "key": "rbfn-mail-from",
       "type": "PROCESS"
     },
     {
@@ -22,8 +22,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "${emailTo}",
-  "mailFrom": "${emailFrom}",
+  "mailTo": "{{{rbfn-mail-to}}}",
+  "mailFrom": "{{{rbfn-mail-from}}}",
   "mailSubject": "List of Barcodes removed from Evans new bookshelf",
   "mailText": "This email provides list of barcodes that has been taken off Evans new bookshelf",
   "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.zip",

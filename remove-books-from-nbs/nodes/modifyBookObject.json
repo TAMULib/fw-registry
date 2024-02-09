@@ -1,0 +1,8 @@
+{
+  "id": "1ae0bfc4-c1ea-4005-a039-58db7799eb34",
+  "name": "Modify Book Object Subprocess",
+  "description": "prepare book update for okapi update",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "modifyBookLocation.js"
+}

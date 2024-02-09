@@ -1,0 +1,25 @@
+{
+  "id": "c743b316-e1de-4e1f-9674-47d1cccb763e",
+  "name": "Convert Array into CSV",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "barcodeReport",
+      "type": "LOCAL"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type" : "PROCESS"
+    }
+  ],
+  "source": "${barcodeReport}",
+  "destination": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodes-report-${timestamp}.csv",
+  "format": "CSV",
+  "container": "NONE",
+  "asyncBefore": true
+}
