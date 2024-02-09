@@ -1,0 +1,8 @@
+{
+  "id": "5e9c54b4-4855-4ee3-a255-784812288d6c",
+  "name": "Query by barcode",
+  "description": "Get items from Evans new bookshelf",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildBarcodeQuery.js"
+}

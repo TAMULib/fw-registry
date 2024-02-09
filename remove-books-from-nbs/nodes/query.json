@@ -1,7 +1,7 @@
 {
   "id": "f08897cd-e5c6-401b-9cab-6849ece0a3aa",
-  "name": "Query by Call Number",
-  "description": "Query books by specied call number range provided.",
+  "name": "Get Items By Barcode",
+  "description": "Get list of items by barcodes.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
