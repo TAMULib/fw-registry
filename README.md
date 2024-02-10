@@ -457,3 +457,58 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --form 'username="***"' \
   --form 'password="***"'
 ```
+
+## books-call-number
+
+### Books Checked Out By Call Number Report Workflow
+
+This workflow queries checked-out books within a specific call number range, generates a list, and emails this list to the specified recipient.
+
+These variables are required when triggering the workflow:
+
+| Variable Name  | Allowed Values | Short Description |
+| -------------- | -------------- | ----------------- |
+| startRange     | string         | Start Range of call number. |
+| endRange       | string         | End range of call number. |
+| username       | string         | Okapi login username. |
+| password       | string         | Okapi login password. |
+| ldp-user       | string         | LDP login username. |
+| ldp-password   | string         | LDP login password. |
+| ldp-url        | URL            | LDP URL. |
+| bcn-mail-to    | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| bcn-mail-from  | e-mail address | An e-mail address used on behalf of the workflow. |
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+
+```shell
+
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set bcn-mail-to ***
+fw config set bcn-mail-from ***
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+
+```
+
+To build and activate:
+
+```shell
+
+fw build books-call-number
+fw activate books-call-number
+
+```
+
+User inititates form submission from catalog_reports Book-Call-Number Report.
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{"logLevel": "INFO", "bcn-mail-from": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcm-mail-to": "recipient@tamu.edu"}'
+
+```

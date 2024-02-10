@@ -1,0 +1,31 @@
+{
+  "id": "2fff188a-9bf3-43f7-939f-fcce0c4387dd",
+  "name": "Email Items",
+  "description": "Email list of checked-out books by call number as an attachment.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "bcn-mail-to",
+      "type": "PROCESS"
+    },
+    {
+      "key": "bcn-mail-from",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "{{{bcn-mail-to}}}",
+  "mailFrom": "{{{bcn-mail-from}}}",
+  "mailSubject": "TAMU Checked Out Books By Call Number Report",
+  "mailText": "TAMU checked out books by call number list attached",
+  "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
+  "asyncBefore": true
+}
