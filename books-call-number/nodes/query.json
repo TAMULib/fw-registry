@@ -9,17 +9,17 @@
       "type": "LOCAL"
     },
     {
-      "key": "tenantId",
+      "key": "timestamp",
       "type": "PROCESS"
     },
     {
-      "key": "timestamp",
+      "key": "path",
       "type": "PROCESS"
     }
   ],
   "designation": "ldp",
   "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
-  "outputPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
+  "outputPath": "${path}/checked-out-books-report-${timestamp}.csv",
   "resultType": "CSV",
   "includeHeader": true,
   "asyncBefore": true

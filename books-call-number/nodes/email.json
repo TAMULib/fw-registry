@@ -9,23 +9,19 @@
       "type": "PROCESS"
     },
     {
-      "key": "bcn-mail-from",
-      "type": "PROCESS"
-    },
-    {
       "key": "timestamp",
       "type": "PROCESS"
     },
     {
-      "key": "tenantId",
+      "key": "path",
       "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{{bcn-mail-to}}}",
+  "mailTo": "{{bcn-mail-to}}",
   "mailFrom": "{{{bcn-mail-from}}}",
   "mailSubject": "TAMU Checked Out Books By Call Number Report",
   "mailText": "TAMU checked out books by call number list attached",
-  "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
+  "attachmentPath": "${path}/checked-out-books-report-${timestamp}.zip",
   "asyncBefore": true
 }
