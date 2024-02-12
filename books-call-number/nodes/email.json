@@ -5,7 +5,7 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "bcn-mail-to",
+      "key": "bcnMailTo",
       "type": "PROCESS"
     },
     {
@@ -18,8 +18,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{bcn-mail-to}}",
-  "mailFrom": "{{{bcn-mail-from}}}",
+  "mailTo": "${bcnMailTo}",
+  "mailFrom": "{{{bcnMailFrom}}}",
   "mailSubject": "TAMU Checked Out Books By Call Number Report",
   "mailText": "TAMU checked out books by call number list attached",
   "attachmentPath": "${path}/checked-out-books-report-${timestamp}.zip",
