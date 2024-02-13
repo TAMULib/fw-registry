@@ -489,6 +489,7 @@ fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
 fw config set bcnMailFrom ***
+fw config set bcnMailTo ***
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 
 ```
