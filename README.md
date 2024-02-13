@@ -477,7 +477,7 @@ These variables are required when triggering the workflow:
 | ldp-password            | string         | LDP login password. |
 | ldp-url                 | URL            | LDP URL. |
 | bcnMailTo               | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
-| bcnMailFrom           | e-mail address | An e-mail address used on behalf of the workflow. |
+| bcnMailFrom             | e-mail address | An e-mail address used on behalf of the workflow. |
 | mis-catalog-reports-url | URL            | URL for the MIS Catalog Reports website. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 
