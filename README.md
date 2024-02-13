@@ -477,7 +477,6 @@ These variables are required when triggering the workflow:
 | ldp-password            | string         | LDP login password. |
 | ldp-url                 | URL            | LDP URL. |
 | bcnMailTo               | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
-| bcnMailFrom             | e-mail address | An e-mail address used on behalf of the workflow. |
 | mis-catalog-reports-url | URL            | URL for the MIS Catalog Reports website. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 
@@ -488,7 +487,6 @@ This utilizes **LDP** to get the query result which gets written to: */mnt/workf
 fw config set ldp-url ***
 fw config set ldp-user ***
 fw config set ldp-password ***
-fw config set bcnMailFrom ***
 fw config set bcnMailTo ***
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 
@@ -512,6 +510,6 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{"logLevel": "INFO", "bcnMailFrom": "folio@k1000.library.tamu.edu", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcmMailTo": "recipient@tamu.edu", "path": "/mnt/workflows/${tenantId}/bcn" }'
+  --data-raw '{"logLevel": "INFO", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcnMailTo": "recipient@tamu.edu", "path": "/mnt/workflows/${tenantId}/bcn" }'
 
 ```
