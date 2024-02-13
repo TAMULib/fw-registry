@@ -5,11 +5,7 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "bcn-mail-to",
-      "type": "PROCESS"
-    },
-    {
-      "key": "bcn-mail-from",
+      "key": "bcnMailTo",
       "type": "PROCESS"
     },
     {
@@ -17,15 +13,15 @@
       "type": "PROCESS"
     },
     {
-      "key": "tenantId",
+      "key": "path",
       "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{{bcn-mail-to}}}",
-  "mailFrom": "{{{bcn-mail-from}}}",
+  "mailTo": "${bcnMailTo}",
+  "mailFrom": "{{{bcnMailFrom}}}",
   "mailSubject": "TAMU Checked Out Books By Call Number Report",
   "mailText": "TAMU checked out books by call number list attached",
-  "attachmentPath": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
+  "attachmentPath": "${path}/checked-out-books-report-${timestamp}.zip",
   "asyncBefore": true
 }

@@ -9,13 +9,13 @@
     "type": "PROCESS"
     },
     {
-    "key": "tenantId",
-    "type": "PROCESS"
+      "key": "path",
+      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
-  "source": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.csv",
-  "destination": "/mnt/workflows/${tenantId}/books-call-number/checked-out-books-report-${timestamp}.zip",
+  "source": "${path}/checked-out-books-report-${timestamp}.csv",
+  "destination": "${path}/checked-out-books-report-${timestamp}.zip",
   "format": "ZIP",
   "container": "NONE",
   "asyncBefore": true
