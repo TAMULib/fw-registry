@@ -1,0 +1,20 @@
+{
+  "id": "23b15d29-0f7a-40c5-b670-fb71db0456e8",
+  "name": "Delete CSV Report",
+  "description": "Delete the csv report file",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "path",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${path}/checked-out-books-report-${timestamp}.csv",
+  "op": "DELETE",
+  "asyncBefore": true
+}

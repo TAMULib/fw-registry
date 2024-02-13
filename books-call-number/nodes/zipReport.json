@@ -1,0 +1,22 @@
+{
+  "id": "6b08fa16-772e-4587-81db-5121f1489990",
+  "name": "Compress Book Report",
+  "description": "Compress book report utilizing ZIP format",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+    "key": "timestamp",
+    "type": "PROCESS"
+    },
+    {
+      "key": "path",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "${path}/checked-out-books-report-${timestamp}.csv",
+  "destination": "${path}/checked-out-books-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

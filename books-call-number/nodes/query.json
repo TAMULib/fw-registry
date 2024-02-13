@@ -1,0 +1,26 @@
+{
+  "id": "78ae1271-bcf8-452f-a3de-7e4583ba8017",
+  "name": "Query by Call Number",
+  "description": "Query books by specied call number range provided.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "booksCallNumberQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "path",
+      "type": "PROCESS"
+    }
+  ],
+  "designation": "ldp",
+  "query": "${booksCallNumberQuery.prop('sql').stringValue()}",
+  "outputPath": "${path}/checked-out-books-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "asyncBefore": true
+}

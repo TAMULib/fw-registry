@@ -1,0 +1,20 @@
+{
+  "id": "349d1628-5f30-412d-a6c0-c9466175f0dd",
+  "name": "Delete ZIP format",
+  "description": "Delete book report in zip format.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "path",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${path}/checked-out-books-report-${timestamp}.zip",
+  "op": "DELETE",
+  "asyncBefore": true
+}
