@@ -25,7 +25,6 @@ var booksCallNumberQuery =
   '\n\n' + cte +
   '\nSELECT ie.effective_call_number' +
   '\n\tFROM folio_reporting.item_ext ie' +
-  '\n\tJOIN folio_reporting.holdings_ext he ON ie.holdings_record_id = he.holdings_id' +
   '\n\tCROSS JOIN MaxLength' +
   '\nWHERE ' + where +
   '\nORDER BY ie.effective_call_number';
