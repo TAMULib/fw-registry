@@ -7,27 +7,28 @@ if (logLevel === 'DEBUG') {
 var where = 'TRUE';
 
 if (startRange) {
-  where = '\n\t\tUPPER(he.call_number) >= UPPER(\'' + startRange + '\')';
+  where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
 }
 
 if (endRange) {
-  where += '\n\t\tAND UPPER(he.call_number) <= RPAD(UPPER(\'' + endRange + '\'), max_len, \'ÿ\')';
+  where += '\n\t\tAND UPPER(ie.effective_call_number) <= RPAD(UPPER(\'' + endRange + '\'), max_len, \'ÿ\')';
 }
 
-var cte =
-  'WITH MaxLength AS (' +
-  '\n\tSELECT MAX(LENGTH(he.call_number)) AS max_len' +
-  '\n\tFROM folio_reporting.holdings_ext he' +
+where += '\n\t\tAND ie.status_name = \'Checked out\'';
+
+var cte = 'WITH MaxLength AS (' +
+'\n\tSELECT MAX(LENGTH(ie.effective_call_number)) AS max_len' +
+'\n\tFROM folio_reporting.item_ext ie' +
 ')';
 
 var booksCallNumberQuery =
   '\n\n' + cte +
-  '\nSELECT he.call_number' +
+  '\nSELECT ie.effective_call_number' +
   '\n\tFROM folio_reporting.item_ext ie' +
   '\n\tJOIN folio_reporting.holdings_ext he ON ie.holdings_record_id = he.holdings_id' +
   '\n\tCROSS JOIN MaxLength' +
   '\nWHERE ' + where +
-  '\nORDER BY he.call_number';
+  '\nORDER BY ie.effective_call_number';
 
 if (logLevel === 'DEBUG') {
   print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
