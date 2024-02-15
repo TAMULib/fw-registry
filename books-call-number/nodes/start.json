@@ -1,9 +1,0 @@
-{
-  "id": "e189ef88-9f24-4cc8-85b5-a3c6c04222f9",
-  "name": "Start",
-  "description": "Start workflow to email list of checked out books by call number.",
-  "type": "MESSAGE_CORRELATION",
-  "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/books-call-number/start"
-}
-
