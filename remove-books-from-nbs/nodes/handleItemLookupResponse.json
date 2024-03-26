@@ -1,0 +1,8 @@
+{
+  "id": "08bfbba4-d572-43c5-b274-f00f1476adfe",
+  "name": "Handle item lookup by barcode response",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "handleItemLookupResponse.js"
+}

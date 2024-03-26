@@ -1,0 +1,9 @@
+{
+  "id": "d431815a-e049-41fe-8ab1-08f1283f115b",
+  "name": "Remove Books From NBS Workflow Start Trigger",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/remove-books-from-nbs/start"
+}

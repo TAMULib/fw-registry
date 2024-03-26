@@ -1,0 +1,25 @@
+{
+  "id": "a3aad69c-0aae-4d3b-8513-84ab85a6c179",
+  "name": "Update item",
+  "description": "",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${item.prop('id').stringValue()}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${item}"
+  },
+  "inputVariables": [
+    {
+      "key": "item",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemUpdateResponse",
+    "type": "LOCAL"
+  },
+  "asyncBefore": true
+}

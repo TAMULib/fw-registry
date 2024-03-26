@@ -1,0 +1,8 @@
+{
+  "id": "67f75a13-2ba3-48fc-8849-70fd069cd013",
+  "name": "End NBS Items Lookup",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "EndEvent",
+  "asyncBefore": true
+}

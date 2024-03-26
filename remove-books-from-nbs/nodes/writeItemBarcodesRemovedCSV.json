@@ -1,0 +1,26 @@
+{
+  "id": "132786d0-9210-4a58-b92e-987050eff6e4",
+  "name": "Write barcodes CSV",
+  "description": "Write items removed array of barcodes to single column CSV.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "barcodesOfItemsRemoved",
+      "type": "PROCESS",
+      "spin": true
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "target": "barcodesOfItemsRemoved",
+  "path": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodesOfItemsRemoved-${timestamp}.csv",
+  "op": "WRITE",
+  "asyncBefore": true
+}

@@ -1,0 +1,8 @@
+{
+  "id": "0a72dc6a-cffa-4a70-9257-5c4bc1ef9ea9",
+  "name": "Convert CSV to barcode array",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "convertCSVtoJSONArray.js"
+}

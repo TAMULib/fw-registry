@@ -1,0 +1,33 @@
+{
+  "id": "efc2d48a-54b2-46d6-bce0-7f4c5eec433b",
+  "name": "Email Barcode List",
+  "description": "Email list of barcodes removed from new bookshelf.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "email",
+      "type": "LOCAL",
+      "spin": true
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "{{nbs-mail-from}}",
+  "mailSubject": "${email.subject}",
+  "mailText": "${email.text}",
+  "mailMarkup": "${email.markup}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodesOfItemsRemoved-${timestamp}.csv",
+  "asyncBefore": true
+}

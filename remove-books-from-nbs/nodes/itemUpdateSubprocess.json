@@ -1,0 +1,17 @@
+{
+  "id": "db5cd3d2-a3f8-4e5e-830b-e0e3f23d5fa9",
+  "name": "New Bookshelf Items Update Subprocess",
+  "description": "Subprocess to update items on new bookshelf",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/f315e725-f834-490b-acee-77d6ba9721b1",
+    "{{mod-workflow}}/requestTask/a3aad69c-0aae-4d3b-8513-84ab85a6c179",
+    "{{mod-workflow}}/endEvent/a92cdf8e-76e2-4bb3-becb-66f675f0d499"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${itemsToRemove.elements()}",
+    "inputDataName": "item",
+    "parallel": false
+  }
+}

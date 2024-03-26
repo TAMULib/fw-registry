@@ -1,0 +1,8 @@
+{
+  "id": "f315e725-f834-490b-acee-77d6ba9721b1",
+  "name": "Start NBS Items Update",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}

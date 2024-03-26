@@ -1,0 +1,24 @@
+{
+  "id": "f21bcb7c-283c-4a16-9411-fcc526a4ed6f",
+  "name": "Lookup item by barcode",
+  "description": "",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items?query=barcode==${barcode}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "barcode",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemsResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

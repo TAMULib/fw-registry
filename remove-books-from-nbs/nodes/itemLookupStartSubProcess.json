@@ -1,0 +1,8 @@
+{
+  "id": "882d2100-8bc0-4c53-be8a-d9b40283a21f",
+  "name": "Start NBS Items Lookup",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}

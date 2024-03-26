@@ -1,0 +1,16 @@
+{
+  "id": "d3ad0b52-bb37-4884-8ef8-4b54898d4f83",
+  "name": "Delete Barcodes CSV input file",
+  "description": "",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${inputFilePath}",
+  "op": "DELETE",
+  "asyncBefore": true
+}

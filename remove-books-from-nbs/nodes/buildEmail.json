@@ -1,0 +1,8 @@
+{
+  "id": "7b3f51ce-4c5c-4263-8511-d4f90dec8177",
+  "name": "Build email report",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildEmail.js"
+}
