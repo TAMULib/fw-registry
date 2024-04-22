@@ -1,0 +1,9 @@
+{
+  "id": "a5620b3e-f895-4fd4-82c8-39cb380ab0c7",
+  "name": "Start",
+  "description": "Start workflow to withdraw items by list of barcodes.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/books-call-number/start"
+}
+ 

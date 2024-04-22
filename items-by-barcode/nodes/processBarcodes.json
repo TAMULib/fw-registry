@@ -1,0 +1,9 @@
+{
+  "id": "44dce6fa-6d4d-4e95-8f5e-a18242735214",
+  "name": "Process Barcodes and Prepare Update Query",
+  "description": "Process barcodes, extracting IDs from loaded CSV data and sanitizing input variables for SQL use.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processBarcodes.js"
+}
+

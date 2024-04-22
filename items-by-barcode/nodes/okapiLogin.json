@@ -1,0 +1,34 @@
+{
+  "id": "5b388938-2506-4158-96bf-128d31fd92e7",
+  "name": "Okapi Login",
+  "description": "Login to Okapi.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/authn/login",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
+  },
+  "inputVariables": [
+    {
+      "key": "username",
+      "type": "PROCESS"
+    },
+    {
+      "key": "password",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [
+    {
+      "key": "X-Okapi-Token",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "loginResponse",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}

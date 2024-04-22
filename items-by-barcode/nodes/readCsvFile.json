@@ -1,0 +1,20 @@
+{
+  "id": "be299216-022b-4e0e-9307-2e6bf8e07824",
+  "name": "Read Input CSV File",
+  "description": "Load the CSV file containing a single column of IDs.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "rowsCsv",
+    "type": "PROCESS",
+    "asTransient": true
+  },
+  "path": "${inputFilePath}",
+  "op": "READ",
+  "asyncBefore": true
+}

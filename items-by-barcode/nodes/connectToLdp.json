@@ -1,0 +1,13 @@
+{
+  "id": "8d280c0a-9980-48b6-ac1f-d0680605c08c",
+  "name": "Connect LDP",
+  "description": "Connect to the LDP.",
+  "deserializeAs": "DatabaseConnectionTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "ldp",
+  "url": "{{{ldp-url}}}",
+  "username": "{{{ldp-user}}}",
+  "password": "{{{ldp-password}}}",
+  "asyncBefore": true
+}
