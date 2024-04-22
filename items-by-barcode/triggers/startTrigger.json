@@ -1,0 +1,9 @@
+{
+  "id": "a2d94ac1-024b-4385-b685-55e56dd0575a",
+  "name": "FOLIO Create Items By Barcode Trigger",
+  "description": "Trigger for starting Items By Barcode Workflow.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/items-by-barcode/start"
+}
