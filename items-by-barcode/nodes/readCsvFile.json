@@ -14,7 +14,7 @@
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "${inputFilePath}",
+  "path": "/mnt/workflows/tamu/items-by-barcode/barcodes.csv",
   "op": "READ",
   "asyncBefore": true
 }

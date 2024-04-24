@@ -1,8 +1,19 @@
 {
   "id": "138fb515-84c7-4cc5-a532-29b52d21e6cd",
   "name": "Add Note",
-  "description": "Build Items array from the LDP response and add note to holdings.",
+  "description": "Get input from UI and add note to holdings in LDP.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
+  "inputVariables": [
+    {
+      "key": "userNoteObject",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "userNoteStringified",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true,
   "code": "addNote.js"
 }

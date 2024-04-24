@@ -4,6 +4,6 @@
   "description": "Start workflow to withdraw items by list of barcodes.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/books-call-number/start"
+  "expression": "/events/workflow/items-by-barcode/start"
 }
  

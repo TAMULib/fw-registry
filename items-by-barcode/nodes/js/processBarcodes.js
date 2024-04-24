@@ -7,7 +7,6 @@ var idsMatrix = JSON.parse(idsJson);
 
 var idSql = null;
 var idSqlFailure = false;
-var changedItems = [];
 
 if (logLevel === 'DEBUG') {
   print('\ninputFilePath = ' + inputFilePath + '\n');
@@ -57,5 +56,4 @@ queryWrapper.sql += 'AND ie.status_name != \'withdrawn\';';
 
 
 
-execution.setVariable('changedItems', S(JSON.stringify(changedItems)));
 execution.setVariableLocal('ldpUpdateQuery', S(JSON.stringify(queryWrapper)));

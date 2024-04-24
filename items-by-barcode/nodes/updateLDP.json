@@ -1,6 +1,6 @@
 {
   "id": "7d09d81c-567d-4b09-9c31-4f5bcfaef3bf",
-  "name": "Update Items in LDP",
+  "name": "Update Item Properties in LDP",
   "description": "Update items as per barcodes by running update query.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [

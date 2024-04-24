@@ -1,0 +1,20 @@
+{
+  "id": "326e1185-8a44-42af-bc46-34305834a145",
+  "name": "Update Note Property in LDP",
+  "description": "Add Note to holdings in LDP.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "userNoteStringified",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "ldpNoteResponse",
+    "type": "LOCAL"
+  },
+  "designation": "ldp",
+  "query": "${ldpUpdateNoteQuery.prop('sql').stringValue()}",
+  "asyncBefore": true
+}
+
