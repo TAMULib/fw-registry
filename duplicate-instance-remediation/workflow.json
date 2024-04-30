@@ -12,11 +12,11 @@
   },
   "nodes": [
     "{{mod-workflow}}/startEvent/",
+    "{{mod-workflow}}/databaseConnectionTask/",
     "{{mod-workflow}}/",
     "{{mod-workflow}}/",
     "{{mod-workflow}}/",
-    "{{mod-workflow}}/",
-    "{{mod-workflow}}/"
+    "{{mod-workflow}}/endEvent/"
   ],
   "initialContext": {}
 }
