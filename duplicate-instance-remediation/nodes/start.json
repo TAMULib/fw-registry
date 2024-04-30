@@ -1,0 +1,8 @@
+{
+  "id": "",
+  "name": "Start",
+  "description": "Start Workflow duplicate instance remediation.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/duplicate-instance-remediation/start"
+}

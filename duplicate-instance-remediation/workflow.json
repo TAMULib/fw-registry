@@ -1,0 +1,22 @@
+{
+  "id": "",
+  "name": "Duplicate Instance Remediation",
+  "description": "Identifies duplicate instances based on a set of analyses and remediates them based on heuristic analysis.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/",
+    "{{mod-workflow}}/",
+    "{{mod-workflow}}/",
+    "{{mod-workflow}}/",
+    "{{mod-workflow}}/",
+    "{{mod-workflow}}/"
+  ],
+  "initialContext": {}
+}

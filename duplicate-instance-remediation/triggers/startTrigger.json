@@ -1,0 +1,9 @@
+{
+  "id": "",
+  "name": "Duplicate Instance Remediation",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/duplicate-instance-remediation/start"
+}
