@@ -1,0 +1,8 @@
+{
+  "id": "08ebbb4b-63e0-4061-9201-f78ac50faa5e",
+  "name": "Process Holdings in Edit Holding Subprocess",
+  "description": "Process holdings set suppress = true",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processItemUpdateSubprocessGETResponse.js"
+}

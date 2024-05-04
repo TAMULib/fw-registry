@@ -1,0 +1,28 @@
+{
+  "id": "e6336805-d0f1-4e00-b8d9-e91d5ee38c03",
+  "name": "Update Item",
+  "description": "Update the subprocess item",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${itemId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${item}"
+  },
+  "inputVariables": [
+    {
+      "key": "itemId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "item",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {},
+  "asyncBefore": true
+}

@@ -1,0 +1,25 @@
+{
+  "id": "b7463159-5acd-45ba-b211-0c08f2940201",
+  "name": "Get Item By Item Id",
+  "description": "Get item by ItemId",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${itemId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "itemId",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

@@ -1,0 +1,19 @@
+{
+  "id": "fbfd2eb6-a4fd-431e-a6cf-18a97f6564fc",
+  "name": "Holding Edit Subprocess",
+  "description": "Subprocess to edit holdings based on holdingsId.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/4e545a0b-2418-4adb-b62a-bf279338826c",
+    "{{mod-workflow}}/requestTask/46dd2c9c-4c26-4ab1-b8f1-44e90f83f028",
+    "{{mod-workflow}}/scriptTask/08ebbb4b-63e0-4061-9201-f78ac50faa5e",
+    "{{mod-workflow}}/requestTask/f06601c7-c40b-4877-ba6b-ed1f060c6964",
+    "{{mod-workflow}}/endEvent/7d94306c-bfcf-4e5c-b832-8ee08f427c00"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${holdingsIds.elements()}",
+    "inputDataName": "holdingsId",
+    "parallel": false
+  }
+}

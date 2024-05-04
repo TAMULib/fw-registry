@@ -1,0 +1,19 @@
+{
+  "id": "10ad233b-a26e-4d4a-b80a-f7a054e3a935",
+  "name": "Item Edit Subprocess",
+  "description": "Subprocess to edit items based on itemId.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/2b5533d3-b8d7-410a-959d-07e8e27a090c",
+    "{{mod-workflow}}/requestTask/b7463159-5acd-45ba-b211-0c08f2940201",
+    "{{mod-workflow}}/scriptTask/888f79a5-585c-48ca-985a-bdb956158b7d",
+    "{{mod-workflow}}/requestTask/e6336805-d0f1-4e00-b8d9-e91d5ee38c03",
+    "{{mod-workflow}}/endEvent/3613459f-ffdc-40b5-b5a6-f707efed88c7"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${itemIds.elements()}",
+    "inputDataName": "itemId",
+    "parallel": false
+  }
+}

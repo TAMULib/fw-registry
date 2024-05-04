@@ -1,0 +1,8 @@
+{
+  "id": "4e545a0b-2418-4adb-b62a-bf279338826c",
+  "name": "Start Holding Subprocess Edit",
+  "description": "Start holdings subprocess edit by given holdingsId.",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}
