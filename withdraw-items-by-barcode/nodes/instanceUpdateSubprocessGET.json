@@ -1,0 +1,25 @@
+{
+  "id": "45843758-502a-46cb-ba4c-cddbcc78565d",
+  "name": "Get Instance By Instace Id",
+  "description": "Get instance by instanceId.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/instance-storage/instances/${instanceId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instanceResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

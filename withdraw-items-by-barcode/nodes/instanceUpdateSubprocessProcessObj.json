@@ -1,0 +1,8 @@
+{
+  "id": "e2b9c89b-d81d-4157-98dd-2fcc984cf857",
+  "name": "Process Instance in Edit Instance Subprocess",
+  "description": "Process instaces set suppress = true",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processInstanceUpdateSubprocessGETResponse.js"
+}
