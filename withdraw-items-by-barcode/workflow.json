@@ -19,8 +19,10 @@
     "{{mod-workflow}}/databaseQueryTask/5c0a7542-bb8b-4277-ae0e-127a692d0d19",
     "{{mod-workflow}}/scriptTask/3f689d96-30b3-4623-b27f-6ff24bd9e788",
     "{{mod-workflow}}/databaseDisconnectTask/21e28faf-4f86-45aa-b37b-c75452b4dc43",
+    "{{mod-workflow}}/requestTask/860ab6d6-ae0c-4756-8e8f-3678ce99e4f1",
     "{{mod-workflow}}/subprocess/10ad233b-a26e-4d4a-b80a-f7a054e3a935",
     "{{mod-workflow}}/subprocess/fbfd2eb6-a4fd-431e-a6cf-18a97f6564fc",
+    "{{mod-workflow}}/subprocess/7d029202-9b77-4b41-b148-08aea47ce366",
     "{{mod-workflow}}/endEvent/b1bc69f5-20ca-446c-ba7b-7c53d8ce8447"
   ],
   "initialContext": {}

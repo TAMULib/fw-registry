@@ -4,5 +4,5 @@
   "description": "Process holdings set suppress = true",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "processItemUpdateSubprocessGETResponse.js"
+  "code": "processHoldingUpdateSubprocessGETResponse.js"
 }

@@ -8,7 +8,7 @@
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "${item}"
+    "bodyTemplate": "${holdings}"
   },
   "inputVariables": [
     {
