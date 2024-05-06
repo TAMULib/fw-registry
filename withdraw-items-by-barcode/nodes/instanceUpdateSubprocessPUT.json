@@ -7,7 +7,7 @@
     "url": "{{okapi-internal}}/instance-storage/instances/${instanceId}",
     "method": "PUT",
     "contentType": "application/json",
-    "accept": "application/json",
+    "accept": "text/plain",
     "bodyTemplate": "${instance}"
   },
   "inputVariables": [

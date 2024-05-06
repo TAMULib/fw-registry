@@ -3,6 +3,8 @@ var barcodesJSON = MappingUtility.mapCsvToJson(barcodesCSV);
 
 if (logLevel === "DEBUG") {
   print('\nbarcodesJSON = ' + barcodesJSON + '\n');
+  print('\nemailTo = ' + emailTo + '\n');
+  print('\nnote = ' + note + '\n');
 }
 
 var barcodesJSONArray = JSON.parse(barcodesJSON);
@@ -26,4 +28,8 @@ if (logLevel === "DEBUG") {
   print('\nbarcodes = ' + barcodes + '\n');
 }
 
+if (note && note.trim() !== "") {
+  execution.setVariable('holdingsNote', note);
+}
+execution.setVariable('note', note);
 execution.setVariable('barcodes', S(JSON.stringify(barcodes)));

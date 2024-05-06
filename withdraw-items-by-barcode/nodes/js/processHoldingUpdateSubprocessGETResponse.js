@@ -1,17 +1,17 @@
 var holdingsObj = JSON.parse(holdingsResponse);
 print('\nStringify Holding = ' + JSON.stringify(holdingsObj));
-var itemObj = JSON.parse(itemResponse);
+if (holdingsNote && holdingsNote.trim() !== "") {
+  print('\n\nholdingsNote', + holdingsNote);
+}
 
 if (!!holdingsObj) {
   print('\n TODO set the temp location and add notes');
   if ( (holdingsObj.holdingsItems.length === 0) || (holdingsObj.bareHoldingsItems.length === 0) ) {
-    if ( itemObj.hasOwnProperty('discoverySuppress') && ( itemObj.discoverySuppress === true ) ) {
-      holdingsObj.discoverySuppress = true;
-    }
+    holdingsObj.discoverySuppress = true;
   }
 
-  if(holdingsObj.temporarylocationid) {
-    holdingsObj.temporarylocationid = "dd55282c-bd64-4e1c-887d-ad0c8887bb69";
+  if(holdingsObj.permanentLocationId) {
+    holdingsObj.permanentLocationId = "dd55282c-bd64-4e1c-887d-ad0c8887bb69";
   }
 }
 

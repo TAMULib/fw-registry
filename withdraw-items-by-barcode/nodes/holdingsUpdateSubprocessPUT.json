@@ -7,7 +7,7 @@
     "url": "{{okapi-internal}}/holdings-storage/holdings/${holdingsId}",
     "method": "PUT",
     "contentType": "application/json",
-    "accept": "application/json",
+    "accept": "text/plain",
     "bodyTemplate": "${holdings}"
   },
   "inputVariables": [
