@@ -1,0 +1,19 @@
+{
+  "id": "b3feec97-3095-484a-8b18-4f7796da1031",
+  "name": "Items Subprocess",
+  "description": "Subprocess for processing all of the loaded Items.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/49fa5906-4758-45d0-82cb-4964409623de",
+    "{{mod-workflow}}/requestTask/f0459c97-4fc9-48d0-92da-f6d4f057fa2d",
+    "{{mod-workflow}}/scriptTask/3287e607-bb2d-4830-8bb0-c1db8fba212d",
+    "{{mod-workflow}}/requestTask/23cf5c57-98bf-4d00-a15a-31a306af1a28",
+    "{{mod-workflow}}/endEvent/318691f6-ced3-4973-a932-8bbdc8d5f55d"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${items.elements()}",
+    "inputDataName": "item",
+    "parallel": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "id": "7db36d56-12e2-4a13-8c4e-c69edff1f3a9",
+  "name": "Update Item Properties in LDP",
+  "description": "Update items as per barcodes by running update query.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "ldpUpdateQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "ldpResponse",
+    "type": "LOCAL"
+  },
+  "designation": "ldp",
+  "query": "${ldpUpdateQuery.prop('sql').stringValue()}",
+  "asyncBefore": true
+}
+

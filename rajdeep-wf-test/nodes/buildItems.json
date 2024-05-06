@@ -1,0 +1,8 @@
+{
+  "id": "b3e50650-fec6-49a2-9159-894cfd6c021b",
+  "name": "Build Items",
+  "description": "Build Items array from the LDP response.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildItems.js"
+}

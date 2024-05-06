@@ -1,0 +1,9 @@
+{
+  "id": "f753b5df-c153-45be-8836-e3e911938f6f",
+  "name": "Process Barcodes",
+  "description": "Process barcodes.",
+  "deserializeAs": "ScriptTask",
+  "outputVariables": ["barcodeArray"],
+  "scriptFormat": "javascript",
+  "code": "extractBarcodes_test.js"
+}

@@ -1,0 +1,12 @@
+{
+    "id": "efde02ff-678a-4dfb-ae19-2ab1b16c32a7",
+    "name": "Deserialize LDP Response",
+    "description": "Deserialize",
+    "deserializeAs": "ScriptTask",
+    "inputVariables": {
+      "key": "ldpGetItems",
+        "type": "LOCAL"
+     }, 
+    "scriptFormat": "javascript",
+    "code": "deserializeResponse.js"
+  }

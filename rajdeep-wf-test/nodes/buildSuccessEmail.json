@@ -1,0 +1,8 @@
+{
+  "id": "5873f58b-55f8-4d5e-8e35-edae53e5f5e6",
+  "name": "Build Success E-mail",
+  "description": "Build the e-mail structure used for sending the success e-mail.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildSuccessEmail.js"
+}
