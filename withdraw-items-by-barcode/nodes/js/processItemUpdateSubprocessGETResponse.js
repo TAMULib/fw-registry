@@ -6,7 +6,7 @@ if (!!itemObj) {
     itemObj.discoverySuppress = true;
   }
 
-  if ( itemObj.temporaryLoanType ) {
+  if ( itemObj.hasOwnProperty('temporaryLoanType') && itemObj.temporaryLoanType ) {
     itemObj.temporaryLoanType.id = "e029dd79-1778-422c-b856-f0ac131f0369";
   }
 

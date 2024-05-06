@@ -28,8 +28,5 @@ if (logLevel === "DEBUG") {
   print('\nbarcodes = ' + barcodes + '\n');
 }
 
-if (note && note.trim() !== "") {
-  execution.setVariable('holdingsNote', note);
-}
 execution.setVariable('note', note);
 execution.setVariable('barcodes', S(JSON.stringify(barcodes)));
