@@ -7,7 +7,7 @@
     "url": "{{okapi-internal}}/inventory/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
-    "accept": "application/json",
+    "accept": "text/plain",
     "bodyTemplate": "${item}"
   },
   "inputVariables": [
@@ -23,6 +23,10 @@
     }
   ],
   "headerOutputVariables": [],
-  "outputVariable": {},
+  "outputVariable": {
+    "key": "item",
+    "type": "PROCESS",
+    "spin": true
+  },
   "asyncBefore": true
 }
