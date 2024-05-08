@@ -1,6 +1,6 @@
 var itemPutResponse = JSON.parse(item);
-var itemUpdateStatus = '';
-var updateStatus = {
+var itemStatus = '';
+var itemUpdateStatus = {
   'barcode': '',
   'status': ''
 };
@@ -8,17 +8,17 @@ if (!!itemPutResponse) {
   if (itemPutResponse.status.name === "Withdrawn" &&
       itemPutResponse.temporaryLoanType.id === "e029dd79-1778-422c-b856-f0ac131f0369" &&
       itemPutResponse.discoverySuppress === true) {
-    itemUpdateStatus = "Success";
+    itemStatus = "Success";
   } else {
-    itemUpdateStatus = "Failed";
+    itemStatus = "Failed";
   }
 
-  updateStatus.barcode = itemPutResponse.barcode;
-  updateStatus.status = itemUpdateStatus;
+  itemUpdateStatus.barcode = itemPutResponse.barcode;
+  itemUpdateStatus.status = itemStatus;
 
-  print('\n\nStatus itemUpdateStatus:', itemUpdateStatus);
+  print('\n\nStatus itemStatus:', itemStatus);
   print('\n\nStatus itemUpdate barcode:', itemPutResponse.barcode);
 
 }
 
-execution.setVariable('updateStatus', JSON.stringify(updateStatus));
+execution.setVariable('itemUpdateStatus', JSON.stringify(itemUpdateStatus));

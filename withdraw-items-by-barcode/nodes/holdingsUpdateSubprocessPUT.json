@@ -23,6 +23,10 @@
     }
   ],
   "headerOutputVariables": [],
-  "outputVariable": {},
+  "outputVariable": {
+    "key": "holdings",
+    "type": "PROCESS",
+    "spin": true
+  },
   "asyncBefore": true
 }
