@@ -8,10 +8,6 @@ for (var i = 0; i < barcodeIdsJSONArray.length; i++) {
   barcodeIds += '\'' + barcodeIdsJSONArray[i] + '\'';
 }
 
-if (logLevel === "DEBUG") {
-  print('\nbarcodeIds = ' + barcodeIds + '\n');
-}
-
 var from = 'folio_reporting.item_ext ie' +
            '\n\tinner join folio_reporting.holdings_ext he ON he.holdings_id = ie.holdings_record_id' +
            '\n\tinner join folio_reporting.instance_ext ie2 ON ie2.instance_id = he.instance_id';

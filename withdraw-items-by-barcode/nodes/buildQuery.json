@@ -1,7 +1,7 @@
 {
   "id": "571d831b-7089-44b0-8d45-d48ea2639a55",
   "name": "Build Query",
-  "description": "Build query to get items, corresponding holdings and instances by barcodes.",
+  "description": "Query to get itemId, associated holdingsId and instanceIds.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "buildQuery.js"

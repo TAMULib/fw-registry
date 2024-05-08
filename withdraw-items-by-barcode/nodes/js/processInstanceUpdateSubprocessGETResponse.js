@@ -6,7 +6,9 @@ if (!!instanceObj) {
 
 }
 
-print('\nInstance = ' + S(JSON.stringify(instanceObj)));
+if (logLevel === "DEBUG") {
+  print('\nInstance = ' + S(JSON.stringify(instanceObj)));
+}
 
 execution.setVariable('instance', S(JSON.stringify(instanceObj)));
 execution.setVariable('instanceId', (!!instanceObj && !!instanceObj.id) ? instanceObj.id : '');

@@ -1,7 +1,7 @@
 {
   "id": "9e43d115-d42e-4c6d-a016-7eba517a631c",
-  "name": "End Holding Subprocess Edit",
-  "description": "Subprocess to end - edit holdings based on holdingsId.",
+  "name": "Holdings Update Subprocess: End",
+  "description": "Subprocess to end - update holdings based on holdingsId.",
   "type": "NONE",
   "deserializeAs": "EndEvent",
   "asyncBefore": true

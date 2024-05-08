@@ -1,7 +1,7 @@
 {
   "id": "4dd52dbc-b8b9-4b40-9d11-561d276c5b2c",
-  "name": "Instance Edit Subprocess",
-  "description": "Subprocess to edit instance based on instanceIds.",
+  "name": "Instance Update Subprocess",
+  "description": "Subprocess to update instance based on instanceIds.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [

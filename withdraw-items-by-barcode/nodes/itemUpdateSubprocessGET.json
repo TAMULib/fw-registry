@@ -1,7 +1,7 @@
 {
   "id": "4a3460ab-87c8-4244-a429-2f78683a44e4",
-  "name": "Get Item By Item Id",
-  "description": "Get item by ItemId",
+  "name": "Item Update Subprocess: Get Item By Item Id",
+  "description": "Get item by itemId",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{okapi-internal}}/inventory/items/${itemId}",

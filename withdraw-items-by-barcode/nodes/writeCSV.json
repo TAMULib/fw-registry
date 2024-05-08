@@ -5,7 +5,7 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "csvObjArray",
+      "key": "barcodeStatusArray",
       "type": "PROCESS",
       "spin": true
     },
@@ -15,7 +15,7 @@
     }
   ],
   "outputVariable": {},
-  "target": "csvObjArray",
+  "target": "barcodeStatusArray",
   "path": "/mnt/workflows/tamu/withdraw-items-by-barcode/withdraw-items-by-barcode-${timestamp}.csv",
   "op": "WRITE",
   "asyncBefore": true

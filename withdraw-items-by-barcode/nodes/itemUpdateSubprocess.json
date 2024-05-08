@@ -1,7 +1,7 @@
 {
   "id": "8ece5df1-a7f3-40fb-87a7-882cb56d7f9e",
-  "name": "Item Edit Subprocess",
-  "description": "Subprocess to edit items based on itemId.",
+  "name": "Item Update Subprocess",
+  "description": "Subprocess to update item by itemId.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [

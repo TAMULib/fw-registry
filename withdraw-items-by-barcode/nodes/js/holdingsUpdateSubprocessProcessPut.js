@@ -10,20 +10,19 @@ if (!!holdingsPutResponse) {
     holdingsUpdateStatus = "Failed";
   }
 
-  print('\n\nStatus holdingsUpdateStatus:', holdingsUpdateStatus);
-
 }
-
-execution.setVariable('holdingsUpdateStatus', JSON.stringify(holdingsUpdateStatus));
 
 var csvObj = JSON.parse(csvObjArray);
 
 for (var i = 0; i < csvObj.length; i++) {
   if (csvObj[i].holdingsId === holdingsPutResponse.id) {
-      print('\n\nAdding holdingsUpdateStatus to csvObj\n\n');
       csvObj[i].holdingsUpdateStatus = holdingsUpdateStatus;
       break;
   }
 }
-print('\n\n stringify csvObjWithItemHoldingStatus' + JSON.stringify(csvObj));
+
+if (logLevel === "DEBUG") {
+  print('\n\n CSVObjWithItemHoldingStatus' + JSON.stringify(csvObj));
+}
+
 execution.setVariable('csvObjArray', JSON.stringify(csvObj));

@@ -1,7 +1,7 @@
 {
   "id": "2cbc346e-5d06-4003-ad92-89009596d661",
-  "name": "Start Instance Subprocess Edit",
-  "description": "Start instance subprocess edit by given instanceIds.",
+  "name": "Instance Update Subprocess: Start",
+  "description": "Start update instance by instanceIds.",
   "type": "NONE",
   "deserializeAs": "StartEvent",
   "asyncBefore": true

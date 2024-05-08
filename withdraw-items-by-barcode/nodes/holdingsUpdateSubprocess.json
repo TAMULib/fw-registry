@@ -1,7 +1,7 @@
 {
   "id": "31e32bbe-1c40-4dc9-b395-cc37acd7d6b8",
-  "name": "Holding Edit Subprocess",
-  "description": "Subprocess to edit holdings based on holdingsId.",
+  "name": "Holdings Update Subprocess",
+  "description": "Subprocess to update holdings based on holdingsId.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [

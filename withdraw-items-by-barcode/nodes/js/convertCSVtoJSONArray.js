@@ -19,9 +19,6 @@ for (var i = 0; i < barcodesJSONArray.length; i++) {
 }
 
 if (logLevel === "DEBUG") {
-  print('\nbarcodesJSON = ' + barcodesJSON + '\n');
-  print('\nemailTo = ' + emailTo + '\n');
-  print('\nnote = ' + note + '\n');
   print('\nbarcodes = ' + barcodes + '\n');
 }
 

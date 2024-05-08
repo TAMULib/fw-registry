@@ -1,7 +1,7 @@
 {
   "id": "da587fc0-a95c-4149-b1de-3edba2c4ef3f",
   "name": "Read Barcode CSV",
-  "description": "Read barcodes from csv files.",
+  "description": "Read barcodes from csv file.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {

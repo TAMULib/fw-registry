@@ -1,7 +1,7 @@
 {
   "id": "3b696f3d-c014-44fe-938f-a1e77de6ed0a",
-  "name": "Start Item Subprocess Edit",
-  "description": "Start item subprocess edit by given itemId.",
+  "name": "Start Item Update Subprocess",
+  "description": "Start item subprocess update by itemId.",
   "type": "NONE",
   "deserializeAs": "StartEvent",
   "asyncBefore": true

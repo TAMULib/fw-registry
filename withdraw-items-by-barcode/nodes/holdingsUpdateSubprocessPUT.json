@@ -1,7 +1,7 @@
 {
   "id": "6fff7df3-aaf4-4304-9080-eaa607b4521c",
-  "name": "Update Holdings",
-  "description": "Update the subprocess holdings",
+  "name": "Holdings Update Subprocess: Update Holdings",
+  "description": "Update the holdings object.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{okapi-internal}}/holdings-storage/holdings/${holdingsId}",

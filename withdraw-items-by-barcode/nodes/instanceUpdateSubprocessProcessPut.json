@@ -1,6 +1,6 @@
 {
   "id": "81fcc21b-d9e4-4125-9084-7a876b6c0c1a",
-  "name": "Get Status of Holdings Update PUT",
+  "name": "Instance Update Subprocess: Get PUT Status",
   "description": "Get the status of the http PUT request.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
