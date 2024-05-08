@@ -1,26 +1,22 @@
 {
-  "id": "1189eeb0-ccd3-4241-a52c-4f662bda0f14",
-  "name": "Write barcodes and update status.",
+  "id": "1b41e9e4-9709-4df0-9d82-4d8ad109b636",
+  "name": "Write Barcodes And Status ",
   "description": "Write barcodes and the corresponding update status to CSV.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
       "key": "csvObjArray",
-      "type": "LOCAL",
+      "type": "PROCESS",
       "spin": true
     },
     {
       "key": "timestamp",
       "type": "PROCESS"
-    },
-    {
-      "key": "tenantId",
-      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
   "target": "csvObjArray",
-  "path": "/mnt/workflows/${tenantId}/withdraw-items-by-barcode/withdraw-items-by-barcode-${timestamp}.csv",
+  "path": "/mnt/workflows/tamu/withdraw-items-by-barcode/withdraw-items-by-barcode-${timestamp}.csv",
   "op": "WRITE",
   "asyncBefore": true
 }

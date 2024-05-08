@@ -4,5 +4,5 @@
   "description": "Convert to JSONArrayObject",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "converyCSVtoJSONArray.js"
+  "code": "convertCSVtoJSONArray.js"
 }

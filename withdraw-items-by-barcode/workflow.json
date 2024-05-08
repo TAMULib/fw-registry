@@ -23,7 +23,11 @@
     "{{mod-workflow}}/subprocess/8ece5df1-a7f3-40fb-87a7-882cb56d7f9e",
     "{{mod-workflow}}/subprocess/31e32bbe-1c40-4dc9-b395-cc37acd7d6b8",
     "{{mod-workflow}}/subprocess/4dd52dbc-b8b9-4b40-9d11-561d276c5b2c",
-    "{{mod-workflow}}/fileTask/1189eeb0-ccd3-4241-a52c-4f662bda0f14",
+    "{{mod-workflow}}/fileTask/1b41e9e4-9709-4df0-9d82-4d8ad109b636",
+    "{{mod-workflow}}/compressFileTask/a91519c4-d65b-46f7-90ab-999342cd0fe5",
+    "{{mod-workflow}}/emailTask/8e5b3afb-b48e-4647-8865-604778b45ff7",
+    "{{mod-workflow}}/fileTask/af3e11c4-2e8b-4839-a066-1a1453533846",
+    "{{mod-workflow}}/fileTask/90ef5596-41c5-4773-a51d-031ead77c1a7",
     "{{mod-workflow}}/endEvent/b1bc69f5-20ca-446c-ba7b-7c53d8ce8447"
   ],
   "initialContext": {}
