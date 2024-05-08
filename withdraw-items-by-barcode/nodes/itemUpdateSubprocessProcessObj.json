@@ -1,5 +1,5 @@
 {
-  "id": "888f79a5-585c-48ca-985a-bdb956158b7d",
+  "id": "8f7bd30e-c6d8-42f6-9f4e-6674d468e625",
   "name": "Process Item in Edit Item Subprocess",
   "description": "Process item - set status = withdrawn, temporary_loan_type = withdrawn, item suppress = true",
   "deserializeAs": "ScriptTask",

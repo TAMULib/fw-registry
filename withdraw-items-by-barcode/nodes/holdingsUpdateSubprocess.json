@@ -1,15 +1,16 @@
 {
-  "id": "fbfd2eb6-a4fd-431e-a6cf-18a97f6564fc",
+  "id": "31e32bbe-1c40-4dc9-b395-cc37acd7d6b8",
   "name": "Holding Edit Subprocess",
   "description": "Subprocess to edit holdings based on holdingsId.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/4e545a0b-2418-4adb-b62a-bf279338826c",
-    "{{mod-workflow}}/requestTask/46dd2c9c-4c26-4ab1-b8f1-44e90f83f028",
-    "{{mod-workflow}}/scriptTask/08ebbb4b-63e0-4061-9201-f78ac50faa5e",
-    "{{mod-workflow}}/requestTask/f06601c7-c40b-4877-ba6b-ed1f060c6964",
-    "{{mod-workflow}}/endEvent/7d94306c-bfcf-4e5c-b832-8ee08f427c00"
+    "{{mod-workflow}}/startEvent/45e3fdfe-a549-4ab5-92a9-84fc27bd6566",
+    "{{mod-workflow}}/requestTask/4292d492-c465-4c51-b080-066b44c7656c",
+    "{{mod-workflow}}/scriptTask/88f811ec-2558-478b-a0b4-20132d74c02c",
+    "{{mod-workflow}}/requestTask/6fff7df3-aaf4-4304-9080-eaa607b4521c",
+    "{{mod-workflow}}/scriptTask/2da06e4a-df13-475c-b197-4248a9e9f3ef",
+    "{{mod-workflow}}/endEvent/9e43d115-d42e-4c6d-a016-7eba517a631c"
   ],
   "loopRef": {
     "dataInputRefExpression": "${holdingsIds.elements()}",

@@ -35,3 +35,18 @@ execution.setVariable('itemBarcodes', S(JSON.stringify(itemBarcodeArr)));
 execution.setVariable('itemIds', S(JSON.stringify(itemIdArr)));
 execution.setVariable('holdingsIds', S(JSON.stringify(holdingsIdArr)));
 execution.setVariable('instanceIds', S(JSON.stringify(instanceIdArr)));
+
+var csvObjArray = [];
+
+for (var i = 0; i < itemBarcodeArr.length; i++) {
+  var csvObj = {
+      itemBarcode: itemBarcodeArr[i],
+      itemId: itemIdArr[i],
+      holdingsId: holdingsIdArr[i],
+      instanceId: instanceIdArr[i]
+  };
+  csvObjArray.push(csvObj);
+}
+
+print('\n\n stringify csvObjArray' + JSON.stringify(csvObjArray));
+execution.setVariable('csvObjArray', S(JSON.stringify(csvObjArray)));
