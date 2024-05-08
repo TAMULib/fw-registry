@@ -7,8 +7,6 @@ if (!!instancePutResponse && (instancePutResponse.discoverySuppress === true ) )
     instanceUpdateStatus = "Failed";
   }
 
-print('\n\nStatus instanceUpdateStatus:', instanceUpdateStatus);
-
 execution.setVariable('instanceUpdateStatus', JSON.stringify(instanceUpdateStatus));
 
 var csvObj = JSON.parse(csvObjArray);
@@ -20,5 +18,6 @@ for (var i = 0; i < csvObj.length; i++) {
       break;
   }
 }
+
 print('\n\n stringify csvObjWithItemHoldingInstanceStatus' + JSON.stringify(csvObj));
-execution.setVariable('csvObjArray', JSON.stringify(csvObj));
+execution.setVariable('csvObjArray', S(JSON.stringify(csvObj)));
