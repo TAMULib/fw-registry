@@ -21,4 +21,3 @@ if (logLevel === "DEBUG") {
 }
 
 execution.setVariable('csvObjArray', JSON.stringify(csvObj));
-

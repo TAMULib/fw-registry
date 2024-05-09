@@ -26,10 +26,12 @@ for (var key in ihiArr) {
   }
 }
 
-print('\nitemBarcodeArr:' + itemBarcodeArr);
-print('\nitemIdArr:' + itemIdArr);
-print('\nholdingsIdArr:' + holdingsIdArr);
-print('\ninstanceIdArr:' + instanceIdArr);
+if (logLevel === 'DEBUG') {
+  print('\nitemBarcodeArr:' + itemBarcodeArr);
+  print('\nitemIdArr:' + itemIdArr);
+  print('\nholdingsIdArr:' + holdingsIdArr);
+  print('\ninstanceIdArr:' + instanceIdArr);
+}
 
 execution.setVariable('itemBarcodes', S(JSON.stringify(itemBarcodeArr)));
 execution.setVariable('itemIds', S(JSON.stringify(itemIdArr)));
@@ -48,5 +50,8 @@ for (var i = 0; i < itemBarcodeArr.length; i++) {
   csvObjArray.push(csvObj);
 }
 
-print('\n\n stringify csvObjArray' + JSON.stringify(csvObjArray));
+if (logLevel === 'DEBUG') {
+  print('\n\n csvObjArray' + JSON.stringify(csvObjArray));
+}
+
 execution.setVariable('csvObjArray', S(JSON.stringify(csvObjArray)));

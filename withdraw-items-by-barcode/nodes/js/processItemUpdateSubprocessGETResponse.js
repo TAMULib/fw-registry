@@ -16,7 +16,10 @@ if (!!itemObj) {
 
 }
 
-print('\nItem = ' + S(JSON.stringify(itemObj)));
+if (logLevel === 'DEBUG') {
+  print('\nItem = ' + S(JSON.stringify(itemObj)));
+}
+
 
 execution.setVariable('item', S(JSON.stringify(itemObj)));
 execution.setVariable('itemId', (!!itemObj && !!itemObj.id) ? itemObj.id : '');
