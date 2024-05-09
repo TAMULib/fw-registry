@@ -1,0 +1,8 @@
+{
+  "id": "5beed578-9f89-472b-a485-bdfef3196574",
+  "name": "Instance Update Subprocess: Process Get Response",
+  "description": "Process instaces GET response",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processInstanceUpdateSubprocessGETResponse.js"
+}

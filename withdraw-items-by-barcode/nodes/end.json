@@ -1,0 +1,6 @@
+{
+  "id": "b1bc69f5-20ca-446c-ba7b-7c53d8ce8447",
+  "name": "End",
+  "description": "End of withdraw items by barcode workflow",
+  "deserializeAs": "EndEvent"
+}

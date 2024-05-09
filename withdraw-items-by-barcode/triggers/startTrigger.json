@@ -1,0 +1,10 @@
+{
+  "id": "9635e2ad-7f71-4ef1-be83-869f29a28893",
+  "name": "FOLIO Withdraw Items By Barcode Workflow",
+  "description": "Trigger to start withdraw items by barcode.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/withdraw-items-by-barcode/start"
+}
+

@@ -1,0 +1,32 @@
+{
+  "id": "c113c3e3-8158-4670-a081-08dcc4f38e1b",
+  "name": "Instance Update Subprocess: Update Instance",
+  "description": "Update the instance object.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/instance-storage/instances/${instanceId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "text/plain",
+    "bodyTemplate": "${instance}"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "instance",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instance",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

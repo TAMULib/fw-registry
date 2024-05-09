@@ -1,0 +1,8 @@
+{
+  "id": "4a33bef3-4f5e-45ac-bb8a-2c376cb02cf9",
+  "name": "Convert CSV to JSONArray",
+  "description": "Convert to JSONArrayObject",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "convertCSVtoJSONArray.js"
+}

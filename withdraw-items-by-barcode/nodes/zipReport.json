@@ -1,0 +1,19 @@
+{
+  "id": "23b15d29-0f7a-40c5-b670-fb71db0456e8",
+  "name": "Compress Book Report",
+  "description": "Compress withdraw items by barcode report utilizing ZIP format",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+    "key": "timestamp",
+    "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/tamu/withdraw-items-by-barcode/withdraw-items-by-barcode-${timestamp}.csv",
+  "destination": "/mnt/workflows/tamu/withdraw-items-by-barcode/wibb-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}
+

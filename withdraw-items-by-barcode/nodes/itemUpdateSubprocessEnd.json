@@ -1,0 +1,8 @@
+{
+  "id": "707505e5-a34b-4577-bf9d-5f55d2b59b23",
+  "name": "Item Update Subprocess: End",
+  "description": "Item update subprocess - end task for item update.",
+  "type": "NONE",
+  "deserializeAs": "EndEvent",
+  "asyncBefore": true
+}

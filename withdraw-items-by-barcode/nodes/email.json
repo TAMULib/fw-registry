@@ -1,0 +1,23 @@
+{
+  "id": "8e5b3afb-b48e-4647-8865-604778b45ff7",
+  "name": "Email ZIP Report",
+  "description": "Email attachment containing CSV report.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "{{{withdrawItemsByBarcodeFrom}}}",
+  "mailSubject": "Withdraw Items By Barcode Report",
+  "mailText": "Attached is the report for Withdraw Items By Barcode.",
+  "attachmentPath": "/mnt/workflows/tamu/withdraw-items-by-barcode/wibb-report-${timestamp}.zip",
+  "asyncBefore": true
+}

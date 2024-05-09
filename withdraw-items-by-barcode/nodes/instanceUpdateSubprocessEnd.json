@@ -1,0 +1,8 @@
+{
+  "id": "7a3baf11-73bb-47b5-8b7e-73035f4578c3",
+  "name": "End Instance Subprocess Edit",
+  "description": "Subprocess to end - edit instance based on instanceId.",
+  "type": "NONE",
+  "deserializeAs": "EndEvent",
+  "asyncBefore": true
+}

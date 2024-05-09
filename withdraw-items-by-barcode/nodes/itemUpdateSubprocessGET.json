@@ -1,0 +1,25 @@
+{
+  "id": "4a3460ab-87c8-4244-a429-2f78683a44e4",
+  "name": "Item Update Subprocess: Get Item By Item Id",
+  "description": "Get item by itemId",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/inventory/items/${itemId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "itemId",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "itemResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

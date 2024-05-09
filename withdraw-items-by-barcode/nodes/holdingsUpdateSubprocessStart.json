@@ -1,0 +1,8 @@
+{
+  "id": "45e3fdfe-a549-4ab5-92a9-84fc27bd6566",
+  "name": "Start Holdings Update Subprocess",
+  "description": "Start holdings subprocess update by holdingId.",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}
