@@ -1,7 +1,7 @@
 {
   "id": "3f689d96-30b3-4623-b27f-6ff24bd9e788",
   "name": "Process Items, Holdings and Instances",
-  "description": "Process items, holdings and instances response for okapi update.",
+  "description": "Process items, holdings, and instances response for okapi update.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "processItemsHoldInsResponse.js"
