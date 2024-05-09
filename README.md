@@ -645,7 +645,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
     "password": "*",
     "emailTo": "recipient@tamu.edu",
     "file": "@barcodes.csv",
-    "noteText": "This is a note text message.",
+    "note": "This is a note text message.",
     "path": "/mnt/workflows/diku/withdraw-items-by-barcode"
 }'
 
