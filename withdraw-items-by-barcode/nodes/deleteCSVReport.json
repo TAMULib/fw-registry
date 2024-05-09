@@ -1,7 +1,7 @@
 {
   "id": "90ef5596-41c5-4773-a51d-031ead77c1a7",
   "name": "Delete CSV Report",
-  "description": "Delete CSV report file",
+  "description": "Delete CSV report file.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {

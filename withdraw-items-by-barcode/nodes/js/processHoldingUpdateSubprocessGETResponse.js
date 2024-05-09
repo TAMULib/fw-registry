@@ -8,21 +8,20 @@ if (!!holdingsObj) {
 
   var notes = extractResponseArray(holdingsObj, 'notes');
 
-  if ( holdingsObj.hasOwnProperty('discoverySuppress') ) {
+  if (holdingsObj.hasOwnProperty('discoverySuppress')) {
     holdingsObj.discoverySuppress = true;
   }
 
-  if ( holdingsObj.hasOwnProperty('permanentLocationId') &&  holdingsObj.permanentLocationId ) {
+  if (holdingsObj.hasOwnProperty('permanentLocationId') &&  holdingsObj.permanentLocationId) {
     holdingsObj.permanentLocationId = "dd55282c-bd64-4e1c-887d-ad0c8887bb69";
   }
 
-  if( holdingsObj.notes ) {
+  if(!!holdingsObj.notes) {
     notes.push({
       'note': note
     });
     holdingsObj.notes = notes;
   }
-
 }
 
 if (logLevel === "DEBUG") {

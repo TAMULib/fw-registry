@@ -9,10 +9,12 @@ if (!!instancePutResponse && (instancePutResponse.discoverySuppress === true ) )
 
 var csvObj = JSON.parse(csvObjArray);
 
-for (var i = 0; i < csvObj.length; i++) {
-  if (csvObj[i].instanceId === instancePutResponse.id) {
-      csvObj[i].instanceUpdateStatus = instanceUpdateStatus;
-      break;
+if(!!csvObj) {
+  for (var i = 0; i < csvObj.length; i++) {
+    if (csvObj[i].instanceId === instancePutResponse.id) {
+        csvObj[i].instanceUpdateStatus = instanceUpdateStatus;
+        break;
+    }
   }
 }
 

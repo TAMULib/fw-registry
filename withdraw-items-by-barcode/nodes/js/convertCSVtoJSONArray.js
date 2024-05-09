@@ -4,16 +4,18 @@ var barcodesJSONArray = JSON.parse(barcodesJSON);
 
 var barcodes = [];
 
-for (var i = 0; i < barcodesJSONArray.length; i++) {
-  var keys = Object.keys(barcodesJSONArray[i]);
+if(!!barcodesJSONArray) {
+  for (var i = 0; i < barcodesJSONArray.length; i++) {
+    var keys = Object.keys(barcodesJSONArray[i]);
 
-  if (keys.length > 0) {
-    if (barcodes.indexOf(keys[0]) === -1) {
-      barcodes.push(keys[0]);
-    }
-    var barcode = barcodesJSONArray[i][keys[0]];
-    if (typeof barcode === 'string' && barcode.trim().length > 0) {
-      barcodes.push(barcode.trim());
+    if (keys.length > 0) {
+      if (barcodes.indexOf(keys[0]) === -1) {
+        barcodes.push(keys[0]);
+      }
+      var barcode = barcodesJSONArray[i][keys[0]];
+      if (typeof barcode === 'string' && barcode.trim().length > 0) {
+        barcodes.push(barcode.trim());
+      }
     }
   }
 }

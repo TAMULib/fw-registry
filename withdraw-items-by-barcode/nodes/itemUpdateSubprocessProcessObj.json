@@ -1,7 +1,7 @@
 {
   "id": "8f7bd30e-c6d8-42f6-9f4e-6674d468e625",
   "name": "Process Item in Edit Item Subprocess",
-  "description": "Process item - set status = withdrawn, temporary_loan_type = withdrawn, item suppress = true",
+  "description": "Process item, setting properties as appropriate.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "processItemUpdateSubprocessGETResponse.js"

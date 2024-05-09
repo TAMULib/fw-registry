@@ -1,9 +1,7 @@
 var instanceObj = JSON.parse(instanceResponse);
 
 if (!!instanceObj) {
-
   instanceObj.discoverySuppress = true;
-
 }
 
 if (logLevel === "DEBUG") {

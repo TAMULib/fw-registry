@@ -5,23 +5,25 @@ var itemIdArr = [];
 var holdingsIdArr = [];
 var instanceIdArr = [];
 
-for (var key in ihiArr) {
-  for(var k in ihiArr[key]) {
-    switch (k) {
-      case 'itembarcode':
-        itemBarcodeArr.push(ihiArr[key][k]);
-        break;
-      case 'itemid':
-        itemIdArr.push(ihiArr[key][k]);
-        break;
-      case 'holdingsid':
-        holdingsIdArr.push(ihiArr[key][k]);
-        break;
-      case 'instanceid':
-        instanceIdArr.push(ihiArr[key][k]);
-        break;
-      default:
-        break;
+if(!!ihiArr) {
+  for (var key in ihiArr) {
+    for(var k in ihiArr[key]) {
+      switch (k) {
+        case 'itembarcode':
+          itemBarcodeArr.push(ihiArr[key][k]);
+          break;
+        case 'itemid':
+          itemIdArr.push(ihiArr[key][k]);
+          break;
+        case 'holdingsid':
+          holdingsIdArr.push(ihiArr[key][k]);
+          break;
+        case 'instanceid':
+          instanceIdArr.push(ihiArr[key][k]);
+          break;
+        default:
+          break;
+      }
     }
   }
 }

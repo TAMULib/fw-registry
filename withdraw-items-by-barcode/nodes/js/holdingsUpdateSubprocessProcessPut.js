@@ -14,10 +14,12 @@ if (!!holdingsPutResponse) {
 
 var csvObj = JSON.parse(csvObjArray);
 
-for (var i = 0; i < csvObj.length; i++) {
-  if (csvObj[i].holdingsId === holdingsPutResponse.id) {
-      csvObj[i].holdingsUpdateStatus = holdingsUpdateStatus;
-      break;
+if(!!csvObj) {
+  for (var i = 0; i < csvObj.length; i++) {
+    if (csvObj[i].holdingsId === holdingsPutResponse.id) {
+        csvObj[i].holdingsUpdateStatus = holdingsUpdateStatus;
+        break;
+    }
   }
 }
 

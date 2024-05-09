@@ -1,7 +1,7 @@
 {
   "id": "3a873639-6fff-479e-97bb-09e0b0e3e6a4",
   "name": "Withdraw Items By Barcode",
-  "description": "Generate email containing list of items withdrawn by barcode and their status.",
+  "description": "Send email containing a list of items withdrawn by barcode and their status.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
   "deploymentId": null,

@@ -1,12 +1,14 @@
 var csvObj = JSON.parse(csvObjArray);
 var barcodeStatusArray = [['Barcode', 'Status']];
 
-for (var i = 0; i < csvObj.length; i++) {
-  var barcodeStatus = [
-    csvObj[i].itemBarcode.replace(/"/g, ''),
-    csvObj[i].instanceUpdateStatus || csvObj[i].holdingsUpdateStatus || csvObj[i].itemStatus || "Unknown"
-  ];
-  barcodeStatusArray.push(barcodeStatus);
+if(!!csvObj) {
+  for (var i = 0; i < csvObj.length; i++) {
+    var barcodeStatus = [
+      csvObj[i].itemBarcode.replace(/"/g, ''),
+      csvObj[i].instanceUpdateStatus || csvObj[i].holdingsUpdateStatus || csvObj[i].itemStatus || "Unknown"
+    ];
+    barcodeStatusArray.push(barcodeStatus);
+  }
 }
 
 if (logLevel === "DEBUG") {

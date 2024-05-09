@@ -1,7 +1,7 @@
 {
   "id": "c47ebc65-b97e-4173-bde6-f7c7c478e412",
   "name": "Item Update Subprocess: Update Item",
-  "description": "Update the item",
+  "description": "Update the item.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{okapi-internal}}/inventory/items/${itemId}",

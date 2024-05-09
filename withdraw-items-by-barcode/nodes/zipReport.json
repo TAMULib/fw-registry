@@ -1,7 +1,7 @@
 {
   "id": "23b15d29-0f7a-40c5-b670-fb71db0456e8",
   "name": "Compress Book Report",
-  "description": "Compress withdraw items by barcode report utilizing ZIP format",
+  "description": "Compress withdraw items by barcode report in a ZIP format.",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {

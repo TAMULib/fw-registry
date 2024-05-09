@@ -15,12 +15,14 @@ if (!!itemPutResponse) {
 
 var csvObj = JSON.parse(csvObjArray);
 
-for (var i = 0; i < csvObj.length; i++) {
-  if (csvObj[i].itemBarcode === itemPutResponse.barcode &&
-      csvObj[i].itemId === itemPutResponse.id &&
-      itemStatus !== '') {
-       csvObj[i].itemStatus = itemStatus;
-      break;
+if (!!csvObj) {
+  for (var i = 0; i < csvObj.length; i++) {
+    if (csvObj[i].itemBarcode === itemPutResponse.barcode &&
+        csvObj[i].itemId === itemPutResponse.id &&
+        itemStatus !== '') {
+         csvObj[i].itemStatus = itemStatus;
+        break;
+    }
   }
 }
 
