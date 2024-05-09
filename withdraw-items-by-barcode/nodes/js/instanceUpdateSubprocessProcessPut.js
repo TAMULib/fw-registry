@@ -20,18 +20,5 @@ if (logLevel === "DEBUG") {
   print('\n\n CSVObj With Item, Holding and Instance Status' + JSON.stringify(csvObj));
 }
 
-var barcodeStatusArray = [['Barcode', 'Status']];
+execution.setVariable('csvObjArray', JSON.stringify(csvObj));
 
-for (var i = 0; i < csvObj.length; i++) {
-  var barcodeStatus = [
-    csvObj[i].itemBarcode,
-    csvObj[i].instanceUpdateStatus || "Status Unknown"
-  ];
-  barcodeStatusArray.push(barcodeStatus);
-}
-
-if (logLevel === "DEBUG") {
-  print('\n\nBarcode & Status Array' + JSON.stringify(barcodeStatusArray));
-}
-
-execution.setVariable('barcodeStatusArray', S(JSON.stringify(barcodeStatusArray)));
