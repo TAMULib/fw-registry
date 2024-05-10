@@ -1,0 +1,14 @@
+{
+  "id": "717404db-e8cc-43f3-8ac3-1a28fb9d097e",
+  "name": "Process Barcodes",
+  "description": "Process barcodes.",
+  "deserializeAs": "ScriptTask",
+  "outputVariables": [
+    {
+      "key": "barcodeArray",
+      "type": "LOCAL"
+    }
+  ],
+  "scriptFormat": "javascript",
+  "code": "extractBarcodes_test.js"
+}

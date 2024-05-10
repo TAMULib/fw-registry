@@ -1,0 +1,24 @@
+{
+  "id": "1de2f426-41b1-4e23-89e5-052bbc911d2c",
+  "name": "rajdeep barcode withdraww",
+  "description": "some workflow testing.....",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/b59e18ca-188d-4a4a-89e3-6c93d737d2fa",
+    "{{mod-workflow}}/fileTask/b2cd0853-65d1-4861-869e-9fe0f92b0deb", 
+    "{{mod-workflow}}/scriptTask/717404db-e8cc-43f3-8ac3-1a28fb9d097e",  
+    "{{mod-workflow}}/scriptTask/2abe458c-fad6-45db-aa51-eaa15b5c6b8d", 
+    "{{mod-workflow}}/databaseConnectionTask/372ffa54-7b64-445a-9176-d3fe19595acd", 
+    "{{mod-workflow}}/scriptTask/e6235c94-7cc2-4312-9fdc-cb8bdbcb3eee", 
+    "{{mod-workflow}}/databaseQueryTask/8217c99d-7abc-4046-949f-8c8eadc7c2a0",
+    "{{mod-workflow}}/endEvent/687b6990-ca15-4891-8a52-1b1a33b0e5df"
+  ],
+  "initialContext": {}
+}

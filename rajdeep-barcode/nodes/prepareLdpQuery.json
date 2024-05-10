@@ -1,0 +1,14 @@
+{
+    "id": "2abe458c-fad6-45db-aa51-eaa15b5c6b8d",
+    "name": "Preare LDP query",
+    "description": "Prepare LDP Select Query",
+    "deserializeAs": "ScriptTask",
+    "inputVariables": ["barcodeArray"],
+    "outputVariable": {
+        "key": "ldpGetItems",
+        "type": "LOCAL",
+        "asJson": true
+      },    
+    "scriptFormat": "javascript",
+    "code": "getFromLDP.js"
+  }

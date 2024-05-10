@@ -1,0 +1,8 @@
+{
+  "id": "31c364ed-58e6-4154-a98c-9494e40d3759",
+  "name": "Process Input Variables",
+  "description": "Process most input variables, extracting IDs from loaded CSV data and sanitizing input variables for SQL use.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processInputVariables.js"
+}

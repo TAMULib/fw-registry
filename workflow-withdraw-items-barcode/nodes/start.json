@@ -1,0 +1,8 @@
+{
+  "id": "895bdb64-317f-4089-8c22-acd1cdc07702",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/workflow-withdraw-items-barcode/start"
+}

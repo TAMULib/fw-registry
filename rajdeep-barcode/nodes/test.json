@@ -1,0 +1,12 @@
+{
+    "id": "0949ed89-3cf2-49a7-9855-7acb98916ee7",
+    "name": "Print ldpResponse",
+    "description": "Print Response",
+    "deserializeAs": "ScriptTask",
+    "inputVariables": {
+      "key": "ldpResponse",
+        "type": "LOCAL"
+     }, 
+    "scriptFormat": "javascript",
+    "code": "printResponse.js"
+  }

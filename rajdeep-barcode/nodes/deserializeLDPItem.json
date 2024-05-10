@@ -1,0 +1,22 @@
+{
+    "id": "e6235c94-7cc2-4312-9fdc-cb8bdbcb3eee",
+    "name": "Deserialize LDP Response",
+    "description": "Deserialize",
+    "deserializeAs": "ScriptTask",
+    "inputVariables": {
+      "ldpGetItems": {
+          "type": "Local",
+          "value": "${ldpGetItems}",
+          "local": true,
+          "asJson": true
+      }
+  }, 
+  "outputVariables": {
+    "sqlQuery": {
+      "type": "Local",
+      "local": true
+    }
+  },
+    "scriptFormat": "javascript",
+    "code": "deserializeResponse.js"
+  }

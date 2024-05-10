@@ -1,0 +1,20 @@
+{
+  "id": "a91a87f4-9ae0-4b04-ad02-8579c52f0eee",
+  "name": "Read Input CSV File",
+  "description": "Load the CSV file containing a single column of IDs.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariables": {
+    "key": "rowsCsv",
+    "type": "PROCESS",
+    "asTransient": true
+  },
+  "path": "/mnt/workflows/tamu/items-by-barcode/barcodes.csv",
+  "op": "READ",
+  "asyncBefore": true
+}

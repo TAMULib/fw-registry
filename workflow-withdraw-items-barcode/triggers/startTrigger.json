@@ -1,0 +1,10 @@
+{
+  "id": "ac2c0d64-b47a-4d49-a930-a0f9f19fc481",
+  "name": "Start trigger",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/workflow-withdraw-items-barcode/start"
+}
+

@@ -1,0 +1,20 @@
+{
+  "id": "19209cc8-28a4-4c9a-908c-cd9ae31cae6a",
+  "name": "Delete CSV Report",
+  "description": "Delete the csv report file",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "/mnt/workflows/${tenantId}/remove-books-from-nbs/remove-books-from-nbs-report-${timestamp}.csv",
+  "op": "DELETE",
+  "asyncBefore": true
+}

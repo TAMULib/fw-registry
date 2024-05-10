@@ -1,0 +1,18 @@
+{
+  "id": "8217c99d-7abc-4046-949f-8c8eadc7c2a0",
+  "name": "Get Items from LDP",
+  "description": "Load required items from LDP.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": {
+    "ldpGetItems": {
+      "type": "PROCESS"
+    }
+  },
+  "outputVariable": {
+    "key": "ldpResponse",
+    "type": "LOCAL"
+  },
+  "designation": "ldp",
+  "query": "${ldpGetItems.sql}",
+  "asyncBefore": true
+}

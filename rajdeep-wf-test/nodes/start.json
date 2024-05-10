@@ -1,8 +1,0 @@
-{
-  "id": "d1a9ab4f-4187-4dec-930e-7ab14d1b6ed2",
-  "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
-  "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/rajdeep-wf-test/start"
-}

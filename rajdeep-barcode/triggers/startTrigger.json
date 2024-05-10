@@ -1,0 +1,9 @@
+{
+  "id": "36d914ed-ee37-4ba7-ab26-4215ec551f5c",
+  "name": "Trigger workflow for me",
+  "description": "",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/rajdeep-barcode/start"
+}

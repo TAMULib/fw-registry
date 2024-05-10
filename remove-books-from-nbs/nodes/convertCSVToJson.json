@@ -1,0 +1,8 @@
+{
+  "id": "02cdf90c-8ca4-4aef-8bb5-a9c0242a9fd6",
+  "name": "Convert Barcode CSV to JSON",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "convertCSVtoJson.js"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "b59e18ca-188d-4a4a-89e3-6c93d737d2fa",
+  "name": "Start",
+  "description": "",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/rajdeep-barcode/start"
+}

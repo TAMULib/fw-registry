@@ -1,0 +1,23 @@
+{
+  "id": "01f70a7f-f636-4fd9-a085-8c1219ebaec5",
+  "name": "workflow withdraw items barcode",
+  "description": "workflow test.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/895bdb64-317f-4089-8c22-acd1cdc07702",
+    "{{mod-workflow}}/fileTask/a91a87f4-9ae0-4b04-ad02-8579c52f0eee",
+    "{{mod-workflow}}/scriptTask/317f1337-d02e-4546-a1f8-5641661133c4",
+    "{{mod-workflow}}/scriptTask/1ce0bd75-f25b-4347-8c2c-15b3ff98c889",
+    "{{mod-workflow}}/databaseConnectionTask/b2bd4a92-ddb2-4b33-95f2-5a1c20ef5f26",
+    "{{mod-workflow}}/scriptTask/5421afec-4ae2-4c16-8a1b-49ee366ae146",
+    "{{mod-workflow}}/endEvent/75008b46-0938-426d-b6d2-95f6c642d1cb"
+  ],
+  "initialContext": {}
+}
