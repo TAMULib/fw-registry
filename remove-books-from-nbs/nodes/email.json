@@ -24,7 +24,7 @@
   ],
   "outputVariable": {},
   "mailTo": "${emailTo}",
-  "mailFrom": "{{nbs-mail-from}}",
+  "mailFrom": "{{{nbs-mail-from}}}",
   "mailSubject": "${email.subject}",
   "mailText": "${email.text}",
   "mailMarkup": "${email.markup}",

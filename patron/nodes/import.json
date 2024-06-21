@@ -4,7 +4,7 @@
   "description": "Request to post user collection to import",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/user-import",
+    "url": "{{{okapi-internal}}}/user-import",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

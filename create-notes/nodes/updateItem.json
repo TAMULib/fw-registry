@@ -4,7 +4,7 @@
   "description": "Update the Item using the appropriate REST request.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/inventory/items/${itemId}",
+    "url": "{{{okapi-internal}}}/inventory/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",

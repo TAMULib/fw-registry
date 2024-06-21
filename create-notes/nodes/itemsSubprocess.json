@@ -5,11 +5,11 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/50b9cf0d-fe9d-4eb4-bef4-145c1b9194b7",
-    "{{mod-workflow}}/requestTask/daa0f2b8-fe57-4cfc-8fe2-23a405c4d1cb",
-    "{{mod-workflow}}/scriptTask/1192f9a0-d279-4e13-b23c-8045fd1a870f",
-    "{{mod-workflow}}/requestTask/217a5f0f-ce95-4e81-a958-0cf3b6df138a",
-    "{{mod-workflow}}/endEvent/7488ccf1-74f6-4748-8cba-e47f97cfb04e"
+    "{{{mod-workflow}}}/startEvent/50b9cf0d-fe9d-4eb4-bef4-145c1b9194b7",
+    "{{{mod-workflow}}}/requestTask/daa0f2b8-fe57-4cfc-8fe2-23a405c4d1cb",
+    "{{{mod-workflow}}}/scriptTask/1192f9a0-d279-4e13-b23c-8045fd1a870f",
+    "{{{mod-workflow}}}/requestTask/217a5f0f-ce95-4e81-a958-0cf3b6df138a",
+    "{{{mod-workflow}}}/endEvent/7488ccf1-74f6-4748-8cba-e47f97cfb04e"
   ],
   "loopRef": {
     "dataInputRefExpression": "${items.elements()}",

@@ -14,8 +14,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{gobi-mail-to}}",
-  "mailFrom": "{{gobi-mail-from}}",
+  "mailTo": "{{{gobi-mail-to}}}",
+  "mailFrom": "{{{gobi-mail-from}}}",
   "mailSubject": "TAMU ISBN Report",
   "mailText": "ISBN Gzip TSV file attached",
   "attachmentPath": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv.gz",

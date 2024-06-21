@@ -4,7 +4,7 @@
   "description": "Request the Item by its given Item ID.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/inventory/items/${item.id}",
+    "url": "{{{okapi-internal}}}/inventory/items/${item.id}",
     "method": "GET",
     "accept": "application/json"
   },

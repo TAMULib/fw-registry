@@ -4,9 +4,9 @@
   "description": "",
   "deserializeAs": "ParallelGateway",
   "nodes": [
-    "{{mod-workflow}}/databaseQueryTask/be4b87a9-e8c1-45d0-b264-04cca5d9ff32",
-    "{{mod-workflow}}/emailTask/dcf2e6bb-7726-4fbd-ad39-f9009372beb0",
-    "{{mod-workflow}}/fileTask/a43cdc4e-c2ca-47eb-bbc9-dcc35bfcf798",
-    "{{mod-workflow}}/parallelGateway/e607c8e7-4622-4ebd-a2c0-baa29dac3a4c"
+    "{{{mod-workflow}}}/databaseQueryTask/be4b87a9-e8c1-45d0-b264-04cca5d9ff32",
+    "{{{mod-workflow}}}/emailTask/dcf2e6bb-7726-4fbd-ad39-f9009372beb0",
+    "{{{mod-workflow}}}/fileTask/a43cdc4e-c2ca-47eb-bbc9-dcc35bfcf798",
+    "{{{mod-workflow}}}/parallelGateway/e607c8e7-4622-4ebd-a2c0-baa29dac3a4c"
   ]
 }

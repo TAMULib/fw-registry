@@ -4,7 +4,7 @@
   "description": "Retrieve the expense class by name.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${marcOrderData.expenseClass}\")",
+    "url": "{{{okapi-internal}}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${marcOrderData.expenseClass}\")",
     "method": "GET",
     "accept": "application/json"
   },

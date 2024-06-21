@@ -4,7 +4,7 @@
   "description": "Retrieve the Material Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/material-types?limit=999",
+    "url": "{{{okapi-internal}}}/material-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },

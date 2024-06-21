@@ -4,7 +4,7 @@
   "description": "Retrieve the Instance Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/instance-types?limit=999",
+    "url": "{{{okapi-internal}}}/instance-types?limit=999",
     "method": "GET",
     "accept": "application/json"
   },

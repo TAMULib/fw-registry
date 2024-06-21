@@ -5,10 +5,10 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/882d2100-8bc0-4c53-be8a-d9b40283a21f",
-    "{{mod-workflow}}/requestTask/f21bcb7c-283c-4a16-9411-fcc526a4ed6f",
-    "{{mod-workflow}}/scriptTask/08bfbba4-d572-43c5-b274-f00f1476adfe",
-    "{{mod-workflow}}/endEvent/67f75a13-2ba3-48fc-8849-70fd069cd013"
+    "{{{mod-workflow}}}/startEvent/882d2100-8bc0-4c53-be8a-d9b40283a21f",
+    "{{{mod-workflow}}}/requestTask/f21bcb7c-283c-4a16-9411-fcc526a4ed6f",
+    "{{{mod-workflow}}}/scriptTask/08bfbba4-d572-43c5-b274-f00f1476adfe",
+    "{{{mod-workflow}}}/endEvent/67f75a13-2ba3-48fc-8849-70fd069cd013"
   ],
   "loopRef": {
     "dataInputRefExpression": "${barcodes.elements()}",

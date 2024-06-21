@@ -19,7 +19,7 @@
   ],
   "outputVariable": {},
   "mailTo": "${emailTo}",
-  "mailFrom": "{{orcid-mail-from}}",
+  "mailFrom": "{{{orcid-mail-from}}}",
   "mailSubject": "ORCID list for Faculty and Staff",
   "mailText": "Faculty and Staff TSV file attached",
   "attachmentPath": "/mnt/workflows/${tenantId}/orcid/fast-${timestamp}.tsv",

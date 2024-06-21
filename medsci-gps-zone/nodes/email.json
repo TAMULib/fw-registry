@@ -14,8 +14,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{medsci-gps-zone-to}}",
-  "mailFrom": "{{medsci-gps-zone-from}}",
+  "mailTo": "{{{medsci-gps-zone-to}}}",
+  "mailFrom": "{{{medsci-gps-zone-from}}}",
   "mailSubject": "Grad access list",
   "mailText": "Grad access list is attached.",
   "attachmentPath": "/mnt/workflows/${tenantId}/medsci-gps-zone/grad_access_${timestamp}.txt",

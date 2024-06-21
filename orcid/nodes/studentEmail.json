@@ -19,7 +19,7 @@
   ],
   "outputVariable": {},
   "mailTo": "${emailTo}",
-  "mailFrom": "{{orcid-mail-from}}",
+  "mailFrom": "{{{orcid-mail-from}}}",
   "mailSubject": "ORCID list for Students",
   "mailText": "Student TSV file attached",
   "attachmentPath": "/mnt/workflows/${tenantId}/orcid/student-${timestamp}.tsv",

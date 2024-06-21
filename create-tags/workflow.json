@@ -11,13 +11,13 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/70533257-6cb8-4975-aadb-1324c8adf04e",
-    "{{mod-workflow}}/fileTask/bc912058-7b71-4b50-8bf9-751d37a133cb",
-    "{{mod-workflow}}/scriptTask/f52b03c9-c886-47b5-a377-4bb3b7d72f3b",
-    "{{mod-workflow}}/requestTask/0abf1dbc-5da6-40f8-9f04-07cc52d5a5bc",
-    "{{mod-workflow}}/subprocess/3a50b86e-e20c-4c12-8183-88844785df8b",
-    "{{mod-workflow}}/fileTask/4d37e26e-5e83-445c-95e7-0c95a63ccf67",
-    "{{mod-workflow}}/endEvent/1fdf4eea-c393-4f9b-b900-d79f70e3aa34"
+    "{{{mod-workflow}}}/startEvent/70533257-6cb8-4975-aadb-1324c8adf04e",
+    "{{{mod-workflow}}}/fileTask/bc912058-7b71-4b50-8bf9-751d37a133cb",
+    "{{{mod-workflow}}}/scriptTask/f52b03c9-c886-47b5-a377-4bb3b7d72f3b",
+    "{{{mod-workflow}}}/requestTask/0abf1dbc-5da6-40f8-9f04-07cc52d5a5bc",
+    "{{{mod-workflow}}}/subprocess/3a50b86e-e20c-4c12-8183-88844785df8b",
+    "{{{mod-workflow}}}/fileTask/4d37e26e-5e83-445c-95e7-0c95a63ccf67",
+    "{{{mod-workflow}}}/endEvent/1fdf4eea-c393-4f9b-b900-d79f70e3aa34"
   ],
   "initialContext": {}
 }

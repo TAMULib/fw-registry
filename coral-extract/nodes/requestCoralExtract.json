@@ -4,7 +4,7 @@
   "description": "Retrieve the Loan Types.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{coral-url}}/folio_utilities/coral_extract.php",
+    "url": "{{{coral-url}}}/folio_utilities/coral_extract.php",
     "method": "GET",
     "accept": "text/plain"
   },

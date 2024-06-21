@@ -11,12 +11,12 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/da9acc1f-cff3-4df0-ba1d-b14b032f9f3c",
-    "{{mod-workflow}}/databaseConnectionTask/ca8ed7f5-61ff-4ed3-bb63-cff504351804",
-    "{{mod-workflow}}/databaseQueryTask/06f6e63e-c532-45f5-a159-24737dd2e5aa",
-    "{{mod-workflow}}/scriptTask/764269d4-2aa0-4a8c-a2d9-aa29023bc272",
-    "{{mod-workflow}}/databaseDisconnectTask/c933e1a1-3da0-4b29-9d71-05a8b055b308",
-    "{{mod-workflow}}/endEvent/e5632f70-7d04-4694-a674-38650f38e545"
+    "{{{mod-workflow}}}/startEvent/da9acc1f-cff3-4df0-ba1d-b14b032f9f3c",
+    "{{{mod-workflow}}}/databaseConnectionTask/ca8ed7f5-61ff-4ed3-bb63-cff504351804",
+    "{{{mod-workflow}}}/databaseQueryTask/06f6e63e-c532-45f5-a159-24737dd2e5aa",
+    "{{{mod-workflow}}}/scriptTask/764269d4-2aa0-4a8c-a2d9-aa29023bc272",
+    "{{{mod-workflow}}}/databaseDisconnectTask/c933e1a1-3da0-4b29-9d71-05a8b055b308",
+    "{{{mod-workflow}}}/endEvent/e5632f70-7d04-4694-a674-38650f38e545"
   ],
   "initialContext": {}
 }

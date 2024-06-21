@@ -18,8 +18,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{circ-fines-mail-to}}",
-  "mailFrom": "{{circ-fines-mail-from}}",
+  "mailTo": "{{{circ-fines-mail-to}}}",
+  "mailFrom": "{{{circ-fines-mail-from}}}",
   "mailSubject": "Daily Fees/Fines Paid Report",
   "mailText": "${(count > 0)?then('Daily Fees/Fines Paid TSV file attached', 'No results to report')}",
   "attachmentPath": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",

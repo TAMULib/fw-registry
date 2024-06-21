@@ -11,13 +11,13 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/51ca1e76-10e8-4d27-b617-850af49947d9",
-    "{{mod-workflow}}/databaseConnectionTask/931b27b4-d37d-4400-9593-8f028805a6cc",
-    "{{mod-workflow}}/databaseQueryTask/51c7b363-25bf-4886-a9f1-00eef0e429fb",
-    "{{mod-workflow}}/databaseDisconnectTask/5cf6d6c7-03fd-4820-829b-294d1f78cad8",
-    "{{mod-workflow}}/emailTask/a756bd71-98d3-49b1-ad56-2cdb12c700df",
-    "{{mod-workflow}}/fileTask/6ea7dc02-6b3d-4330-8015-d028fe71a904",
-    "{{mod-workflow}}/endEvent/b24bea03-b419-4b4c-a516-0c4f6ba20814"
+    "{{{mod-workflow}}}/startEvent/51ca1e76-10e8-4d27-b617-850af49947d9",
+    "{{{mod-workflow}}}/databaseConnectionTask/931b27b4-d37d-4400-9593-8f028805a6cc",
+    "{{{mod-workflow}}}/databaseQueryTask/51c7b363-25bf-4886-a9f1-00eef0e429fb",
+    "{{{mod-workflow}}}/databaseDisconnectTask/5cf6d6c7-03fd-4820-829b-294d1f78cad8",
+    "{{{mod-workflow}}}/emailTask/a756bd71-98d3-49b1-ad56-2cdb12c700df",
+    "{{{mod-workflow}}}/fileTask/6ea7dc02-6b3d-4330-8015-d028fe71a904",
+    "{{{mod-workflow}}}/endEvent/b24bea03-b419-4b4c-a516-0c4f6ba20814"
   ],
   "initialContext": {}
 }

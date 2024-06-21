@@ -11,11 +11,11 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/b52f3c45-2ec3-45af-970a-a88048f6d1d2",
-    "{{mod-workflow}}/databaseConnectionTask/33316e99-b744-4a26-99b4-176c0e3870bc",
-    "{{mod-workflow}}/databaseQueryTask/c8131f1d-49f7-4096-a06e-23173496b7c6",
-    "{{mod-workflow}}/databaseDisconnectTask/ecd303ea-5aa9-4877-8b43-5fd350dbe5cd",
-    "{{mod-workflow}}/endEvent/905e159b-8063-493f-b748-2fac5626602e"
+    "{{{mod-workflow}}}/startEvent/b52f3c45-2ec3-45af-970a-a88048f6d1d2",
+    "{{{mod-workflow}}}/databaseConnectionTask/33316e99-b744-4a26-99b4-176c0e3870bc",
+    "{{{mod-workflow}}}/databaseQueryTask/c8131f1d-49f7-4096-a06e-23173496b7c6",
+    "{{{mod-workflow}}}/databaseDisconnectTask/ecd303ea-5aa9-4877-8b43-5fd350dbe5cd",
+    "{{{mod-workflow}}}/endEvent/905e159b-8063-493f-b748-2fac5626602e"
   ],
   "initialContext": {}
 }

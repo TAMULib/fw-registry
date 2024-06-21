@@ -11,16 +11,16 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/df9cff30-665a-11eb-b9fd-afcd4d476de5",
-    "{{mod-workflow}}/requestTask/b4996879-e2d8-41b7-89c0-46e762d93af8",
-    "{{mod-workflow}}/databaseConnectionTask/55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
-    "{{mod-workflow}}/parallelGateway/36942c89-e5f6-49ad-8b61-a1ed9c53fcb5",
-    "{{mod-workflow}}/moveToNode/76bff6c3-20be-4645-b7c6-8865ccd25603",
-    "{{mod-workflow}}/moveToNode/5cfaad2b-c393-461e-937f-7579207b602b",
-    "{{mod-workflow}}/databaseDisconnectTask/eeb3491b-b024-4389-b921-797b8774c759",
-    "{{mod-workflow}}/scriptTask/96286fc0-6663-11eb-b98e-f1ccdde4a279",
-    "{{mod-workflow}}/requestTask/ad5d92dd-605e-4660-aa43-144691283a57",
-    "{{mod-workflow}}/endEvent/df9d2640-665a-11eb-b9fd-afcd4d476de5"
+    "{{{mod-workflow}}}/startEvent/df9cff30-665a-11eb-b9fd-afcd4d476de5",
+    "{{{mod-workflow}}}/requestTask/b4996879-e2d8-41b7-89c0-46e762d93af8",
+    "{{{mod-workflow}}}/databaseConnectionTask/55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
+    "{{{mod-workflow}}}/parallelGateway/36942c89-e5f6-49ad-8b61-a1ed9c53fcb5",
+    "{{{mod-workflow}}}/moveToNode/76bff6c3-20be-4645-b7c6-8865ccd25603",
+    "{{{mod-workflow}}}/moveToNode/5cfaad2b-c393-461e-937f-7579207b602b",
+    "{{{mod-workflow}}}/databaseDisconnectTask/eeb3491b-b024-4389-b921-797b8774c759",
+    "{{{mod-workflow}}}/scriptTask/96286fc0-6663-11eb-b98e-f1ccdde4a279",
+    "{{{mod-workflow}}}/requestTask/ad5d92dd-605e-4660-aa43-144691283a57",
+    "{{{mod-workflow}}}/endEvent/df9d2640-665a-11eb-b9fd-afcd4d476de5"
   ],
   "initialContext": {}
 }

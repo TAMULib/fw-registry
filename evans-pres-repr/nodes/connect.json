@@ -6,8 +6,8 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "ldp",
-  "url": "{{ldp-url}}",
-  "username": "{{ldp-user}}",
-  "password": "{{ldp-password}}",
+  "url": "{{{ldp-url}}}",
+  "username": "{{{ldp-user}}}",
+  "password": "{{{ldp-password}}}",
   "asyncBefore": true
 }

@@ -5,10 +5,10 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/a46ffa35-8a4c-49c1-a187-a5896bdb07c2",
-    "{{mod-workflow}}/scriptTask/eca6ddb2-67f1-400e-a303-4989782ccf5f",
-    "{{mod-workflow}}/requestTask/0f331243-d789-4c21-a472-ff62b32050fd",
-    "{{mod-workflow}}/endEvent/97f64167-be93-4b9b-80cd-f3e51545b25b"
+    "{{{mod-workflow}}}/startEvent/a46ffa35-8a4c-49c1-a187-a5896bdb07c2",
+    "{{{mod-workflow}}}/scriptTask/eca6ddb2-67f1-400e-a303-4989782ccf5f",
+    "{{{mod-workflow}}}/requestTask/0f331243-d789-4c21-a472-ff62b32050fd",
+    "{{{mod-workflow}}}/endEvent/97f64167-be93-4b9b-80cd-f3e51545b25b"
   ],
   "loopRef": {
     "dataInputRefExpression": "${tags.elements()}",

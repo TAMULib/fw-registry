@@ -5,9 +5,9 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/1a4534d3-8bfd-42b5-8fa1-3f37ea4490ec",
-    "{{mod-workflow}}/databaseQueryTask/55c95511-a571-4763-9233-34307594b19e",
-    "{{mod-workflow}}/endEvent/24c7e3a2-b1d8-4796-a43c-31c035ee00e8"
+    "{{{mod-workflow}}}/startEvent/1a4534d3-8bfd-42b5-8fa1-3f37ea4490ec",
+    "{{{mod-workflow}}}/databaseQueryTask/55c95511-a571-4763-9233-34307594b19e",
+    "{{{mod-workflow}}}/endEvent/24c7e3a2-b1d8-4796-a43c-31c035ee00e8"
   ],
   "inputVariables": [
     {

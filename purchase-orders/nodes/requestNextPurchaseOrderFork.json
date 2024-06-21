@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "ParallelGateway",
   "nodes": [
-    "{{mod-workflow}}/requestTask/695ef5e8-eb59-421b-a379-17d67161b12b",
-    "{{mod-workflow}}/parallelGateway/f64d6746-5c22-460b-81e7-b0e3a04bf4a5"
+    "{{{mod-workflow}}}/requestTask/695ef5e8-eb59-421b-a379-17d67161b12b",
+    "{{{mod-workflow}}}/parallelGateway/f64d6746-5c22-460b-81e7-b0e3a04bf4a5"
   ]
 }

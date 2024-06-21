@@ -4,7 +4,7 @@
   "description": "Create source record",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/source-storage/records",
+    "url": "{{{okapi-internal}}}/source-storage/records",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

@@ -5,9 +5,9 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "{{mod-workflow}}/startEvent/f315e725-f834-490b-acee-77d6ba9721b1",
-    "{{mod-workflow}}/requestTask/a3aad69c-0aae-4d3b-8513-84ab85a6c179",
-    "{{mod-workflow}}/endEvent/a92cdf8e-76e2-4bb3-becb-66f675f0d499"
+    "{{{mod-workflow}}}/startEvent/f315e725-f834-490b-acee-77d6ba9721b1",
+    "{{{mod-workflow}}}/requestTask/a3aad69c-0aae-4d3b-8513-84ab85a6c179",
+    "{{{mod-workflow}}}/endEvent/a92cdf8e-76e2-4bb3-becb-66f675f0d499"
   ],
   "loopRef": {
     "dataInputRefExpression": "${itemsToRemove.elements()}",

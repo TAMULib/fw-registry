@@ -11,14 +11,14 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/8334ffed-e14b-45e4-b9b3-40596de50e10",
-    "{{mod-workflow}}/scriptTask/967382d8-d5c1-4332-825d-aec8a4c71b1d",
-    "{{mod-workflow}}/databaseConnectionTask/a0427d77-6047-4339-a311-c9351b8c56f5",
-    "{{mod-workflow}}/queryTask/4765e1b2-ff7f-42af-ae0c-680ded6faa33",
-    "{{mod-workflow}}/databaseConnectionTask/ad2c63f2-f2bb-4fd4-86c9-cf200861395a",
-    "{{mod-workflow}}/compressFileTask/9243a5bc-cb16-4519-9107-2fbac8768393",
-    "{{mod-workflow}}/emailTask/f888e0c9-1e17-48b7-8539-10113bcedc98",
-    "{{mod-workflow}}/endEvent/c0820883-7921-4a05-8b3a-2c9d12fb3cdf"
+    "{{{mod-workflow}}}/startEvent/8334ffed-e14b-45e4-b9b3-40596de50e10",
+    "{{{mod-workflow}}}/scriptTask/967382d8-d5c1-4332-825d-aec8a4c71b1d",
+    "{{{mod-workflow}}}/databaseConnectionTask/a0427d77-6047-4339-a311-c9351b8c56f5",
+    "{{{mod-workflow}}}/queryTask/4765e1b2-ff7f-42af-ae0c-680ded6faa33",
+    "{{{mod-workflow}}}/databaseConnectionTask/ad2c63f2-f2bb-4fd4-86c9-cf200861395a",
+    "{{{mod-workflow}}}/compressFileTask/9243a5bc-cb16-4519-9107-2fbac8768393",
+    "{{{mod-workflow}}}/emailTask/f888e0c9-1e17-48b7-8539-10113bcedc98",
+    "{{{mod-workflow}}}/endEvent/c0820883-7921-4a05-8b3a-2c9d12fb3cdf"
   ],
   "initialContext": {}
 }

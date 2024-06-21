@@ -4,7 +4,7 @@
   "description": "Retrieve the configuration entry by value name.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${marcOrderData.billTo}\\\"*\")",
+    "url": "{{{okapi-internal}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${marcOrderData.billTo}\\\"*\")",
     "method": "GET",
     "accept": "application/json"
   },

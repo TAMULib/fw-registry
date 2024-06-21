@@ -11,13 +11,13 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/959c601c-96f9-48a0-847c-6857922ba397",
-    "{{mod-workflow}}/databaseConnectionTask/1d11bca4-87ee-48d7-9b75-3dac8a32e060",
-    "{{mod-workflow}}/databaseQueryTask/44ba063b-d801-4afb-a7dd-95b4d5fd1326",
-    "{{mod-workflow}}/emailTask/939e1dfc-840f-4261-b8a3-d7a19a32719c",
-    "{{mod-workflow}}/databaseDisconnectTask/53f0e0f0-708e-49f1-b2f0-3b35b7fb6b13",
-    "{{mod-workflow}}/fileTask/61dfa92b-e89b-4f69-b16f-84a703f0b33f",
-    "{{mod-workflow}}/endEvent/773c1bb9-4222-454d-ace9-413a578aec46"
+    "{{{mod-workflow}}}/startEvent/959c601c-96f9-48a0-847c-6857922ba397",
+    "{{{mod-workflow}}}/databaseConnectionTask/1d11bca4-87ee-48d7-9b75-3dac8a32e060",
+    "{{{mod-workflow}}}/databaseQueryTask/44ba063b-d801-4afb-a7dd-95b4d5fd1326",
+    "{{{mod-workflow}}}/emailTask/939e1dfc-840f-4261-b8a3-d7a19a32719c",
+    "{{{mod-workflow}}}/databaseDisconnectTask/53f0e0f0-708e-49f1-b2f0-3b35b7fb6b13",
+    "{{{mod-workflow}}}/fileTask/61dfa92b-e89b-4f69-b16f-84a703f0b33f",
+    "{{{mod-workflow}}}/endEvent/773c1bb9-4222-454d-ace9-413a578aec46"
   ],
   "initialContext": {}
 }

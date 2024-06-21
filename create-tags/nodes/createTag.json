@@ -4,7 +4,7 @@
   "description": "create tag",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/tags",
+    "url": "{{{okapi-internal}}}/tags",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

@@ -4,7 +4,7 @@
   "description": "Retrieve the statistical code by code.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
+    "url": "{{{okapi-internal}}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
     "method": "GET",
     "accept": "application/json"
   },

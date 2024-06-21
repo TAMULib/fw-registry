@@ -18,8 +18,8 @@
     }
   ],
   "outputVariable": {},
-  "mailTo": "{{evansPresReprTo}}",
-  "mailFrom": "{{evansPresReprFrom}}",
+  "mailTo": "{{{evansPresReprTo}}}",
+  "mailFrom": "{{{evansPresReprFrom}}}",
   "mailSubject": "Evans Pres Repr Report",
   "mailText": "${(count > 0) ? then('Monthly Evans Pres Repr CSV file attached', 'No results to report')}",
   "attachmentPath": "/mnt/workflows/${tenantId}/evans-pres-repr/evans-pres-repr-${timestamp}.csv",

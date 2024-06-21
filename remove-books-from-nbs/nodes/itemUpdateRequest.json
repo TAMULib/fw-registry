@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{okapi-internal}}/inventory/items/${item.prop('id').stringValue()}",
+    "url": "{{{okapi-internal}}}/inventory/items/${item.prop('id').stringValue()}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",

@@ -11,11 +11,11 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/137f454b-cf93-4f93-bcef-a8a4b4c47801",
-    "{{mod-workflow}}/fileTask/8fc342de-6683-473a-ac52-9656b51095cf",
-    "{{mod-workflow}}/scriptTask/caccff66-fdbe-4377-b2e4-118da0edc67e",
-    "{{mod-workflow}}/compressFileTask/d40b8866-3810-4c0e-94a4-f83779a53501",
-    "{{mod-workflow}}/endEvent/8cd64c09-c3c5-48cc-abcb-ff3b33098eac"
+    "{{{mod-workflow}}}/startEvent/137f454b-cf93-4f93-bcef-a8a4b4c47801",
+    "{{{mod-workflow}}}/fileTask/8fc342de-6683-473a-ac52-9656b51095cf",
+    "{{{mod-workflow}}}/scriptTask/caccff66-fdbe-4377-b2e4-118da0edc67e",
+    "{{{mod-workflow}}}/compressFileTask/d40b8866-3810-4c0e-94a4-f83779a53501",
+    "{{{mod-workflow}}}/endEvent/8cd64c09-c3c5-48cc-abcb-ff3b33098eac"
   ],
   "initialContext": {}
 }

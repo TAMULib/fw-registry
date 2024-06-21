@@ -11,22 +11,22 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/9219c68d-8019-4b3d-9ea6-f1a3a1c2d22c",
-    "{{mod-workflow}}/requestTask/179d06af-72a2-408a-a2fd-bf45300d55a8",
-    "{{mod-workflow}}/parallelGateway/b4440bc5-6fe8-4bf3-aa41-57debe0a813f",
-    "{{mod-workflow}}/moveToNode/6237b530-fa88-4b41-ac82-23c2c9069ab2",
-    "{{mod-workflow}}/moveToNode/3bafb8b3-f358-4218-9d30-9843e7970e90",
-    "{{mod-workflow}}/moveToNode/12f41362-f0ed-4197-9fe3-9241cecba4c0",
-    "{{mod-workflow}}/moveToNode/fc0a73ac-031c-4c48-a108-c78886ca9ff6",
-    "{{mod-workflow}}/moveToNode/8df18451-8401-46f2-a4ff-ce14501a1073",
-    "{{mod-workflow}}/moveToNode/989d0a8b-df95-4437-b4cf-f4211178b7ae",
-    "{{mod-workflow}}/fileTask/08233df1-02cb-4608-874e-8c83b8f9e76a",
-    "{{mod-workflow}}/scriptTask/ba6e0cdf-7c82-4ff1-9cc5-ea2570f334bc",
-    "{{mod-workflow}}/subprocess/38f20fef-1dc1-4bce-9616-a47e33df5ba5",
-    "{{mod-workflow}}/scriptTask/a17feeb4-2376-430d-97e6-21ce0a1e1719",
-    "{{mod-workflow}}/emailTask/3dd5d171-771c-48a7-a2e7-9d063190c3e5",
-    "{{mod-workflow}}/fileTask/eda78d56-b57f-4395-a374-5d7f9a9d03da",
-    "{{mod-workflow}}/endEvent/98760d21-7f01-41d8-b915-39df79cad824"
+    "{{{mod-workflow}}}/startEvent/9219c68d-8019-4b3d-9ea6-f1a3a1c2d22c",
+    "{{{mod-workflow}}}/requestTask/179d06af-72a2-408a-a2fd-bf45300d55a8",
+    "{{{mod-workflow}}}/parallelGateway/b4440bc5-6fe8-4bf3-aa41-57debe0a813f",
+    "{{{mod-workflow}}}/moveToNode/6237b530-fa88-4b41-ac82-23c2c9069ab2",
+    "{{{mod-workflow}}}/moveToNode/3bafb8b3-f358-4218-9d30-9843e7970e90",
+    "{{{mod-workflow}}}/moveToNode/12f41362-f0ed-4197-9fe3-9241cecba4c0",
+    "{{{mod-workflow}}}/moveToNode/fc0a73ac-031c-4c48-a108-c78886ca9ff6",
+    "{{{mod-workflow}}}/moveToNode/8df18451-8401-46f2-a4ff-ce14501a1073",
+    "{{{mod-workflow}}}/moveToNode/989d0a8b-df95-4437-b4cf-f4211178b7ae",
+    "{{{mod-workflow}}}/fileTask/08233df1-02cb-4608-874e-8c83b8f9e76a",
+    "{{{mod-workflow}}}/scriptTask/ba6e0cdf-7c82-4ff1-9cc5-ea2570f334bc",
+    "{{{mod-workflow}}}/subprocess/38f20fef-1dc1-4bce-9616-a47e33df5ba5",
+    "{{{mod-workflow}}}/scriptTask/a17feeb4-2376-430d-97e6-21ce0a1e1719",
+    "{{{mod-workflow}}}/emailTask/3dd5d171-771c-48a7-a2e7-9d063190c3e5",
+    "{{{mod-workflow}}}/fileTask/eda78d56-b57f-4395-a374-5d7f9a9d03da",
+    "{{{mod-workflow}}}/endEvent/98760d21-7f01-41d8-b915-39df79cad824"
   ],
   "initialContext": {}
 }

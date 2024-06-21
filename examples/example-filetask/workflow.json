@@ -11,10 +11,10 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/ebb2c6ae-b116-4b93-a579-9ae7ff82e98c",
-    "{{mod-workflow}}/scriptTask/2c1ff822-aeb1-4850-b27c-ee74cfe3daa5",
-    "{{mod-workflow}}/fileTask/e3ce8683-b324-407a-95be-0f2c55481102",
-    "{{mod-workflow}}/endEvent/22c719ee-ca61-4d16-90b9-9cff8b314daa"
+    "{{{mod-workflow}}}/startEvent/ebb2c6ae-b116-4b93-a579-9ae7ff82e98c",
+    "{{{mod-workflow}}}/scriptTask/2c1ff822-aeb1-4850-b27c-ee74cfe3daa5",
+    "{{{mod-workflow}}}/fileTask/e3ce8683-b324-407a-95be-0f2c55481102",
+    "{{{mod-workflow}}}/endEvent/22c719ee-ca61-4d16-90b9-9cff8b314daa"
   ],
   "initialContext": {}
 }

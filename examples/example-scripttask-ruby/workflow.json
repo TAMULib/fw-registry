@@ -11,9 +11,9 @@
     "asyncAfter": false
   },
   "nodes": [
-    "{{mod-workflow}}/startEvent/1940f6af-b7db-41fa-855b-2b56c48e9561",
-    "{{mod-workflow}}/scriptTask/7e88f88d-19be-41ba-a20e-dfc27e78dcec",
-    "{{mod-workflow}}/endEvent/a25c2fd3-cbbc-4604-b2aa-8f2565a6c76f"
+    "{{{mod-workflow}}}/startEvent/1940f6af-b7db-41fa-855b-2b56c48e9561",
+    "{{{mod-workflow}}}/scriptTask/7e88f88d-19be-41ba-a20e-dfc27e78dcec",
+    "{{{mod-workflow}}}/endEvent/a25c2fd3-cbbc-4604-b2aa-8f2565a6c76f"
   ],
   "initialContext": {}
 }
