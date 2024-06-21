@@ -1,0 +1,35 @@
+{
+  "id": "3a873639-6fff-479e-97bb-09e0b0e3e6a4",
+  "name": "Withdraw Items By Barcode",
+  "description": "Send email containing a list of items withdrawn by barcode and their status.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{mod-workflow}}/startEvent/9b59cb90-6232-40a1-aa9a-0d9eca741f83",
+    "{{mod-workflow}}/fileTask/da587fc0-a95c-4149-b1de-3edba2c4ef3f",
+    "{{mod-workflow}}/scriptTask/4a33bef3-4f5e-45ac-bb8a-2c376cb02cf9",
+    "{{mod-workflow}}/databaseConnectionTask/eca47911-5825-42d6-9e70-a0683674821d",
+    "{{mod-workflow}}/scriptTask/571d831b-7089-44b0-8d45-d48ea2639a55",
+    "{{mod-workflow}}/databaseQueryTask/5c0a7542-bb8b-4277-ae0e-127a692d0d19",
+    "{{mod-workflow}}/scriptTask/3f689d96-30b3-4623-b27f-6ff24bd9e788",
+    "{{mod-workflow}}/databaseDisconnectTask/21e28faf-4f86-45aa-b37b-c75452b4dc43",
+    "{{mod-workflow}}/requestTask/860ab6d6-ae0c-4756-8e8f-3678ce99e4f1",
+    "{{mod-workflow}}/subprocess/8ece5df1-a7f3-40fb-87a7-882cb56d7f9e",
+    "{{mod-workflow}}/subprocess/31e32bbe-1c40-4dc9-b395-cc37acd7d6b8",
+    "{{mod-workflow}}/subprocess/4dd52dbc-b8b9-4b40-9d11-561d276c5b2c",
+    "{{mod-workflow}}/scriptTask/90cacb73-553b-4ee5-8a30-ebddeab9c66f",
+    "{{mod-workflow}}/fileTask/1b41e9e4-9709-4df0-9d82-4d8ad109b636",
+    "{{mod-workflow}}/compressFileTask/a91519c4-d65b-46f7-90ab-999342cd0fe5",
+    "{{mod-workflow}}/emailTask/8e5b3afb-b48e-4647-8865-604778b45ff7",
+    "{{mod-workflow}}/fileTask/af3e11c4-2e8b-4839-a066-1a1453533846",
+    "{{mod-workflow}}/fileTask/90ef5596-41c5-4773-a51d-031ead77c1a7",
+    "{{mod-workflow}}/endEvent/b1bc69f5-20ca-446c-ba7b-7c53d8ce8447"
+  ],
+  "initialContext": {}
+}

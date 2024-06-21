@@ -1,0 +1,19 @@
+{
+  "id": "5c0a7542-bb8b-4277-ae0e-127a692d0d19",
+  "name": "Query Items By Barcode",
+  "description": "Query items, corresponding holdings and instances.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "itemsHoldInstByBarcodeQuery",
+      "type": "LOCAL"
+    }
+  ],
+  "outputVariable": {
+    "key": "itemsHoldInstByBarcodeResponse",
+    "type": "LOCAL"
+  },
+  "designation": "ldp",
+  "query": "${itemsHoldInstByBarcodeQuery}",
+  "asyncBefore": true
+}

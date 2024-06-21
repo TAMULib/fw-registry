@@ -1,0 +1,21 @@
+{
+  "id": "4dd52dbc-b8b9-4b40-9d11-561d276c5b2c",
+  "name": "Instance Update Subprocess",
+  "description": "Subprocess to update instance based on instanceIds.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/2cbc346e-5d06-4003-ad92-89009596d661",
+    "{{mod-workflow}}/requestTask/41472d6a-2d29-4221-ad65-4b40449979e3",
+    "{{mod-workflow}}/scriptTask/5beed578-9f89-472b-a485-bdfef3196574",
+    "{{mod-workflow}}/requestTask/c113c3e3-8158-4670-a081-08dcc4f38e1b",
+    "{{mod-workflow}}/scriptTask/81fcc21b-d9e4-4125-9084-7a876b6c0c1a",
+    "{{mod-workflow}}/endEvent/7a3baf11-73bb-47b5-8b7e-73035f4578c3"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${instanceIds.elements()}",
+    "inputDataName": "instanceId",
+    "parallel": false
+  },
+  "asyncBefore": true
+}

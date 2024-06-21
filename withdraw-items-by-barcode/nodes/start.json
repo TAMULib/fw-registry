@@ -1,0 +1,9 @@
+{
+  "id": "9b59cb90-6232-40a1-aa9a-0d9eca741f83",
+  "name": "Start Withdraw Items By Barcode",
+  "description": "Workflow to email list of items withdrawn by barcode.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/withdraw-items-by-barcode/start"
+}
+

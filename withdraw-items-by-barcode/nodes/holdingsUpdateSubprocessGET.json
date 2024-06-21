@@ -1,0 +1,25 @@
+{
+  "id": "4292d492-c465-4c51-b080-066b44c7656c",
+  "name": "Holdings Update Subprocess: Get Holdings By Id",
+  "description": "Get holding by holding id.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/holdings-storage/holdings/${holdingsId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "holdingsId",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "holdingsResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

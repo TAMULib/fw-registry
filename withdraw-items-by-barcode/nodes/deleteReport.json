@@ -1,0 +1,16 @@
+{
+  "id": "af3e11c4-2e8b-4839-a066-1a1453533846",
+  "name": "Delete ZIP format",
+  "description": "Delete zip format for wibb report.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "/mnt/workflows/tamu/withdraw-items-by-barcode/wibb-report-${timestamp}.zip",
+  "op": "DELETE",
+  "asyncBefore": true
+}

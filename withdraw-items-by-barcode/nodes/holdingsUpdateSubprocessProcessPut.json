@@ -1,0 +1,8 @@
+{
+  "id": "2da06e4a-df13-475c-b197-4248a9e9f3ef",
+  "name": "Holdings Update Subprocess: Process Status of PUT request",
+  "description": "Process status of http PUT request.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "holdingsUpdateSubprocessProcessPut.js"
+}

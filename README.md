@@ -610,3 +610,80 @@ Either wait for scheduled event to occur or manually execute via:
 ```shell
 fw run evans-pres-repr
 ```
+
+## withdraw-items-by-barcode
+
+### Withdraw Items By Barcode Report Workflow
+
+Manual triggered workflow that updates item, holdings and instance information based on CSV of barcodes. Items are marked as withdrawn with temporary loan types, and holdings are suppressed with location set to 'Evans withdrawn'. A note input by the user is persisted. Then, corresponding instances are suppressed. Finally, an email is sent to inform recipients about these updates after the workflow finishes.
+
+These variables are required when triggering the workflow:
+
+| Variable Name              | Allowed Values | Short Description |
+| --------------             | -------------- | ----------------- |
+| emailTo                    | e-mail address | An e-mail address used as the "TO" in the sent e-mails. |
+| note                       | string         | A string used as 'note'. |
+| file                       | file name      | The file path within the specified directory path having the barcode CSV file. |
+| withdrawItemsByBarcodeFrom | e-mail address | An e-mail address used as the "FROM" in the sent e-mails. |
+| username                   | string         | Okapi login username. |
+| password                   | string         | Okapi login password. |
+| ldp-user                   | string         | LDP login username. |
+| ldp-password               | string         | LDP login password. |
+| ldp-url                    | URL            | LDP URL. |
+| mis-catalog-reports-url    | URL            | URL for the MIS Catalog Reports website. |
+| logLevel                   | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+
+This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/withdraw-items-by-barcode* path.
+
+```shell
+
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set withdrawItemsByBarcodeFrom ***
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+
+```
+
+To build and activate:
+
+```shell
+
+fw build withdraw-items-by-barcode
+fw activate withdraw-items-by-barcode
+
+```
+```
+To deactivate:
+```shell
+fw deactivate withdraw-items-by-barcode
+```
+To delete:
+
+```shell
+
+fw delete withdraw-items-by-barcode
+
+```
+
+User inititates form submission from catalog_reports Withdraw Items By Barcode Report.
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/withdraw-items-by-barcode/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{
+    "logLevel": "DEBUG",
+    "withdrawItemsByBarcodeFrom": "folio@k1000.library.tamu.edu",
+    "username": "*",
+    "password": "*",
+    "emailTo": "recipient@tamu.edu",
+    "file": "@barcodes.csv",
+    "note": "This is a note text message.",
+    "path": "/mnt/workflows/diku/withdraw-items-by-barcode"
+}'
+
+```

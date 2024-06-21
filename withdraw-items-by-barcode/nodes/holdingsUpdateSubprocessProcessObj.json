@@ -1,0 +1,8 @@
+{
+  "id": "88f811ec-2558-478b-a0b4-20132d74c02c",
+  "name": "Holdings Update Subprocess: Process GET",
+  "description": "Process holding object.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "processHoldingUpdateSubprocessGETResponse.js"
+}

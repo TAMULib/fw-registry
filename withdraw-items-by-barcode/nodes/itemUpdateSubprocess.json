@@ -1,0 +1,20 @@
+{
+  "id": "8ece5df1-a7f3-40fb-87a7-882cb56d7f9e",
+  "name": "Item Update Subprocess",
+  "description": "Subprocess to update item by itemId.",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "{{mod-workflow}}/startEvent/3b696f3d-c014-44fe-938f-a1e77de6ed0a",
+    "{{mod-workflow}}/requestTask/4a3460ab-87c8-4244-a429-2f78683a44e4",
+    "{{mod-workflow}}/scriptTask/8f7bd30e-c6d8-42f6-9f4e-6674d468e625",
+    "{{mod-workflow}}/requestTask/c47ebc65-b97e-4173-bde6-f7c7c478e412",
+    "{{mod-workflow}}/scriptTask/592c1281-355d-469d-91fd-884dea0be679",
+    "{{mod-workflow}}/endEvent/707505e5-a34b-4577-bf9d-5f55d2b59b23"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${itemIds.elements()}",
+    "inputDataName": "itemId",
+    "parallel": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "41472d6a-2d29-4221-ad65-4b40449979e3",
+  "name": "Instance Update Subprocess: Get Instance By Id",
+  "description": "Get instance by instance id.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/instance-storage/instances/${instanceId}",
+    "method": "GET",
+    "accept": "application/json"
+  },
+  "inputVariables": [
+    {
+      "key": "instanceId",
+      "type": "PROCESS",
+      "spin": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "instanceResponse",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

@@ -1,0 +1,32 @@
+{
+  "id": "6fff7df3-aaf4-4304-9080-eaa607b4521c",
+  "name": "Holdings Update Subprocess: Update Holdings",
+  "description": "Update the holdings object.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{okapi-internal}}/holdings-storage/holdings/${holdingsId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "text/plain",
+    "bodyTemplate": "${holdings}"
+  },
+  "inputVariables": [
+    {
+      "key": "holdingsId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "holdings",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "holdings",
+    "type": "PROCESS",
+    "spin": true
+  },
+  "asyncBefore": true
+}

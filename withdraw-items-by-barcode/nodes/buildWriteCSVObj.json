@@ -1,0 +1,8 @@
+{
+  "id": "90cacb73-553b-4ee5-8a30-ebddeab9c66f",
+  "name": "Build Write CSV Obj",
+  "description": "Build the CSV object.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildWriteCSVObj.js"
+}
