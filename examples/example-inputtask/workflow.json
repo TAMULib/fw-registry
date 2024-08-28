@@ -1,0 +1,19 @@
+{
+  "id": "7c3f0fa3-9159-4398-9bf7-e1337ac9bbb8",
+  "name": "Example InputTask",
+  "description": "This workflow presents an InputTask.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{{mod-workflow}}}/startEvent/1c2645ea-cc99-49f4-ba7d-6961c33dab8c",
+    "{{{mod-workflow}}}/inputTask/6def19f6-b64d-44ca-b679-3852470a227a",
+    "{{{mod-workflow}}}/endEvent/d2abf134-5a9b-4f69-a63e-b2ff46ac43c2"
+  ],
+  "initialContext": {}
+}

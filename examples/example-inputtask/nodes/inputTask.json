@@ -1,0 +1,14 @@
+{
+  "id": "1c2645ea-cc99-49f4-ba7d-6961c33dab8c",
+  "name": "InputTask Process",
+  "description": "Perform the InputTask.",
+  "deserializeAs": "InputTask",
+  "defaultValue": "default",
+  "inputType": "SELECT",
+  "options": [
+    "default",
+    "example",
+    "other"
+  ],
+  "required": true
+}
