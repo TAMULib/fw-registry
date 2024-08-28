@@ -20,7 +20,7 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 
 ## example-compressfiletask-zip
 
-### Example Compress File Task (Zip) Workflow
+### Example Compress File Task (Zip)
 
 This workflows creates a file in a specified path and compresses it in a zip format.
 
@@ -59,7 +59,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-database-connection-task
 
-### Example DatabaseConnectionTask Workflow
+### Example DatabaseConnectionTask
 
 This workflows connects to and disconnects from a given server/database.
 
@@ -100,7 +100,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-database-query-task
 
-### Example DatabaseQueryTask Workflow
+### Example DatabaseQueryTask
 
 This workflow connects to a database / server, queries the database, prints the response via Ruby scripting language, and disconnects from the database / server.
 
@@ -143,7 +143,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-emailtask
 
-### Example EmailTask Workflow
+### Example EmailTask
 
 This workflows sends an email to the user who's email address is specified in the config file or as a user input.
 
@@ -181,7 +181,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example file-task
 
-### Example FileTask Workflow
+### Example FileTask
 
 This workflows creates a file in a specified path.
 
@@ -221,7 +221,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-request-task
 
-### Example RequestTask Workflow
+### Example RequestTask
 
 This workflows sends a GET request to a given resource and prints the response using Ruby scripting language.
 
@@ -258,7 +258,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-scripttask-rb
 
-### Example ScriptTask Ruby Workflow
+### Example ScriptTask Ruby
 
 This workflows prints a hello world message on the screen utilizing Ruby as a scripting language.
 
