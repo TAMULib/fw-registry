@@ -57,7 +57,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-database-connection-task
+## example-databaseconnectiontask
 
 ### Example DatabaseConnectionTask
 
@@ -80,25 +80,25 @@ These variables are required when triggering the workflow:
 
 To build and activate:
 ```shell
-fw build example-databasetask-connect
-fw activate example-databasetask-connect
+fw build example-databaseconnectiontask
+fw activate example-databaseconnectiontask
 ```
 
 To manually execute via:
 ```shell
-fw run example-databasetask-connect
+fw run example-databaseconnectiontask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-connect/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-database-query-task
+## example-databasequerytask
 
 ### Example DatabaseQueryTask
 
@@ -123,19 +123,19 @@ These variables are required when triggering the workflow:
 
 To build and activate:
 ```shell
-fw build example-databasetask-query
-fw activate example-databasetask-query
+fw build example-databasequerytask
+fw activate example-databasequerytask
 ```
 
 To manually execute via:
 ```shell
-fw run example-databasetask-query
+fw run example-databasequerytask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-query/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -218,8 +218,9 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+```
 
-## example-request-task
+## example-requesttask
 
 ### Example RequestTask
 
