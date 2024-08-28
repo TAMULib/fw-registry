@@ -1,6 +1,6 @@
 {
   "id": "c9a9f4c8-fc51-4e76-8026-9b17c89c8941",
-  "name": "Example Compress (ZIP) File Workflow",
+  "name": "Example Compress (ZIP) File",
   "description": "Create a file at a given path and compress (ZIP) the file.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,

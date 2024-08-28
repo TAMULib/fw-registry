@@ -1,6 +1,6 @@
 {
   "id": "f41e158d-fc5b-4fdd-9c92-5b3985dc5c57",
-  "name": "Example EmailTask Workflow",
+  "name": "Example EmailTask",
   "description": "An example EmailTask Workflow.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,

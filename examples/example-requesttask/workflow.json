@@ -1,6 +1,6 @@
 {
   "id": "eae461cd-9ae1-422a-8e96-60e12a8fdbf4",
-  "name": "Example RequestTask Workflow",
+  "name": "Example RequestTask",
   "description": "This workflow makes a URL request and prints a response.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,

@@ -1,6 +1,6 @@
 {
   "id": "6780cd32-a445-4fe0-990f-dcc9913ce99e",
-  "name": "Example Ruby ScriptTask Workflow",
+  "name": "Example Ruby ScriptTask",
   "description": "An example ScriptTask Workflow using Ruby.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,
