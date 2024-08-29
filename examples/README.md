@@ -287,7 +287,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-scripttask-rb
+## example-scripttask-ruby
 
 ### Example ScriptTask Ruby Workflow
 
