@@ -65,7 +65,7 @@ This workflows connects to and disconnects from a given server/database.
 
 ```shell
 fw config set exampleDatabasePassword ***
-fw config set exampleDatabaseURI "dbc:postgresql://localhost:5432/my_database"
+fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/my_database"
 fw config set exampleDatabaseUser "user"
 ```
 
@@ -106,7 +106,7 @@ This workflow connects to a database / server, queries the database, prints the 
 
 ```shell
 fw config set exampleDatabasePassword ***
-fw config set exampleDatabaseURI "dbc:postgresql://localhost:5432/my_database"
+fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/my_database"
 fw config set exampleDatabaseUser "user"
 fw config set exampleQuery "SELECT id, name FROM users;"
 ```
