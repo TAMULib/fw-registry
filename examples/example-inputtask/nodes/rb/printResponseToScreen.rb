@@ -1,1 +1,0 @@
-puts "Response: #{reqResponse}"
