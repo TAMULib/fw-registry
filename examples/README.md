@@ -20,7 +20,7 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 
 ## example-compressfiletask-zip
 
-### Example Compress File Task (Zip) Workflow
+### Example Compress File Task (Zip)
 
 This workflows creates a file in a specified path and compresses it in a zip format.
 
@@ -57,9 +57,9 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-database-connection-task
+## example-databaseconnectiontask
 
-### Example DatabaseConnectionTask Workflow
+### Example DatabaseConnectionTask
 
 This workflows connects to and disconnects from a given server/database.
 
@@ -80,27 +80,27 @@ These variables are required when triggering the workflow:
 
 To build and activate:
 ```shell
-fw build example-databasetask-connect
-fw activate example-databasetask-connect
+fw build example-databaseconnectiontask
+fw activate example-databaseconnectiontask
 ```
 
 To manually execute via:
 ```shell
-fw run example-databasetask-connect
+fw run example-databaseconnectiontask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-connect/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-database-query-task
+## example-databasequerytask
 
-### Example DatabaseQueryTask Workflow
+### Example DatabaseQueryTask
 
 This workflow connects to a database / server, queries the database, prints the response via Ruby scripting language, and disconnects from the database / server.
 
@@ -123,19 +123,19 @@ These variables are required when triggering the workflow:
 
 To build and activate:
 ```shell
-fw build example-databasetask-query
-fw activate example-databasetask-query
+fw build example-databasequerytask
+fw activate example-databasequerytask
 ```
 
 To manually execute via:
 ```shell
-fw run example-databasetask-query
+fw run example-databasequerytask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasetask-query/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -143,7 +143,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-emailtask
 
-### Example EmailTask Workflow
+### Example EmailTask
 
 This workflows sends an email to the user who's email address is specified in the config file or as a user input.
 
@@ -181,7 +181,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example file-task
 
-### Example FileTask Workflow
+### Example FileTask
 
 This workflows creates a file in a specified path.
 
@@ -250,9 +250,9 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --header 'X-Okapi-Tenant: diku'
 ```
 
-## example-request-task
+## example-requesttask
 
-### Example RequestTask Workflow
+### Example RequestTask
 
 This workflows sends a GET request to a given resource and prints the response using Ruby scripting language.
 
@@ -289,7 +289,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
 
 ## example-scripttask-ruby
 
-### Example ScriptTask Ruby Workflow
+### Example ScriptTask Ruby
 
 This workflows prints a hello world message on the screen utilizing Ruby as a scripting language.
 

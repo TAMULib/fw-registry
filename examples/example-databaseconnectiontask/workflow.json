@@ -1,6 +1,6 @@
 {
   "id": "2da14f7f-81f0-4d40-b831-938237f92b7a",
-  "name": "Example DatabaseConnectionTask Workflow",
+  "name": "Example DatabaseConnectionTask",
   "description": "Example workflow that connects and then disconnects from a database.",
   "versionTag": "1.0",
   "historyTimeToLive": 90,

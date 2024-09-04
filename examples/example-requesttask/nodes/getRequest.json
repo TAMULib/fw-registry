@@ -13,7 +13,7 @@
   "request": {
     "url": "{{{exampleUrlPath}}}",
     "method": "GET",
-    "accept": "application/json"
+    "accept": "text/html"
   },
   "asyncBefore": true
 }

@@ -4,5 +4,5 @@
   "description": "Start workflow to connect and disconnect from a database.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-databasetask-connect/start"
+  "expression": "/events/workflow/example-databaseconnectiontask/start"
 }
