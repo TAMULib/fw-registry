@@ -1,0 +1,9 @@
+{
+  "id": "7a8915d0-2764-4731-af85-51eec1e9fe47",
+  "name": "Example InputTask Start Trigger",
+  "description": "REST POST end point.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/workflow/example-inputtask/start"
+}
