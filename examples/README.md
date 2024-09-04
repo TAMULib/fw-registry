@@ -219,6 +219,37 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
+## example-inputtask
+
+### Example InputTask
+
+This workflows provides an example `InputTask`.
+
+```shell
+fw config set exampleUrlPath ***
+```
+
+No variables are required when triggering the workflow.
+
+To build and activate:
+```shell
+fw build example-inputtask
+fw activate example-inputtask
+```
+
+To manually execute via:
+```shell
+fw run example-requesttask
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-inputtask/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku'
+```
+
 ## example-requesttask
 
 ### Example RequestTask
@@ -256,7 +287,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
-## example-scripttask-rb
+## example-scripttask-ruby
 
 ### Example ScriptTask Ruby
 

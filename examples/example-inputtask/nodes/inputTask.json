@@ -1,0 +1,33 @@
+{
+  "id": "1c2645ea-cc99-49f4-ba7d-6961c33dab8c",
+  "name": "InputTask Process",
+  "description": "Perform the InputTask.",
+  "deserializeAs": "InputTask",
+  "inputs": [
+    {
+      "fieldId": "field_1",
+      "fieldLabel": "Field 1",
+      "defaultValue": "default",
+      "inputType": "SELECT",
+      "options": [
+        "default",
+        "example",
+        "other"
+      ],
+      "required": true
+    },
+    {
+      "fieldId": "field_2",
+      "fieldLabel": "Field 2",
+      "defaultValue": "",
+      "inputType": "TEXT",
+      "required": false
+    },
+    {
+      "fieldId": "submit",
+      "fieldLabel": "Submit",
+      "inputType": "SUBMIT",
+      "required": true
+    }
+  ]
+}

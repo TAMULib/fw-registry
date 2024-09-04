@@ -1,0 +1,8 @@
+{
+  "id": "7c3f0fa3-9159-4398-9bf7-e1337ac9bbb8",
+  "name": "Start",
+  "description": "Start of Example InputTask workflow.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/example-inputtask/start"
+}
