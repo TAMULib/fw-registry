@@ -1,7 +1,7 @@
 {
   "id": "76bff6c3-20be-4645-b7c6-8865ccd25603",
   "name": "Students",
-  "description": "Routes workflow to 'Students' node, connects to gateway, executes query and connection task.",
+  "description": "Routes workflow to students node, connects to gateway, executes query and connection task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_36942c89_e5f6_49ad_8b61_a1ed9c53fcb5",
   "nodes": [
