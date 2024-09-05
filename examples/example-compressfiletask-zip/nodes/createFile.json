@@ -10,7 +10,7 @@
       "spin": false
     }
   ],
-  "outputVariable":{},
+  "outputVariable": {},
   "path": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
   "op": "WRITE",
   "target": "exampleFileData",
