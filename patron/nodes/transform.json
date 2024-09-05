@@ -1,7 +1,7 @@
 {
   "id": "96286fc0-6663-11eb-b98e-f1ccdde4a279",
   "name": "Transform Results",
-  "description": "Exceutes Javascript to process patron objects.",
+  "description": "Transforms the database results into processable objects.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "transform.js"
