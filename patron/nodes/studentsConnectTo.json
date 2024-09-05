@@ -1,7 +1,7 @@
 {
   "id": "50a69e06-40e2-4d8e-8f1d-e6db9344cfb0",
   "name": "Complete Students",
-  "description": "",
+  "description": "Connects to parallel gateway to complete 'student' task.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_09955855_531f_44ce_ba69_2824654a0411"
 }

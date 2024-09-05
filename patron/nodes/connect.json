@@ -1,7 +1,7 @@
 {
   "id": "55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
   "name": "Connect DivIT",
-  "description": "",
+  "description": "Connect to DivIT database.",
   "deserializeAs": "DatabaseConnectionTask",
   "inputVariables": [],
   "outputVariable": {},

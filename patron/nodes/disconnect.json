@@ -1,7 +1,7 @@
 {
   "id": "eeb3491b-b024-4389-b921-797b8774c759",
   "name": "Disconnect DivIT",
-  "description": "",
+  "description": "Disconnect from DivIT database.",
   "deserializeAs": "DatabaseDisconnectTask",
   "inputVariables": [],
   "outputVariable": {},

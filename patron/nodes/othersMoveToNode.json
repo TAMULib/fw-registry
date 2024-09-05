@@ -1,7 +1,7 @@
 {
   "id": "5cfaad2b-c393-461e-937f-7579207b602b",
   "name": "Others",
-  "description": "",
+  "description": "Routes to parallel gateway and executes database query and connection task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_36942c89_e5f6_49ad_8b61_a1ed9c53fcb5",
   "nodes": [

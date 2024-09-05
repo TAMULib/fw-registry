@@ -1,7 +1,7 @@
 {
   "id": "0a0e6598-3fc6-450b-95c9-1ac5debf8b35",
   "name": "Complete Other",
-  "description": "",
+  "description": "Connects to parallel gateway task.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_09955855_531f_44ce_ba69_2824654a0411"
 }
