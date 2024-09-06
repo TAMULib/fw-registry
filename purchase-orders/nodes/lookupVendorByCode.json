@@ -1,7 +1,7 @@
 {
   "id": "97e71494-ed26-4ad0-bf0c-b2d52274b2c2",
   "name": "Lookup Vendor By Code",
-  "description": "Retrieves vendor details by code.",
+  "description": "Retrieves the vendor details by code.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/organizations-storage/organizations?limit=1&offset=0&query=((code='${marcOrderData.vendorCode}'))",
