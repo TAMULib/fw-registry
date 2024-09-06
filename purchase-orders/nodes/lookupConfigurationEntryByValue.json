@@ -1,7 +1,7 @@
 {
   "id": "01f346d0-a3f5-4a25-b2aa-aa8bacb29440",
   "name": "Lookup Configuration Entry by Value",
-  "description": "Retrieves configuration entry by value name.",
+  "description": "Retrieves the configuration entry by value name.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${marcOrderData.billTo}\\\"*\")",
