@@ -1,7 +1,7 @@
 {
   "id": "173ec7dc-12b6-42c4-8876-aa814498c685",
   "name": "Lookup Expense Class by Name",
-  "description": "Routes to lookup expense class by name node, connects to parallel gateway and inititates request task.",
+  "description": "Routes to lookup expense class by name node, connects to parallel gateway, and inititates request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_be158ddd_1143_40ff_84bd_59c46c94be04",
   "nodes": [
