@@ -1,7 +1,7 @@
 {
   "id": "a956fce2-0aad-4d7f-aa00-ec848f71d681",
   "name": "Lookup Fund By Code",
-  "description": "Retrieve the fund by code.",
+  "description": "Retrieves the fund by code.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/finance/funds?limit=1&offset=0&query=(code==\"${marcOrderData.fundCode}\")",

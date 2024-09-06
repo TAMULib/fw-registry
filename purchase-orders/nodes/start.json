@@ -1,7 +1,7 @@
 {
   "id": "9219c68d-8019-4b3d-9ea6-f1a3a1c2d22c",
   "name": "Start",
-  "description": "",
+  "description": "Start of purchase order workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/workflow/purchase-orders/start"

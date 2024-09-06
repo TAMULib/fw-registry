@@ -1,7 +1,7 @@
 {
   "id": "b4440bc5-6fe8-4bf3-aa41-57debe0a813f",
   "name": "Reference Data Fork",
-  "description": "",
+  "description": "Forks the workflow into parallel tasks for reference data processing.",
   "deserializeAs": "ParallelGateway",
   "nodes": [
     "{{{mod-workflow}}}/requestTask/e699a8ab-0122-45a5-9504-149e69c970bf",

@@ -1,7 +1,7 @@
 {
   "id": "f25f7775-a01e-4624-9435-951ae2bea165",
   "name": "Prepare Item",
-  "description": "",
+  "description": "Executes script to prepare item data.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "prepareItem.js"

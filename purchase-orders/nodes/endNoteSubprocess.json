@@ -1,6 +1,6 @@
 {
   "id": "353d7131-0804-45b9-a983-295225bd5525",
   "name": "End Note Create Subprocess",
-  "description": "",
+  "description": "End of note creation sub process.",
   "deserializeAs": "EndEvent"
 }

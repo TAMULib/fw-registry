@@ -1,7 +1,7 @@
 {
   "id": "a7907673-c262-4875-a6ab-a8f4138d4c98",
   "name": "Complete Lookup Vendor By Code",
-  "description": "",
+  "description": "Connects to parallel gateway to complete vendor lookup by code.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_f64d6746_5c22_460b_81e7_b0e3a04bf4a5"
 }

@@ -1,6 +1,6 @@
 {
   "id": "ab94addf-021b-4b86-a49a-c370a3b3e9dc",
   "name": "End Purchase Order Create Subprocess",
-  "description": "",
+  "description": "End of purchase order creation subprocess.",
   "deserializeAs": "EndEvent"
 }

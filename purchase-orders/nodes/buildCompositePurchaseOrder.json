@@ -1,7 +1,7 @@
 {
   "id": "358f8a62-63f0-48ce-9906-c425139b58fb",
   "name": "Build Composite Purchase Order",
-  "description": "",
+  "description": "Builds a composite purchase order by extracting data from data response.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "buildCompositePurchaseOrder.js"

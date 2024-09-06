@@ -1,7 +1,7 @@
 {
   "id": "94ff5df0-a7ff-4c16-84ee-fe71e96adabc",
   "name": "Lookup Expense Class by Name",
-  "description": "Retrieve the expense class by name.",
+  "description": "Retrieves the expense class by name.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${marcOrderData.expenseClass}\")",

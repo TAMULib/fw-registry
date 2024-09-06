@@ -1,7 +1,7 @@
 {
   "id": "8e2153f9-651f-4084-91b8-944a849593d7",
   "name": "Build Notes",
-  "description": "",
+  "description": "Builds note object by processing the MARC order data.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "buildNotes.js"

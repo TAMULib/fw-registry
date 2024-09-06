@@ -1,7 +1,7 @@
 {
   "id": "d5a1483a-08f3-4c08-b695-bdaafb63542e",
   "name": "Update Instance Join",
-  "description": "",
+  "description": "Joins parallel workflow nodes at the update instance task.",
   "deserializeAs": "ParallelGateway",
   "nodes": []
 }

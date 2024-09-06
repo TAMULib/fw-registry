@@ -1,7 +1,7 @@
 {
   "id": "0dce1a68-7e25-448f-ad69-c45adadf013f",
   "name": "Update Item",
-  "description": "Update item",
+  "description": "Request task to update an item.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/item-storage/items/${itemId}",

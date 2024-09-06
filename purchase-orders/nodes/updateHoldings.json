@@ -1,7 +1,7 @@
 {
   "id": "90057fb3-7409-4a35-aa3b-6c56b30c8a8d",
   "name": "Update Holdings",
-  "description": "Update holdings",
+  "description": "Request task to update holdings.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/holdings-storage/holdings/${holdingsRecordId}",

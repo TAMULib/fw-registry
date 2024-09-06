@@ -1,7 +1,7 @@
 {
   "id": "e73919e6-6fee-4993-95b3-81e7cbc1f53b",
   "name": "Request Locations",
-  "description": "Retrieve the Locations.",
+  "description": "Requests locations from the endpoint",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/locations?limit=999",

@@ -1,7 +1,7 @@
 {
   "id": "77e065ef-ce38-4655-8fcc-e3a0f43b06ce",
   "name": "Update Instance Fork",
-  "description": "",
+  "description": "Forks the workflow into parallel branches for updating instances.",
   "deserializeAs": "ParallelGateway",
   "nodes": [
     "{{{mod-workflow}}}/requestTask/8a5b4584-3b0e-4207-824f-6880692925f0",

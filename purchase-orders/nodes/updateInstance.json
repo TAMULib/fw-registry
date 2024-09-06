@@ -1,7 +1,7 @@
 {
   "id": "8a5b4584-3b0e-4207-824f-6880692925f0",
   "name": "Update Instance",
-  "description": "Update instance mapped from MARC record",
+  "description": "Request task to update instance mapped from MARC record.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/inventory/instances/${instanceId}",

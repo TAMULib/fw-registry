@@ -1,7 +1,7 @@
 {
   "id": "5079dd44-1cd7-43c3-bdad-b87a3edbd1b0",
   "name": "Complete Request Holdings of Instance",
-  "description": "",
+  "description": "Connects to parallel gateway to complete the request for holdings of instance objects.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_aab7aa95_9c03_424f_ad66_9af83b191213"
 }

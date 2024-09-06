@@ -1,7 +1,7 @@
 {
   "id": "c8c18fc1-5422-4770-ade3-3a189b942071",
   "name": "Request Instance For Purchase Order Line",
-  "description": "Retrieve the Instance Created by the Purchase Order Line.",
+  "description": "Retrieves the instance created by the purchase order line.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/inventory/instances/${instanceId}",

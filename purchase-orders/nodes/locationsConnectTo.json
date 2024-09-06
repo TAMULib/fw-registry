@@ -1,7 +1,7 @@
 {
   "id": "cd4bf3ff-2690-4d64-a63b-27afd0859767",
   "name": "Complete Locations",
-  "description": "",
+  "description": "Connects to parallel gateway to complete locations task.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_9ee4d11c_ea5b_4080_9958_e0d964fd8447"
 }

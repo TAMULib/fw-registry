@@ -1,7 +1,7 @@
 {
   "id": "e699a8ab-0122-45a5-9504-149e69c970bf",
   "name": "Request Instance Types",
-  "description": "Retrieve the Instance Types.",
+  "description": "Retrieves instance types from the specified url.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/instance-types?limit=999",

@@ -1,7 +1,7 @@
 {
   "id": "08233df1-02cb-4608-874e-8c83b8f9e76a",
   "name": "Read MARC input file",
-  "description": "",
+  "description": "Reads the MARC input file from the specified path and stores content in MARC process variable.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
