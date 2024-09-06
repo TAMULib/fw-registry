@@ -1,7 +1,7 @@
 {
   "id": "695ef5e8-eb59-421b-a379-17d67161b12b",
   "name": "Request Next Purchase Order Number",
-  "description": "Requests the next po number and stores response in poNumberResponse variable.",
+  "description": "Requests the next purchase order.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/orders/po-number",
