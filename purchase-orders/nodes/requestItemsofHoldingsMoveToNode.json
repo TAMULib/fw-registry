@@ -1,7 +1,7 @@
 {
   "id": "c6fd79b2-d6d4-41fc-a2a4-db9848532600",
   "name": "Request Items of Holdings",
-  "description": "Routes workflow to request items of holdings, connects to parallel gateway and inititates request task.",
+  "description": "Routes workflow to request items of holdings, connects to parallel gateway, and inititates request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_77e065ef_ce38_4655_8fcc_e3a0f43b06ce",
   "nodes": [
