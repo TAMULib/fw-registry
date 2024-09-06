@@ -1,7 +1,7 @@
 {
   "id": "fc0a73ac-031c-4c48-a108-c78886ca9ff6",
   "name": "Holdings Types",
-  "description": "Routes workflow to holdings Type node, connects to parallel gateway and initiates request task.",
+  "description": "Routes workflow to holdings type node, connects to parallel gateway, and initiates request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_b4440bc5_6fe8_4bf3_aa41_57debe0a813f",
   "nodes": [
