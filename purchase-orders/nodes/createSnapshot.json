@@ -1,7 +1,7 @@
 {
   "id": "9046d37b-000d-4968-a41c-d77ff55f3622",
   "name": "Create Snapshot",
-  "description": "Submits job execution to create snapshot",
+  "description": "Submits job execution to create storage snapshot using POST request.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/source-storage/snapshots",

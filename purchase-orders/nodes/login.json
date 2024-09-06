@@ -1,7 +1,7 @@
 {
   "id": "179d06af-72a2-408a-a2fd-bf45300d55a8",
   "name": "Login",
-  "description": "Get Login Token for Purchase Orders",
+  "description": "Gets okapi login token for purchase orders.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/authn/login",

@@ -1,7 +1,7 @@
 {
   "id": "fe29b6f1-ffd7-4d99-a73d-ad4001948d2a",
   "name": "Create Note",
-  "description": "Creates a purchase order line note",
+  "description": "Creates a purchase order line note using POST request.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/notes",

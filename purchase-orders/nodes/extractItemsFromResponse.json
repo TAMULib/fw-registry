@@ -1,7 +1,7 @@
 {
   "id": "dbd8367c-6859-4035-a67b-610377cd1680",
   "name": "Extract Items from Response",
-  "description": "",
+  "description": "Extract items from the itemsresponse object.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "extractItemsFromResponse.js"

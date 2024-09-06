@@ -1,7 +1,7 @@
 {
   "id": "54062319-0960-4958-a429-2e8cffd687aa",
   "name": "Update Holdings",
-  "description": "",
+  "description": "Routes the workflow to update holdings, connect to parallel gateway, and initiate a request tassk.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_77e065ef_ce38_4655_8fcc_e3a0f43b06ce",
   "nodes": [

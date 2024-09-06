@@ -1,7 +1,7 @@
 {
   "id": "f64d6746-5c22-460b-81e7-b0e3a04bf4a5",
   "name": "Request Next Purchase Order Number Join",
-  "description": "",
+  "description": "Requests for the subsequent purchase order number using parallel gateway node.",
   "deserializeAs": "ParallelGateway",
   "nodes": []
 }

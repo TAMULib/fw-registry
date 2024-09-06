@@ -1,7 +1,7 @@
 {
   "id": "e28cd32e-7715-4fe9-9d3d-c4ac6d808f85",
   "name": "Request Items of Holdings",
-  "description": "Retrieve the Items of Instance Holdings by the Purchase Order Line.",
+  "description": "Retrieve the items of instance holdings by the purchase order line.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/item-storage/items?query=(holdingsRecordId==\"${holdingsRecordId}\")",

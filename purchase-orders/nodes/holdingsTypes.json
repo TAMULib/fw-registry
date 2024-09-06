@@ -1,7 +1,7 @@
 {
   "id": "7a890bb7-ed1c-49e3-900f-b90dd7f5090f",
   "name": "Request Holdings Types",
-  "description": "Retrieve the Holdings Types.",
+  "description": "Retrieves holdings types from the specified url.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/holdings-types?limit=999",

@@ -1,7 +1,7 @@
 {
   "id": "7a3d5394-2192-4d2d-a0a4-2b328f01a5b8",
   "name": "Request Instance For Purchase Order Line Fork",
-  "description": "",
+  "description": "Forks the workflow to initiate a request task and connect to parallel gateway node.",
   "deserializeAs": "ParallelGateway",
   "nodes": [
     "{{{mod-workflow}}}/requestTask/c8c18fc1-5422-4770-ade3-3a189b942071",

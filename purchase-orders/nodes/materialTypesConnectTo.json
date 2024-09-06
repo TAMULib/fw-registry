@@ -1,7 +1,7 @@
 {
   "id": "813c76ff-ebfa-4343-9ecd-9f8e31944e18",
   "name": "Complete Material Types",
-  "description": "",
+  "description": "Connects to parallel gateway to complete material types task.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_9ee4d11c_ea5b_4080_9958_e0d964fd8447"
 }

@@ -1,7 +1,7 @@
 {
   "id": "bce108d8-e104-43a6-84bc-c359114396d8",
   "name": "Start Note Create Subprocess",
-  "description": "",
+  "description": "Start of note create subprocess.",
   "type": "NONE",
   "deserializeAs": "StartEvent",
   "asyncBefore": true

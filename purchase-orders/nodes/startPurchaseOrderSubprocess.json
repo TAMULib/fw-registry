@@ -1,7 +1,7 @@
 {
   "id": "2aaabe53-2528-4b0e-8989-71c780d5956a",
   "name": "Start Purchase Order Create Subprocess",
-  "description": "",
+  "description": "Start of create purchase order subprocess.",
   "type": "NONE",
   "deserializeAs": "StartEvent",
   "asyncBefore": true

@@ -1,7 +1,7 @@
 {
   "id": "81ec09ff-717d-4f00-8f93-51c1708561f8",
   "name": "Complete Lookup Configuration Entry by Value",
-  "description": "",
+  "description": "Connects to parallel gateway to complete lookup configuration entry by value process.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_f64d6746_5c22_460b_81e7_b0e3a04bf4a5"
 }

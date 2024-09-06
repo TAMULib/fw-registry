@@ -1,7 +1,7 @@
 {
   "id": "eda78d56-b57f-4395-a374-5d7f9a9d03da",
   "name": "Delete MARC input file",
-  "description": "",
+  "description": "Deletes the MARC input file at the specified inputFilePath.",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {

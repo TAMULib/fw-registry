@@ -1,7 +1,7 @@
 {
   "id": "3b4a443c-6aa7-4c60-a956-097d4f78d45d",
   "name": "Complete Holdings Types",
-  "description": "",
+  "description": "Connects to parallel gateway to complete the holdings type process.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_9ee4d11c_ea5b_4080_9958_e0d964fd8447"
 }

@@ -1,7 +1,7 @@
 {
   "id": "e8841661-ddda-4b31-8116-a4696aa046d5",
   "name": "Lookup Fund By Code",
-  "description": "",
+  "description": "Routes workflow to lookup fund by code, connects to gateway and initiates a request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_be158ddd_1143_40ff_84bd_59c46c94be04",
   "nodes": [

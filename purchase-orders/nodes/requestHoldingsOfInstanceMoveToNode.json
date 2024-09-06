@@ -1,7 +1,7 @@
 {
   "id": "de71c8c5-6746-43c7-9520-db67b65b7ca6",
   "name": "Request Holdings of Instance",
-  "description": "",
+  "description": "Routes the workflow to request holdings of an instance, connects to a parallel gateway, and starts a request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_7a3d5394_2192_4d2d_a0a4_2b328f01a5b8",
   "nodes": [

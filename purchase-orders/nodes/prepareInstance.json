@@ -1,7 +1,7 @@
 {
   "id": "4845fc57-9e86-4782-8e20-325133f5cb6e",
   "name": "Prepare Instance",
-  "description": "",
+  "description": "Executes script to prepare instance object.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "prepareInstance.js",

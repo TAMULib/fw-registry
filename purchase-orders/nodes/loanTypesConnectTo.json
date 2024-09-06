@@ -1,7 +1,7 @@
 {
   "id": "d3d4699b-35a3-454a-b257-fc67de74e95e",
   "name": "Complete Loan Types",
-  "description": "",
+  "description": "Connects to parallel gateway to complete the loan type process.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_9ee4d11c_ea5b_4080_9958_e0d964fd8447"
 }

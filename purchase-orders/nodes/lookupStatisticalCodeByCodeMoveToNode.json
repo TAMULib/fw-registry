@@ -1,7 +1,7 @@
 {
   "id": "3a1f9ca2-e5c4-402a-8b38-629c4bfe652f",
   "name": "Lookup Statistical Code by Code",
-  "description": "",
+  "description": "Routes workflow to lookup statistical code by code', connects to parallel gateway and initiates request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_be158ddd_1143_40ff_84bd_59c46c94be04",
   "nodes": [

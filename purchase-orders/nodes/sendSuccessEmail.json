@@ -1,7 +1,7 @@
 {
   "id": "3dd5d171-771c-48a7-a2e7-9d063190c3e5",
   "name": "Send Success Email",
-  "description": "",
+  "description": "Sends a success email using emailTo, emailFrom, and successEmail properties.",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
