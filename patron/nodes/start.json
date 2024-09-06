@@ -1,7 +1,7 @@
 {
   "id": "df9cff30-665a-11eb-b9fd-afcd4d476de5",
   "name": "Start",
-  "description": "",
+  "description": "Start of patron workflow.",
   "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
   "expression": "0 0 9 * * ?"

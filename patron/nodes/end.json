@@ -1,6 +1,6 @@
 {
   "id": "df9d2640-665a-11eb-b9fd-afcd4d476de5",
   "name": "End",
-  "description": "",
+  "description": "End of patron workflow.",
   "deserializeAs": "EndEvent"
 }
