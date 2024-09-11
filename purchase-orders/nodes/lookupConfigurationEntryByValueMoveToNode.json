@@ -1,7 +1,7 @@
 {
   "id": "8a6b267c-a748-4d0b-9f00-e93cf9362d69",
   "name": "Lookup Configuration Entry by Value",
-  "description": "",
+  "description": "Routes to lookup configuration entry by value node, connects to parallel gateway, and initiates a request task.",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_be158ddd_1143_40ff_84bd_59c46c94be04",
   "nodes": [

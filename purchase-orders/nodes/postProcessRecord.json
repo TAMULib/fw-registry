@@ -1,7 +1,7 @@
 {
   "id": "cdc9dab0-8182-4d5a-a494-51d7d8632fec",
   "name": "Post-Process Record",
-  "description": "",
+  "description": "Executes script to post-process and update records using report and instance data.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "postProcessRecord.js"

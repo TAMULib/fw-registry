@@ -1,7 +1,7 @@
 {
   "id": "18d0e1eb-46c2-4a9e-8838-88584d7998cd",
   "name": "Query Student Patrons",
-  "description": "",
+  "description": "Executes query on student patrons from DivIT database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {

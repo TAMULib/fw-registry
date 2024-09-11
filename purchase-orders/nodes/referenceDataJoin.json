@@ -1,7 +1,7 @@
 {
   "id": "9ee4d11c-ea5b-4080-9958-e0d964fd8447",
   "name": "Reference Data Join",
-  "description": "",
+  "description": "Joins the workflow path at the reference data gateway.",
   "deserializeAs": "ParallelGateway",
   "nodes": []
 }

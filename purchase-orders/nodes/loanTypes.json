@@ -1,7 +1,7 @@
 {
   "id": "ba79466f-51ac-4449-837c-f0568d671b66",
   "name": "Request Loan Types",
-  "description": "Retrieve the Loan Types.",
+  "description": "Retrieves loan types from the specified url.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/loan-types?limit=999",

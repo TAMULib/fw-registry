@@ -1,6 +1,6 @@
 {
   "id": "e1872550-3905-427c-a895-74c4cbe2b7c9",
   "name": "End Item Update Subprocess",
-  "description": "",
+  "description": "End of item update subprocess.",
   "deserializeAs": "EndEvent"
 }

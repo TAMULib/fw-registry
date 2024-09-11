@@ -1,7 +1,7 @@
 {
   "id": "d669c59e-f0bd-42bd-a4e2-deac5c8d9df1",
   "name": "Prepare Source Record",
-  "description": "",
+  "description": "Executes script to prepare the source record.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "prepareSourceRecord.js"

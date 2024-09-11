@@ -1,7 +1,7 @@
 {
   "id": "26da56ad-e640-4693-bd2a-e687d446224b",
   "name": "Lookup Statistical Code by Code",
-  "description": "Retrieve the statistical code by code.",
+  "description": "Retrieves the statistical code by code.",
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{okapi-internal}}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",

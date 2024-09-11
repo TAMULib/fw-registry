@@ -1,7 +1,7 @@
 {
   "id": "09955855-531f-44ce-ba69-2824654a0411",
   "name": "Join",
-  "description": "",
+  "description": "Joins incoming tasks to single path.",
   "deserializeAs": "ParallelGateway",
   "nodes": []
 }

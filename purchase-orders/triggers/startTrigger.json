@@ -1,7 +1,7 @@
 {
   "id": "d6242b52-d850-11eb-9b1b-07ab610c71f4",
   "name": "Purchase Order Start Trigger",
-  "description": "",
+  "description": "Triggers the purchase order workflow via POST request",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",

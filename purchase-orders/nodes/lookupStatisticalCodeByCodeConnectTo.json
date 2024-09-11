@@ -1,7 +1,7 @@
 {
   "id": "59b7b384-7d82-466b-8bc2-8bd3c4618570",
   "name": "Complete Lookup Statistical Code by Code",
-  "description": "",
+  "description": "Connects to parallel gateway to retrieve the statistical code by code process.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_f64d6746_5c22_460b_81e7_b0e3a04bf4a5"
 }

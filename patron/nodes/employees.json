@@ -1,7 +1,7 @@
 {
   "id": "4a6d3c6a-6465-4f9f-9caf-06a0b3ff6047",
   "name": "Query Employee Patrons",
-  "description": "",
+  "description": "Execute query on DivIt database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {

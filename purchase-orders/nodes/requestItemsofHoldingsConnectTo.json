@@ -1,7 +1,7 @@
 {
   "id": "75c610c9-5921-4139-a737-9ad80159baf6",
   "name": "Complete Request Items of Holdings",
-  "description": "",
+  "description": "Connects to parallel gateway to request items of holdings object.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_d5a1483a_08f3_4c08_b695_bdaafb63542e"
 }

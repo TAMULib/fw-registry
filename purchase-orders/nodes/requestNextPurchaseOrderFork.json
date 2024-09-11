@@ -1,7 +1,7 @@
 {
   "id": "be158ddd-1143-40ff-84bd-59c46c94be04",
   "name": "Request Next Purchase Order Number Fork",
-  "description": "",
+  "description": "Forks workflow to request the subsequent purchase order number, connects to parallel gateway, and initiates a request task.",
   "deserializeAs": "ParallelGateway",
   "nodes": [
     "{{{mod-workflow}}}/requestTask/695ef5e8-eb59-421b-a379-17d67161b12b",

@@ -1,6 +1,6 @@
 {
   "id": "98760d21-7f01-41d8-b915-39df79cad824",
   "name": "End",
-  "description": "",
+  "description": "End of purchase order workflow.",
   "deserializeAs": "EndEvent"
 }

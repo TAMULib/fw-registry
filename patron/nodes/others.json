@@ -1,7 +1,7 @@
 {
   "id": "eda4f0e5-b9c0-4e2d-985b-9894e8179425",
   "name": "Query Other Patrons",
-  "description": "",
+  "description": "Executes queries on other patrons in DivIt database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {

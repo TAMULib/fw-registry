@@ -1,7 +1,7 @@
 {
   "id": "ba6e0cdf-7c82-4ff1-9cc5-ea2570f334bc",
   "name": "Split MARC Records",
-  "description": "",
+  "description": "Executes script to convert MARC records to JSON and sets local workflow variables for records and report.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
   "code": "splitMarcRecords.js"

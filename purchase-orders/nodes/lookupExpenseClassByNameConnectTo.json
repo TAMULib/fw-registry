@@ -1,7 +1,7 @@
 {
   "id": "ec2aabf5-8431-4a5f-8f95-06e160098e30",
   "name": "Complete Lookup Expense Class by Name",
-  "description": "",
+  "description": "Connects to parallel gateway to complete lookup of expense class by name process.",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_f64d6746_5c22_460b_81e7_b0e3a04bf4a5"
 }
