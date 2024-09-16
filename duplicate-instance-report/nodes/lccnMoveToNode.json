@@ -1,0 +1,12 @@
+{
+  "id": "b4e72925-19a4-47ed-8f31-e32cf8905123",
+  "name": "LCCN",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
+  "nodes": [
+    "{{{mod-workflow}}}/databaseQueryTask/9d943d76-ab21-4ca6-9eae-8df6e962c037",
+    "{{{mod-workflow}}}/emailTask/a32eae62-d2f3-4b7b-bbd4-275ba140555e",
+    "{{{mod-workflow}}}/connectTo/35bb9b1d-ffa5-4d20-b3c9-afd71ff3990e"
+  ]
+}

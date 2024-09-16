@@ -1,0 +1,6 @@
+{
+  "id": "3c9848b3-f5a4-4753-b916-2b73c88d9409",
+  "name": "End",
+  "description": "End of duplicate instance report workflow",
+  "deserializeAs": "EndEvent"
+}

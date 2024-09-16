@@ -1,0 +1,22 @@
+{
+  "id": "e14e6cfc-b069-4f2f-8903-d94714fd2574",
+  "name": "Compress Instance Duplications Report",
+  "description": "Compress instance duplications report as ZIP format",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

@@ -1,0 +1,7 @@
+{
+  "id": "c36f8e08-7e43-49b3-923f-ebb8629617c8",
+  "name": "ISBN Complete",
+  "description": "",
+  "deserializeAs": "ConnectTo",
+  "nodeId": "parallel_gateway_af9d6b6c_6d59_4735_9a7c_2314a68e0985"
+}

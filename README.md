@@ -796,3 +796,49 @@ Either wait for scheduled event to occur or manually execute via:
 ```shell
 fw run evans-pres-repr
 ```
+
+## duplicate-instance-report
+
+### Instance Duplication Report Workflow (Scheduled)
+
+This workflow emails a CSV report for Call Number, ISBN, LCCN, ISSN, and OCLC matches as well as a full instance duplication CSV report compressed with ZIP format.
+
+The full instance duplication CSV has the following columns. The title and author columns are wrapped in double quotes.
+
+```
+HRID, HRID2, OCLC, ISBN, ISSN, CALL_NUMBER, LCCN, TITLE, TITLE2, AUTHOR, AUTHOR2
+```
+
+Requires following path `/mnt/workflows/${tenantId}/duplicate-instance-report`.
+
+
+These variables are required when building and running the workflow:
+
+| Variable Name                  | Allowed Values | Brief Description |
+| ------------------------------ | -------------- | ----------------- |
+| ldp-url                        | URL            | LDP URL. |
+| ldp-user                       | string         | LDP login username. |
+| ldp-password                   | string         | LDP login password. |
+| duplicate-instance-report-from | e-mail address | The e-mail address of the report sender. |
+| duplicate-instance-report-to   | e-mail address | The e-mail address of the report recipient. |
+
+The scheduled event is for **12:00 AM UTC**, on the first of the month, only in January, April, July, and October.
+
+```shell
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set duplicate-instance-report-from ***
+fw config set duplicate-instance-report-to ***
+```
+
+To build and activate:
+```shell
+fw build duplicate-instance-report
+fw activate duplicate-instance-report
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run duplicate-instance-report
+```

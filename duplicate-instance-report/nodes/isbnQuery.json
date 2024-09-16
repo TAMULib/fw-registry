@@ -1,0 +1,27 @@
+{
+  "id": "84b7be20-ce1f-45f4-ad2e-7dff0c131e42",
+  "name": "ISBN Match Query",
+  "description": "Query to find instances with matching ISBN",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "isbnCount",
+    "type": "PROCESS",
+    "spin": false
+  },
+  "designation": "ldp",
+  "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/isbn-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "query": "WITH isbn AS (SELECT ie.instance_hrid, ii.identifier, NULLIF(LEFT(RIGHT(REGEXP_REPLACE(ii.identifier, ' .*', ''), 10), 9), ':') AS isbn, ie.title, sm.content AS author FROM folio_reporting.instance_ext ie JOIN folio_reporting.instance_identifiers ii ON ie.instance_hrid = ii.instance_hrid JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE ii.identifier_type_name = 'ISBN' AND ii.identifier NOT SIMILAR TO '(:|$)%' AND sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.identifier, l.isbn, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM isbn l JOIN isbn r ON l.isbn = r.isbn AND l.instance_hrid < r.instance_hrid",
+  "asyncBefore": true
+}
