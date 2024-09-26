@@ -1,0 +1,29 @@
+{
+  "id": "7bc30e09-6b69-40da-9a53-34e75fdcc488",
+  "name": "Email OCLC Matches",
+  "description": "Email CSV with instances with matching OCLC",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "oclcCount",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The instances with matching OCLC report has completed, see the results attached.\n${oclcCount} instance matches found.",
+  "mailMarkup": "<p>The instances with matching OCLC report has completed, see the results attached.</p><br/>${oclcCount} instance matches found.",
+  "mailSubject": "Matching OCLC Instances Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/oclc-${timestamp}.csv",
+  "includeAttachment": "${oclcCount}",
+  "asyncBefore": true
+}

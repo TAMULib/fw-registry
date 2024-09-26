@@ -1,0 +1,7 @@
+{
+  "id": "01c05fa9-6897-4e1c-b0bc-c56b187173e2",
+  "name": "ISSN Complete",
+  "description": "",
+  "deserializeAs": "ConnectTo",
+  "nodeId": "parallel_gateway_af9d6b6c_6d59_4735_9a7c_2314a68e0985"
+}

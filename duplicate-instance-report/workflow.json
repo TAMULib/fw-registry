@@ -1,0 +1,27 @@
+{
+  "id": "93c90a8c-5b39-4499-a0bc-a24d75444a5c",
+  "name": "Duplicate Instance Report Workflow",
+  "description": "Identify and report instances with matching OCLC, ISBN, ISSN, LCCN, or Call Number",
+  "versionTag": "1.0",
+  "historyTimeToLive": 0,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "{{{mod-workflow}}}/startEvent/bf39c55f-1fd6-41a5-a98a-c28d6d05da9d",
+    "{{{mod-workflow}}}/databaseConnectionTask/11f065f0-f1ea-47ed-abc9-146099572e7b",
+    "{{{mod-workflow}}}/parallelGateway/aea23b81-06b1-4795-8bab-ea562a854c83",
+    "{{{mod-workflow}}}/moveToNode/408a6624-8be4-4bdf-8688-75c23a730187",
+    "{{{mod-workflow}}}/moveToNode/3b2668b9-58aa-447e-b907-40cee663a3ea",
+    "{{{mod-workflow}}}/moveToNode/b4e72925-19a4-47ed-8f31-e32cf8905123",
+    "{{{mod-workflow}}}/databaseQueryTask/f548dd78-4cf5-4eb9-9b28-e4738470d44b",
+    "{{{mod-workflow}}}/compressFileTask/e14e6cfc-b069-4f2f-8903-d94714fd2574",
+    "{{{mod-workflow}}}/emailTask/da165c76-b891-4d01-9fbb-f8da1b1a6d12",
+    "{{{mod-workflow}}}/databaseDisconnectTask/db806bf5-49b8-4f8a-bf96-fc0258d3c31e",
+    "{{{mod-workflow}}}/endEvent/3c9848b3-f5a4-4753-b916-2b73c88d9409"
+  ],
+  "initialContext": {}
+}

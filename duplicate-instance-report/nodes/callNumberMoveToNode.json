@@ -1,0 +1,12 @@
+{
+  "id": "42c50baa-7d73-48ad-bd9b-53ffd6cd6eda",
+  "name": "CALL NUMBER",
+  "description": "",
+  "deserializeAs": "MoveToNode",
+  "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
+  "nodes": [
+    "{{{mod-workflow}}}/databaseQueryTask/7a20c05e-2a58-42f2-9769-42e5b7045343",
+    "{{{mod-workflow}}}/emailTask/b5dca523-4a24-4d02-a122-6ea8c9f34ac4",
+    "{{{mod-workflow}}}/connectTo/53c5ca0f-9116-4bcf-86ba-ad4b4770aaaf"
+  ]
+}

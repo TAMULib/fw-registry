@@ -1,0 +1,29 @@
+{
+  "id": "b5dca523-4a24-4d02-a122-6ea8c9f34ac4",
+  "name": "Email Call Number Matches",
+  "description": "Email CSV with instances with matching call numbers",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "callNumberCount",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The instances with matching Call Number report has completed, see the results attached.\n${callNumberCount} instance matches found.",
+  "mailMarkup": "<p>The instances with matching Call Number report has completed, see the results attached.</p><br/>${callNumberCount} instance matches found.",
+  "mailSubject": "Matching Call Number Instances Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/call-number-${timestamp}.csv",
+  "includeAttachment": "${callNumberCount}",
+  "asyncBefore": true
+}

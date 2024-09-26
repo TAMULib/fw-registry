@@ -1,0 +1,29 @@
+{
+  "id": "f2cd0c7a-0dbe-4daa-b1ea-29455044a505",
+  "name": "Email ISSN Matches",
+  "description": "Email CSV with instances with matching ISSN",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "issnCount",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The instances with matching ISSN report has completed, see the results attached.\n${issnCount} instance matches found.",
+  "mailMarkup": "<p>The instances with matching ISSN report has completed, see the results attached.</p><br/>${issnCount} instance matches found.",
+  "mailSubject": "Matching ISSN Instances Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/issn-${timestamp}.csv",
+  "includeAttachment": "${issnCount}",
+  "asyncBefore": true
+}

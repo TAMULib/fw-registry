@@ -1,0 +1,27 @@
+{
+  "id": "7a20c05e-2a58-42f2-9769-42e5b7045343",
+  "name": "Call Number Match Query",
+  "description": "Query to find instances with matching call number",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "callNumberCount",
+    "type": "PROCESS",
+    "spin": false
+  },
+  "designation": "ldp",
+  "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/call-number-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "query": "WITH call_number AS (SELECT ie.instance_hrid, he.call_number_type_id, he.call_number_type_name, he.call_number, TRIM(CONCAT_WS(' ', he.call_number_prefix, he.call_number, he.call_number_suffix)) AS full_call_number, ie.title, sm.content AS author FROM folio_reporting.instance_ext ie JOIN folio_reporting.holdings_ext he ON ie.instance_id = he.instance_id JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE he.call_number IS NOT NULL AND he.call_number !~ '^\\s*$' AND he.call_number_type_id IS NOT NULL AND sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.call_number AS call_number, r.call_number AS call_number2, l.full_call_number, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM call_number l JOIN call_number r ON l.full_call_number = r.full_call_number AND l.instance_hrid < r.instance_hrid",
+  "asyncBefore": true
+}
