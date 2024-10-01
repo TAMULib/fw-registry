@@ -8,7 +8,7 @@
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "{\"username\": \"{{{username}}}\", \"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
   },
   "inputVariables": [
     {
@@ -17,7 +17,8 @@
     },
     {
       "key": "password",
-      "type": "PROCESS"
+      "type": "PROCESS",
+      "asSecure": true
     }
   ],
   "headerOutputVariables": [

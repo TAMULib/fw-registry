@@ -8,9 +8,19 @@
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "{\"username\": \"{{{username}}}\",\"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
   },
-  "inputVariables": [],
+  "inputVariables": [
+    {
+      "key": "username",
+      "type": "PROCESS"
+    },
+    {
+      "key": "password",
+      "type": "PROCESS",
+      "asSecure": true
+    }
+  ],
   "headerOutputVariables": [
     {
       "key": "X-Okapi-Token",

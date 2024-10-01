@@ -17,7 +17,8 @@
     },
     {
       "key": "password",
-      "type": "PROCESS"
+      "type": "PROCESS",
+      "asSecure": true
     }
   ],
   "headerOutputVariables": [
