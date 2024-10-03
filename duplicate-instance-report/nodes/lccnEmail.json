@@ -1,0 +1,29 @@
+{
+  "id": "a32eae62-d2f3-4b7b-bbd4-275ba140555e",
+  "name": "Email LCCN Matches",
+  "description": "Email CSV with instances with matching LCCN",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "lccnCount",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The instances with matching LCCN report has completed, see the results attached.\n${lccnCount} instance matches found.",
+  "mailMarkup": "<p>The instances with matching LCCN report has completed, see the results attached.</p><br/>${lccnCount} instance matches found.",
+  "mailSubject": "Matching LCCN Instances Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/lccn-${timestamp}.csv",
+  "includeAttachment": "${lccnCount}",
+  "asyncBefore": true
+}

@@ -1,0 +1,27 @@
+{
+  "id": "403c8b97-2901-494a-bcdd-bfbbe23a1aa8",
+  "name": "ISSN Match Query",
+  "description": "Query to find instances with matching ISSN",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "issnCount",
+    "type": "PROCESS",
+    "spin": false
+  },
+  "designation": "ldp",
+  "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/issn-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "query": "WITH issn_with_title AS (SELECT ie.instance_hrid, sm.content AS issn, ie.title FROM folio_reporting.instance_ext ie JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE field = '022' AND ord = 1 AND sf = 'a'), issn AS (SELECT issnwt.instance_hrid, issnwt.issn, issnwt.title, sm.content AS author FROM issn_with_title issnwt JOIN public.srs_marctab sm ON issnwt.instance_hrid = sm.instance_hrid WHERE sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.issn, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM issn l JOIN issn r ON l.issn = r.issn AND l.instance_hrid < r.instance_hrid",
+  "asyncBefore": true
+}

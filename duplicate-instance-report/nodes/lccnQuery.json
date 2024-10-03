@@ -1,0 +1,27 @@
+{
+  "id": "9d943d76-ab21-4ca6-9eae-8df6e962c037",
+  "name": "LCCN Match Query",
+  "description": "Query to find instances with matching LCCN",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "lccnCount",
+    "type": "PROCESS",
+    "spin": false
+  },
+  "designation": "ldp",
+  "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/lccn-${timestamp}.csv",
+  "resultType": "CSV",
+  "includeHeader": true,
+  "query": "WITH lccn AS (SELECT ie.instance_hrid, ii.identifier AS lccn, ie.title, sm.content AS author FROM folio_reporting.instance_ext ie JOIN folio_reporting.instance_identifiers ii ON ie.instance_hrid = ii.instance_hrid JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE ii.identifier_type_name = 'LCCN' AND sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.lccn, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM lccn l JOIN lccn r ON l.lccn = r.lccn AND l.instance_hrid < r.instance_hrid",
+  "asyncBefore": true
+}

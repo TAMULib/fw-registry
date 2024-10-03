@@ -1,0 +1,29 @@
+{
+  "id": "da165c76-b891-4d01-9fbb-f8da1b1a6d12",
+  "name": "Email Instance Duplications Report",
+  "description": "Email CSV with duplicate instances hrids and match criterium",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "count",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The Instance Duplication Report has completed, see the results attached.\n${count} instance matches found.",
+  "mailMarkup": "<p>The Instance Duplication Report has completed, see the results attached.</p><br/>${count} instance matches found.",
+  "mailSubject": "Instance Duplication Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.zip",
+  "includeAttachment": "${count}",
+  "asyncBefore": true
+}

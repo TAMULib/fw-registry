@@ -1,0 +1,29 @@
+{
+  "id": "66356870-9e8a-406b-ae3d-5fcffef0c556",
+  "name": "Email ISBN Matches",
+  "description": "Email CSV with instances with matching ISBN",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "isbnCount",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailFrom": "{{{duplicate-instance-report-from}}}",
+  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailText": "The instances with matching ISBN report has completed, see the results attached.\n${isbnCount} instance matches found.",
+  "mailMarkup": "<p>The instances with matching ISBN report has completed, see the results attached.</p><br/>${isbnCount} instance matches found.",
+  "mailSubject": "Matching ISBN Instances Report - LDP {{{ldp-url}}}",
+  "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/isbn-${timestamp}.csv",
+  "includeAttachment": "${isbnCount}",
+  "asyncBefore": true
+}
