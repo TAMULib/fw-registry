@@ -722,6 +722,7 @@ These variables are required when building and running the workflow:
 | ldp-password            | string         | LDP login password. |
 | ldp-url                 | URL            | LDP URL. |
 | ldp-user                | string         | LDP login username. |
+| locationName            | string         | A JSON Array of location names from the reporting table `item_ext`. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
 | password                | string         | Okapi login password. |
@@ -754,7 +755,7 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{"logLevel": "INFO", "startRange": "a0", "endRange":"b9","username":"*","password":"*", "bcnMailTo": "recipient@tamu.edu", "path": "/mnt/workflows/diku/bcn" }'
+  --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "logLevel": "INFO", "password":"*", "path": "/mnt/workflows/diku/bcn", "startRange": "a0", "username":"*" }'
 ```
 
 ## evans-pres-repr
