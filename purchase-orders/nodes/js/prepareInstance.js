@@ -37,7 +37,7 @@ mappedInstanceObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 mappedInstanceObj._version = 1;
 
 if (logLevel === 'DEBUG') {
-  print('\ninstance = ' + JSON.stringify(mappedInstanceObj) + '\n');
+  print('\nmappedInstance = ' + JSON.stringify(mappedInstanceObj) + '\n');
 }
 
 execution.setVariable('instance', S(JSON.stringify(mappedInstanceObj)));
