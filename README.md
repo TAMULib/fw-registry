@@ -172,8 +172,10 @@ These variables are required when building and running the workflow:
 | holdingsType     | string         | A holdings type to use. |
 | logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | materialType     | string         | A material type to use. |
+| mod-workflow     | URL            | Mod-Workflow URL. |
 | noteType         | string         | A Note type. |
 | okapiUrl         | URL            | The (public or external) Okapi URL. |
+| okapi-internal   | URL            | The (internal) Okapi URL. |
 | password         | string         | Okapi login password. |
 | path             | directory path | The directory on the system where the MARC file is stored. |
 | permELocation    | string         | A permanent e-location to use. |
@@ -183,6 +185,11 @@ These variables are required when building and running the workflow:
 | tempLoanType     | string         | A temporary Loan type to use. |
 | tempLocation     | string         | A temporary location to use. |
 | username         | string         | Okapi login username. |
+
+```shell
+fw config set mod-workflow ***
+fw config set okapi-internal ***
+```
 
 ```shell
 fw build purchase-orders
