@@ -160,27 +160,36 @@ Purchase Orders Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| eHoldingsType   | string         | An e-holdings type to use. |
-| emailFrom       | e-mail address | The e-mail address of the sender. |
-| emailTo         | e-mail address | The e-mail address of the recipient. |
-| eMaterialType   | string         | An e-material type to use. |
-| file            | file name      | The file path within the specified directory path representing the MARC file to process. |
-| fiscalYearCode  | string         | A fiscal year code to use. |
-| logLevel        | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| materialType    | string         | A material type to use. |
-| noteType        | string         | A Note type. |
-| okapiUrl        | URL            | The (public or external) Okapi URL. |
-| password        | string         | Okapi login password. |
-| path            | directory path | The directory on the system where the MARC file is stored. |
-| permELocation   | string         | A permanent e-location to use. |
-| permLoanType    | string         | A permanent Loan type to use. |
-| permLocation    | string         | A permanent location to use. |
-| statisticalCode | string         | A statistical code to use. |
-| tempLoanType    | string         | A temporary Loan type to use. |
-| tempLocation    | string         | A temporary location to use. |
-| username        | string         | Okapi login username. |
+|  Variable Name   | Allowed Values | Brief Description |
+| ---------------- | -------------- | ----------------- |
+| callNumberTypeId | string         | A call number type ID to use. |
+| eHoldingsType    | string         | An e-holdings type to use. |
+| emailFrom        | e-mail address | The e-mail address of the sender. |
+| emailTo          | e-mail address | The e-mail address of the recipient. |
+| eMaterialType    | string         | An e-material type to use. |
+| file             | file name      | The file path within the specified directory path representing the MARC file to process. |
+| fiscalYearCode   | string         | A fiscal year code to use. |
+| holdingsType     | string         | A holdings type to use. |
+| logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| materialType     | string         | A material type to use. |
+| mod-workflow     | URL            | Mod-Workflow URL. |
+| noteType         | string         | A Note type. |
+| okapiUrl         | URL            | The (public or external) Okapi URL. |
+| okapi-internal   | URL            | The (internal) Okapi URL. |
+| password         | string         | Okapi login password. |
+| path             | directory path | The directory on the system where the MARC file is stored. |
+| permELocation    | string         | A permanent e-location to use. |
+| permLoanType     | string         | A permanent Loan type to use. |
+| permLocation     | string         | A permanent location to use. |
+| statisticalCode  | string         | A statistical code to use. |
+| tempLoanType     | string         | A temporary Loan type to use. |
+| tempLocation     | string         | A temporary location to use. |
+| username         | string         | Okapi login username. |
+
+```shell
+fw config set mod-workflow ***
+fw config set okapi-internal ***
+```
 
 ```shell
 fw build purchase-orders
@@ -191,25 +200,27 @@ fw activate purchase-orders
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/purchase-orders/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: diku' \
---form 'logLevel="INFO"' \
---form 'file=@"/example.mrc"' \
---form 'path="/mnt/po"' \
---form 'statisticalCode="ybppapp"' \
---form 'okapiUrl="https://folio-okapi-test.library.tamu.edu"' \
---form 'username="***"' \
---form 'password="***"' \
---form 'permLocation="Evans stk"' \
---form 'tempLocation="Evans nbs"' \
---form 'fiscalYearCode="FY2021"' \
---form 'permLoanType="normal"' \
---form 'tempLoanType="newbook"' \
---form 'noteType="General note"' \
---form 'materialType="unmediated -- volume"' \
---form 'permELocation="www_evans"' \
---form 'eMaterialType="computer -- online resource"' \
+--form 'callNumberTypeId="95467209-6d7b-468b-94df-0f5d7ad2747d"' \
 --form 'eHoldingsType="Unknown"' \
 --form 'emailFrom="me@example.com"' \
---form 'emailTo="you@example.com"'
+--form 'emailTo="you@example.com"' \
+--form 'eMaterialType="computer -- online resource"' \
+--form 'file=@"/example.mrc"' \
+--form 'fiscalYearCode="FY2021"' \
+--form 'holdingsType="Monograph"' \
+--form 'logLevel="INFO"' \
+--form 'materialType="unmediated -- volume"' \
+--form 'noteType="General note"' \
+--form 'okapiUrl="https://okapi"' \
+--form 'password="***"' \
+--form 'path="/mnt/po"' \
+--form 'permELocation="www_evans"' \
+--form 'permLoanType="normal"' \
+--form 'permLocation="Evans stk"' \
+--form 'statisticalCode="ybppapp"' \
+--form 'tempLoanType="newbook"' \
+--form 'tempLocation="Evans nbs"' \
+--form 'username="***"'
 ```
 
 ## circ-fines
