@@ -28,7 +28,7 @@ var from = 'folio_reporting.holdings_ext holdings_ext'
             + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.holdings_statements hold_state ON holdings_ext.holdings_hrid = hold_state.holdings_hrid'
             + '\n\t\tLEFT JOIN folio_reporting.items_holdings_instances item_hold_in ON holdings_ext.instance_id = item_hold_in.instance_id'
-            + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id  = item_detail.holdings_id';
+            + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id = item_detail.holdings_id';
 
 var where = 'TRUE';
 
@@ -146,7 +146,7 @@ var shelflistQuery = '\n'
        + '\n\t\tMAX(item_hist.last_transaction) AS last_trans_date,'
        + '\n\t\tstring_agg(DISTINCT item_ext.material_type_name, \' || \'  ORDER BY item_ext.material_type_name ASC) AS item_material_type'
        + '\n\tFROM folio_reporting.holdings_ext holdings_ext'
-       + '\n\t\tLEFT JOIN folio_reporting.item_ext item_ext ON holdings_ext.holdings_id = item_ext.holdings_record_id'
+       + '\n\t\tLEFT JOIN folio_reporting.item_ext item_ext ON holdings_ext.holdings_id = item_ext.holdings_id'
        + '\n\t\tLEFT JOIN mis.item_history item_hist ON item_ext.item_id = item_hist.item_id'
        + '\n\tGROUP BY'
        + '\n\t\tholdings_ext.holdings_id'
