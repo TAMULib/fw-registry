@@ -1,0 +1,6 @@
+{
+  "id": "f2ff8708-ff62-4a04-832b-7d2f67bba8e6",
+  "name": "End",
+  "description": "End of Example Javascript ScriptTask Workflow.",
+  "deserializeAs": "EndEvent"
+}
