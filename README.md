@@ -172,7 +172,6 @@ These variables are required when building and running the workflow:
 | holdingsType     | string         | A holdings type to use. |
 | logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | materialType     | string         | A material type to use. |
-| mod-workflow     | URL            | Mod-Workflow URL. |
 | noteType         | string         | A Note type. |
 | okapiUrl         | URL            | The (public or external) Okapi URL. |
 | okapi-internal   | URL            | The (internal) Okapi URL. |
@@ -187,7 +186,6 @@ These variables are required when building and running the workflow:
 | username         | string         | Okapi login username. |
 
 ```shell
-fw config set mod-workflow ***
 fw config set okapi-internal ***
 ```
 
