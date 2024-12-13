@@ -1,0 +1,19 @@
+{
+  "id": "4719b39b-e017-423e-814e-4b648bb9327e",
+  "name": "Example JS ScriptTask",
+  "description": "An example ScriptTask Workflow using Javascript.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/84d0181e-8e0f-4d80-a580-03fe45b3c179",
+    "/scriptTask/fdcb6711-880e-409f-a247-02304cc83acc",
+    "/endEvent/f2ff8708-ff62-4a04-832b-7d2f67bba8e6"
+  ],
+  "initialContext": {}
+}

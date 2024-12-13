@@ -287,6 +287,43 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/workfl
   --data-raw '{ "logLevel": "INFO" }'
 ```
 
+## example-scripttask-js
+
+### Example ScriptTask Javascript
+
+This workflows prints a variable and, based on a build variable substitution, will print the original or alternate value.
+
+These variables are available or required when triggering the workflow:
+
+|   Variable Name    | Allowed Values | Short Description |
+| ------------------ | -------------- | ----------------- |
+| logLevel           | [INFO,DEBUG]   | Desired log level. |
+| exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed. |
+
+```shell
+fw config set exampleInjectValue "Custom Value"
+```
+
+To build and activate:
+```shell
+fw build example-scripttask-js
+fw activate example-scripttask-js
+```
+
+To manually execute via:
+```shell
+fw run example-scripttask-js
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-scripttask-js/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
+```
+
 ## example-scripttask-ruby
 
 ### Example ScriptTask Ruby

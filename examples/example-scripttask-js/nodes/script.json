@@ -1,0 +1,8 @@
+{
+  "id": "fdcb6711-880e-409f-a247-02304cc83acc",
+  "name": "Run Script",
+  "description": "Check to see how variable substitution works while running in Javascript.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "script.js"
+}
