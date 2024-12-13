@@ -4,8 +4,8 @@
   "description": "",
   "deserializeAs": "ParallelGateway",
   "nodes": [
-    "{{{mod-workflow}}}/databaseQueryTask/724e34bf-c539-411e-bb62-cd15da9ff515",
-    "{{{mod-workflow}}}/emailTask/7bc30e09-6b69-40da-9a53-34e75fdcc488",
-    "{{{mod-workflow}}}/parallelGateway/af9d6b6c-6d59-4735-9a7c-2314a68e0985"
+    "/databaseQueryTask/724e34bf-c539-411e-bb62-cd15da9ff515",
+    "/emailTask/7bc30e09-6b69-40da-9a53-34e75fdcc488",
+    "/parallelGateway/af9d6b6c-6d59-4735-9a7c-2314a68e0985"
   ]
 }
