@@ -38,16 +38,18 @@ DivIT patron workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| divit-password | string         | DivIt login password. |
-| divit-url      | URL            | DivIt URL. |
-| divit-user     | string         | DivIt login username. |
+|    Variable Name    | Allowed Values | Brief Description |
+| ------------------- | -------------- | ----------------- |
+| divit-password      | string         | DivIt login password. |
+| divit-url           | URL            | DivIt URL. |
+| divit-user          | string         | DivIt login username. |
+| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only). |
 
 ```shell
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
+fw config set overridePatronEmail ***
 ```
 
 ```shell
