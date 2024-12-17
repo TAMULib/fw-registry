@@ -38,16 +38,18 @@ DivIT patron workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| divit-password | string         | DivIt login password. |
-| divit-url      | URL            | DivIt URL. |
-| divit-user     | string         | DivIt login username. |
+|    Variable Name    | Allowed Values | Brief Description |
+| ------------------- | -------------- | ----------------- |
+| divit-password      | string         | DivIt login password. |
+| divit-url           | URL            | DivIt URL. |
+| divit-user          | string         | DivIt login username. |
+| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only). |
 
 ```shell
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
+fw config set overridePatronEmail ***
 ```
 
 ```shell
@@ -172,7 +174,6 @@ These variables are required when building and running the workflow:
 | holdingsType     | string         | A holdings type to use. |
 | logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | materialType     | string         | A material type to use. |
-| mod-workflow     | URL            | Mod-Workflow URL. |
 | noteType         | string         | A Note type. |
 | okapiUrl         | URL            | The (public or external) Okapi URL. |
 | okapi-internal   | URL            | The (internal) Okapi URL. |
@@ -187,7 +188,6 @@ These variables are required when building and running the workflow:
 | username         | string         | Okapi login username. |
 
 ```shell
-fw config set mod-workflow ***
 fw config set okapi-internal ***
 ```
 

@@ -5,8 +5,8 @@
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
   "nodes": [
-    "{{{mod-workflow}}}/databaseQueryTask/403c8b97-2901-494a-bcdd-bfbbe23a1aa8",
-    "{{{mod-workflow}}}/emailTask/f2cd0c7a-0dbe-4daa-b1ea-29455044a505",
-    "{{{mod-workflow}}}/connectTo/01c05fa9-6897-4e1c-b0bc-c56b187173e2"
+    "/databaseQueryTask/403c8b97-2901-494a-bcdd-bfbbe23a1aa8",
+    "/emailTask/f2cd0c7a-0dbe-4daa-b1ea-29455044a505",
+    "/connectTo/01c05fa9-6897-4e1c-b0bc-c56b187173e2"
   ]
 }

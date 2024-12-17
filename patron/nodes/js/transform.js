@@ -30,6 +30,10 @@ function tranform(patrons) {
     personal.phone = FormatUtility.normalizePhoneNumber(patron.personal_phone);
     personal.preferredContactTypeId = 'email';
 
+    if ("{{{overridePatronEmail}}}" != "") {
+      personal.email = "{{{overridePatronEmail}}}";
+    }
+
     if (patron.addresses_permanent_addressLine1) {
       var permanentAddress = {};
 

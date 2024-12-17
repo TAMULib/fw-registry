@@ -1,0 +1,8 @@
+{
+  "id": "84d0181e-8e0f-4d80-a580-03fe45b3c179",
+  "name": "Start",
+  "description": "Start of Example Javascript ScriptTask Workflow.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/workflow/example-scripttask-js/start"
+}

@@ -28,7 +28,7 @@ var from = 'folio_reporting.holdings_ext holdings_ext'
             + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id'
             + '\n\t\tLEFT JOIN folio_reporting.holdings_statements hold_state ON holdings_ext.holdings_hrid = hold_state.holdings_hrid'
             + '\n\t\tLEFT JOIN folio_reporting.items_holdings_instances item_hold_in ON holdings_ext.instance_id = item_hold_in.instance_id'
-            + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id  = item_detail.holdings_id';
+            + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id = item_detail.holdings_id';
 
 var where = 'TRUE';
 
