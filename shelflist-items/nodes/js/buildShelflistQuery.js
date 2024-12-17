@@ -29,7 +29,7 @@ var cte = 'WITH oclc_identifiers AS ('
           + '\n)';
 
 var from = 'folio_reporting.item_ext item_ext'
-            + '\n\tinner join folio_reporting.holdings_ext holdings_ext on item_ext.holdings_id =  holdings_ext.holdings_id'
+            + '\n\tinner join folio_reporting.holdings_ext holdings_ext on item_ext.holdings_record_id =  holdings_ext.holdings_id'
             + '\n\tleft join mis.item_history history on item_ext.item_id = history.item_id'
             + '\n\tleft join folio_reporting.instance_ext instance_ext on instance_ext.instance_id = holdings_ext.instance_id'
             + '\n\tleft join folio_reporting.instance_publication instance_pub on instance_pub.instance_id = instance_ext.instance_id'
