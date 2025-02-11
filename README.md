@@ -38,17 +38,17 @@ DivIT patron workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-|    Variable Name    | Allowed Values | Brief Description |
-| ------------------- | -------------- | ----------------- |
-| divit-password      | string         | DivIt login password. |
-| divit-url           | URL            | DivIt URL. |
-| divit-user          | string         | DivIt login username. |
-| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only). |
+|    Variable Name    | Allowed Values | Brief Description
+| ------------------- | -------------- | -----------------
+| divitPassword       | string         | DivIt login password.
+| divitUrl            | URL            | DivIt URL.
+| divitUser           | string         | DivIt login username.
+| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only).
 
 ```shell
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
+fw config set divitUrl ***
+fw config set divitUser ***
+fw config set divitPassword ***
 fw config set overridePatronEmail ***
 ```
 
@@ -63,20 +63,20 @@ Extract for ORCID workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| divit-password  | string         | DivIt login password. |
-| divit-url       | URL            | DivIt URL. |
-| divit-user      | string         | DivIt login username. |
-| orcid-mail-from | e-mail address | The e-mail address of the sender. |
-| orcid-mail-to   | e-mail address | The e-mail address of the recipient. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| divitPassword  | string         | DivIt login password.
+| divitUrl       | URL            | DivIt URL.
+| divitUser      | string         | DivIt login username.
+| orcidMailFrom  | e-mail address | The e-mail address of the sender.
+| orcidMailTo    | e-mail address | The e-mail address of the recipient.
 
 ```shell
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
-fw config set orcid-mail-from ***
-fw config set orcid-mail-to ***
+fw config set divitUrl ***
+fw config set divitUser ***
+fw config set divitPassword ***
+fw config set orcidMailFrom ***
+fw config set orcidMailTo ***
 ```
 
 ```shell
@@ -97,20 +97,20 @@ ISBN report to GOBI workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| gobi-mail-from | e-mail address | The e-mail address of the sender. |
-| gobi-mail-to   | e-mail address | The e-mail address of the recipient. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| gobiMailFrom   | e-mail address | The e-mail address of the sender.
+| gobiMailTo     | e-mail address | The e-mail address of the recipient.
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
-fw config set gobi-mail-from ***
-fw config set gobi-mail-to ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
+fw config set gobiMailFrom ***
+fw config set gobiMailTo ***
 ```
 
 ```shell
@@ -124,18 +124,18 @@ E-resource Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| divit-password | string         | DivIt login password. |
-| divit-url      | URL            | DivIt URL. |
-| divit-user     | string         | DivIt login username. |
-| resource-view  | string         | The name of the resource view. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| divitPassword  | string         | DivIt login password.
+| divitUrl       | URL            | DivIt URL.
+| divitUser      | string         | DivIt login username.
+| resourceView   | string         | The name of the resource view.
 
 ```shell
-fw config set e-resource-view LIBRARY_ERESOURCES
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
+fw config set e-resourceView LIBRARY_ERESOURCES
+fw config set divitUrl ***
+fw config set divitUser ***
+fw config set divitPassword ***
 ```
 
 ```shell
@@ -162,33 +162,33 @@ Purchase Orders Workflow.
 
 These variables are required when building and running the workflow:
 
-|  Variable Name   | Allowed Values | Brief Description |
-| ---------------- | -------------- | ----------------- |
-| callNumberTypeId | string         | A call number type ID to use. |
-| eHoldingsType    | string         | An e-holdings type to use. |
-| emailFrom        | e-mail address | The e-mail address of the sender. |
-| emailTo          | e-mail address | The e-mail address of the recipient. |
-| eMaterialType    | string         | An e-material type to use. |
-| file             | file name      | The file path within the specified directory path representing the MARC file to process. |
-| fiscalYearCode   | string         | A fiscal year code to use. |
-| holdingsType     | string         | A holdings type to use. |
-| logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| materialType     | string         | A material type to use. |
-| noteType         | string         | A Note type. |
-| okapiUrl         | URL            | The (public or external) Okapi URL. |
-| okapi-internal   | URL            | The (internal) Okapi URL. |
-| password         | string         | Okapi login password. |
-| path             | directory path | The directory on the system where the MARC file is stored. |
-| permELocation    | string         | A permanent e-location to use. |
-| permLoanType     | string         | A permanent Loan type to use. |
-| permLocation     | string         | A permanent location to use. |
-| statisticalCode  | string         | A statistical code to use. |
-| tempLoanType     | string         | A temporary Loan type to use. |
-| tempLocation     | string         | A temporary location to use. |
-| username         | string         | Okapi login username. |
+|  Variable Name   | Allowed Values | Brief Description
+| ---------------- | -------------- | -----------------
+| callNumberTypeId | string         | A call number type ID to use.
+| eHoldingsType    | string         | An e-holdings type to use.
+| emailFrom        | e-mail address | The e-mail address of the sender.
+| emailTo          | e-mail address | The e-mail address of the recipient.
+| eMaterialType    | string         | An e-material type to use.
+| file             | file name      | The file path within the specified directory path representing the MARC file to process.
+| fiscalYearCode   | string         | A fiscal year code to use.
+| holdingsType     | string         | A holdings type to use.
+| logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| materialType     | string         | A material type to use.
+| noteType         | string         | A Note type.
+| okapiUrl         | URL            | The (public or external) Okapi URL.
+| okapiInternal    | URL            | The (internal) Okapi URL.
+| password         | string         | Okapi login password.
+| path             | directory path | The directory on the system where the MARC file is stored.
+| permELocation    | string         | A permanent e-location to use.
+| permLoanType     | string         | A permanent Loan type to use.
+| permLocation     | string         | A permanent location to use.
+| statisticalCode  | string         | A statistical code to use.
+| tempLoanType     | string         | A temporary Loan type to use.
+| tempLocation     | string         | A temporary location to use.
+| username         | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
+fw config set okapiInternal ***
 ```
 
 ```shell
@@ -229,18 +229,18 @@ Circulation Fees/Fines Daily Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password         | string         | LDP login password. |
-| ldp-url              | URL            | LDP URL. |
-| ldp-user             | string         | LDP login username. |
-| medsci-gps-zone-from | e-mail address | The e-mail address of the sender. |
-| medsci-gps-zone-to   | e-mail address | The e-mail address of the recipient. |
+| Variable Name      | Allowed Values | Brief Description
+| ------------------ | -------------- | -----------------
+| ldpPassword        | string         | LDP login password.
+| ldpUrl             | URL            | LDP URL.
+| ldpUser            | string         | LDP login username.
+| medsciGpsZoneFrom  | e-mail address | The e-mail address of the sender.
+| medsciGpsZoneTo    | e-mail address | The e-mail address of the recipient.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 fw config set circ-fines-mail-from ***
 fw config set circ-fines-mail-to ***
 ```
@@ -256,16 +256,16 @@ Rapid ILS Print Serials Monthly Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -279,16 +279,16 @@ Rapid ILS Print Monos Monthly Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -342,18 +342,18 @@ CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| coral-url      | URL            | Coral server URL. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| coralUrl       | URL            | Coral server URL.
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set coral-url ***
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set coralUrl ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -375,20 +375,20 @@ For the `medsci-gps-zone-file` setting, the file name (without the path part) sh
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| divit-password       | string         | DivIt login password. |
-| divit-url            | URL            | DivIt URL. |
-| divit-user           | string         | DivIt login username. |
-| medsci-gps-zone-from | e-mail address | The e-mail address of the sender. |
-| medsci-gps-zone-to   | e-mail address | The e-mail address of the recipient. |
+| Variable Name     | Allowed Values | Brief Description
+| ----------------- | -------------- | -----------------
+| divitPassword     | string         | DivIt login password.
+| divitUrl          | URL            | DivIt URL.
+| divitUser         | string         | DivIt login username.
+| medsciGpsZoneFrom | e-mail address | The e-mail address of the sender.
+| medsciGpsZoneTo   | e-mail address | The e-mail address of the recipient.
 
 ```shell
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
-fw config set medsci-gps-zone-from ***
-fw config set medsci-gps-zone-to ***
+fw config set divitUrl ***
+fw config set divitUser ***
+fw config set divitPassword ***
+fw config set medsciGpsZoneFrom ***
+fw config set medsciGpsZoneTo ***
 ```
 
 ```shell
@@ -406,16 +406,16 @@ HathiTrust Export
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -433,14 +433,14 @@ Create Tags Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
-| password                | string         | Okapi login password. |
-| path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
-| username                | string         | Okapi login username.
+| Variable Name        | Allowed Values | Brief Description
+| -------------------- | -------------- | -----------------
+| file                 | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| logLevel             | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| misCatalogReportsUrl | URL            | Catalog Reports URL (must not include a trailing slash).
+| password             | string         | Okapi login password.
+| path                 | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+| username             | string         | Okapi login username.
 
 ```shell
 fw build create-tags
@@ -462,35 +462,35 @@ Shelflist (holdings level) Report Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| batchId                      | UUID   | A batch ID. |
-| createdDateEnd               | string | A created end date. |
-| createdDateStart             | string | A created start date. |
-| emailFrom                    | e-mail address | The e-mail address of the sender. |
-| emailTo                      | e-mail address | The e-mail address of the recipient. |
-| format                       | string | A JSON Array of formats. |
-| issuance                     | string | An issuance name. |
-| language                     | string | A JSON Array of languages. |
-| ldp-password                 | string | LDP login password. |
-| ldp-url                      | URL    | LDP URL. |
-| ldp-user                     | string | LDP login username. |
-| libraryName                  | string | A JSON Array of library names. |
-| logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| locationDiscoveryDisplayName | string | A JSON Array of location names. |
-| locationName                 | string | A JSON Array of location names. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
-| resourceType                 | string | A JSON Array of resource types. |
-| suppressHoldings             | boolean | Designate whether or not Holdings should be suppressed. |
-| suppressInstance             | boolean | Designate whether or not Instances should be suppressed. |
-| updatedDateEnd               | string | An updated end date. |
-| updatedDateStart             | string | An updated start date. |
+| Variable Name                | Allowed Values | Brief Description
+| ---------------------------- | -------------- | -----------------
+| batchId                      | UUID           | A batch ID.
+| createdDateEnd               | string         | A created end date.
+| createdDateStart             | string         | A created start date.
+| emailFrom                    | e-mail address | The e-mail address of the sender.
+| emailTo                      | e-mail address | The e-mail address of the recipient.
+| format                       | string         | A JSON Array of formats.
+| issuance                     | string         | An issuance name.
+| language                     | string         | A JSON Array of languages.
+| ldpPassword                  | string         | LDP login password.
+| ldpUrl                       | URL            | LDP URL.
+| ldpUser                      | string         | LDP login username.
+| libraryName                  | string         | A JSON Array of library names.
+| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| locationDiscoveryDisplayName | string         | A JSON Array of location names.
+| locationName                 | string         | A JSON Array of location names.
+| misCatalogReportsUrl         | URL            | Catalog Reports URL (must not include a trailing slash).
+| resourceType                 | string         | A JSON Array of resource types.
+| suppressHoldings             | boolean        | Designate whether or not Holdings should be suppressed.
+| suppressInstance             | boolean        | Designate whether or not Instances should be suppressed.
+| updatedDateEnd               | string         | An updated end date.
+| updatedDateStart             | string         | An updated start date.
 
 ```shell
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set misCatalogReportsUrl https://localhost/catalog_reports/site
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -509,32 +509,32 @@ Shelflist (items level) Report Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| batchId                      | UUID   | A batch ID. |
-| createdDateEnd               | string | A created end date. |
-| createdDateStart             | string | A created start date. |
-| emailFrom                    | e-mail address | The e-mail address of the sender. |
-| emailTo                      | e-mail address | The e-mail address of the recipient. |
-| itemStatus                   | string | A JSON Array of Item statuses. |
-| ldp-password                 | string | LDP login password. |
-| ldp-url                      | URL    | LDP URL. |
-| ldp-user                     | string | LDP login username. |
-| libraryName                  | string | A JSON Array of library names. |
-| loanType                     | string | A JSON Array of loan types. |
-| logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| locationDiscoveryDisplayName | string | A JSON Array of location names. |
-| locationName                 | string | A JSON Array of location names. |
-| materialType                 | string | A JSON Array of material types. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
-| updatedDateEnd               | string | An updated end date. |
-| updatedDateStart             | string | An updated start date. |
+| Variable Name                | Allowed Values | Brief Description
+| ---------------------------- | -------------- | -----------------
+| batchId                      | UUID           | A batch ID.
+| createdDateEnd               | string         | A created end date.
+| createdDateStart             | string         | A created start date.
+| emailFrom                    | e-mail address | The e-mail address of the sender.
+| emailTo                      | e-mail address | The e-mail address of the recipient.
+| itemStatus                   | string         | A JSON Array of Item statuses.
+| ldpPassword                  | string         | LDP login password.
+| ldpUrl                       | URL            | LDP URL.
+| ldpUser                      | string         | LDP login username.
+| libraryName                  | string         | A JSON Array of library names.
+| loanType                     | string         | A JSON Array of loan types.
+| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| locationDiscoveryDisplayName | string         | A JSON Array of location names.
+| locationName                 | string         | A JSON Array of location names.
+| materialType                 | string         | A JSON Array of material types.
+| misCatalogReportsUrl         | URL            | Catalog Reports URL (must not include a trailing slash).
+| updatedDateEnd               | string         | An updated end date.
+| updatedDateStart             | string         | An updated start date.
 
 ```shell
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set misCatalogReportsUrl https://localhost/catalog_reports/site
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -555,16 +555,16 @@ Item History Update Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 ```shell
@@ -587,20 +587,20 @@ The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
-| okapi-internal | URL            | The (internal) Okapi URL. |
-| password       | string         | Okapi login password. |
-| username       | string         | Okapi login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
+| okapiInternal  | URL            | The (internal) Okapi URL.
+| password       | string         | Okapi login password.
+| username       | string         | Okapi login username.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
-fw config set okapi-internal ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
+fw config set okapiInternal ***
 fw config set username ***
 fw config set password ***
 ```
@@ -630,28 +630,28 @@ At the end of this process, an e-mail is set to the given destination address.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| emailFrom      | e-mail address | The e-mail address of the sender. |
-| emailTo        | e-mail address | The e-mail address of the recipient. |
-| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| itemNoteTypeId | UUID           | The Item Note Type UUID to be used for the Note. |
-| noteText       | string         | A message used as the Note. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
-| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| okapi-internal | URL            | The (internal) Okapi URL. |
-| password       | string         | Okapi login password. |
-| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
-| staffOnly      | boolean        | Designate whether or not this is a *Staff Only* note. |
-| username       | string         | Okapi login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| emailFrom      | e-mail address | The e-mail address of the sender.
+| emailTo        | e-mail address | The e-mail address of the recipient.
+| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| itemNoteTypeId | UUID           | The Item Note Type UUID to be used for the Note.
+| noteText       | string         | A message used as the Note.
+| ldpPassword    | string         | LDP login password.
+| ldpUrl         | URL            | LDP URL.
+| ldpUser        | string         | LDP login username.
+| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| okapiInternal  | URL            | The (internal) Okapi URL.
+| password       | string         | Okapi login password.
+| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+| staffOnly      | boolean        | Designate whether or not this is a *Staff Only* note.
+| username       | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set okapiInternal ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 ```
 
 To build and activate:
@@ -683,19 +683,19 @@ For the uploaded CSV of call numbers, remove items that have been on the new boo
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| nbs-mail-from  | e-mail address | The e-mail address of the sender. |
-| emailTo        | e-mail address | The e-mail address of the recipient. |
-| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| password       | string         | Okapi login password. |
-| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
-| username       | string         | Okapi login username. |
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| emailTo        | e-mail address | The e-mail address of the recipient.
+| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| nbsMailFrom    | e-mail address | The e-mail address of the sender.
+| password       | string         | Okapi login password.
+| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+| username       | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
-fw config set nbs-mail-from ***
+fw config set okapiInternal ***
+fw config set nbsMailFrom ***
 ```
 
 To build and activate:
@@ -725,30 +725,30 @@ This workflow queries checked-out books within a specific call number range, gen
 
 These variables are required when building and running the workflow:
 
-| Variable Name           | Allowed Values | Brief Description |
-| --------------          | -------------- | ----------------- |
-| bcnMailFrom             | e-mail address | The e-mail address of the sender. |
-| bcnMailTo               | e-mail address | The e-mail address of the recipient. |
-| endRange                | string         | End range of call number. |
-| ldp-password            | string         | LDP login password. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
-| locationName            | string         | A JSON Array of location names from the reporting table `item_ext`. |
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
-| password                | string         | Okapi login password. |
-| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory). |
-| startRange              | string         | Start Range of call number. |
-| username                | string         | Okapi login username. |
+| Variable Name           | Allowed Values | Brief Description
+| --------------          | -------------- | -----------------
+| bcnMailFrom             | e-mail address | The e-mail address of the sender.
+| bcnMailTo               | e-mail address | The e-mail address of the recipient.
+| endRange                | string         | End range of call number.
+| ldpPassword             | string         | LDP login password.
+| ldpUrl                  | URL            | LDP URL.
+| ldpUser                 | string         | LDP login username.
+| locationName            | string         | A JSON Array of location names from the reporting table `item_ext`.
+| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| misCatalogReportsUrl    | URL            | Catalog Reports URL (must not include a trailing slash).
+| password                | string         | Okapi login password.
+| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory).
+| startRange              | string         | Start Range of call number.
+| username                | string         | Okapi login username.
 
 This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 fw config set bcnMailFrom ***
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set misCatalogReportsUrl https://localhost/catalog_reports/site
 ```
 
 To build and activate:
@@ -777,23 +777,23 @@ This workflow sends a monthly email containing a list of all items with 'tempora
 
 These variables are required when building and running the workflow:
 
-| Variable Name           | Allowed Values | Brief Description |
-| --------------          | -------------- | ----------------- |
-| evansPresReprFrom       | e-mail address | The e-mail address of the sender. |
-| evansPresReprTo         | e-mail address | The e-mail address of the recipient. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
-| ldp-password            | string         | LDP login password. |
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| Variable Name     | Allowed Values | Brief Description
+| ----------------- | -------------- | -----------------
+| evansPresReprFrom | e-mail address | The e-mail address of the sender.
+| evansPresReprTo   | e-mail address | The e-mail address of the recipient.
+| ldpUrl            | URL            | LDP URL.
+| ldpUser           | string         | LDP login username.
+| ldpPassword       | string         | LDP login password.
+| logLevel          | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 
 This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
 
 The scheduled event is for **8:00AM UTC** on the first day of every month.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
 fw config set evansPresReprFrom ***
 fw config set evansPresReprTo ***
 ```
@@ -826,22 +826,22 @@ Requires following path `/mnt/workflows/${tenantId}/duplicate-instance-report`.
 
 These variables are required when building and running the workflow:
 
-| Variable Name                  | Allowed Values | Brief Description |
-| ------------------------------ | -------------- | ----------------- |
-| ldp-url                        | URL            | LDP URL. |
-| ldp-user                       | string         | LDP login username. |
-| ldp-password                   | string         | LDP login password. |
-| duplicate-instance-report-from | e-mail address | The e-mail address of the report sender. |
-| duplicate-instance-report-to   | e-mail address | The e-mail address of the report recipient. |
+| Variable Name               | Allowed Values | Brief Description
+| --------------------------- | -------------- | -----------------
+| ldpUrl                      | URL            | LDP URL.
+| ldpUser                     | string         | LDP login username.
+| ldpPassword                 | string         | LDP login password.
+| duplicateInstanceReportFrom | e-mail address | The e-mail address of the report sender.
+| duplicateInstanceReportTo   | e-mail address | The e-mail address of the report recipient.
 
 The scheduled event is for **12:00 AM UTC**, on the first of the month, only in January, April, July, and October.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
-fw config set duplicate-instance-report-from ***
-fw config set duplicate-instance-report-to ***
+fw config set ldpUrl ***
+fw config set ldpUser ***
+fw config set ldpPassword ***
+fw config set duplicateInstanceReportFrom ***
+fw config set duplicateInstanceReportTo ***
 ```
 
 To build and activate:
