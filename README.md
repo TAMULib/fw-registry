@@ -1,5 +1,7 @@
 # fw-registry
 
+Copyright © 2019-2025 Texas A&M University Libraries under the [MIT license](LICENSE).
+
 Start mod-workflow and mod-camunda.
 
 ```shell
