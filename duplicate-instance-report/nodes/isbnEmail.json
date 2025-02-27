@@ -18,11 +18,11 @@
     }
   ],
   "outputVariable": {},
-  "mailFrom": "{{{duplicate-instance-report-from}}}",
-  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailFrom": "{{{duplicateInstanceReportFrom}}}",
+  "mailTo": "{{{duplicateInstanceReportTo}}}",
   "mailText": "The instances with matching ISBN report has completed, see the results attached.\n${isbnCount} instance matches found.",
   "mailMarkup": "<p>The instances with matching ISBN report has completed, see the results attached.</p><br/>${isbnCount} instance matches found.",
-  "mailSubject": "Matching ISBN Instances Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Matching ISBN Instances Report - LDP {{{ldpUrl}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/isbn-${timestamp}.csv",
   "includeAttachment": "${isbnCount}",
   "asyncBefore": true

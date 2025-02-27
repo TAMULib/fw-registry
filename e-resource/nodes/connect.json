@@ -6,8 +6,8 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "e-resource",
-  "url": "{{{divit-url}}}",
-  "username": "{{{divit-user}}}",
-  "password": "{{{divit-password}}}",
+  "url": "{{{divitUrl}}}",
+  "username": "{{{divitUser}}}",
+  "password": "{{{divitPassword}}}",
   "asyncBefore": true
 }

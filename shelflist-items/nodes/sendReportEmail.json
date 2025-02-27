@@ -21,7 +21,7 @@
   "mailTo": "${emailTo}",
   "mailFrom": "${emailFrom}",
   "mailSubject": "Shelflist (items level) Report",
-  "mailText": "Zipped Shelflist (items level) Report CSV can be downloaded with {{{mis-catalog-reports-url}}}/reports/?action=generate&reportId=siwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip",
-  "mailMarkup": "Click <a href=\"{{{mis-catalog-reports-url}}}/reports/?action=generate&reportId=siwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip\">here</a> to download Zipped Shelflist (items level) Report CSV",
+  "mailText": "Zipped Shelflist (items level) Report CSV can be downloaded with {{{misCatalogReportsUrl}}}/reports/?action=generate&reportId=siwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip",
+  "mailMarkup": "Click <a href=\"{{{misCatalogReportsUrl}}}/reports/?action=generate&reportId=siwf&configuration[fileName]=shelflist-items-report-${timestamp}.zip\">here</a> to download Zipped Shelflist (items level) Report CSV",
   "asyncBefore": true
 }

@@ -4,7 +4,7 @@
   "description": "Retrieves the instance created by the purchase order line.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/inventory/instances/${instanceId}",
+    "url": "{{{okapiInternal}}}/inventory/instances/${instanceId}",
     "method": "GET",
     "accept": "application/json"
   },

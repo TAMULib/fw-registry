@@ -4,7 +4,7 @@
   "description": "Creates a purchase order line note using POST request.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/notes",
+    "url": "{{{okapiInternal}}}/notes",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
