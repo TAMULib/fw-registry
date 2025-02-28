@@ -1,0 +1,18 @@
+{
+  "id": "ce38df14-9c16-4eae-bcb7-f09c07e566bd",
+  "name": "Hegis Purchase Order Workflow",
+  "description": "Sends email containing the hegis purchase order report.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/c490490f-ad52-4fef-827e-60be8f38f1d7",
+    "/endEvent/a5992be3-6bec-4273-bab2-ff3ee69d1aed"
+  ],
+  "initialContext": {}
+}
