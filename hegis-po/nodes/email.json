@@ -1,0 +1,31 @@
+{
+  "id": "187c74cd-e120-4f89-a73a-39ef1bcb973e",
+  "name": "Email Hegis Purchase Order Report",
+  "description": "Email the generated Hegis purchase order report.",
+  "deserializeAs": "EmailTask",
+  "inputVariables": [
+    {
+      "key": "emailTo",
+      "type": "PROCESS"
+    },
+    {
+      "key": "hegisPoEmailFrom",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "mailTo": "${emailTo}",
+  "mailFrom": "{{{hegisPoEmailFrom}}}",
+  "mailSubject": "TAMU Hegis Purchase Order Report",
+  "mailText": "TAMU Hegis Purchase Order Report",
+  "attachmentPath": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.zip",
+  "asyncBefore": true
+}

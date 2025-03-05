@@ -4,5 +4,5 @@
   "description": "Start workflow to email the generated hegis purchase order report.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/hegis-po/start"
+  "expression": "/events/hegis-po/start"
 }
