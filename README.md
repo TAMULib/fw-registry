@@ -87,7 +87,7 @@ fw activate orcid
 ```
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/orcid/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/orcid/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{"emailTo": "you@example.com"}'
@@ -152,7 +152,7 @@ fw run e-resource
 or
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/e-resource/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/e-resource/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{}'
@@ -199,7 +199,7 @@ fw activate purchase-orders
 ```
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/purchase-orders/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/purchase-orders/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: diku' \
 --form 'callNumberTypeId="95467209-6d7b-468b-94df-0f5d7ad2747d"' \
@@ -448,7 +448,7 @@ These variables are required when building and running the workflow:
 fw build create-tags
 fw activate create-tags
 
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-tags/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/create-tags/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: diku' \
 --form 'logLevel="INFO"' \
@@ -499,7 +499,7 @@ fw config set ldp-password ***
 fw build shelflist-holdings
 fw activate shelflist-holdings
 
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-holdings/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/shelflist-holdings/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{ "logLevel": "INFO", "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
@@ -545,7 +545,7 @@ fw activate shelflist-items
 ```
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/shelflist-items/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/shelflist-items/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{ "logLevel": "INFO", "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
@@ -664,7 +664,7 @@ fw activate create-notes
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/create-notes/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/create-notes/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
   --form 'logLevel="INFO"' \
@@ -708,7 +708,7 @@ fw activate remove-books-from-nbs
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/remove-books-from-nbs/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/remove-books-from-nbs/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
   --form 'logLevel="INFO"' \
@@ -765,7 +765,7 @@ The user initiates the form submission using the Catalog Reports Book-Call-Numbe
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/books-call-number/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "logLevel": "INFO", "password":"*", "path": "/mnt/workflows/diku/bcn", "startRange": "a0", "username":"*" }'

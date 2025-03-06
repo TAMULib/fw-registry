@@ -4,5 +4,5 @@
   "description": "Start of purchase order workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/purchase-orders/start"
+  "expression": "/events/purchase-orders/start"
 }

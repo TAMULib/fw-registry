@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/example-compressfiletask-zip/start"
+  "pathPattern": "/events/example-compressfiletask-zip/start"
 }

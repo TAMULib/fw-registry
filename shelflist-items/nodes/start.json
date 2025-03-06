@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/shelflist-items/start"
+  "expression": "/events/shelflist-items/start"
 }

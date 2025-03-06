@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/example-inputtask/start"
+  "pathPattern": "/events/example-inputtask/start"
 }

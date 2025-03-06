@@ -4,5 +4,5 @@
   "description": "Start workflow to email list of checked out books by call number.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/books-call-number/start"
+  "expression": "/events/books-call-number/start"
 }

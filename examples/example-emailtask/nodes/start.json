@@ -4,5 +4,5 @@
   "description": "Start of Example EmailTask Workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-emailtask/start"
+  "expression": "/events/example-emailtask/start"
 }
