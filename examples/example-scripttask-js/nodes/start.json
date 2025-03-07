@@ -4,5 +4,5 @@
   "description": "Start of Example Javascript ScriptTask Workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-scripttask-js/start"
+  "expression": "/events/example-scripttask-js/start"
 }

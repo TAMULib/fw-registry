@@ -4,5 +4,5 @@
   "description": "Start Workflow to a given Note to Holdings (exclusive) or Items read in from a CSV file of IDs.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/create-notes/start"
+  "expression": "/events/create-notes/start"
 }

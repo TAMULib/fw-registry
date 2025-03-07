@@ -4,5 +4,5 @@
   "description": "Start Workflow to remove books from Evans NBS.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/remove-books-from-nbs/start"
+  "expression": "/events/remove-books-from-nbs/start"
 }
