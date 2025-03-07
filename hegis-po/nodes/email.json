@@ -9,10 +9,6 @@
       "type": "PROCESS"
     },
     {
-      "key": "hegisPoEmailFrom",
-      "type": "PROCESS"
-    },
-    {
       "key": "tenantId",
       "type": "PROCESS"
     },
