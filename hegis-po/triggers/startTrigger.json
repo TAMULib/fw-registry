@@ -1,0 +1,9 @@
+{
+  "id": "dd0bb6bf-1371-4bfd-a762-60d0300ce8d4",
+  "name": "FOLIO Hegis Purchase Order Workflow Trigger",
+  "description": "Trigger for starting Hegis Purchase Order Workflow.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/hegis-po/start"
+}

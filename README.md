@@ -856,3 +856,49 @@ Either wait for scheduled event to occur or manually execute via:
 ```shell
 fw run duplicate-instance-report
 ```
+
+## hegis-purchase-order
+
+### Hegis Purchase Order Workflow
+
+The user initiates the form submission using the Catalog Reports Hegis Purchase Order Workflow.
+
+Requires following path `/mnt/workflows/${tenantId}/hegis-po`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name           | Allowed Values | Brief Description |
+| ----------------------- | -------------- | ----------------- |
+| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| ldp-password            | string         | LDP login password. |
+| ldp-url                 | URL            | LDP URL. |
+| ldp-user                | string         | LDP login username. |
+| hegisPoEmailFrom        | e-mail address | The e-mail address of the sender. |
+| emailTo                 | e-mail address | The e-mail address of the recipient. |
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
+| hegis                   | string         | A JSON Array of Hegis codes. |
+| sysUnitCodes            | string         | A JSON Array of system unit codes. |
+| poType                  | string         | The purchase order type. |
+
+
+```shell
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set ldp-url ***
+fw config set ldp-user ***
+fw config set ldp-password ***
+fw config set hegisPoEmailFrom ***
+```
+
+To build and activate:
+```shell
+fw build hegis-po
+fw activate hegis-po
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/hegis-po/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{ "logLevel": "DEBUG", "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
+```

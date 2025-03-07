@@ -1,0 +1,26 @@
+{
+  "id": "2b2fc936-dbed-4496-a721-31f678ed7068",
+  "name": "Query Hegis Purchase Order",
+  "description": "Execute hegis purchase order query on ldp database.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [
+    {
+      "key": "hegisPoQuery",
+      "type": "LOCAL"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    }
+  ],
+  "outputPath": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",
+  "resultType": "CSV",
+  "designation": "ldp",
+  "query": "${hegisPoQuery}",
+  "includeHeader": true,
+  "asyncBefore": true
+}
