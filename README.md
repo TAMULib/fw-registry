@@ -867,8 +867,8 @@ Requires following path `/mnt/workflows/${tenantId}/hegis-po`.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
+| Variable Name           | Allowed Values | Brief Description |
+| ----------------------- | -------------- | ----------------- |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | ldp-password            | string         | LDP login password. |
 | ldp-url                 | URL            | LDP URL. |
@@ -877,7 +877,7 @@ These variables are required when building and running the workflow:
 | emailTo                 | e-mail address | The e-mail address of the recipient. |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
 | hegis                   | string         | A JSON Array of Hegis codes. |
-| sys                     | string         | A JSON Array of system unit codes. |
+| sysUnitCodes            | string         | A JSON Array of system unit codes. |
 | poType                  | string         | The purchase order type. |
 
 
@@ -889,13 +889,16 @@ fw config set ldp-password ***
 fw config set hegisPoEmailFrom ***
 ```
 
+To build and activate:
 ```shell
 fw build hegis-po
 fw activate hegis-po
+```
 
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/hegis-po/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{ "logLevel": "DEBUG", "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sys": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
+--data-raw '{ "logLevel": "DEBUG", "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
 ```
-
