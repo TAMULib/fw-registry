@@ -1,0 +1,20 @@
+{
+  "id": "25310c6e-449b-490a-adda-139bd119a4f6",
+  "name": "Delete CSV Report",
+  "description": "Delete the csv report file.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",
+  "op": "DELETE",
+  "asyncBefore": true
+}

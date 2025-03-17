@@ -1,0 +1,8 @@
+{
+  "id": "d52b047d-6caa-4d13-ba64-593049e06b15",
+  "name": "Build Query",
+  "description": "Build Query using input parameters.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildQuery.js"
+}

@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/shelflist-items/start"
+  "pathPattern": "/events/shelflist-items/start"
 }

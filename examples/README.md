@@ -51,7 +51,7 @@ fw run example-compressfiletask-zip
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-compressfiletask-zip/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-compressfiletask-zip/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -92,7 +92,7 @@ fw run example-databaseconnectiontask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databaseconnectiontask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -135,7 +135,7 @@ fw run example-databasequerytask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-databasequerytask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -173,7 +173,7 @@ fw run example-emailtask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-emailtask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-emailtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO", "exampleEmailTo": "you@example.com" }'
@@ -213,7 +213,7 @@ fw run example-filetask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-filetask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-filetask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -245,7 +245,7 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-inputtask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-inputtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku'
 ```
@@ -281,7 +281,7 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-requesttask/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-requesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -318,7 +318,7 @@ fw run example-scripttask-js
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-scripttask-js/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
@@ -350,7 +350,7 @@ fw run example-scripttask-ruby
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/workflow/example-scripttask-ruby/start' \
+curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-ruby/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'

@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/remove-books-from-nbs/start"
+  "pathPattern": "/events/remove-books-from-nbs/start"
 }

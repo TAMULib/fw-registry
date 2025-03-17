@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/hathitrust/start"
+  "expression": "/events/hathitrust/start"
 }

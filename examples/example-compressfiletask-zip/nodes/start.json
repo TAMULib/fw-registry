@@ -4,5 +4,5 @@
   "description": "Start of the CompressFileTask workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-compressfiletask-zip/start"
+  "expression": "/events/example-compressfiletask-zip/start"
 }

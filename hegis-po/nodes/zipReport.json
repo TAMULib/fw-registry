@@ -1,0 +1,22 @@
+{
+  "id": "8d5019a2-8bcf-43dd-942f-280387b03c8d",
+  "name": "Zip Hegis Purchase Order report",
+  "description": "Compress hegis purchase order report using ZIP format.",
+  "deserializeAs": "CompressFileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "source": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",
+  "destination": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.zip",
+  "format": "ZIP",
+  "container": "NONE",
+  "asyncBefore": true
+}

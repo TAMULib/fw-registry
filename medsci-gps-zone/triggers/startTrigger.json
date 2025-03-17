@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/medsci-gps-zone/start"
+  "pathPattern": "/events/medsci-gps-zone/start"
 }

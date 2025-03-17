@@ -37,7 +37,7 @@ if (marcOrderDataObj.barcode) {
   itemObj.barcode = marcOrderDataObj.barcode.trim()
 }
 
-itemObj.status = { name: 'Available' };
+itemObj.status = { name: 'In process' };
 
 if (logLevel === 'DEBUG') {
   print('\nitem = ' + JSON.stringify(itemObj) + '\n');

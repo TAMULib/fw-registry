@@ -5,5 +5,5 @@
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/workflow/example-databaseconnectiontask/start"
+  "pathPattern": "/events/example-databaseconnectiontask/start"
 }

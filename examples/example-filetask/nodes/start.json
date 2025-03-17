@@ -4,5 +4,5 @@
   "description": "Start of Example FileTask workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-filetask/start"
+  "expression": "/events/example-filetask/start"
 }

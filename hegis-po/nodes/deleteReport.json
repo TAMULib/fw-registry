@@ -1,0 +1,20 @@
+{
+  "id": "1a603a37-5067-45d5-b033-6b674aeffc4c",
+  "name": "Delete ZIP format",
+  "description": "Delete Hegis purchase order report in zip format.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "timestamp",
+      "type": "PROCESS"
+    },
+    {
+      "key": "tenantId",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.zip",
+  "op": "DELETE",
+  "asyncBefore": true
+}

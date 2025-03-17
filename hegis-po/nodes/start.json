@@ -1,0 +1,8 @@
+{
+  "id": "c490490f-ad52-4fef-827e-60be8f38f1d7",
+  "name": "Start",
+  "description": "Start workflow to email the generated hegis purchase order report.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/hegis-po/start"
+}

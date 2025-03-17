@@ -4,5 +4,5 @@
   "description": "",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/create-tags/start"
+  "expression": "/events/create-tags/start"
 }

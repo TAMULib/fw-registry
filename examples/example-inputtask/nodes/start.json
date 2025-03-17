@@ -4,5 +4,5 @@
   "description": "Start of Example InputTask workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/workflow/example-inputtask/start"
+  "expression": "/events/example-inputtask/start"
 }
