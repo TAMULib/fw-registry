@@ -1,7 +1,7 @@
 {
   "id": "2b2fc936-dbed-4496-a721-31f678ed7068",
   "name": "Query Hegis Purchase Order",
-  "description": "Execute hegis purchase order query on ldp database.",
+  "description": "Execute Hegis purchase order query on LDP database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
