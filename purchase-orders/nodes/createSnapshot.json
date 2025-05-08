@@ -4,7 +4,7 @@
   "description": "Submits job execution to create storage snapshot using POST request.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/source-storage/snapshots",
+    "url": "{{{okapiInternal}}}/source-storage/snapshots",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

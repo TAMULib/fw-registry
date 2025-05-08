@@ -18,11 +18,11 @@
     }
   ],
   "outputVariable": {},
-  "mailFrom": "{{{duplicate-instance-report-from}}}",
-  "mailTo": "{{{duplicate-instance-report-to}}}",
+  "mailFrom": "{{{duplicateInstanceReportFrom}}}",
+  "mailTo": "{{{duplicateInstanceReportTo}}}",
   "mailText": "The Instance Duplication Report has completed, see the results attached.\n${count} instance matches found.",
   "mailMarkup": "<p>The Instance Duplication Report has completed, see the results attached.</p><br/>${count} instance matches found.",
-  "mailSubject": "Instance Duplication Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Instance Duplication Report - LDP {{{ldpUrl}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.zip",
   "includeAttachment": "${count}",
   "asyncBefore": true

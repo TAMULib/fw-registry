@@ -4,7 +4,7 @@
   "description": "Requests creation of a composite purchase order by posting data to the request url.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/orders/composite-orders",
+    "url": "{{{okapiInternal}}}/orders/composite-orders",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
