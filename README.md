@@ -732,9 +732,9 @@ These variables are required when building and running the workflow:
 | bcnMailFrom             | e-mail address | The e-mail address of the sender. |
 | bcnMailTo               | e-mail address | The e-mail address of the recipient. |
 | endRange                | string         | End range of call number. |
-| ldp-password            | string         | LDP login password. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
+| metadb-password         | string         | MetaDb login password. |
+| metadb-url              | URL            | MetaDb URL. |
+| metadb-user             | string         | MetaDb login username. |
 | locationName            | string         | A JSON Array of location names from the reporting table `item_ext`. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
@@ -746,9 +746,9 @@ These variables are required when building and running the workflow:
 This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set bcnMailFrom ***
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 ```
