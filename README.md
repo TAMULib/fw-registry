@@ -231,18 +231,18 @@ Circulation Fees/Fines Daily Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| ldp-password         | string         | LDP login password. |
-| ldp-url              | URL            | LDP URL. |
-| ldp-user             | string         | LDP login username. |
+| Variable Name        | Allowed Values | Brief Description |
+| -------------------- | -------------- | ----------------- |
+| metadb-password      | string         | MetaDB login password. |
+| metadb-url           | URL            | MetaDB URL. |
+| metadb-user          | string         | MetaDB login username. |
 | medsci-gps-zone-from | e-mail address | The e-mail address of the sender. |
 | medsci-gps-zone-to   | e-mail address | The e-mail address of the recipient. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set circ-fines-mail-from ***
 fw config set circ-fines-mail-to ***
 ```
