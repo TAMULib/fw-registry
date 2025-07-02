@@ -22,7 +22,7 @@
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The instances with matching OCLC report has completed, see the results attached.\n${oclcCount} instance matches found.",
   "mailMarkup": "<p>The instances with matching OCLC report has completed, see the results attached.</p><br/>${oclcCount} instance matches found.",
-  "mailSubject": "Matching OCLC Instances Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Matching OCLC Instances Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/oclc-${timestamp}.csv",
   "includeAttachment": "${oclcCount}",
   "asyncBefore": true

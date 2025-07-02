@@ -830,18 +830,18 @@ These variables are required when building and running the workflow:
 
 | Variable Name                  | Allowed Values | Brief Description |
 | ------------------------------ | -------------- | ----------------- |
-| ldp-url                        | URL            | LDP URL. |
-| ldp-user                       | string         | LDP login username. |
-| ldp-password                   | string         | LDP login password. |
+| metadb-url                     | URL            | MetaDB URL. |
+| metadb-user                    | string         | MetaDB login username. |
+| metadb-password                | string         | MetaDB login password. |
 | duplicate-instance-report-from | e-mail address | The e-mail address of the report sender. |
 | duplicate-instance-report-to   | e-mail address | The e-mail address of the report recipient. |
 
 The scheduled event is for **12:00 AM UTC**, on the first of the month, only in January, April, July, and October.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set duplicate-instance-report-from ***
 fw config set duplicate-instance-report-to ***
 ```

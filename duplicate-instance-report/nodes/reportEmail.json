@@ -22,7 +22,7 @@
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The Instance Duplication Report has completed, see the results attached.\n${count} instance matches found.",
   "mailMarkup": "<p>The Instance Duplication Report has completed, see the results attached.</p><br/>${count} instance matches found.",
-  "mailSubject": "Instance Duplication Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Instance Duplication Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.zip",
   "includeAttachment": "${count}",
   "asyncBefore": true
