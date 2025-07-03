@@ -99,18 +99,18 @@ ISBN report to GOBI workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| gobi-mail-from | e-mail address | The e-mail address of the sender. |
-| gobi-mail-to   | e-mail address | The e-mail address of the recipient. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| gobi-mail-from  | e-mail address | The e-mail address of the sender. |
+| gobi-mail-to    | e-mail address | The e-mail address of the recipient. |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set gobi-mail-from ***
 fw config set gobi-mail-to ***
 ```
