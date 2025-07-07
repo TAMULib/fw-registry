@@ -1,6 +1,6 @@
 {
   "id": "b32e9dcc-992a-471e-8f76-769c215d3060",
-  "name": "Save Coral Id from created instance to LDP",
+  "name": "Save Coral Id from created instance to MetaDB",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
@@ -16,7 +16,7 @@
     }
   ],
   "outputVariable": {},
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "INSERT INTO mis.coral_instances (coralid, instanceid) values (${coralItem.coralid}, '${instance.id}')",
   "asyncBefore": true
 }

@@ -1,7 +1,7 @@
 {
   "id": "a74c0421-5d97-4608-bb85-eb14adebd23d",
   "name": "Process Coral Items Subprocess",
-  "description": "Subprocess to process Coral Items obtained from LDP.",
+  "description": "Subprocess to process Coral Items obtained from MetaDB.",
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
