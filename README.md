@@ -311,17 +311,17 @@ fw activate rapid-electronic-serials
 
 Extract Coral Data and Import it into Folio (Scheduled).
 
-This utilizes LDP, which must have tables `mis.coral_extract` and `mis.coral_instances` manually created.
-Each execution of this workflow clears the LDP table `mis.coral_extract` near the start of the process.
+This utilizes MetaDB, which must have tables `mis.coral_extract` and `mis.coral_instances` manually created.
+Each execution of this workflow clears the MetaDB table `mis.coral_extract` near the start of the process.
 
 ```sql
-CREATE SCHEMA mis AUTHORIZATION ldpadmin;
+CREATE SCHEMA mis AUTHORIZATION metadb;
 
-GRANT USAGE ON SCHEMA mis TO ldp;
-GRANT USAGE ON SCHEMA mis TO ldpadmin;
+GRANT USAGE ON SCHEMA mis TO meta_wf;
+GRANT USAGE ON SCHEMA mis TO metadb;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldp;
-ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldpadmin;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO meta_wf;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO metadb;
 
 CREATE TABLE mis.coral_extract (
 coralid int2 NOT NULL,
@@ -344,18 +344,18 @@ CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| coral-url      | URL            | Coral server URL. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| coral-url       | URL            | Coral server URL. |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
 
 ```shell
 fw config set coral-url ***
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
