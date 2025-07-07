@@ -16,8 +16,8 @@
   "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/hathitrust/tamu_single-part_${date}.tsv",
   "resultType": "TSV",
-  "designation": "ldp",
-  "query": "SELECT instances.instance_hrid AS local_id, identifiers.identifier AS oclc, CASE WHEN instances.discovery_suppress = 't' THEN 'WD' ELSE 'CH' END AS status FROM folio_reporting.items_holdings_instances ihi, folio_reporting.instance_ext instances, folio_reporting.instance_formats formats, folio_reporting.instance_identifiers identifiers WHERE instances.instance_id = ihi.instance_id AND instances.instance_id = formats.instance_id AND identifiers.instance_id = instances.instance_id AND mode_of_issuance_name = 'single unit' AND instances.type_name = 'text' AND format_name = 'unmediated -- volume' AND identifiers.identifier_type_name = 'OCLC' AND ihi.holdings_id IN (SELECT sq_ihi.holdings_id FROM folio_reporting.items_holdings_instances sq_ihi GROUP BY sq_ihi.holdings_id HAVING COUNT(*) = 1)",
+  "designation": "metadb",
+  "query": "SELECT instances.instance_hrid AS local_id, identifiers.identifier AS oclc, CASE WHEN instances.discovery_suppress = 't' THEN 'WD' ELSE 'CH' END AS status FROM folio_derived.items_holdings_instances ihi, folio_derived.instance_ext instances, folio_derived.instance_formats  formats, folio_derived.instance_identifiers  identifiers WHERE instances.instance_id = ihi.instance_id AND instances.instance_id = formats.instance_id AND identifiers.instance_id = instances.instance_id AND mode_of_issuance_name = 'single unit' AND instances.type_name = 'text' AND format_name = 'unmediated -- volume' AND identifiers.identifier_type_name = 'OCLC' AND ihi.holdings_id IN (SELECT sq_ihi.holdings_id FROM folio_derived.items_holdings_instances sq_ihi GROUP BY sq_ihi.holdings_id HAVING COUNT(*) = 1)",
   "includeHeader": true,
   "asyncBefore": true
 }
