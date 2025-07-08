@@ -415,9 +415,9 @@ These variables are required when building and running the workflow:
 | metadb-user     | string         | MetaDB login username. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
