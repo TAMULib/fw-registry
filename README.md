@@ -296,7 +296,6 @@ fw config set metadb-password ***
 ```shell
 fw build rapid-electronic-monos
 fw activate rapid-electronic-monos
-
 ```
 
 ```shell
