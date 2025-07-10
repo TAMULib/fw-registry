@@ -464,35 +464,35 @@ Shelflist (holdings level) Report Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| batchId                      | UUID   | A batch ID. |
-| createdDateEnd               | string | A created end date. |
-| createdDateStart             | string | A created start date. |
+| Variable Name                | Allowed Values | Brief Description |
+| ---------------------------- | -------------- | ----------------- |
+| batchId                      | UUID           | A batch ID. |
+| createdDateEnd               | string         | A created end date. |
+| createdDateStart             | string         | A created start date. |
 | emailFrom                    | e-mail address | The e-mail address of the sender. |
 | emailTo                      | e-mail address | The e-mail address of the recipient. |
-| format                       | string | A JSON Array of formats. |
-| issuance                     | string | An issuance name. |
-| language                     | string | A JSON Array of languages. |
-| ldp-password                 | string | LDP login password. |
-| ldp-url                      | URL    | LDP URL. |
-| ldp-user                     | string | LDP login username. |
-| libraryName                  | string | A JSON Array of library names. |
-| logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| locationDiscoveryDisplayName | string | A JSON Array of location names. |
-| locationName                 | string | A JSON Array of location names. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
-| resourceType                 | string | A JSON Array of resource types. |
-| suppressHoldings             | boolean | Designate whether or not Holdings should be suppressed. |
-| suppressInstance             | boolean | Designate whether or not Instances should be suppressed. |
-| updatedDateEnd               | string | An updated end date. |
-| updatedDateStart             | string | An updated start date. |
+| format                       | string         | A JSON Array of formats. |
+| issuance                     | string         | An issuance name. |
+| language                     | string         | A JSON Array of languages. |
+| metadb-password              | string         | MetaDB login password. |
+| metadb-url                   | URL            | MetaDB URL. |
+| metadb-user                  | string         | MetaDB login username. |
+| libraryName                  | string         | A JSON Array of library names. |
+| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| locationDiscoveryDisplayName | string         | A JSON Array of location names. |
+| locationName                 | string         | A JSON Array of location names. |
+| mis-catalog-reports-url      | URL            | Catalog Reports URL (must not include a trailing slash). |
+| resourceType                 | string         | A JSON Array of resource types. |
+| suppressHoldings             | boolean        | Designate whether or not Holdings should be suppressed. |
+| suppressInstance             | boolean        | Designate whether or not Instances should be suppressed. |
+| updatedDateEnd               | string         | An updated end date. |
+| updatedDateStart             | string         | An updated start date. |
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell

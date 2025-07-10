@@ -19,15 +19,15 @@ if (logLevel === 'DEBUG') {
 }
 
 var from = 'folio_reporting.holdings_ext holdings_ext'
-            + '\n\t\tINNER JOIN folio_reporting.instance_ext ON holdings_ext.instance_id = instance_ext.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_contributors contribs ON holdings_ext.instance_id = contribs.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_publication pubs ON holdings_ext.instance_id = pubs.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_identifiers idents ON holdings_ext.instance_id = idents.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_formats formats ON holdings_ext.instance_id = formats.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_languages lan ON holdings_ext.instance_id = lan.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id'
-            + '\n\t\tLEFT JOIN folio_reporting.holdings_statements hold_state ON holdings_ext.holdings_hrid = hold_state.holdings_hrid'
-            + '\n\t\tLEFT JOIN folio_reporting.items_holdings_instances item_hold_in ON holdings_ext.instance_id = item_hold_in.instance_id'
+            + '\n\t\tINNER JOIN folio_inventory.instance__t__ instance_ext ON holdings_ext.instance_id = instance_ext.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.instance_contributors contribs ON holdings_ext.instance_id = contribs.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.instance_publication pubs ON holdings_ext.instance_id = pubs.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.instance_identifiers idents ON holdings_ext.instance_id = idents.instance_id'
+            + '\n\t\tLEFT JOIN folio_inventory.instance_format__t__ formats ON holdings_ext.instance_id = formats.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.instance_languages lan ON holdings_ext.instance_id = lan.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.instance_statistical_codes stat_codes ON holdings_ext.instance_id = stat_codes.instance_id'
+            + '\n\t\tLEFT JOIN folio_derived.holdings_statements hold_state ON holdings_ext.holdings_hrid = hold_state.holdings_hrid'
+            + '\n\t\tLEFT JOIN folio_derived.items_holdings_instances item_hold_in ON holdings_ext.instance_id = item_hold_in.instance_id'
             + '\n\t\tLEFT JOIN item_detail item_detail ON holdings_ext.holdings_id = item_detail.holdings_id';
 
 var where = 'TRUE';
@@ -145,7 +145,7 @@ var shelflistQuery = '\n'
        + '\n\t\tSUM(item_hist.hist_browses) AS hist_browses,'
        + '\n\t\tMAX(item_hist.last_transaction) AS last_trans_date,'
        + '\n\t\tstring_agg(DISTINCT item_ext.material_type_name, \' || \'  ORDER BY item_ext.material_type_name ASC) AS item_material_type'
-       + '\n\tFROM folio_reporting.holdings_ext holdings_ext'
+       + '\n\tFROM folio_inventory.holdings_record__t__ holdings_ext'
        + '\n\t\tLEFT JOIN folio_reporting.item_ext item_ext ON holdings_ext.holdings_id = item_ext.holdings_record_id'
        + '\n\t\tLEFT JOIN mis.item_history item_hist ON item_ext.item_id = item_hist.item_id'
        + '\n\tGROUP BY'
