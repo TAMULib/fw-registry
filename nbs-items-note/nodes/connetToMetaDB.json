@@ -1,0 +1,13 @@
+{
+  "id": "7f7b1d38-a006-4dca-a9b2-d2fbb17c5dda",
+  "name": "Connect to MetaDB",
+  "description": "Connect to the MetaDB.",
+  "deserializeAs": "DatabaseConnectionTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "metadb",
+  "url": "{{{metadb-url}}}",
+  "username": "{{{metadb-user}}}",
+  "password": "{{{metadb-password}}}",
+  "asyncBefore": true
+}

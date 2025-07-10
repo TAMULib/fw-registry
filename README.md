@@ -582,7 +582,7 @@ fw run item-history-update
 This workflows adds a special check-in note for *New Bookshelf Items* for a specific temporary location **UUID**.
 If the check-in note already exists, then the new note is not added.
 
-This utilizes **LDP** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
 These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
 
 The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
@@ -591,17 +591,17 @@ These variables are required when building and running the workflow:
 
 | Variable Name  | Allowed Values | Brief Description |
 | -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| metadb-password| string         | MetaDB login password. |
+| metadb-url     | URL            | MetaDB URL. |
+| metadb-user    | string         | MetaDB login username. |
 | okapi-internal | URL            | The (internal) Okapi URL. |
 | password       | string         | Okapi login password. |
 | username       | string         | Okapi login username. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set okapi-internal ***
 fw config set username ***
 fw config set password ***

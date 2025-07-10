@@ -1,6 +1,6 @@
 {
   "id": "67d9b49f-fc45-4d10-b341-e59383dabaf8",
-  "name": "Upsert Query to LDP",
+  "name": "Upsert Query to MetaDB",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
@@ -10,7 +10,7 @@
     }
   ],
   "outputVariable": {},
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "${upsertQuery.prop('sql').stringValue()}",
   "asyncBefore": true
 }

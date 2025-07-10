@@ -1,0 +1,14 @@
+{
+  "id": "badb402c-916d-4e0d-a525-fcaa8f490974",
+  "name": "Get Items from MetaDB",
+  "description": "Load all Items from the MetaDB using an SQL query.",
+  "deserializeAs": "DatabaseQueryTask",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "itemsResponse",
+    "type": "PROCESS"
+  },
+  "designation": "metadb",
+  "query": "(select id from folio_inventory.item fii where fii.effectivelocationid = '07a4e97e-9941-4f60-ad25-577bb6672c08' and fii.jsonb -> 'status' ->> 'name' = 'Checked out' and jsonb_array_length(jsonb -> 'circulationNotes') = 0) union (select s.id  from ( select id, to_jsonb(fii2.jsonb -> 'circulationNotes') as notes from folio_inventory.item fii2 where fii2.effectivelocationid = '07a4e97e-9941-4f60-ad25-577bb6672c08' and jsonb -> 'status' ->> 'name' = 'Checked out') s where not s.notes @> '[{\"note\":\"Place on New Bookshelf\"}]'::jsonb)",
+  "asyncBefore": true
+}
