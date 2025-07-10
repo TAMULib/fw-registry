@@ -275,6 +275,36 @@ fw build rapid-print-serials
 fw activate rapid-print-serials
 ```
 
+## rapid-electronic-monos
+
+Rapid ILS Electronic Monos Report. (Scheduled)
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build rapid-electronic-monos
+fw activate rapid-electronic-monos
+
+```
+
+```shell
+fw run rapid-electronic-monos
+```
+
+or wait for the cron job to be auto-triggered.
+
 ## rapid-print-monos
 
 Rapid ILS Print Monos Monthly Report. (Scheduled)
