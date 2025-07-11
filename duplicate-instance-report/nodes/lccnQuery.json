@@ -18,10 +18,10 @@
     "type": "PROCESS",
     "spin": false
   },
-  "designation": "ldp",
+  "designation": "metadb",
   "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/lccn-${timestamp}.csv",
   "resultType": "CSV",
   "includeHeader": true,
-  "query": "WITH lccn AS (SELECT ie.instance_hrid, ii.identifier AS lccn, ie.title, sm.content AS author FROM folio_reporting.instance_ext ie JOIN folio_reporting.instance_identifiers ii ON ie.instance_hrid = ii.instance_hrid JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE ii.identifier_type_name = 'LCCN' AND sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.lccn, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM lccn l JOIN lccn r ON l.lccn = r.lccn AND l.instance_hrid < r.instance_hrid",
+  "query": "WITH lccn AS (SELECT ie.instance_hrid, ii.identifier AS lccn, ie.title, sm.content AS author FROM folio_derived.instance_ext ie JOIN folio_derived.instance_identifiers ii ON ie.instance_hrid = ii.instance_hrid JOIN folio_source_record.marc__t sm ON ie.instance_hrid = sm.instance_hrid WHERE ii.identifier_type_name = 'LCCN' AND sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.lccn, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM lccn l JOIN lccn r ON l.lccn = r.lccn AND l.instance_hrid < r.instance_hrid",
   "asyncBefore": true
 }

@@ -22,7 +22,7 @@
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The instances with matching Call Number report has completed, see the results attached.\n${callNumberCount} instance matches found.",
   "mailMarkup": "<p>The instances with matching Call Number report has completed, see the results attached.</p><br/>${callNumberCount} instance matches found.",
-  "mailSubject": "Matching Call Number Instances Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Matching Call Number Instances Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/call-number-${timestamp}.csv",
   "includeAttachment": "${callNumberCount}",
   "asyncBefore": true
