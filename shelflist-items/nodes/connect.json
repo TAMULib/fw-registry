@@ -1,13 +1,13 @@
 {
   "id": "a0427d77-6047-4339-a311-c9351b8c56f5",
-  "name": "Connect LDP",
+  "name": "Connect MetaDB",
   "description": "",
   "deserializeAs": "DatabaseConnectionTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "ldp",
-  "url": "{{{ldp-url}}}",
-  "username": "{{{ldp-user}}}",
-  "password": "{{{ldp-password}}}",
+  "designation": "metadb",
+  "url": "{{{metadb-url}}}",
+  "username": "{{{metadb-user}}}",
+  "password": "{{{metadb-password}}}",
   "asyncBefore": true
 }
