@@ -743,7 +743,7 @@ These variables are required when building and running the workflow:
 | startRange              | string         | Start Range of call number. |
 | username                | string         | Okapi login username. |
 
-This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
 ```shell
 fw config set metadb-url ***
