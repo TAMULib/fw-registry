@@ -1,6 +1,6 @@
 {
   "id": "b3edd0b1-9611-4973-ad53-9f0e9f0f9e1e",
-  "name": "Query Daily Fees/Fines Paid from LDP",
+  "name": "Query Daily Fees/Fines Paid from MetaDb",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
@@ -19,7 +19,7 @@
   },
   "outputPath": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",
   "resultType": "TSV",
-  "designation": "ldp",
-  "query": "SELECT DISTINCT isp.NAME AS service_point, actions.data->>'paymentMethod' AS method, users.barcode, Concat(users.data->'personal'->>'lastName', ' ', users.data->'personal'->>'firstName') AS NAME, to_char(actions.date_action at time zone 'America/Chicago', 'YYYYMMDD HH24:MI:SS') AS action_date, actions.source AS operator, actions.amount_action AS amount, actions.comments AS comments, actions.id FROM PUBLIC.audit_circulation_logs logs, PUBLIC.inventory_service_points isp, PUBLIC.user_users users, PUBLIC.feesfines_accounts accounts, PUBLIC.feesfines_feefineactions actions WHERE actions.type_action IN ('Paid fully', 'Paid partially') AND isp.id = logs.service_point_id AND logs.data->'linkToIds'->>'feeFineId' = accounts.id AND actions.user_id = users.id AND actions.account_id = accounts.id AND Cast(logs.date AS DATE) = CURRENT_DATE - 1 AND isp.NAME IN ('Ask Us Desk (Evans)', 'Business Library Circulation', 'InterLibrary Loan Dept. (Evans)', 'Maps & GIS', 'Media and Reserves', 'PSEL Circulation Desk') ORDER BY action_date DESC",
+  "designation": "metadb",
+  "query": "SELECT DISTINCT isp.NAME AS service_point, actions.payment_method AS method, users.\"jsonb\" -> 'barcode' as userBarcode, Concat(users.\"jsonb\" -> 'personal' ->> 'lastName', ' ',users.\"jsonb\" -> 'personal' ->> 'firstName') AS NAME,to_char(actions.date_action at time zone 'America/Chicago','YYYYMMDD HH24:MI:SS') AS action_date, actions.source AS operator, actions.amount_action AS amount, actions.comments AS comments,actions.id FROM folio_audit.circulation_logs logs, folio_inventory.service_point__t isp,folio_users.users users, folio_feesfines.accounts accounts, folio_feesfines.feefineactions__t actions WHERE  actions.type_action IN ( 'Paid fully', 'Paid partially' )  AND isp.id = (logs.\"jsonb\" ->> 'servicePointId')::uuid AND (logs.\"jsonb\" -> 'linkToIds' ->> 'feeFineId')::uuid = accounts.id AND actions.user_id = users.id AND actions.account_id = accounts.id AND CAST(logs.\"jsonb\" ->> 'date' AS DATE) = CURRENT_DATE - 1 AND isp.NAME IN ( 'Ask Us Desk (Evans)', 'Business Library Circulation','InterLibrary Loan Dept. (Evans)', 'Maps & GIS', 'Media and Reserves', 'PSEL Circulation Desk' ) ORDER  BY action_date DESC",
   "asyncBefore": true
 }
