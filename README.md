@@ -511,32 +511,32 @@ Shelflist (items level) Report Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| batchId                      | UUID   | A batch ID. |
-| createdDateEnd               | string | A created end date. |
-| createdDateStart             | string | A created start date. |
+| Variable Name                | Allowed Values | Brief Description |
+| --------------               | -------------- | ----------------- |
+| batchId                      | UUID           | A batch ID. |
+| createdDateEnd               | string         | A created end date. |
+| createdDateStart             | string         | A created start date. |
 | emailFrom                    | e-mail address | The e-mail address of the sender. |
 | emailTo                      | e-mail address | The e-mail address of the recipient. |
-| itemStatus                   | string | A JSON Array of Item statuses. |
-| ldp-password                 | string | LDP login password. |
-| ldp-url                      | URL    | LDP URL. |
-| ldp-user                     | string | LDP login username. |
-| libraryName                  | string | A JSON Array of library names. |
-| loanType                     | string | A JSON Array of loan types. |
-| logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| locationDiscoveryDisplayName | string | A JSON Array of location names. |
-| locationName                 | string | A JSON Array of location names. |
-| materialType                 | string | A JSON Array of material types. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
-| updatedDateEnd               | string | An updated end date. |
-| updatedDateStart             | string | An updated start date. |
+| itemStatus                   | string         | A JSON Array of Item statuses. |
+| metadb-password              | string         | MetaDB login password. |
+| metadb-url                   | URL            | MetaDB URL. |
+| metadb-user                  | string         | MetaDB login username. |
+| libraryName                  | string         | A JSON Array of library names. |
+| loanType                     | string         | A JSON Array of loan types. |
+| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| locationDiscoveryDisplayName | string         | A JSON Array of location names. |
+| locationName                 | string         | A JSON Array of location names. |
+| materialType                 | string         | A JSON Array of material types. |
+| mis-catalog-reports-url      | URL            | Catalog Reports URL (must not include a trailing slash). |
+| updatedDateEnd               | string         | An updated end date. |
+| updatedDateStart             | string         | An updated start date. |
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
