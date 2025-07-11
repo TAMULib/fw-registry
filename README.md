@@ -260,20 +260,53 @@ These variables are required when building and running the workflow:
 
 | Variable Name  | Allowed Values | Brief Description |
 | -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| metadb-password| string         | MetaDB login password. |
+| metadb-url     | URL            | MetaDB URL. |
+| metadb-user    | string         | MetaDB login username. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
 fw build rapid-print-serials
 fw activate rapid-print-serials
 ```
+
+```shell
+fw run rapid-print-serials
+```
+
+## rapid-electronic-monos
+
+Rapid ILS Electronic Monos Report. (Scheduled)
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build rapid-electronic-monos
+fw activate rapid-electronic-monos
+```
+
+```shell
+fw run rapid-electronic-monos
+```
+
+or wait for the cron job to be auto-triggered.
 
 ## rapid-print-monos
 
@@ -283,20 +316,26 @@ These variables are required when building and running the workflow:
 
 | Variable Name  | Allowed Values | Brief Description |
 | -------------- | -------------- | ----------------- |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+| metadb-password| string         | MetaDB login password. |
+| metadb-url     | URL            | MetaDB URL. |
+| metadb-user    | string         | MetaDB login username. |
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
 fw build rapid-print-monos
 fw activate rapid-print-monos
 ```
+
+```shell
+fw run rapid-print-monos
+```
+
+or wait for the cron job to be auto-triggered.
 
 ## rapid-electronic-serials
 
@@ -511,32 +550,32 @@ Shelflist (items level) Report Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| batchId                      | UUID   | A batch ID. |
-| createdDateEnd               | string | A created end date. |
-| createdDateStart             | string | A created start date. |
+| Variable Name                | Allowed Values | Brief Description |
+| --------------               | -------------- | ----------------- |
+| batchId                      | UUID           | A batch ID. |
+| createdDateEnd               | string         | A created end date. |
+| createdDateStart             | string         | A created start date. |
 | emailFrom                    | e-mail address | The e-mail address of the sender. |
 | emailTo                      | e-mail address | The e-mail address of the recipient. |
-| itemStatus                   | string | A JSON Array of Item statuses. |
-| ldp-password                 | string | LDP login password. |
-| ldp-url                      | URL    | LDP URL. |
-| ldp-user                     | string | LDP login username. |
-| libraryName                  | string | A JSON Array of library names. |
-| loanType                     | string | A JSON Array of loan types. |
-| logLevel                     | string | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| locationDiscoveryDisplayName | string | A JSON Array of location names. |
-| locationName                 | string | A JSON Array of location names. |
-| materialType                 | string | A JSON Array of material types. |
-| mis-catalog-reports-url      | URL    | Catalog Reports URL (must not include a trailing slash). |
-| updatedDateEnd               | string | An updated end date. |
-| updatedDateStart             | string | An updated start date. |
+| itemStatus                   | string         | A JSON Array of Item statuses. |
+| metadb-password              | string         | MetaDB login password. |
+| metadb-url                   | URL            | MetaDB URL. |
+| metadb-user                  | string         | MetaDB login username. |
+| libraryName                  | string         | A JSON Array of library names. |
+| loanType                     | string         | A JSON Array of loan types. |
+| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| locationDiscoveryDisplayName | string         | A JSON Array of location names. |
+| locationName                 | string         | A JSON Array of location names. |
+| materialType                 | string         | A JSON Array of material types. |
+| mis-catalog-reports-url      | URL            | Catalog Reports URL (must not include a trailing slash). |
+| updatedDateEnd               | string         | An updated end date. |
+| updatedDateStart             | string         | An updated start date. |
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
@@ -732,9 +771,9 @@ These variables are required when building and running the workflow:
 | bcnMailFrom             | e-mail address | The e-mail address of the sender. |
 | bcnMailTo               | e-mail address | The e-mail address of the recipient. |
 | endRange                | string         | End range of call number. |
-| ldp-password            | string         | LDP login password. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
+| metadb-password         | string         | MetaDb login password. |
+| metadb-url              | URL            | MetaDb URL. |
+| metadb-user             | string         | MetaDb login username. |
 | locationName            | string         | A JSON Array of location names from the reporting table `item_ext`. |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
@@ -743,12 +782,12 @@ These variables are required when building and running the workflow:
 | startRange              | string         | Start Range of call number. |
 | username                | string         | Okapi login username. |
 
-This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
+This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set bcnMailFrom ***
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 ```
@@ -870,9 +909,9 @@ These variables are required when building and running the workflow:
 | Variable Name           | Allowed Values | Brief Description |
 | ----------------------- | -------------- | ----------------- |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| ldp-password            | string         | LDP login password. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
+| metadb-password         | string         | MetaDB login password. |
+| metadb-url              | URL            | MetaDB URL. |
+| metadb-user             | string         | MetaDB login username. |
 | hegisPoEmailFrom        | e-mail address | The e-mail address of the sender. |
 | emailTo                 | e-mail address | The e-mail address of the recipient. |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
@@ -883,9 +922,9 @@ These variables are required when building and running the workflow:
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set hegisPoEmailFrom ***
 ```
 

@@ -1,7 +1,7 @@
 {
   "id": "2b2fc936-dbed-4496-a721-31f678ed7068",
   "name": "Query Hegis Purchase Order",
-  "description": "Execute Hegis purchase order query on LDP database.",
+  "description": "Execute Hegis purchase order query on MetaDB database.",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
@@ -19,7 +19,7 @@
   ],
   "outputPath": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",
   "resultType": "CSV",
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "${hegisPoQuery}",
   "includeHeader": true,
   "asyncBefore": true
