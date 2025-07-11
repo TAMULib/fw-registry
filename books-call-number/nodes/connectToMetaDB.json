@@ -1,7 +1,7 @@
 {
-  "id": "a0427d77-6047-4339-a311-c9351b8c56f5",
+  "id": "c29c2be7-26ce-45e5-811d-3f3c17ae1c67",
   "name": "Connect MetaDB",
-  "description": "",
+  "description": "Connect to the MetaDB.",
   "deserializeAs": "DatabaseConnectionTask",
   "inputVariables": [],
   "outputVariable": {},

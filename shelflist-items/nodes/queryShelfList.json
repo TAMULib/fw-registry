@@ -19,7 +19,7 @@
   ],
   "outputPath": "/mnt/workflows/${tenantId}/shelflist-items/shelflist-items-report-${timestamp}.csv",
   "resultType": "CSV",
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "${shelflistQuery}",
   "includeHeader": true,
   "asyncBefore": true
