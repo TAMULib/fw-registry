@@ -909,9 +909,9 @@ These variables are required when building and running the workflow:
 | Variable Name           | Allowed Values | Brief Description |
 | ----------------------- | -------------- | ----------------- |
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| ldp-password            | string         | LDP login password. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
+| metadb-password         | string         | MetaDB login password. |
+| metadb-url              | URL            | MetaDB URL. |
+| metadb-user             | string         | MetaDB login username. |
 | hegisPoEmailFrom        | e-mail address | The e-mail address of the sender. |
 | emailTo                 | e-mail address | The e-mail address of the recipient. |
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash). |
@@ -922,9 +922,9 @@ These variables are required when building and running the workflow:
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set hegisPoEmailFrom ***
 ```
 
