@@ -17,7 +17,7 @@
   "outputPath": "/mnt/workflows/${tenantId}/hathitrust/tamu_serials_${date}.tsv",
   "resultType": "TSV",
   "designation": "metadb",
-  "query": "SELECT instances.instance_hrid AS local_id, identifiers.identifier AS oclc, CASE WHEN instances.discovery_suppress = 't' THEN 'WD' ELSE 'CH' END AS status, CONCAT(ihi.enumeration, ' ', ihi.chronology) AS enum_chron FROM folio_derived.items_holdings_instances ihi, folio_derived.instance_ext instances, folio_derived.instance_formats  formats, folio_derived.instance_identifiers  identifiers WHERE instances.instance_id = ihi.instance_id AND instances.instance_id = formats.instance_id AND identifiers.instance_id = instances.instance_id AND mode_of_issuance_name = 'serial' AND instances.type_name = 'text' AND formats.instance_format_name = 'unmediated -- volume' AND identifiers.identifier_type_name = 'OCLC' ORDER BY instances.instance_hrid",
+  "query": "SELECT instances.instance_hrid AS local_id, identifiers.identifier AS oclc, CASE WHEN instances.discovery_suppress = 't' THEN 'WD' ELSE 'CH' END AS status, CONCAT(ihi.enumeration, ' ', ihi.chronology) AS enum_chron FROM folio_derived.items_holdings_instances ihi, folio_derived.instance_ext instances, folio_derived.instance_formats formats, folio_derived.instance_identifiers  identifiers WHERE instances.instance_id = ihi.instance_id AND instances.instance_id = formats.instance_id AND identifiers.instance_id = instances.instance_id AND mode_of_issuance_name = 'serial' AND instances.type_name = 'text' AND formats.instance_format_name = 'unmediated -- volume' AND identifiers.identifier_type_name = 'OCLC' ORDER BY instances.instance_hrid",
   "includeHeader": true,
   "asyncBefore": true
 }
