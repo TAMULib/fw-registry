@@ -341,24 +341,27 @@ instanceid varchar(36) NULL,
 CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 );
 ```
+Its important to note that account: `meta_wf` must be granted ownership to `mis` schema for CRUD operations.
 
-Ensure the template files are located in the following path:`/mnt/workflows/diku/coral_extract`. These files are essential for building and executing the subprocess in the workflow after the Okapi login step.
+Ensure the two template files are located in the following path:`/mnt/workflows/<tenant>/coral_extract`.
+
+These template files are used after the Okapi login step to build instance and holdings records. They include placeholders that are replaced at runtime using `replace()` method.
 
 ```markdown
 ### Template 1: instance_template.json
 
 ```json
 {
-  "statusId": "daf2681c-25af-4202-a3fa-e58fdf806183",
-  "modeOfIssuanceId": "4fc0f4fe-06fd-490a-a078-c4da1754e03a",
+  "statusId": "",
+  "modeOfIssuanceId": "",
   "title": "[title]",
-  "instanceTypeId": "c208544b-9e28-44fa-a13c-f4093d72f798",
+  "instanceTypeId": "",
   "source": "CORAL",
   "contributors": [
     {
       "name": "[contributor]",
       "primary": false,
-      "contributorNameTypeId": "2e48e713-17f3-4c13-a9f8-23845bb210aa"
+      "contributorNameTypeId": ""
     }
   ],
   "publication": [
@@ -371,17 +374,31 @@ Ensure the template files are located in the following path:`/mnt/workflows/diku
     {
       "note": "[summary]",
       "staffOnly": false,
-      "instanceNoteTypeId": "10e2e11b-450f-45c8-b09b-0f819999966e"
+      "instanceNoteTypeId": ""
     }
   ],
   "electronicAccess": [
     {
       "uri": "http://proxy.library.tamu.edu/login?url=http://coral.library.tamu.edu/resourcelink.php?resource=[coralId]",
       "linkText": "Connect to the full text of this electronic resource",
-      "relationshipId": "f5d0068e-6272-458e-8a81-b85e7b9a14aa"
+      "relationshipId": ""
     }
   ]
 }
+```
+
+Used in ScriptTask Node: [`buildInstance.json`](/coral-extract/nodes/buildInstance.json)
+The script `buildInstance.js` replaces the following: `[title]`, `[contributor]`, `[publisher]`, `[summary]` and `[coralId]` using
+
+```
+var instance = JSON.parse(
+  instanceTemplate
+    .replace(/\[title\]/i, safe(item.title))
+    .replace(/\[contributor\]/i, safe(item.contributor))
+    .replace(/\[publisher\]/i, safe(item.publisher))
+    .replace(/\[summary\]/i, safe(item.summary))
+    .replace(/\[coralId\]/i, item.coralid)
+);
 ```
 
 ```markdown
@@ -391,16 +408,27 @@ Ensure the template files are located in the following path:`/mnt/workflows/diku
 {
   "instanceId": "[instanceId]",
   "receiptStatus": "Received and complete or ceased",
-  "holdingsTypeId": "03c9c400-b9e3-4a07-ac0e-05ab470233ed",
+  "holdingsTypeId": "",
   "retentionPolicy": "Unknown",
-  "callNumberTypeId": "24badefa-4456-40c5-845c-3f45ffbc4c03",
+  "callNumberTypeId": "",
   "acquisitionMethod": "Unknown",
   "discoverySuppress": false,
-  "permanentLocationId": "480f367b-bf19-4266-b38f-4df0650c94ce"
+  "permanentLocationId": ""
 }
 ```
 
-These variables are required when building and running the workflow:
+Used in ScriptTask Node: [`buildHoldings.json`](/coral-extract/nodes/buildHoldings.json).
+The script `buildHoldings.js` replaces the following placeholder: `[instanceId]` using
+
+```
+var match = new RegExp('\\[instanceId\\]', 'i');
+var holdings = JSON.parse(
+  holdingsTemplate
+    .replace(match, instanceId)
+);
+```
+
+The following variables are required when building and running the workflow:
 
 | Variable Name   | Allowed Values | Brief Description |
 | --------------- | -------------- | ----------------- |
