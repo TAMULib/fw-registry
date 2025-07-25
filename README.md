@@ -341,7 +341,7 @@ instanceid varchar(36) NULL,
 CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 );
 ```
-Its important to note that account: `meta_wf` must be granted ownership to `mis` schema for CRUD operations.
+> Its important to note that account: `meta_wf` must be granted ownership to `mis` schema for CRUD operations.
 
 Ensure the two template files are located in the following path:`/mnt/workflows/<tenant>/coral_extract`.
 
