@@ -350,17 +350,17 @@ fw activate rapid-electronic-serials
 
 Extract Coral Data and Import it into Folio (Scheduled).
 
-This utilizes LDP, which must have tables `mis.coral_extract` and `mis.coral_instances` manually created.
-Each execution of this workflow clears the LDP table `mis.coral_extract` near the start of the process.
+This utilizes MetaDB, which must have tables `mis.coral_extract` and `mis.coral_instances` manually created.
+Each execution of this workflow clears the MetaDB table `mis.coral_extract` near the start of the process.
 
 ```sql
-CREATE SCHEMA mis AUTHORIZATION ldpadmin;
+CREATE SCHEMA mis AUTHORIZATION metadb;
 
-GRANT USAGE ON SCHEMA mis TO ldp;
-GRANT USAGE ON SCHEMA mis TO ldpadmin;
+GRANT USAGE ON SCHEMA mis TO meta_wf;
+GRANT USAGE ON SCHEMA mis TO metadb;
 
-ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldp;
-ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO ldpadmin;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO meta_wf;
+ALTER DEFAULT PRIVILEGES IN SCHEMA mis GRANT ALL PRIVILEGES ON TABLES TO metadb;
 
 CREATE TABLE mis.coral_extract (
 coralid int2 NOT NULL,
@@ -380,21 +380,107 @@ instanceid varchar(36) NULL,
 CONSTRAINT coral_instances_pkey PRIMARY KEY (coralid)
 );
 ```
+> Its important to note that account: `meta_wf` must be granted ownership to `mis` schema for CRUD operations.
 
-These variables are required when building and running the workflow:
+Ensure the two template files are located in the following path:`/mnt/workflows/<tenant>/coral_extract`.
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| coral-url      | URL            | Coral server URL. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
+These template files are used after the Okapi login step to build instance and holdings records. They include placeholders that are replaced at runtime using `replace()` method.
+
+```markdown
+### Template 1: instance_template.json
+
+```json
+{
+  "statusId": "",
+  "modeOfIssuanceId": "",
+  "title": "[title]",
+  "instanceTypeId": "",
+  "source": "CORAL",
+  "contributors": [
+    {
+      "name": "[contributor]",
+      "primary": false,
+      "contributorNameTypeId": ""
+    }
+  ],
+  "publication": [
+    {
+      "role": "Publication",
+      "publisher": "[publisher]"
+    }
+  ],
+  "notes": [
+    {
+      "note": "[summary]",
+      "staffOnly": false,
+      "instanceNoteTypeId": ""
+    }
+  ],
+  "electronicAccess": [
+    {
+      "uri": "http://proxy.library.tamu.edu/login?url=http://coral.library.tamu.edu/resourcelink.php?resource=[coralId]",
+      "linkText": "Connect to the full text of this electronic resource",
+      "relationshipId": ""
+    }
+  ]
+}
+```
+
+Used in ScriptTask Node: [`buildInstance.json`](/coral-extract/nodes/buildInstance.json)
+The script `buildInstance.js` replaces the following: `[title]`, `[contributor]`, `[publisher]`, `[summary]` and `[coralId]` using
+
+```
+var instance = JSON.parse(
+  instanceTemplate
+    .replace(/\[title\]/i, safe(item.title))
+    .replace(/\[contributor\]/i, safe(item.contributor))
+    .replace(/\[publisher\]/i, safe(item.publisher))
+    .replace(/\[summary\]/i, safe(item.summary))
+    .replace(/\[coralId\]/i, item.coralid)
+);
+```
+
+```markdown
+### Template 2: holdings_template.json
+
+```json
+{
+  "instanceId": "[instanceId]",
+  "receiptStatus": "Received and complete or ceased",
+  "holdingsTypeId": "",
+  "retentionPolicy": "Unknown",
+  "callNumberTypeId": "",
+  "acquisitionMethod": "Unknown",
+  "discoverySuppress": false,
+  "permanentLocationId": ""
+}
+```
+
+Used in ScriptTask Node: [`buildHoldings.json`](/coral-extract/nodes/buildHoldings.json).
+The script `buildHoldings.js` replaces the following placeholder: `[instanceId]` using
+
+```
+var match = new RegExp('\\[instanceId\\]', 'i');
+var holdings = JSON.parse(
+  holdingsTemplate
+    .replace(match, instanceId)
+);
+```
+
+The following variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| coral-url       | URL            | Coral server URL. |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
 
 ```shell
 fw config set coral-url ***
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell

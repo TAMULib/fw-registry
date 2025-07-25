@@ -1,6 +1,6 @@
 {
   "id": "55c95511-a571-4763-9233-34307594b19e",
-  "name": "Save Coral Item to LDP",
+  "name": "Save Coral Item to MetaDB",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
@@ -11,7 +11,7 @@
     }
   ],
   "outputVariable": {},
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "INSERT INTO mis.coral_extract (coralid, contributor, title, publisher, summary, natureOfContentTerm, electronicAccess, status) values (${extractItem.coralId}, '${extractItem.contributor}', '${extractItem.title}', '${extractItem.publisher}', '${extractItem.summary}', '${extractItem.natureOfContentTerm}', '${extractItem.electronicAccess}', '${extractItem.status}')",
   "asyncBefore": true
 }
