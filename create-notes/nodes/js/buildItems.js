@@ -1,4 +1,4 @@
-var itemsArr = JSON.parse(ldpResponse);
+var itemsArr = JSON.parse(metadbResponse);
 
 if (!Array.isArray(itemsArr)) {
   itemsArr = [];
