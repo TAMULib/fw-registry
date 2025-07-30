@@ -71,11 +71,11 @@ if (staffOnly !== true && staffOnly !== false && ('' + staffOnly).toLowerCase() 
 queryWrapper.staffOnly = (staffOnly === true || ('' + staffOnly).toLowerCase() === 'true') ? true : false;
 
 queryWrapper.sql =  '( select item.id from folio_inventory.item item ';
-queryWrapper.sql += '  where item.jsonb ->> \'barcode\' in (' + idSql + ') AND jsonb_array_length(item.jsonb -> \'notes\') = 0';
+queryWrapper.sql += '  where item.jsonb ->> \'barcode\' in (' + idSql + ') and jsonb_array_length(item.jsonb -> \'notes\') = 0';
 queryWrapper.sql += ') union (';
 queryWrapper.sql += '  select s.id from (';
-queryWrapper.sql += '    select id, jsonb->\'notes\' AS notes ';
-queryWrapper.sql += '    from folio_inventory.item item where item.jsonb ->> \'barcode\' IN (' + idSql + ')';
+queryWrapper.sql += '    select id, jsonb->\'notes\' as notes ';
+queryWrapper.sql += '    from folio_inventory.item item where item.jsonb ->> \'barcode\' in (' + idSql + ')';
 queryWrapper.sql += '  ) s';
 queryWrapper.sql += '  where not s.notes @> \'[{"itemNoteTypeId":"' + queryWrapper.noteType + '", "staffOnly":' + queryWrapper.staffOnly + ',"note":"' + queryWrapper.noteText + '"}]\'::jsonb';
 queryWrapper.sql += ')';
