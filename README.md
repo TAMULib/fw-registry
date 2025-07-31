@@ -750,35 +750,35 @@ fw run nbs-items-note
 This workflow adds a given note, specified by the *Note Type UUID*, with the given *Note Text* message and the given *Staff Only* setting.
 If a given Note already exists on an Item then that Note is not added multiple times to the Item.
 
-This utilizes **LDP** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
 These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
 
 At the end of this process, an e-mail is set to the given destination address.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description |
-| -------------- | -------------- | ----------------- |
-| emailFrom      | e-mail address | The e-mail address of the sender. |
-| emailTo        | e-mail address | The e-mail address of the recipient. |
-| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| itemNoteTypeId | UUID           | The Item Note Type UUID to be used for the Note. |
-| noteText       | string         | A message used as the Note. |
-| ldp-password   | string         | LDP login password. |
-| ldp-url        | URL            | LDP URL. |
-| ldp-user       | string         | LDP login username. |
-| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
-| okapi-internal | URL            | The (internal) Okapi URL. |
-| password       | string         | Okapi login password. |
-| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
-| staffOnly      | boolean        | Designate whether or not this is a *Staff Only* note. |
-| username       | string         | Okapi login username. |
+| Variable Name   | Allowed Values | Brief Description |
+| --------------- | -------------- | ----------------- |
+| emailFrom       | e-mail address | The e-mail address of the sender. |
+| emailTo         | e-mail address | The e-mail address of the recipient. |
+| file            | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
+| itemNoteTypeId  | UUID           | The Item Note Type UUID to be used for the Note. |
+| noteText        | string         | A message used as the Note. |
+| metadb-password | string         | MetaDB login password. |
+| metadb-url      | URL            | MetaDB URL. |
+| metadb-user     | string         | MetaDB login username. |
+| logLevel        | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| okapi-internal  | URL            | The (internal) Okapi URL. |
+| password        | string         | Okapi login password. |
+| path            | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory). |
+| staffOnly       | boolean        | Designate whether or not this is a *Staff Only* note. |
+| username        | string         | Okapi login username. |
 
 ```shell
 fw config set okapi-internal ***
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 To build and activate:
