@@ -773,7 +773,7 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/books-
 
 ## evans-pres-repr
 
-### Evans Pres Repr Workflow (Scheduled)
+### Evans Pres Repr Report Workflow (Scheduled)
 
 This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Evans Pres Repr" to a specifically configured email address `evansPresReprFrom`.
 
