@@ -19,8 +19,8 @@
   },
   "outputPath": "/mnt/workflows/${tenantId}/evans-pres-repr/evans-pres-repr-${timestamp}.csv",
   "resultType": "CSV",
-  "designation": "ldp",
-  "query": "SELECT * FROM folio_reporting.item_ext ie WHERE ie.temporary_location_name = 'Evans pres repr'",
+  "designation": "metadb",
+  "query": "SELECT * FROM folio_derived.item_ext ie WHERE ie.temporary_location_name = 'Evans pres repr'",
   "includeHeader": true,
   "asyncBefore": true
 }

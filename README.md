@@ -898,29 +898,29 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/books-
 
 ## evans-pres-repr
 
-### Evans Pres Repr Workflow (Scheduled)
+### Evans Pres Repr Report Workflow (Scheduled)
 
-This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Eva Pres Repr" to a specifically configured email address `evansPresReprFrom`.
+This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Evans Pres Repr" to a specifically configured email address `evansPresReprFrom`.
 
 These variables are required when building and running the workflow:
 
-| Variable Name           | Allowed Values | Brief Description |
-| --------------          | -------------- | ----------------- |
-| evansPresReprFrom       | e-mail address | The e-mail address of the sender. |
-| evansPresReprTo         | e-mail address | The e-mail address of the recipient. |
-| ldp-url                 | URL            | LDP URL. |
-| ldp-user                | string         | LDP login username. |
-| ldp-password            | string         | LDP login password. |
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
+| Variable Name     | Allowed Values | Brief Description |
+| --------------    | -------------- | ----------------- |
+| evansPresReprFrom | e-mail address | The e-mail address of the sender. |
+| evansPresReprTo   | e-mail address | The e-mail address of the recipient. |
+| metadb-url        | URL            | MetaDB URL. |
+| metadb-user       | string         | MetaDB login username. |
+| metadb-password   | string         | MetaDB login password. |
+| logLevel          | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG". |
 
-This utilizes **LDP** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
+This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
 
 The scheduled event is for **8:00AM UTC** on the first day of every month.
 
 ```shell
-fw config set ldp-url ***
-fw config set ldp-user ***
-fw config set ldp-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 fw config set evansPresReprFrom ***
 fw config set evansPresReprTo ***
 ```
