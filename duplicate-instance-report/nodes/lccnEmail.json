@@ -22,7 +22,7 @@
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The instances with matching LCCN report has completed, see the results attached.\n${lccnCount} instance matches found.",
   "mailMarkup": "<p>The instances with matching LCCN report has completed, see the results attached.</p><br/>${lccnCount} instance matches found.",
-  "mailSubject": "Matching LCCN Instances Report - LDP {{{ldp-url}}}",
+  "mailSubject": "Matching LCCN Instances Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/lccn-${timestamp}.csv",
   "includeAttachment": "${lccnCount}",
   "asyncBefore": true

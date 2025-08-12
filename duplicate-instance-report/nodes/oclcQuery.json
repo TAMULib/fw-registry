@@ -18,10 +18,10 @@
     "type": "PROCESS",
     "spin": false
   },
-  "designation": "ldp",
+  "designation": "metadb",
   "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/oclc-${timestamp}.csv",
   "resultType": "CSV",
   "includeHeader": true,
-  "query": "WITH oclc_with_title AS (SELECT ie.instance_hrid, LTRIM(REGEXP_REPLACE(SUBSTRING(sm.content FROM 8), '[^0-9]', '', 'g'), '0') AS oclc, ie.title FROM folio_reporting.instance_ext ie JOIN public.srs_marctab sm ON ie.instance_hrid = sm.instance_hrid WHERE sm.field = '035' AND sm.ord = 1 AND sm.sf IN ('a', 'z') AND sm.content LIKE '(OCoLC)%'), oclc AS (SELECT oclcwt.instance_hrid, oclcwt.oclc, oclcwt.title, sm.content AS author FROM oclc_with_title oclcwt JOIN public.srs_marctab sm ON oclcwt.instance_hrid = sm.instance_hrid WHERE sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.oclc, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM oclc l JOIN oclc r ON l.oclc = r.oclc AND l.instance_hrid < r.instance_hrid",
+  "query": "WITH oclc_with_title AS (SELECT ie.instance_hrid, LTRIM(REGEXP_REPLACE(SUBSTRING(sm.content FROM 8), '[^0-9]', '', 'g'), '0') AS oclc, ie.title FROM folio_derived.instance_ext ie JOIN folio_source_record.marc__t sm ON ie.instance_hrid = sm.instance_hrid WHERE sm.field = '035' AND sm.ord = 1 AND sm.sf IN ('a', 'z') AND sm.content LIKE '(OCoLC)%'), oclc AS (SELECT oclcwt.instance_hrid, oclcwt.oclc, oclcwt.title, sm.content AS author FROM oclc_with_title oclcwt JOIN folio_source_record.marc__t sm ON oclcwt.instance_hrid = sm.instance_hrid WHERE sm.field = '100' AND sm.ord = 1 AND sm.sf = 'a') SELECT l.instance_hrid AS hrid, r.instance_hrid AS hrid2, l.oclc, '\"' || REPLACE(l.title, '\"', '\"\"') || '\"' AS title, '\"' || REPLACE(r.title, '\"', '\"\"') || '\"' AS title2, '\"' || REPLACE(l.author, '\"', '\"\"') || '\"' AS author, '\"' || REPLACE(r.author, '\"', '\"\"') || '\"' AS author2 FROM oclc l JOIN oclc r ON l.oclc = r.oclc AND l.instance_hrid < r.instance_hrid",
   "asyncBefore": true
 }

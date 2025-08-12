@@ -1,10 +1,10 @@
 {
   "id": "1e2fd518-812f-4ed1-ad05-5b330512cf15",
-  "name": "Disconnect LDP",
+  "name": "Disconnect MetaDB",
   "description": "",
   "deserializeAs": "DatabaseDisconnectTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "ldp",
+  "designation": "metadb",
   "asyncBefore": true
 }

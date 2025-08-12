@@ -1,11 +1,11 @@
 {
   "id": "7c029ff5-4106-4214-987b-77be79141e12",
-  "name": "Clear Coral Items in LDP",
+  "name": "Clear Coral Items in MetaDB",
   "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [],
   "outputVariable": {},
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "TRUNCATE TABLE mis.coral_extract",
   "asyncBefore": true
 }
