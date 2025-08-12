@@ -19,7 +19,7 @@
   ],
   "outputPath": "/mnt/workflows/${tenantId}/shelflist-holdings/shelflist-holdings-report-${timestamp}.csv",
   "resultType": "CSV",
-  "designation": "ldp",
+  "designation": "metadb",
   "query": "${shelflistQuery.prop('sql').stringValue()}",
   "includeHeader": true,
   "asyncBefore": true
