@@ -24,7 +24,7 @@ function tranform(patrons) {
     userImport.expirationDate = patron.expirationDate;
 
     userImport.customFields = {
-        under: patron.is_over_18 !== 'true'
+        under: patron.is_over_18 === 'true'
     };
 
     personal.lastName = patron.personal_lastName;
