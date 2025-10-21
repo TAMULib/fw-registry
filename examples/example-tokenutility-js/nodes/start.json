@@ -1,0 +1,9 @@
+{
+  "id": "3bb6152a-1946-4238-a920-63bd15f6d1ff",
+  "name": "Start",
+  "description": "Start of the TokenUtility (JS) workflow.",
+  "type": "MESSAGE_CORRELATION",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/example-tokenutility-js/start"
+}
+
