@@ -87,7 +87,7 @@ const tests = [{
   expect: ACCESS_TOKEN,
 }, {
   callback: TokenUtility.getAccessToken,
-  name: "getRefreshToken",
+  name: "getAccessToken",
   header: REFRESH_COOKIE,
   expect: null,
 }, {
