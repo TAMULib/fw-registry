@@ -41,6 +41,9 @@ These variables are available or required when triggering the workflow:
 | exampleFilePath  | directory path | The full directory path on the system where the source file and the compressed file will be stored on the server (exclude trailing slash after the directory).
 | logLevel         | [INFO,DEBUG]   | Desired log level.
 
+The `exampleFilePath` will have `/testFileCreate` appended before adding the `exampleFileName`.
+Given the example settings above, the full file path would therefore be `/tmp/examples/path/testFileCreate/file.txt`.
+
 To build and activate:
 ```shell
 fw build example-compressfiletask-zip
