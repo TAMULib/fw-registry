@@ -80,7 +80,7 @@ fw config set exampleDatabaseUser "user"
 These variables are available or required when triggering the workflow:
 
 | Variable Name           | Allowed Values | Short Description
-| ------------------------| -------------- | -----------------
+| ----------------------- | -------------- | -----------------
 | exampleDatabasePassword | string         | The password of the database you want to connect to.
 | exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.
@@ -149,7 +149,7 @@ INSERT INTO users (id, name) VALUES ((1, "Me"), (2, "You"));
 These variables are available or required when triggering the workflow:
 
 | Variable Name           | Allowed Values | Short Description
-| ------------------------| -------------- | -----------------
+| ----------------------- | -------------- | -----------------
 | exampleDatabasePassword | string         | The password of the database you want to connect to.
 | exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.

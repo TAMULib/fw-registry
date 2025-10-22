@@ -75,8 +75,8 @@ Extract for ORCID workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
 | divit-password  | string         | DivIt login password.
 | divit-url       | URL            | DivIt URL.
 | divit-user      | string         | DivIt login username.
@@ -273,11 +273,11 @@ Rapid ILS Print Serials Monthly Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
-| metadb-password| string         | MetaDB login password.
-| metadb-url     | URL            | MetaDB URL.
-| metadb-user    | string         | MetaDB login username.
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
 
 ```shell
 fw config set metadb-url ***
@@ -522,8 +522,8 @@ For the `medsci-gps-zone-file` setting, the file name (without the path part) sh
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
+| Variable Name        | Allowed Values | Brief Description
+| -------------------- | -------------- | -----------------
 | divit-password       | string         | DivIt login password.
 | divit-url            | URL            | DivIt URL.
 | divit-user           | string         | DivIt login username.
@@ -582,8 +582,8 @@ Create Tags Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
+| Variable Name           | Allowed Values | Brief Description
+| ----------------------- | -------------- | -----------------
 | file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
@@ -661,7 +661,7 @@ Shelflist (items level) Report Workflow.
 These variables are required when building and running the workflow:
 
 | Variable Name                | Allowed Values | Brief Description
-| --------------               | -------------- | -----------------
+| ---------------------------- | -------------- | -----------------
 | batchId                      | UUID           | A batch ID.
 | createdDateEnd               | string         | A created end date.
 | createdDateStart             | string         | A created start date.
@@ -885,7 +885,7 @@ This workflow queries checked-out books within a specific call number range, gen
 These variables are required when building and running the workflow:
 
 | Variable Name           | Allowed Values | Brief Description
-| --------------          | -------------- | -----------------
+| ----------------------- | -------------- | -----------------
 | bcnMailFrom             | e-mail address | The e-mail address of the sender.
 | bcnMailTo               | e-mail address | The e-mail address of the recipient.
 | endRange                | string         | End range of call number.
@@ -939,7 +939,7 @@ This workflow sends a monthly email containing a list of all items with 'tempora
 These variables are required when building and running the workflow:
 
 | Variable Name     | Allowed Values | Brief Description
-| --------------    | -------------- | -----------------
+| ----------------- | -------------- | -----------------
 | evansPresReprFrom | e-mail address | The e-mail address of the sender.
 | evansPresReprTo   | e-mail address | The e-mail address of the recipient.
 | metadb-url        | URL            | MetaDB URL.
