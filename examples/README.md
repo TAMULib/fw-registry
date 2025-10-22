@@ -355,3 +355,42 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/exampl
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
+## example-tokenutility-js
+
+### Example Token Utility JavaScript
+
+This workflows tests the loading of a cookie using the `TokenUtility` Java class.
+A unit test-like behavior is performed, producing results of success or failure if the expected token is received or not.
+
+This also prints the JavaScript version when `logLevel` is set to `DEBUG`.
+
+```shell
+fw config set logLevel "DEBUG"
+```
+
+These variables are available or required when triggering the workflow:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| logLevel         | [INFO,DEBUG]   | Desired log level.
+
+To build and activate:
+```shell
+fw build example-tokenutility-js
+fw activate example-tokenutility-js
+```
+
+To manually execute via:
+```shell
+fw run example-tokenutility-js
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-tokenutility-js/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
+```
