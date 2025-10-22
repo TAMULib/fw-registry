@@ -100,6 +100,16 @@ const tests = [{
   name: "getRefreshToken",
   header: ACCESS_COOKIE,
   expect: null,
+}, {
+  callback: TokenUtility.getAccessToken,
+  name: "getAccessToken",
+  header: OTHER_COOKIE,
+  expect: null,
+}, {
+  callback: TokenUtility.getRefreshToken,
+  name: "getRefreshToken",
+  header: OTHER_COOKIE,
+  expect: null,
 }];
 
 (function () {
