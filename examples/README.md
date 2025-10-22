@@ -67,7 +67,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-com
 
 ## example-databaseconnectiontask
 
-### Example DatabaseConnectionTask
+### Example Database Connection Task
 
 This workflows connects to and disconnects from a given server/database.
 
@@ -109,15 +109,41 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-dat
 
 ## example-databasequerytask
 
-### Example DatabaseQueryTask
+### Example Database Query Task
 
 This workflow connects to a database / server, queries the database, prints the response via Ruby scripting language, and disconnects from the database / server.
 
 ```shell
-fw config set exampleDatabasePassword ***
-fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/my_database"
-fw config set exampleDatabaseUser "user"
+fw config set exampleDatabasePassword "examples"
+fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/examples"
+fw config set exampleDatabaseUser "examples"
 fw config set exampleQuery "SELECT id, name FROM users;"
+```
+
+The example query above requires the database to exist in the chosen database.
+This can be done as a follows.
+
+Make sure the `pg_hba.conf` is configured to allow user `examples` to connect to database `examples`:
+```
+host  examples examples 127.0.0.1/32 scram-sha-256
+local examples examples              scram-sha-256
+```
+
+Populate the database:
+```sql
+CREATE USER examples password examples;
+CREATE DATABASE examples OWNER examples;
+```
+
+Connect to the database:
+```shell
+psql -U examples examples
+```
+
+Create and populate the table:
+```sql
+CREATE TABLE users (id int, name text);
+INSERT INTO users (id, name) VALUES ((1, "Me"), (2, "You"));
 ```
 
 These variables are available or required when triggering the workflow:
@@ -153,7 +179,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-dat
 
 ## example-emailtask
 
-### Example EmailTask
+### Example Email Task
 
 This workflows sends an email to the user who's email address is specified in the config file or as a user input.
 
@@ -190,9 +216,9 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-ema
 ```
 
 
-## example file-task
+## example-filetask
 
-### Example FileTask
+### Example File Task
 
 This workflows creates a file in a specified path.
 
@@ -208,6 +234,9 @@ These variables are available or required when triggering the workflow:
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).
 | logLevel         | [INFO,DEBUG]   | Desired log level.
+
+The `exampleFilePath` will have `/testFileCreate` appended before adding the `exampleFileName`.
+Given the example settings above, the full file path would therefore be `/tmp/examples/path/testFileCreate/file.txt`.
 
 
 To build and activate:
@@ -233,9 +262,11 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-fil
 
 ## example-inputtask
 
-### Example InputTask
+### Example Input Task
 
 This workflows provides an example `InputTask`.
+
+Testing this task requires that the tester to log into the Camunda Admin UI, find the `Example InputTask`, select the running instance, navigate to `User Tasks`, add appropriate user (such as `admin`) as the `Assignee`, select the `Task ID` link, add a `String` variable named `field_1` with a value like `example`, and complete the form.
 
 ```shell
 fw config set exampleUrlPath ***
@@ -265,7 +296,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inp
 
 ## example-requesttask
 
-### Example RequestTask
+### Example Request Task
 
 This workflows sends a **GET** request to a given resource and prints the response using Ruby scripting language.
 
@@ -303,7 +334,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-req
 
 ## example-scripttask-js
 
-### Example ScriptTask Javascript
+### Example Script Task (JavaScript)
 
 This workflows prints a variable and, based on a build variable substitution, will print the original or alternate value.
 
@@ -341,7 +372,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-scr
 
 ## example-scripttask-ruby
 
-### Example ScriptTask Ruby
+### Example Script Task (Ruby)
 
 This workflows prints a hello world message on the screen utilizing Ruby as a scripting language.
 
