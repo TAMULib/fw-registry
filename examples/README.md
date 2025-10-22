@@ -340,7 +340,7 @@ This workflows prints a variable and, based on a build variable substitution, wi
 
 These variables are available or required when triggering the workflow:
 
-|   Variable Name    | Allowed Values | Short Description
+| Variable Name      | Allowed Values | Short Description
 | ------------------ | -------------- | -----------------
 | logLevel           | [INFO,DEBUG]   | Desired log level.
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed. |

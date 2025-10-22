@@ -49,7 +49,7 @@ DivIT patron workflow. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-|    Variable Name    | Allowed Values | Brief Description
+| Variable Name       | Allowed Values | Brief Description
 | ------------------- | -------------- | -----------------
 | divit-password      | string         | DivIt login password.
 | divit-url           | URL            | DivIt URL.
@@ -177,7 +177,7 @@ Purchase Orders Workflow.
 
 These variables are required when building and running the workflow:
 
-|  Variable Name   | Allowed Values | Brief Description
+| Variable Name    | Allowed Values | Brief Description
 | ---------------- | -------------- | -----------------
 | callNumberTypeId | string         | A call number type ID to use.
 | eHoldingsType    | string         | An e-holdings type to use.
