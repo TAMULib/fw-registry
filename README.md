@@ -331,11 +331,11 @@ Rapid ILS Print Monos Monthly Report. (Scheduled)
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
-| metadb-password| string         | MetaDB login password.
-| metadb-url     | URL            | MetaDB URL.
-| metadb-user    | string         | MetaDB login username.
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
 
 ```shell
 fw config set metadb-url ***
@@ -741,14 +741,14 @@ The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
-| metadb-password| string         | MetaDB login password.
-| metadb-url     | URL            | MetaDB URL.
-| metadb-user    | string         | MetaDB login username.
-| okapi-internal | URL            | The (internal) Okapi URL.
-| password       | string         | Okapi login password.
-| username       | string         | Okapi login username.
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+| okapi-internal  | URL            | The (internal) Okapi URL.
+| password        | string         | Okapi login password.
+| username        | string         | Okapi login username.
 
 ```shell
 fw config set metadb-url ***
