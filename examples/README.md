@@ -359,7 +359,6 @@ curl --location --request POST 'http://localhost:9001/mod-workflow/events/exampl
 
 ## example-tokenutility-js
 
-
 ### Example Token Utility JavaScript
 
 This workflows tests the loading of a cookie using the `TokenUtility` Java class.
