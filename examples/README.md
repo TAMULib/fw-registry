@@ -2,11 +2,14 @@
 
 This provides examples on building and using a workflow.
 
+
 ## Setup
 
-Follow the instructions from the `Readme.md` file at the root of this repository.
+Follow the instructions from the `README.md` file at the root of this repository.
 
 If using the `fw-cli`, then these examples require that the `wd` (Working Directory) for `fw-registry` to be set to this examples sub-directory.
+
+This documentation's `curl` examples are based on the expectation that `mod-workflow` is started on port `9001` (via something like `SERVER_PORT=9001`).
 
 Such as:
 ```shell
@@ -17,6 +20,7 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 ```
   "wd": "fw-registry/examples",
 ```
+
 
 ## example-compressfiletask-zip
 
@@ -31,11 +35,11 @@ fw config set exampleFileName "file.txt"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name    | Allowed Values | Short Description |
-| ---------------- | -------------- | ----------------- |
-| exampleFileName  | file name      | The name of the file within the specified directory path representing the file to compress (do not prefix with a starting slash). |
-| exampleFilePath  | directory path | The full directory path on the system where the source file and the compressed file will be stored on the server (exclude trailing slash after the directory).  |
-| logLevel         | [INFO,DEBUG]   | Desired log level. |
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| exampleFileName  | file name      | The name of the file within the specified directory path representing the file to compress (do not prefix with a starting slash).
+| exampleFilePath  | directory path | The full directory path on the system where the source file and the compressed file will be stored on the server (exclude trailing slash after the directory).
+| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -51,11 +55,12 @@ fw run example-compressfiletask-zip
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-compressfiletask-zip/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-compressfiletask-zip/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-databaseconnectiontask
 
@@ -71,12 +76,12 @@ fw config set exampleDatabaseUser "user"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name           | Allowed Values | Short Description |
-| ------------------------| -------------- | ----------------- ||
-| exampleDatabasePassword | string         | The password of the database you want to connect to. |
-| exampleDatabaseURI      | URL            | The URI of the database you want to connect to. |
+| Variable Name           | Allowed Values | Short Description
+| ------------------------| -------------- | -----------------
+| exampleDatabasePassword | string         | The password of the database you want to connect to.
+| exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.
-| logLevel                | [INFO,DEBUG]   | Desired log level. |
+| logLevel                | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -92,11 +97,12 @@ fw run example-databaseconnectiontask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-databaseconnectiontask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-databasequerytask
 
@@ -113,13 +119,13 @@ fw config set exampleQuery "SELECT id, name FROM users;"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name           | Allowed Values | Short Description |
-| ------------------------| -------------- | ----------------- |
-| exampleDatabasePassword | string         | The password of the database you want to connect to. |
-| exampleDatabaseURI      | URL            | The URI of the database you want to connect to. |
-| exampleDatabaseUser     | string         | The user name of the database you want to connect to. |
-| exampleQuery            | string         | The query. |
-| logLevel                | [INFO,DEBUG]   | Desired log level. |
+| Variable Name           | Allowed Values | Short Description
+| ------------------------| -------------- | -----------------
+| exampleDatabasePassword | string         | The password of the database you want to connect to.
+| exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
+| exampleDatabaseUser     | string         | The user name of the database you want to connect to.
+| exampleQuery            | string         | The query.
+| logLevel                | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -135,11 +141,12 @@ fw run example-databasequerytask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-databasequerytask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-emailtask
 
@@ -153,11 +160,11 @@ fw config set exampleEmailFrom "user@example.com"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name    | Allowed Values | Short Description |
-| ---------------- | -------------- | ----------------- |
-| exampleEmailFrom | e-mail address | The source e-mail address to send from. |
-| exampleEmailTo   | e-mail address | The destination e-mail address to send to. |
-| logLevel         | [INFO,DEBUG]   | Desired log level |
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| exampleEmailFrom | e-mail address | The source e-mail address to send from.
+| exampleEmailTo   | e-mail address | The destination e-mail address to send to.
+| logLevel         | [INFO,DEBUG]   | Desired log level
 
 To build and activate:
 ```shell
@@ -173,11 +180,12 @@ fw run example-emailtask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-emailtask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-emailtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO", "exampleEmailTo": "you@example.com" }'
 ```
+
 
 ## example file-task
 
@@ -192,11 +200,11 @@ fw config set exampleFilePath "/tmp/examples/path"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name    | Allowed Values | Short Description |
-| ---------------- | -------------- | ----------------- |
-| exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash). |
-| exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).  |
-| logLevel         | [INFO,DEBUG]   | Desired log level. |
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).
+| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 
 To build and activate:
@@ -213,11 +221,12 @@ fw run example-filetask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-filetask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-filetask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-inputtask
 
@@ -245,10 +254,11 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-inputtask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inputtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku'
 ```
+
 
 ## example-requesttask
 
@@ -262,10 +272,10 @@ fw config set exampleUrlPath "http://www.example.com"
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name    | Allowed Values | Short Description |
-| ---------------- | -------------- | ----------------- |
-| exampleUrlPath   | URL            | The URL to send a GET request to. |
-| logLevel         | [INFO,DEBUG]   | Desired log level. |
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| exampleUrlPath   | URL            | The URL to send a GET request to.
+| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -281,11 +291,12 @@ fw run example-requesttask
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-requesttask/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-requesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-scripttask-js
 
@@ -295,9 +306,9 @@ This workflows prints a variable and, based on a build variable substitution, wi
 
 These variables are available or required when triggering the workflow:
 
-|   Variable Name    | Allowed Values | Short Description |
-| ------------------ | -------------- | ----------------- |
-| logLevel           | [INFO,DEBUG]   | Desired log level. |
+|   Variable Name    | Allowed Values | Short Description
+| ------------------ | -------------- | -----------------
+| logLevel           | [INFO,DEBUG]   | Desired log level.
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed. |
 
 ```shell
@@ -318,11 +329,12 @@ fw run example-scripttask-js
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
 
 ```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-js/start' \
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-scripttask-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
 ```
+
 
 ## example-scripttask-ruby
 
@@ -332,9 +344,9 @@ This workflows prints a hello world message on the screen utilizing Ruby as a sc
 
 These variables are available or required when triggering the workflow:
 
-| Variable Name    | Allowed Values | Short Description |
-| ---------------- | -------------- | ----------------- |
-| logLevel         | [INFO,DEBUG]   | Desired log level. |
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -348,10 +360,3 @@ fw run example-scripttask-ruby
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-ruby/start' \
-  --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
-```
