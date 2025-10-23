@@ -1,0 +1,9 @@
+{
+  "id": "310370e0-7cd6-4a9c-a155-f00e6e1c5be0",
+  "name": "Run Script",
+  "description": "Execute the TokenUtility functions using JavaScript and print the result, failing on errors.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "script.js",
+  "inputVariables": []
+}
