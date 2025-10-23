@@ -1,0 +1,6 @@
+{
+  "id": "04261e64-4c3d-419d-8aaa-30cd08a1b28c",
+  "name": "End",
+  "description": "End of the TokenUtility (JS) workflow.",
+  "deserializeAs": "EndEvent"
+}
