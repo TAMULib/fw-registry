@@ -4,7 +4,7 @@
   "description": "Request task to update holdings.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/holdings-storage/holdings/${holdingsRecordId}",
+    "url": "{{{okapi-url}}}/holdings-storage/holdings/${holdingsRecordId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",

@@ -1,6 +1,6 @@
 {
   "id": "8c9e268e-6302-44c9-8bdf-4f5830c26deb",
   "name": "End",
-  "description": "",
+  "description": "Finished the Coral Extract workflow.",
   "deserializeAs": "EndEvent"
 }

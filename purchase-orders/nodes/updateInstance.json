@@ -4,7 +4,7 @@
   "description": "Request task to update instance mapped from MARC record.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/inventory/instances/${instanceId}",
+    "url": "{{{okapi-url}}}/inventory/instances/${instanceId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",
