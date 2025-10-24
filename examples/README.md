@@ -260,40 +260,6 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-fil
 ```
 
 
-## example-inputtask
-
-### Example Input Task
-
-This workflows provides an example `InputTask`.
-
-Testing this task requires that the tester to log into the Camunda Admin UI, find the `Example InputTask`, select the running instance, navigate to `User Tasks`, add appropriate user (such as `admin`) as the `Assignee`, select the `Task ID` link, add a `String` variable named `field_1` with a value like `example`, and complete the form.
-
-```shell
-fw config set exampleUrlPath ***
-```
-
-No variables are required when triggering the workflow.
-
-To build and activate:
-```shell
-fw build example-inputtask
-fw activate example-inputtask
-```
-
-To manually execute via:
-```shell
-fw run example-requesttask
-```
-
-Trigger the workflow using an **HTTP** request such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inputtask/start' \
-  --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: diku'
-```
-
-
 ## example-foliologin-js
 
 ### Example FOLIO Login (JavaScript)
@@ -332,6 +298,40 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-fol
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
   --data-raw '{ "logLevel": "INFO" }'
+```
+
+
+## example-inputtask
+
+### Example Input Task
+
+This workflows provides an example `InputTask`.
+
+Testing this task requires that the tester to log into the Camunda Admin UI, find the `Example InputTask`, select the running instance, navigate to `User Tasks`, add appropriate user (such as `admin`) as the `Assignee`, select the `Task ID` link, add a `String` variable named `field_1` with a value like `example`, and complete the form.
+
+```shell
+fw config set exampleUrlPath ***
+```
+
+No variables are required when triggering the workflow.
+
+To build and activate:
+```shell
+fw build example-inputtask
+fw activate example-inputtask
+```
+
+To manually execute via:
+```shell
+fw run example-requesttask
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inputtask/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku'
 ```
 
 
