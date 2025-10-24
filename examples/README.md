@@ -294,6 +294,47 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inp
 ```
 
 
+## example-foliologin-js
+
+### Example FOLIO Login (JavaScript)
+
+This workflows tests logging into the FOLIO system, such as OKAPI`.
+This performs the login, extracts the `Set-Cookie` header, and produces an `X-Okapi-Token`.
+This `X-Okapi-Token` is then printed as the **Access Token**.
+
+This also prints the the **Access Token** during processing when `logLevel` is set to `DEBUG`.
+
+```shell
+fw config set logLevel "INFO"
+```
+
+These variables are available or required when triggering the workflow:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| logLevel         | [INFO,DEBUG]   | Desired log level.
+
+To build and activate:
+```shell
+fw build example-foliologin-js
+fw activate example-foliologin-js
+```
+
+To manually execute via:
+```shell
+fw run example-foliologin-js
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliologin-js/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
+```
+
+
 ## example-requesttask
 
 ### Example Request Task
