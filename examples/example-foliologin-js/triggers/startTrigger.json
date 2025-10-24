@@ -1,0 +1,9 @@
+{
+  "id": "69c30f31-b0de-4463-897c-b743f4ee5224",
+  "name": "TokenUtility (JS) Start Trigger",
+  "description": "Start of the TokenUtility (JS) workflow.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/example-tokenutility-js/start"
+}

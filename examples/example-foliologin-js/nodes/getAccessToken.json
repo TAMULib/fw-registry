@@ -1,0 +1,13 @@
+{
+  "id": "5199339a-a3f3-401a-86fd-f719b65732ae",
+  "name": "Get Access Token",
+  "description": "Get the FOLIO Access Token as an X-Okapi-Token.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "getAccessToken.js",
+  "inputVariables": [],
+  "outputVariable": {
+    "key": "X-Okapi-Token",
+    "type": "PROCESS"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "id": "d55e9092-884d-48c2-9dcd-865cb6c34774",
+  "name": "Show Access Token",
+  "description": "Print the FOLIO Access Token from the X-Okapi-Token variable.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "showAccessToken.js"
+}
