@@ -138,12 +138,12 @@ E-resource Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
-| divit-password | string         | DivIt login password.
-| divit-url      | URL            | DivIt URL.
-| divit-user     | string         | DivIt login username.
-| resource-view  | string         | The name of the resource view.
+| Variable Name    | Allowed Values | Brief Description
+| ---------------- | -------------- | -----------------
+| divit-password   | string         | DivIt login password.
+| divit-url        | URL            | DivIt URL.
+| divit-user       | string         | DivIt login username.
+| e-resource-view  | string         | The name of the resource view.
 
 ```shell
 fw config set e-resource-view LIBRARY_ERESOURCES
