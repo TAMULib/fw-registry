@@ -4,7 +4,7 @@
   "description": "Request task to update an item.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/item-storage/items/${itemId}",
+    "url": "{{{okapi-url}}}/item-storage/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",

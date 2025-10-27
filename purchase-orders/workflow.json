@@ -13,6 +13,7 @@
   "nodes": [
     "/startEvent/9219c68d-8019-4b3d-9ea6-f1a3a1c2d22c",
     "/requestTask/179d06af-72a2-408a-a2fd-bf45300d55a8",
+    "/scriptTask/61a2062b-d760-4570-855e-c7ece56bfd3a",
     "/parallelGateway/b4440bc5-6fe8-4bf3-aa41-57debe0a813f",
     "/moveToNode/6237b530-fa88-4b41-ac82-23c2c9069ab2",
     "/moveToNode/3bafb8b3-f358-4218-9d30-9843e7970e90",

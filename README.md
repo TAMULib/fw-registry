@@ -54,12 +54,14 @@ These variables are required when building and running the workflow:
 | divit-password      | string         | DivIt login password.
 | divit-url           | URL            | DivIt URL.
 | divit-user          | string         | DivIt login username.
+| okapi-url           | URL            | The Okapi URL.
 | overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only).
 
 ```shell
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
+fw config set okapi-url ***
 fw config set overridePatronEmail ***
 ```
 
@@ -190,8 +192,7 @@ These variables are required when building and running the workflow:
 | logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | materialType     | string         | A material type to use.
 | noteType         | string         | A Note type.
-| okapiUrl         | URL            | The (public or external) Okapi URL.
-| okapi-internal   | URL            | The (internal) Okapi URL.
+| okapi-url        | URL            | The Okapi URL.
 | password         | string         | Okapi login password.
 | path             | directory path | The directory on the system where the MARC file is stored.
 | permELocation    | string         | A permanent e-location to use.
@@ -203,7 +204,7 @@ These variables are required when building and running the workflow:
 | username         | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
+fw config set okapi-url ***
 ```
 
 ```shell
@@ -226,7 +227,6 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/purchase-or
 --form 'logLevel="INFO"' \
 --form 'materialType="unmediated -- volume"' \
 --form 'noteType="General note"' \
---form 'okapiUrl="https://okapi"' \
 --form 'password="***"' \
 --form 'path="/mnt/po"' \
 --form 'permELocation="www_evans"' \
@@ -494,12 +494,14 @@ The following variables are required when building and running the workflow:
 | metadb-password | string         | MetaDB login password.
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
+| okapi-url       | URL            | The Okapi URL.
 
 ```shell
 fw config set coral-url ***
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
+fw config set okapi-url ***
 ```
 
 ```shell
@@ -587,9 +589,14 @@ These variables are required when building and running the workflow:
 | file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
+| okapi-url               | URL            | The Okapi URL.
 | password                | string         | Okapi login password.
 | path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | username                | string         | Okapi login username.
+
+```shell
+fw config set okapi-url ***
+```
 
 ```shell
 fw build create-tags
@@ -746,7 +753,7 @@ These variables are required when building and running the workflow:
 | metadb-password | string         | MetaDB login password.
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
-| okapi-internal  | URL            | The (internal) Okapi URL.
+| okapi           | URL            | The Okapi URL.
 | password        | string         | Okapi login password.
 | username        | string         | Okapi login username.
 
@@ -754,7 +761,7 @@ These variables are required when building and running the workflow:
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
-fw config set okapi-internal ***
+fw config set okapi-url ***
 fw config set username ***
 fw config set password ***
 ```
@@ -797,17 +804,17 @@ These variables are required when building and running the workflow:
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
 | logLevel        | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
-| okapi-internal  | URL            | The (internal) Okapi URL.
+| okapi-url       | URL            | The Okapi URL.
 | password        | string         | Okapi login password.
 | path            | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | staffOnly       | boolean        | Designate whether or not this is a *Staff Only* note.
 | username        | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
+fw config set okapi-url ***
 ```
 
 To build and activate:
@@ -846,13 +853,14 @@ These variables are required when building and running the workflow:
 | emailTo        | e-mail address | The e-mail address of the recipient.
 | file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| okapi-url      | URL            | The Okapi URL.
 | password       | string         | Okapi login password.
 | path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | username       | string         | Okapi login username.
 
 ```shell
-fw config set okapi-internal ***
 fw config set nbs-mail-from ***
+fw config set okapi-url ***
 ```
 
 To build and activate:

@@ -13,6 +13,7 @@
   "nodes": [
     "/startEvent/06bc4aa2-a00a-4532-80c9-a4b5fe4499ae",
     "/requestTask/f3f35f6b-42fb-4fe6-aab6-b35abba5a8a2",
+    "/scriptTask/0cf53af7-c545-4632-9eff-f799f572afe6",
     "/fileTask/f7b1f4cf-4d39-478a-b77a-75dbc58f263b",
     "/scriptTask/60aa763e-d71c-4557-89d7-45592fbf8313",
     "/databaseConnectionTask/8b3f6942-c10f-4fdf-bc7f-e2afcdfc26e4",
