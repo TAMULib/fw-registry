@@ -1,0 +1,23 @@
+{
+  "id": "f62918fc-920e-467c-a6f1-b30ed5bba88c",
+  "name": "Example FOLIO Login - JavaScript",
+  "description": "Use the RequestDelegate to log into FOLIO and process the response using JavaScript.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/919e1ceb-2cfc-4c6b-b89d-94789728d041",
+    "/loginTask/50f6c01f-fd1f-4eb2-9d1d-89291cd06706",
+    "/scriptTask/5199339a-a3f3-401a-86fd-f719b65732ae",
+    "/scriptTask/d55e9092-884d-48c2-9dcd-865cb6c34774",
+    "/endEvent/73c4dd0b-53b4-4968-9012-71d6322d471e"
+  ],
+  "initialContext": {
+    "logLevel": "{{{logLevel}}}"
+  }
+}

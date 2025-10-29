@@ -1,10 +1,10 @@
 {
   "id": "179d06af-72a2-408a-a2fd-bf45300d55a8",
-  "name": "Login",
-  "description": "Gets OKAPI login token for purchase orders.",
+  "name": "FOLIO Login",
+  "description": "Log into FOLIO, obtaining the appropriate tokens.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi-internal}}}/authn/login",
+    "url": "{{{okapi-url}}}/authn/login-with-expiry",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
@@ -22,13 +22,14 @@
   ],
   "headerOutputVariables": [
     {
-      "key": "X-Okapi-Token",
-      "type": "PROCESS"
+      "key": "Set-Cookie",
+      "type": "LOCAL",
+      "asArray": true
     }
   ],
   "outputVariable": {
     "key": "loginResponse",
-    "type": "PROCESS"
+    "type": "LOCAL"
   },
   "asyncBefore": true
 }

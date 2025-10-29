@@ -1,0 +1,6 @@
+{
+  "id": "73c4dd0b-53b4-4968-9012-71d6322d471e",
+  "name": "End",
+  "description": "End of the FOLIO login (JS) workflow.",
+  "deserializeAs": "EndEvent"
+}

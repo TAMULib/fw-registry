@@ -1,7 +1,7 @@
 {
   "id": "7dac827f-890e-45bc-b5be-13baecc9dc2f",
   "name": "Start",
-  "description": "",
+  "description": "Start the Coral Extract workflow based on a time event.",
   "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
   "expression": "0 0 15 * * ?"

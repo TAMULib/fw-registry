@@ -1,0 +1,21 @@
+{
+  "id": "5434300c-7028-4791-b08d-a91c3dd3ecf0",
+  "name": "Example TokenUtility - JavaScript",
+  "description": "Perform TokenUtility operations and print the results using the JavaScript language.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/3bb6152a-1946-4238-a920-63bd15f6d1ff",
+    "/scriptTask/310370e0-7cd6-4a9c-a155-f00e6e1c5be0",
+    "/endEvent/04261e64-4c3d-419d-8aaa-30cd08a1b28c"
+  ],
+  "initialContext": {
+    "logLevel": "{{{logLevel}}}"
+  }
+}

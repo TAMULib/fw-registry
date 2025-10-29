@@ -1,6 +1,5 @@
 if (logLevel === 'DEBUG') {
   print('\nlogLevel = ' + logLevel);
-  print('\nokapiUrl = ' + okapiUrl);
   print('\nusername = ' + username);
   print('\nemailTo = ' + emailTo);
   print('\nhegisCodes = ' + hegisCodes);

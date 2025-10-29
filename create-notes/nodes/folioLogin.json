@@ -1,10 +1,10 @@
 {
-  "id": "0abf1dbc-5da6-40f8-9f04-07cc52d5a5bc",
-  "name": "Login",
-  "description": "Get Login Token for Create Tags",
+  "id": "f3f35f6b-42fb-4fe6-aab6-b35abba5a8a2",
+  "name": "FOLIO Login",
+  "description": "Log into FOLIO, obtaining the appropriate tokens.",
   "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{okapi}}}/authn/login",
+    "url": "{{{okapi-url}}}/authn/login-with-expiry",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
@@ -22,13 +22,14 @@
   ],
   "headerOutputVariables": [
     {
-      "key": "X-Okapi-Token",
-      "type": "PROCESS"
+      "key": "Set-Cookie",
+      "type": "LOCAL",
+      "asArray": true
     }
   ],
   "outputVariable": {
     "key": "loginResponse",
-    "type": "PROCESS"
+    "type": "LOCAL"
   },
   "asyncBefore": true
 }
