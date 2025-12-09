@@ -29,13 +29,13 @@ function main() {
   const locations = JSON.parse(locationsResponse).locations;
 
   const findHoldingsTypeIdByName = function (holdingsTypeName) {
-    for (const i = 0; i < holdingsTypes.length; ++i) {
+    for (let i = 0; i < holdingsTypes.length; ++i) {
       if (holdingsTypeName === holdingsTypes[i].name) return holdingsTypes[i].id;
     }
   };
 
   const findLocationIdByName = function (locationName) {
-    for (const i = 0; i < locations.length; ++i) {
+    for (let i = 0; i < locations.length; ++i) {
       if (locationName === locations[i].name) return locations[i].id;
     }
   };
@@ -43,7 +43,7 @@ function main() {
   const mapStatisticalCodeIds = function (statisticalCodes) {
     const statisticalCodeIds = [];
 
-    for (const i = 0; i < statisticalCodes.length; ++i) {
+    for (let i = 0; i < statisticalCodes.length; ++i) {
       statisticalCodeIds.push(statisticalCodes[i].id);
     }
 
