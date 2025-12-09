@@ -1,5 +1,4 @@
 function main() {
-  const instanceObj = JSON.parse(instance);
   const holdingsKeys = new Set({{{holdingsRecordKeys}}});
 
   if (logLevel === "DEBUG") {
