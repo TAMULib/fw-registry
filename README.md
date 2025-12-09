@@ -175,33 +175,41 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/e-resource/
 
 ## purchase-orders
 
-Purchase Orders Workflow.
+### Purchase Orders Workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name    | Allowed Values | Brief Description
-| ---------------- | -------------- | -----------------
-| callNumberTypeId | string         | A call number type ID to use.
-| eHoldingsType    | string         | An e-holdings type to use.
-| emailFrom        | e-mail address | The e-mail address of the sender.
-| emailTo          | e-mail address | The e-mail address of the recipient.
-| eMaterialType    | string         | An e-material type to use.
-| file             | file name      | The file path within the specified directory path representing the MARC file to process.
-| fiscalYearCode   | string         | A fiscal year code to use.
-| holdingsType     | string         | A holdings type to use.
-| logLevel         | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
-| materialType     | string         | A material type to use.
-| noteType         | string         | A Note type.
-| okapi-url        | URL            | The Okapi URL.
-| password         | string         | Okapi login password.
-| path             | directory path | The directory on the system where the MARC file is stored.
-| permELocation    | string         | A permanent e-location to use.
-| permLoanType     | string         | A permanent Loan type to use.
-| permLocation     | string         | A permanent location to use.
-| statisticalCode  | string         | A statistical code to use.
-| tempLoanType     | string         | A temporary Loan type to use.
-| tempLocation     | string         | A temporary location to use.
-| username         | string         | Okapi login username.
+| Variable Name      | Allowed Values | Brief Description
+| ------------------ | -------------- | -----------------
+| callNumberTypeId   | string         | A call number type ID to use.
+| eHoldingsType      | string         | An e-holdings type to use.
+| emailFrom          | e-mail address | The e-mail address of the sender.
+| emailTo            | e-mail address | The e-mail address of the recipient.
+| eMaterialType      | string         | An e-material type to use.
+| file               | file name      | The file path within the specified directory path representing the MARC file to process.
+| fiscalYearCode     | string         | A fiscal year code to use.
+| holdingsRecordKeys | JSON string    | An array of allowed holdings record keys (if not defined, then all keys are allowed).
+| holdingsType       | string         | A holdings type to use.
+| logLevel           | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| materialType       | string         | A material type to use.
+| noteType           | string         | A Note type.
+| okapi-url          | URL            | The Okapi URL.
+| password           | string         | Okapi login password.
+| path               | directory path | The directory on the system where the MARC file is stored.
+| permELocation      | string         | A permanent e-location to use.
+| permLoanType       | string         | A permanent Loan type to use.
+| permLocation       | string         | A permanent location to use.
+| statisticalCode    | string         | A statistical code to use.
+| tempLoanType       | string         | A temporary Loan type to use.
+| tempLocation       | string         | A temporary location to use.
+| username           | string         | Okapi login username.
+
+The value for `holdingsRecordKeys` is generated from the [mod-inventory-storage holdingsRecord.json](https://github.com/folio-org/mod-inventory-storage/blob/master/ramls/holdings-storage/holdingsRecord.json).
+Use the `jq` program as follows to extract the array of allowed keys along with the `fw` script to set assign the `holdingsRecordKeys` value:
+
+```shell
+fw config set holdingsRecordKeys $(jq -Mc '.properties | keys' holdingsRecord.json)
+```
 
 ```shell
 fw config set okapi-url ***
@@ -1028,7 +1036,6 @@ fw run duplicate-instance-report
 
 ## hegis-purchase-order
 
-
 ### Hegis Purchase Order Workflow
 
 The user initiates the form submission using the Catalog Reports Hegis Purchase Order Workflow.
@@ -1039,17 +1046,16 @@ These variables are required when building and running the workflow:
 
 | Variable Name           | Allowed Values | Brief Description
 | ----------------------- | -------------- | -----------------
+| emailTo                 | e-mail address | The e-mail address of the recipient.
 | logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | metadb-password         | string         | MetaDB login password.
 | metadb-url              | URL            | MetaDB URL.
 | metadb-user             | string         | MetaDB login username.
-| hegisPoEmailFrom        | e-mail address | The e-mail address of the sender.
-| emailTo                 | e-mail address | The e-mail address of the recipient.
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
 | hegis                   | string         | A JSON Array of Hegis codes.
-| sysUnitCodes            | string         | A JSON Array of system unit codes.
+| hegisPoEmailFrom        | e-mail address | The e-mail address of the sender.
 | poType                  | string         | The purchase order type.
-
+| sysUnitCodes            | string         | A JSON Array of system unit codes.
 
 ```shell
 fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
