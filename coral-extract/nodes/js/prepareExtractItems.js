@@ -35,7 +35,7 @@ var buildExtractItems = function () {
     coralIds[coralId] = coralId;
   }
 
-  console.log("DEBUG: Built Extract Items: ", items);
+  console.log("DEBUG: Built Extract Items: ", JSON.stringify(items, null, 2));
 
   return items;
 };
