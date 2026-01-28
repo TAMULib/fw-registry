@@ -19,5 +19,7 @@ var instance = JSON.parse(
 
 instance.id = instanceId;
 
+console.log(`DEBUG: built instance for item ${item?.id}: `, instance);
+
 execution.setVariableLocal('instanceId', instanceId);
 execution.setVariableLocal('instance', S(JSON.stringify(instance)));

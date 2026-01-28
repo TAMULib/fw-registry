@@ -9,4 +9,6 @@ var holdings = JSON.parse(
 
 holdings.id = holdingsId;
 
+console.log(`DEBUG: built holdings for instanceId ${instanceId}: `, holdings);
+
 execution.setVariableLocal('holdings', S(JSON.stringify(holdings)));
