@@ -1,0 +1,19 @@
+{
+  "id": "053bfc63-7f91-4dac-9ecd-65d0bda6e975",
+  "name": "EDI Import",
+  "description": "A workflow for importing EDIs into FOLIO.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/3576999b-ffde-422d-9902-785473a146a0",
+    "/scriptTask/9f16b20a-4281-46d0-b33a-dd3fd1ed9d58",
+    "/endEvent/060dbb70-885b-4705-b584-c2b2a6219f3f"
+  ],
+  "initialContext": {}
+}

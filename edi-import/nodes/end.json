@@ -1,0 +1,6 @@
+{
+  "id": "060dbb70-885b-4705-b584-c2b2a6219f3f",
+  "name": "End",
+  "description": "End of EDI Import Workflow.",
+  "deserializeAs": "EndEvent"
+}
