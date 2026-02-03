@@ -1,5 +1,5 @@
 
-var exampleValue = "original value";
+let exampleValue = "original value";
 print("\n\nOriginal value is: " + exampleValue + "\n");
 
 if ("{{exampleInjectValue}}" != "") {
