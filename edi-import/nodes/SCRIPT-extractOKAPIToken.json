@@ -1,0 +1,8 @@
+{
+  "id": "9f16b20a-4281-46d0-b33a-dd3fd1ed9d58",
+  "name": "Extract OKAPI Token",
+  "description": "Extract the OKAPI Token for future use.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "extactOKAPIToken.js"
+}
