@@ -15,6 +15,7 @@
     "requestTask/d7fd1a89-c43c-4564-a7f1-ef8132783126",           
     "/scriptTask/9f16b20a-4281-46d0-b33a-dd3fd1ed9d58",
     "databaseConnectionTask/be091b7f-902b-45db-aa96-039546029b3c",
+    "databaseQueryTask/3506d9e4-d4ac-41bf-8dfa-65691c3de753",
     "/endEvent/060dbb70-885b-4705-b584-c2b2a6219f3f"
   ],
   "initialContext": {}
