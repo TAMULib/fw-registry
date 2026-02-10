@@ -1,0 +1,20 @@
+{
+  "id": "b0978fa2-47da-4f62-a7e8-87a75e443718",
+  "name": "Read EDI Input File",
+  "description": "Read EDI input file",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {
+    "key": "edi-file",
+    "type": "PROCESS",
+    "asTransient": true
+  },
+  "path": "${inputFilePath}",
+  "op": "READ",
+  "asyncBefore": true
+}
