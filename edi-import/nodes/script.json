@@ -1,8 +1,0 @@
-{
-  "id": "9f16b20a-4281-46d0-b33a-dd3fd1ed9d58",
-  "name": "Run EDI Import Script",
-  "description": "Check to see how variable substitution works while running in Javascript.",
-  "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "script.js"
-}
