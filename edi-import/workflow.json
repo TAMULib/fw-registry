@@ -19,6 +19,10 @@
     "databaseDisconnectTask/1494afb3-980c-4c74-b05e-ff30d53a4557",
     "fileTask/b0978fa2-47da-4f62-a7e8-87a75e443718",
     "/scriptTask/189ce254-e098-4a8b-9a9b-e30c234dc80e",
+    "/subprocess/0eaa9d1e-e520-43a4-bcaa-dce2c3a6b0c6",           <-- Data Import EDI Process, for each invoice
+    "/scriptTask/0167dd54-4258-4eab-8c42-889947431c54",           <-- Task Build Success Email
+    "/emailTask/82d6b373-d2cc-460d-8197-120a65d37cc8",            <-- Send Email
+    "fileTask/f4341d58-de0b-4bd3-9323-b56d19430999",              <-- Clean Up
     "/endEvent/060dbb70-885b-4705-b584-c2b2a6219f3f"
   ],
   "initialContext": {}
