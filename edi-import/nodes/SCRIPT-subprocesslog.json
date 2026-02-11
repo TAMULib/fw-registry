@@ -1,0 +1,8 @@
+{
+  "id": "a102a39d-756f-4ac1-a248-f2b78b988df0",
+  "name": "Sub Process Log",
+  "description": "",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "subprocessLog.js"
+}

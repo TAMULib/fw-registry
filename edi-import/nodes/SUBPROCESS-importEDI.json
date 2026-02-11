@@ -5,9 +5,9 @@
   "type": "EMBEDDED",
   "deserializeAs": "Subprocess",
   "nodes": [
-    "/startEvent/_",
-    "/scriptTask/_",
-    "/endEvent/_"
+    "/startEvent/8d4b2809-6992-45b8-b687-a8dd649f0a22",
+    "/scriptTask/a102a39d-756f-4ac1-a248-f2b78b988df0",
+    "/endEvent/fda22fc8-2285-4827-87c8-9a89974090a0"
   ],
   "loopRef": {
     "dataInputRefExpression": "${invoices.elements()}",
