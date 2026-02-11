@@ -1,0 +1,17 @@
+{
+  "id": "0eaa9d1e-e520-43a4-bcaa-dce2c3a6b0c6",
+  "name": "Import EDI Subprocess",
+  "description": "Subprocess to import EDI",
+  "type": "EMBEDDED",
+  "deserializeAs": "Subprocess",
+  "nodes": [
+    "/startEvent/_",
+    "/scriptTask/_",
+    "/endEvent/_"
+  ],
+  "loopRef": {
+    "dataInputRefExpression": "${invoices.elements()}",
+    "inputDataName": "invoice",
+    "parallel": false
+  }
+}
