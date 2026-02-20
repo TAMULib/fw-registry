@@ -6,8 +6,8 @@
   "inputVariables": [],
   "outputVariable": {},
   "designation": "metadb",
-  "url": "{{{metaDB-url}}}",
-  "username": "{{{metaDB-user}}}",
-  "password": "{{{metaDB-password}}}",
+  "url": "{{{metadb-url}}}",
+  "username": "{{{metadb-user}}}",
+  "password": "{{{metadb-password}}}",
   "asyncBefore": true
 }

@@ -14,7 +14,7 @@
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "${inputFilePath}",
+  "path": "/mnt/workflows/tamu/edi-import/grass",
   "op": "READ",
   "asyncBefore": true
 }
