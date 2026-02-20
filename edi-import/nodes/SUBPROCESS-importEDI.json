@@ -11,7 +11,7 @@
   ],
   "loopRef": {
     "dataInputRefExpression": "${invoices.elements()}",
-    "inputDataName": "invoice",
+    "inputDataName": "inv",
     "parallel": false
   }
 }

@@ -1,2 +1,3 @@
  print('\n\n------------\n');
- print('tag = ' + JSON.stringify(invoice) + '\n');
+ const invoice = JSON.parse(inv);
+ print('tag = ' + invoice.name + '\n');
