@@ -10,11 +10,11 @@
     }
   ],
   "outputVariable": {
-    "key": "edi-file",
+    "key": "inputFile",
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "/mnt/workflows/tamu/edi-import/grass",
+  "path": "/mnt/workflows/tamu/edi-import/inputFile.edi",
   "op": "READ",
   "asyncBefore": true
 }
