@@ -6,6 +6,7 @@
   "deserializeAs": "Subprocess",
   "nodes": [
     "/startEvent/8d4b2809-6992-45b8-b687-a8dd649f0a22",
+    "/requestTask/d7dbe82b-3a26-44b0-bbb1-6e615a7eb858",
     "/scriptTask/a102a39d-756f-4ac1-a248-f2b78b988df0",
     "/endEvent/fda22fc8-2285-4827-87c8-9a89974090a0"
   ],
