@@ -2,4 +2,14 @@ const EDIFACT_DEFAULT_SEPS=Object.freeze({component:":",element:"+",decimal:".",
 
 const invoices = buildEDIOutput(inputFile);
 
+invoices.map(inv => {
+    const oldAcctNum = inv.account_number;
+    const folioAccounts = JSON.parse(accountNumbers)
+        .filter(folioAcctObj => folioAcctObj.account_digits === oldAcctNum);
+    const folioAccount = folioAccounts[0];
+    const newAcctNum = folioAccount?.acctno;
+    inv.account_number = newAcctNum;
+    return inv;
+});
+
 execution.setVariable('invoices', S(JSON.stringify(invoices)));
