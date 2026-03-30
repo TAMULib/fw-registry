@@ -28,8 +28,8 @@ var cte = 'WITH oclc_identifiers AS ('
           + '\n\tSELECT instance_id, contributor_name AS author FROM folio_derived.instance_contributors WHERE contributor_name_type_name = \'Personal name\' AND contributor_is_primary = true'
           + '\n)';
 
-var from = 'folio_inventory.item__t__ item_ext'
-            + '\n\tinner join folio_inventory.holdings_record__t__ holdings_ext on item_ext.holdings_record_id =  holdings_ext.id'
+var from = 'folio_inventory.item__t item_ext'
+            + '\n\tinner join folio_inventory.holdings_record__t holdings_ext on item_ext.holdings_record_id =  holdings_ext.id'
             + '\n\tinner join folio_derived.item_ext fd_item_ext on fd_item_ext.item_id = item_ext.id'
             + '\n\tleft join mis.item_history history on item_ext.id = history.item_id :: uuid'
             + '\n\tleft join folio_derived.instance_ext instance_ext on instance_ext.instance_id = holdings_ext.instance_id'
@@ -37,7 +37,7 @@ var from = 'folio_inventory.item__t__ item_ext'
             + '\n\tleft join contributors c on c.instance_id = instance_ext.instance_id'
             + '\n\tleft join oclc_identifiers oclc on oclc.instance_id = instance_ext.instance_id'
             + '\n\tleft join isbn_identifiers isbn on isbn.instance_id = instance_ext.instance_id'
-            + '\n\tleft join folio_inventory.item__t__ ii on ii.id = item_ext.id';
+            + '\n\tleft join folio_inventory.item__t ii on ii.id = item_ext.id';
 
 var where = 'TRUE';
 
@@ -53,8 +53,8 @@ var normalizeArray = function (array) {
 if (libraryNameArray) {
   normalizeArray(libraryNameArray);
   if (libraryNameArray.length > 0) {
-    from += '\n\tLEFT JOIN folio_inventory.location__t__  publoc ON item_ext.effective_location_id = publoc.id'
-          + '\n\tLEFT JOIN folio_inventory.loclibrary__t__ publib ON publoc.library_id = publib.id';
+    from += '\n\tLEFT JOIN folio_inventory.location__t  publoc ON item_ext.effective_location_id = publoc.id'
+          + '\n\tLEFT JOIN folio_inventory.loclibrary__t publib ON publoc.library_id = publib.id';
 
     where += '\n\tAND publib.name IN (\'' + libraryNameArray.join('\',\'') + '\')';
   }
@@ -66,7 +66,7 @@ if (locationDiscoveryDisplayNameArray) {
   normalizeArray(locationDiscoveryDisplayNameArray);
 
   if (locationDiscoveryDisplayNameArray.length > 0) {
-    from += '\n\tLEFT JOIN folio_inventory.location__t__  publoc ON fd_item_ext.effective_location_name = publoc.name';
+    from += '\n\tLEFT JOIN folio_inventory.location__t  publoc ON fd_item_ext.effective_location_name = publoc.name';
 
     where += '\n\tAND publoc.discovery_display_name IN (\'' + locationDiscoveryDisplayNameArray.join('\',\'') + '\')';
   }
