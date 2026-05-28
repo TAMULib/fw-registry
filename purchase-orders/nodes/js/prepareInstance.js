@@ -23,7 +23,7 @@ var mapStatisticalCodeIds = function (statisticalCodes) {
   return statisticalCodeIds;
 };
 
-var mappedInstance = MappingUtility.mapRecordToInsance(marcJsonRecord, okapiUrl, tenant, token);
+var mappedInstance = MappingUtility.mapRecordToInstance(marcJsonRecord, okapiUrl, tenant, token);
 var mappedInstanceObj = JSON.parse(mappedInstance);
 
 mappedInstanceObj.id = instanceObj.id;
