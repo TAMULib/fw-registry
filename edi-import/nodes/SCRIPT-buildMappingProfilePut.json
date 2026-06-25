@@ -1,0 +1,8 @@
+{
+  "id": "9bb2366c-8a4e-4a34-bf8f-50e8912c21cb",
+  "name": "Build Mapping Profile PUT",
+  "description": "Set this invoice's FOLIO account number on the mapping profile and build the PUT body.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildMappingProfilePut.js"
+}

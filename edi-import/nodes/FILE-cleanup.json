@@ -1,0 +1,16 @@
+{
+  "id": "3ee0ad5e-a4c5-4dac-b3fc-9f3e5b6e63d5",
+  "name": "Clean Up EDI Input File",
+  "description": "Delete the processed EDI input file.",
+  "deserializeAs": "FileTask",
+  "inputVariables": [
+    {
+      "key": "inputFilePath",
+      "type": "PROCESS"
+    }
+  ],
+  "outputVariable": {},
+  "path": "${inputFilePath}",
+  "op": "DELETE",
+  "asyncBefore": true
+}
