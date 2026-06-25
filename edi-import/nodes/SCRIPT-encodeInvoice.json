@@ -1,0 +1,8 @@
+{
+  "id": "c1504d2f-620e-4fd2-bb1d-5c3bfa9e3da2",
+  "name": "Encode Invoice",
+  "description": "Extract upload definition/file ids and prepare the EDI payload for upload.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "encodeInvoice.js"
+}

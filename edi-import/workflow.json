@@ -20,6 +20,9 @@
     "fileTask/b0978fa2-47da-4f62-a7e8-87a75e443718",
     "/scriptTask/189ce254-e098-4a8b-9a9b-e30c234dc80e",
     "/subprocess/0eaa9d1e-e520-43a4-bcaa-dce2c3a6b0c6",
+    "/scriptTask/e346211f-3e49-4d3e-acdd-211ff50a7fec",
+    "/emailTask/f22cb03e-bfc3-4713-9bad-9cab91b31906",
+    "/fileTask/3ee0ad5e-a4c5-4dac-b3fc-9f3e5b6e63d5",
     "/endEvent/060dbb70-885b-4705-b584-c2b2a6219f3f"
   ],
   "initialContext": {}

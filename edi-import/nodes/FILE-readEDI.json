@@ -14,7 +14,7 @@
     "type": "PROCESS",
     "asTransient": true
   },
-  "path": "/mnt/workflows/tamu/edi-import/inputFile.edi",
+  "path": "${inputFilePath}",
   "op": "READ",
   "asyncBefore": true
 }

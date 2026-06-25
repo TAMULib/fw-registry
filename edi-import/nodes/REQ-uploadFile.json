@@ -1,0 +1,33 @@
+{
+  "id": "80aba13a-9f83-434c-9cf7-45b84646e542",
+  "name": "Upload EDI File",
+  "description": "Upload the invoice EDI bytes into the upload definition's file.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{{okapi-url}}}/data-import/uploadDefinitions/${uploadDefinitionId}/files/${fileId}",
+    "method": "POST",
+    "contentType": "application/octet-stream",
+    "accept": "application/json",
+    "bodyTemplate": "${invoiceUploadBody}"
+  },
+  "inputVariables": [
+    {
+      "key": "uploadDefinitionId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "fileId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "invoiceUploadBody",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "uploadDefinitionUploaded",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}
