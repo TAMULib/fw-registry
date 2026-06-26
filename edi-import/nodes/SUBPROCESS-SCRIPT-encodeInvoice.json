@@ -4,5 +4,5 @@
   "description": "Extract upload definition/file ids and prepare the EDI payload for upload.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "encodeInvoice.js"
+  "code": "subprocessEncodeInvoice.js"
 }
