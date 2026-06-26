@@ -4,5 +4,5 @@
   "description": "Set this invoice's FOLIO account number on the mapping profile and build the PUT body.",
   "deserializeAs": "ScriptTask",
   "scriptFormat": "javascript",
-  "code": "buildMappingProfilePut.js"
+  "code": "subprocessBuildMappingProfilePut.js"
 }
