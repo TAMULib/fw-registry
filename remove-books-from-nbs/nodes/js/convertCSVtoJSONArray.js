@@ -10,8 +10,9 @@ var barcodesJSONArray = JSON.parse(barcodesJSON);
 var barcodes = [];
 
 for (var i = 0; i < barcodesJSONArray.length; i++) {
-  var barcode = barcodesJSONArray[i].barcode.trim();
-  if (barcode.length > 0) {
+  const barcode = barcodesJSONArray[i]?.barcode?.trim();
+
+  if ((barcode?.length || 0) > 0) {
     barcodes.push(barcode);
   }
 }
