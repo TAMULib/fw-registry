@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

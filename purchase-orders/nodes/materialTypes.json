@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/material-types?limit=999",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [],
