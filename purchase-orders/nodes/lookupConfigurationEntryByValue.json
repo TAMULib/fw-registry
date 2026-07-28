@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${marcOrderData.billTo}\\\"*\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

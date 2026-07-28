@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${marcOrderData.expenseClass}\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

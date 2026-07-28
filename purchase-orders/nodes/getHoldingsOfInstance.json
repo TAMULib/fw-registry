@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/holdings-storage/holdings?query=(instanceId==\"${instanceId}\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

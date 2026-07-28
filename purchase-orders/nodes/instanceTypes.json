@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/instance-types?limit=999",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [],

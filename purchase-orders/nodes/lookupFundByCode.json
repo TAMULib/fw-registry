@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{okapi-url}}}/finance/funds?limit=1&offset=0&query=(code==\"${marcOrderData.fundCode}\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [
