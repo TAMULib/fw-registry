@@ -2,7 +2,7 @@
   "id": "6ae5ba38-3a94-4789-be2c-9cd0841f404e",
   "name": "Request Holdings of Instance",
   "description": "Retrieves the holdings associated with the instance created by the purchase order line.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/holdings-storage/holdings?query=(instanceId==\"${instanceId}\")",
     "method": "GET",

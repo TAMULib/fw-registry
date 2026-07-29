@@ -2,7 +2,7 @@
   "id": "b4887237-d835-4712-a645-7fae45062fcc",
   "name": "Save Holdings",
   "description": "",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/holdings-storage/holdings",
     "method": "POST",
