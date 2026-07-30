@@ -4,7 +4,7 @@
   "description": "Forks workflow to process a request task and connect to a parallel gateway for acquisition methods related to purchase order line.",
   "deserializeAs": "ParallelGateway",
   "nodes": [
-    "/requestTask/26586e32-7a3f-4b43-9128-b59e8c57846b",
+    "/folioRequestTask/26586e32-7a3f-4b43-9128-b59e8c57846b",
     "/parallelGateway/372aad6f-1fd7-447e-ab43-9c1c1ae9623f"
   ]
 }
