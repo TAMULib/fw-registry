@@ -2,7 +2,7 @@
   "id": "f84bb551-2aa2-4e0c-ac5b-03f302013817",
   "name": "Save Instance",
   "description": "",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/instance-storage/instances",
     "method": "POST",

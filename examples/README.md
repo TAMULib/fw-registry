@@ -301,6 +301,44 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-fol
 ```
 
 
+## example-foliorequesttask
+
+### Example FOLIO Request Task
+
+This workflows sends a **GET** request to a given resource and prints the response using javaScript scripting language.
+
+```shell
+fw config set exampleUrlPath "http://www.example.com"
+```
+
+These variables are available or required when triggering the workflow:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| exampleUrlPath   | URL            | The URL to send a GET request to.
+| logLevel         | [INFO,DEBUG]   | Desired log level.
+
+To build and activate:
+```shell
+fw build example-foliorequesttask
+fw activate example-foliorequesttask
+```
+
+To manually execute via:
+```shell
+fw run example-foliorequesttask
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliorequesttask/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ "logLevel": "INFO" }'
+```
+
+
 ## example-inputtask
 
 ### Example Input Task
@@ -323,7 +361,7 @@ fw activate example-inputtask
 
 To manually execute via:
 ```shell
-fw run example-requesttask
+fw run example-inputtask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:

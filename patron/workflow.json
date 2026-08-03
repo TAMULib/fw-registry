@@ -12,7 +12,7 @@
   },
   "nodes": [
     "/startEvent/df9cff30-665a-11eb-b9fd-afcd4d476de5",
-    "/requestTask/b4996879-e2d8-41b7-89c0-46e762d93af8",
+    "/folioRequestTask/b4996879-e2d8-41b7-89c0-46e762d93af8",
     "/scriptTask/4e609b08-34b1-4318-a28f-face82791bb8",
     "/databaseConnectionTask/55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
     "/parallelGateway/36942c89-e5f6-49ad-8b61-a1ed9c53fcb5",
@@ -20,7 +20,7 @@
     "/moveToNode/5cfaad2b-c393-461e-937f-7579207b602b",
     "/databaseDisconnectTask/eeb3491b-b024-4389-b921-797b8774c759",
     "/scriptTask/96286fc0-6663-11eb-b98e-f1ccdde4a279",
-    "/requestTask/ad5d92dd-605e-4660-aa43-144691283a57",
+    "/folioRequestTask/ad5d92dd-605e-4660-aa43-144691283a57",
     "/endEvent/df9d2640-665a-11eb-b9fd-afcd4d476de5"
   ],
   "initialContext": {}

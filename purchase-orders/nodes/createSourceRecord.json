@@ -2,7 +2,7 @@
   "id": "3f394e18-7e8e-4c66-8e81-88320fc39968",
   "name": "Create Source Record",
   "description": "Create source record",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/source-storage/records",
     "method": "POST",

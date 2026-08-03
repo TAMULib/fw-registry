@@ -7,10 +7,10 @@
   "nodes": [
     "/startEvent/984e9bd7-da9f-4d9e-ac3c-4cdf0b7e5fd2",
     "/scriptTask/a20f3e19-9e0d-451d-af57-171f4fc05b66",
-    "/requestTask/f84bb551-2aa2-4e0c-ac5b-03f302013817",
+    "/folioRequestTask/f84bb551-2aa2-4e0c-ac5b-03f302013817",
     "/databaseQueryTask/b32e9dcc-992a-471e-8f76-769c215d3060",
     "/scriptTask/478d4468-289e-48c1-90ca-6a09bcbc252b",
-    "/requestTask/b4887237-d835-4712-a645-7fae45062fcc",
+    "/folioRequestTask/b4887237-d835-4712-a645-7fae45062fcc",
     "/endEvent/0956649b-0717-4ea6-802a-45c15e62ad73"
   ],
   "inputVariables": [],

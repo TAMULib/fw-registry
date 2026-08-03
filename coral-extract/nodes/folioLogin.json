@@ -2,7 +2,7 @@
   "id": "88ebbebe-5992-4262-bc7b-269d6be38885",
   "name": "FOLIO Login",
   "description": "Log into FOLIO, obtaining the appropriate tokens.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/authn/login-with-expiry",
     "method": "POST",

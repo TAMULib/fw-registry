@@ -2,7 +2,7 @@
   "id": "695ef5e8-eb59-421b-a379-17d67161b12b",
   "name": "Request Next Purchase Order Number",
   "description": "Requests the next purchase order.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/orders/po-number",
     "method": "GET",

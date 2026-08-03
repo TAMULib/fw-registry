@@ -1,0 +1,9 @@
+{
+  "id": "29f5d008-2b7c-43f4-997d-f1d1b5bee3d4",
+  "name": "Example FolioRequestTask Start Trigger",
+  "description": "REST POST end point.",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/example-foliorequesttask/start"
+}

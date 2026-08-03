@@ -2,7 +2,7 @@
   "id": "0f331243-d789-4c21-a472-ff62b32050fd",
   "name": "Create Tag",
   "description": "create tag",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/tags",
     "method": "POST",

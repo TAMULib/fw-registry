@@ -2,7 +2,7 @@
   "id": "26586e32-7a3f-4b43-9128-b59e8c57846b",
   "name": "Request Acquisition Methods",
   "description": "Retrieve the acquisition methods.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/orders/acquisition-methods?limit=999",
     "method": "GET",
