@@ -1,7 +1,7 @@
 {
   "id": "d966972e-68d2-485a-a3a8-6fac2c7e8f75",
   "name": "Start",
-  "description": "Start of Example RequestTask workflow.",
+  "description": "Start of Example FolioRequestTask workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-foliorequesttask/start"
