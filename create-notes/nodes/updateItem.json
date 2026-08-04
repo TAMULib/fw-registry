@@ -2,12 +2,13 @@
   "id": "217a5f0f-ce95-4e81-a958-0cf3b6df138a",
   "name": "Update Item",
   "description": "Update the Item using the appropriate REST request.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",
+    "sendEmptyBody": false,
     "bodyTemplate": "${updatedItem}"
   },
   "inputVariables": [

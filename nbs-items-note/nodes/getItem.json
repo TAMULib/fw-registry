@@ -2,10 +2,11 @@
   "id": "225fbb68-b311-4623-b397-856357be1c90",
   "name": "Request Item",
   "description": "Request the Item by its given Item ID.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/items/${item.id}",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

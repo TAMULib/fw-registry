@@ -2,10 +2,11 @@
   "id": "ba79466f-51ac-4449-837c-f0568d671b66",
   "name": "Request Loan Types",
   "description": "Retrieves loan types from the specified url.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/loan-types?limit=999",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [],

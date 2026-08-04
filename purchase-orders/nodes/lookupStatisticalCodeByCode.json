@@ -2,10 +2,11 @@
   "id": "26da56ad-e640-4693-bd2a-e687d446224b",
   "name": "Lookup Statistical Code by Code",
   "description": "Retrieves the statistical code by code.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

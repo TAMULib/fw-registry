@@ -2,10 +2,11 @@
   "id": "c8c18fc1-5422-4770-ade3-3a189b942071",
   "name": "Request Instance For Purchase Order Line",
   "description": "Retrieves the instance created by the purchase order line.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/instances/${instanceId}",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

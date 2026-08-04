@@ -2,10 +2,11 @@
   "id": "f21bcb7c-283c-4a16-9411-fcc526a4ed6f",
   "name": "Lookup item by barcode",
   "description": "",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/items?query=barcode==${barcode}",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

@@ -6,6 +6,7 @@
   "request": {
     "url": "{{{coral-url}}}/folio_utilities/coral_extract.php",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "text/plain"
   },
   "inputVariables": [],

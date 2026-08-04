@@ -2,12 +2,13 @@
   "id": "8a5b4584-3b0e-4207-824f-6880692925f0",
   "name": "Update Instance",
   "description": "Request task to update instance mapped from MARC record.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/instances/${instanceId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",
+    "sendEmptyBody": false,
     "bodyTemplate": "${instance}"
   },
   "inputVariables": [

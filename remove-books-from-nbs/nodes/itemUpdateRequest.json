@@ -2,12 +2,13 @@
   "id": "a3aad69c-0aae-4d3b-8513-84ab85a6c179",
   "name": "Update item",
   "description": "",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/inventory/items/${item.prop('id').stringValue()}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",
+    "sendEmptyBody": false,
     "bodyTemplate": "${item}"
   },
   "inputVariables": [

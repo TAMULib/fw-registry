@@ -2,12 +2,13 @@
   "id": "fe29b6f1-ffd7-4d99-a73d-ad4001948d2a",
   "name": "Create Note",
   "description": "Creates a purchase order line note using POST request.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/notes",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
+    "sendEmptyBody": false,
     "bodyTemplate": "${note}"
   },
   "inputVariables": [

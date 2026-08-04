@@ -1,8 +1,8 @@
 {
-  "id": "f99d0430-3028-4b40-9eb3-c9bbf8799c5a",
-  "name": "Send GET Request",
+  "id": "4b9553ae-ff25-4dce-a608-498a1af6aab0",
+  "name": "Send GET FOLIO Request",
   "description": "Send GET request to a given server.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "inputVariables": [
   ],
   "headerOutputVariables": [],

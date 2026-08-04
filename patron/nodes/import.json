@@ -2,12 +2,13 @@
   "id": "ad5d92dd-605e-4660-aa43-144691283a57",
   "name": "Post Users",
   "description": "Request to post user collection to import",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/user-import",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
+    "sendEmptyBody": false,
     "bodyTemplate": "${userImportCollection}"
   },
   "inputVariables": [

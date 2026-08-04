@@ -2,12 +2,13 @@
   "id": "b8973fbb-1a0a-4d0e-8721-9deabe0dbb88",
   "name": "Create Composite Purchase Order",
   "description": "Requests creation of a composite purchase order by posting data to the request url.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{okapi-url}}}/orders/composite-orders",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
+    "sendEmptyBody": false,
     "bodyTemplate": "${compositePurchaseOrder}"
   },
   "inputVariables": [
