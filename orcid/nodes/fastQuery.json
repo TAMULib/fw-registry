@@ -11,10 +11,6 @@
     {
       "key": "tenantId",
       "type": "PROCESS"
-    },
-    {
-      "key": "tenantId",
-      "type": "PROCESS"
     }
   ],
   "outputVariable": {},
