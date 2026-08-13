@@ -1,6 +1,6 @@
 var items = JSON.parse(itemsResponse).items;
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nitemsResponse = ' + itemsResponse + '\n');
 }
 

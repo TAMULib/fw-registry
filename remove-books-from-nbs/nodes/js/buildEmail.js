@@ -14,10 +14,12 @@ emailText = emailMarkup.replace(/<\/p>/ig, '\n')
 emailMarkup = emailMarkup.replace(/\t/ig, '')
   .replace(/\n/ig, '');
 
-if (logLevel === 'INFO' || logLevel === 'DEBUG') {
+var envLogLevel = execution.getVariable('logLevel');
+
+if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
   print('emailTo = ' + emailTo);
 
-  if (logLevel === 'DEBUG') {
+  if (envLogLevel === 'DEBUG') {
     print('emailSubject = ' + emailSubject);
     print('emailText = ' + emailText);
     print('emailMarkup = ' + emailMarkup);

@@ -2,7 +2,7 @@ var itemsToRemoveArray = JSON.parse(itemsToRemove);
 var itemsSkippedArray = JSON.parse(itemsSkipped);
 
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nitemsResponse = ' + itemsResponse + '\n');
 }
 
@@ -24,7 +24,7 @@ if (responseItems.length > 0) {
   }
 }
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nitemsToRemove = ' + JSON.stringify(itemsToRemoveArray) + '\n');
   print('\nitemsSkipped = ' + JSON.stringify(itemsSkippedArray) + '\n');
 }

@@ -1,5 +1,5 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel);
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel'));
   print('\nusername = ' + username);
   print('\nemailTo = ' + emailTo);
   print('\nhegisCodes = ' + hegisCodes);
@@ -83,7 +83,7 @@ var hegisPoQuery = 'WITH _payments AS ('
   + poStatus
   + '\nORDER BY po.jsonb ->> \'poNumber\', poi.title;';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\n\n\n hegisPoQuery = ' + hegisPoQuery + '\n\n\n');
 }
 

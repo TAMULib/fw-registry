@@ -1,4 +1,6 @@
-if (logLevel === 'INFO' || logLevel === 'DEBUG') {
+var envLogLevel = execution.getVariable('logLevel');
+
+if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
   print('\nindex = ' + loopCounter);
   print('\tokapiUrl = ' + okapiUrl);
   print('\tpermLocation = ' + permLocation);

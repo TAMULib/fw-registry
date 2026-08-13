@@ -15,7 +15,7 @@ var idSql = null;
 var idSqlFailure = false;
 var changedItems = [];
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ninputFilePath = ' + inputFilePath + '\n');
   print('\nidsJson = ' + idsJson + '\n');
   print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');

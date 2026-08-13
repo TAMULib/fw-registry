@@ -45,13 +45,15 @@ successEmailText = successEmailMarkup.replace(/<\/p>/ig, '\n')
 successEmailMarkup = successEmailMarkup.replace(/\t/ig, '')
   .replace(/\n/ig, '');
 
-if (logLevel === 'INFO' || logLevel === 'DEBUG') {
+var envLogLevel = execution.getVariable('logLevel');
+
+if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
   print('inputFilePath = ' + inputFilePath + ', ');
   print('emailTo = ' + emailTo + ', ');
   print('emailFrom = ' + emailFrom + ', ');
   print('processedItems = ' + processedItems + '\n');
 
-  if (logLevel === 'DEBUG') {
+  if (envLogLevel === 'DEBUG') {
     print('\nsuccessEmailSubject = ' + successEmailSubject + ', ');
     print('successEmailText = ' + successEmailText + ', ');
     print('successEmailMarkup = ' + successEmailMarkup + '\n');

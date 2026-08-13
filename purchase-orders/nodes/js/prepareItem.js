@@ -39,7 +39,7 @@ if (marcOrderDataObj.barcode) {
 
 itemObj.status = { name: 'In process' };
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nitem = ' + JSON.stringify(itemObj) + '\n');
 }
 

@@ -1,7 +1,7 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 var barcodesJSON = MappingUtility.mapCsvToJson(barcodesCSV);
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nbarcodesJSON = ' + barcodesJSON + '\n');
 }
 
@@ -17,7 +17,7 @@ for (var i = 0; i < barcodesJSONArray.length; i++) {
   }
 }
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nbarcodes = ' + barcodes + '\n');
 }
 

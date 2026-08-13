@@ -3,7 +3,7 @@ var UUID = Java.type("java.util.UUID");
 var orderId = UUID.randomUUID().toString();
 var orderLineId = UUID.randomUUID().toString();
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\npoNumberResponse = ' + poNumberResponse + '\n');
   print('\nvendorsResponse = ' + vendorsResponse + '\n');
   print('\nfundsResponse = ' + fundsResponse + '\n');
@@ -165,7 +165,7 @@ if (tagList.length) {
   };
 }
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ncompositePurchaseOrder = ' + JSON.stringify(compositePurchaseOrder) + '\n');
 }
 

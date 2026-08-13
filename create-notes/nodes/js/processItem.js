@@ -9,7 +9,7 @@ var extractResponseArray = function (response, key) {
   return (!response || !response[key]) ? [] : response[key];
 };
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nitemResponse = ' + itemResponse + '\n');
   print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
   print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');

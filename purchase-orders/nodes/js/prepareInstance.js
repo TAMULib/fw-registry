@@ -1,6 +1,6 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ninstance = ' + instance + '\n');
   print('\nstatisticalCodesResponse = ' + statisticalCodesResponse + '\n');
 }
@@ -36,7 +36,7 @@ mappedInstanceObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
 mappedInstanceObj._version = 1;
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmappedInstance = ' + JSON.stringify(mappedInstanceObj) + '\n');
 }
 
