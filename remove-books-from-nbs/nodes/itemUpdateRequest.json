@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/inventory/items/${item.prop('id').stringValue()}",
+    "url": "{{{gatewayUrl}}}/inventory/items/${item.prop('id').stringValue()}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "application/json",

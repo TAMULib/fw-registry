@@ -4,7 +4,7 @@
   "description": "Request the Item by its given Item ID.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/inventory/items/${item.id}",
+    "url": "{{{gatewayUrl}}}/inventory/items/${item.id}",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"

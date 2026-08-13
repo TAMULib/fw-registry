@@ -4,7 +4,7 @@
   "description": "Request task to update an item.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/item-storage/items/${itemId}",
+    "url": "{{{gatewayUrl}}}/item-storage/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",

@@ -4,7 +4,7 @@
   "description": "Requests locations from the endpoint",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/locations?limit=999",
+    "url": "{{{gatewayUrl}}}/locations?limit=999",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"
