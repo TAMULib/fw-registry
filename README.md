@@ -54,14 +54,14 @@ These variables are required when building and running the workflow:
 | divit-password      | string         | DivIt login password.
 | divit-url           | URL            | DivIt URL.
 | divit-user          | string         | DivIt login username.
-| okapi-url           | URL            | The Okapi URL.
+| gateway-url         | URL            | The FOLIO Gateway URL.
 | overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only).
 
 ```shell
 fw config set divit-url ***
 fw config set divit-user ***
 fw config set divit-password ***
-fw config set okapi-url ***
+fw config set gateway-url ***
 fw config set overridePatronEmail ***
 ```
 
@@ -188,12 +188,11 @@ These variables are required when building and running the workflow:
 | eMaterialType      | string         | An e-material type to use.
 | file               | file name      | The file path within the specified directory path representing the MARC file to process.
 | fiscalYearCode     | string         | A fiscal year code to use.
+| gateway-url        | URL            | The FOLIO Gateway URL.
 | holdingsRecordKeys | JSON string    | An array of allowed holdings record keys (if not defined, then all keys are allowed).
 | holdingsType       | string         | A holdings type to use.
-| logLevel           | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | materialType       | string         | A material type to use.
 | noteType           | string         | A Note type.
-| okapi-url          | URL            | The Okapi URL.
 | password           | string         | Okapi login password.
 | path               | directory path | The directory on the system where the MARC file is stored.
 | permELocation      | string         | A permanent e-location to use.
@@ -212,7 +211,7 @@ fw config set holdingsRecordKeys $(jq -Mc '.properties | keys' holdingsRecord.js
 ```
 
 ```shell
-fw config set okapi-url ***
+fw config set gateway-url ***
 ```
 
 ```shell
@@ -232,7 +231,6 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/purchase-or
 --form 'file=@"/example.mrc"' \
 --form 'fiscalYearCode="FY2021"' \
 --form 'holdingsType="Monograph"' \
---form 'logLevel="INFO"' \
 --form 'materialType="unmediated -- volume"' \
 --form 'noteType="General note"' \
 --form 'password="***"' \
@@ -499,17 +497,17 @@ The following variables are required when building and running the workflow:
 | Variable Name   | Allowed Values | Brief Description
 | --------------- | -------------- | -----------------
 | coral-url       | URL            | Coral server URL.
+| gateway-url     | FOLIO Gateway  | The FOLIO Gateway URL.
 | metadb-password | string         | MetaDB login password.
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
-| okapi-url       | URL            | The Okapi URL.
 
 ```shell
 fw config set coral-url ***
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
-fw config set okapi-url ***
+fw config set gateway-url ***
 ```
 
 ```shell
@@ -595,15 +593,14 @@ These variables are required when building and running the workflow:
 | Variable Name           | Allowed Values | Brief Description
 | ----------------------- | -------------- | -----------------
 | file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
+| gateway-url             | URL            | The FOLIO Gateway URL.
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
-| okapi-url               | URL            | The Okapi URL.
 | password                | string         | Okapi login password.
 | path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | username                | string         | Okapi login username.
 
 ```shell
-fw config set okapi-url ***
+fw config set gateway-url ***
 ```
 
 ```shell
@@ -613,7 +610,6 @@ fw activate create-tags
 curl -w '\n' --location --request POST 'http://localhost:9001/events/create-tags/start' \
 --header 'Content-Type: multipart/form-data' \
 --header 'X-Okapi-Tenant: diku' \
---form 'logLevel="INFO"' \
 --form 'file=@"FOLIOTags.csv"' \
 --form 'path="/mnt/workflows/diku/create-tags"' \
 --form 'username="***"' \
@@ -641,7 +637,6 @@ These variables are required when building and running the workflow:
 | metadb-url                   | URL            | MetaDB URL.
 | metadb-user                  | string         | MetaDB login username.
 | libraryName                  | string         | A JSON Array of library names.
-| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | locationDiscoveryDisplayName | string         | A JSON Array of location names.
 | locationName                 | string         | A JSON Array of location names.
 | mis-catalog-reports-url      | URL            | Catalog Reports URL (must not include a trailing slash).
@@ -665,7 +660,7 @@ fw activate shelflist-holdings
 curl -w '\n' --location --request POST 'http://localhost:9001/events/shelflist-holdings/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{ "logLevel": "INFO", "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+--data-raw '{ "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 ```
 
 
@@ -688,7 +683,6 @@ These variables are required when building and running the workflow:
 | metadb-user                  | string         | MetaDB login username.
 | libraryName                  | string         | A JSON Array of library names.
 | loanType                     | string         | A JSON Array of loan types.
-| logLevel                     | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | locationDiscoveryDisplayName | string         | A JSON Array of location names.
 | locationName                 | string         | A JSON Array of location names.
 | materialType                 | string         | A JSON Array of material types.
@@ -712,7 +706,7 @@ fw activate shelflist-items
 curl -w '\n' --location --request POST 'http://localhost:9001/events/shelflist-items/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{ "logLevel": "INFO", "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
+--data-raw '{ "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 ```
 
 
@@ -769,7 +763,7 @@ These variables are required when building and running the workflow:
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
-fw config set okapi-url ***
+fw config set gateway-url ***
 fw config set username ***
 fw config set password ***
 ```
@@ -806,13 +800,12 @@ These variables are required when building and running the workflow:
 | emailFrom       | e-mail address | The e-mail address of the sender.
 | emailTo         | e-mail address | The e-mail address of the recipient.
 | file            | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| gateway-url     | URL            | The FOLIO Gateway URL.
 | itemNoteTypeId  | UUID           | The Item Note Type UUID to be used for the Note.
 | noteText        | string         | A message used as the Note.
 | metadb-password | string         | MetaDB login password.
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
-| logLevel        | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
-| okapi-url       | URL            | The Okapi URL.
 | password        | string         | Okapi login password.
 | path            | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | staffOnly       | boolean        | Designate whether or not this is a *Staff Only* note.
@@ -822,7 +815,7 @@ These variables are required when building and running the workflow:
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
-fw config set okapi-url ***
+fw config set gateway-url ***
 ```
 
 To build and activate:
@@ -836,7 +829,6 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/create-notes/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --form 'logLevel="INFO"' \
   --form 'emailFrom="me@example.com"' \
   --form 'emailTo="you@example.com"' \
   --form 'file=@"itemBarcodes.csv"' \
@@ -860,15 +852,14 @@ These variables are required when building and running the workflow:
 | nbs-mail-from  | e-mail address | The e-mail address of the sender.
 | emailTo        | e-mail address | The e-mail address of the recipient.
 | file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
-| logLevel       | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
-| okapi-url      | URL            | The Okapi URL.
+| gateway-url    | URL            | The FOLIO Gateway URL.
 | password       | string         | Okapi login password.
 | path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
 | username       | string         | Okapi login username.
 
 ```shell
 fw config set nbs-mail-from ***
-fw config set okapi-url ***
+fw config set gateway-url ***
 ```
 
 To build and activate:
@@ -882,7 +873,6 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/remove-books-from-nbs/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --form 'logLevel="INFO"' \
   --form 'emailTo="you@example.com"' \
   --form 'file=@"itemBarcodes.csv"' \
   --form 'path="/mnt/workflows/diku/remove-books-from-nbs/"' \
@@ -909,7 +899,6 @@ These variables are required when building and running the workflow:
 | metadb-url              | URL            | MetaDb URL.
 | metadb-user             | string         | MetaDb login username.
 | locationName            | string         | A JSON Array of location names from the reporting table `item_ext`.
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
 | password                | string         | Okapi login password.
 | path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory).
@@ -941,7 +930,7 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "logLevel": "INFO", "password":"*", "path": "/mnt/workflows/diku/bcn", "startRange": "a0", "username":"*" }'
+  --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "password":"*", "path": "/mnt/workflows/diku/bcn", "startRange": "a0", "username":"*" }'
 ```
 
 
@@ -961,7 +950,6 @@ These variables are required when building and running the workflow:
 | metadb-url        | URL            | MetaDB URL.
 | metadb-user       | string         | MetaDB login username.
 | metadb-password   | string         | MetaDB login password.
-| logLevel          | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 
 This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
 
@@ -1047,7 +1035,6 @@ These variables are required when building and running the workflow:
 | Variable Name           | Allowed Values | Brief Description
 | ----------------------- | -------------- | -----------------
 | emailTo                 | e-mail address | The e-mail address of the recipient.
-| logLevel                | string         | Designate the desired logging, such as "INFO", "WARN", or "DEBUG".
 | metadb-password         | string         | MetaDB login password.
 | metadb-url              | URL            | MetaDB URL.
 | metadb-user             | string         | MetaDB login username.
@@ -1076,5 +1063,5 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/hegis-po/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---data-raw '{ "logLevel": "DEBUG", "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
+--data-raw '{ "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
 ```
