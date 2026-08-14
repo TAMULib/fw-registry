@@ -28,9 +28,9 @@ function getHeaders(name) {
 
 (function () {
   const setCookie = getHeaders('Set-Cookie');
-  const accessToken = TokenUtility.getAccessTokens(setCookie);
+  const folioAccessToken = TokenUtility.getAccessTokens(setCookie);
 
-  debugLog(`\nDEBUG: Example FOLIO Access Token: ${accessToken}.`);
+  debugLog(`\nDEBUG: Example FOLIO Access Token: ${folioAccessToken}.`);
 
-  execution.setVariable('X-Okapi-Token', accessToken);
+  execution.setVariable('X-Okapi-Token', folioAccessToken);
 }());

@@ -12,7 +12,7 @@ function getVar(name) {
 }
 
 (function () {
-  const accessToken = getVar("X-Okapi-Token");
+  const folioAccessToken = getVar("X-Okapi-Token");
 
-  console.log(`\nExample FOLIO Login Workflow Access Token: ${accessToken}.\n`);
+  console.log(`\nExample FOLIO Login Workflow Access Token: ${folioAccessToken}.\n`);
 }());

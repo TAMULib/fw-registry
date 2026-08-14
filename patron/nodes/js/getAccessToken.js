@@ -19,7 +19,7 @@ function getHeaders(name) {
 
 (function () {
   const setCookie = getHeaders("Set-Cookie");
-  const accessToken = TokenUtility.getAccessTokens(setCookie);
+  const folioAccessToken = TokenUtility.getAccessTokens(setCookie);
 
-  execution.setVariable('X-Okapi-Token', accessToken);
+  execution.setVariable('X-Okapi-Token', folioAccessToken);
 }());
