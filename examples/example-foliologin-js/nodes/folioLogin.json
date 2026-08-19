@@ -4,7 +4,7 @@
   "description": "Log into FOLIO, obtaining the appropriate tokens.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}/authn/login-with-expiry",
+    "url": "{{{gatewayUrl}}}{{{folioLoginPath}}}",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
