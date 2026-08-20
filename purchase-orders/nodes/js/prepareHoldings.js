@@ -10,20 +10,20 @@ function main() {
     console.log(`holdingsRecordKeys = [ ${Array.from(holdingsKeys)} ]\n`);
   }
 
-  const holdingsResponseObj = varHoldingsResponse == null ? {} : JSON.parse(varHoldingsResponse);
+  const holdingsResponseObj = varHoldingsResponse == null ? undefined : JSON.parse(varHoldingsResponse);
 
   if ((holdingsResponseObj?.totalRecords || 0) == 0) {
     throw new Error(`Holdings Response has no holdings! Response: ${varHoldingsResponse}.`);
   }
 
-  if (holdingsResponseObj.length > 1 ) {
+  if (holdingsResponseObj.length > 1) {
     console.log(`WARNING: The holdings response returned more than one holdings. Response: ${varHoldingsResponse}.\n`);
   }
 
   const holdingsObj = holdingsResponseObj.holdingsRecords[0];
 
   const varMarcOrderData = execution.getVariable('marcOrderData');
-  const marcOrderDataObj = varMarcOrderData == null ? {} : JSON.parse(varMarcOrderData);
+  const marcOrderDataObj = varMarcOrderData == null ? undefined : JSON.parse(varMarcOrderData);
 
   const varStatisticalCodesResponse = execution.getVariable('statisticalCodesResponse');
   const statisticalCodes = varStatisticalCodesResponse == null ? [] : JSON.parse(varStatisticalCodesResponse).statisticalCodes;

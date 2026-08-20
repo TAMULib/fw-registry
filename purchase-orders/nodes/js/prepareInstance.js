@@ -8,10 +8,10 @@ if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nstatisticalCodesResponse = ' + varStatisticalCodesResponse + '\n');
 }
 
-var instanceObj = varInstance == null ? {} : JSON.parse(varInstance);
+var instanceObj = varInstance == null ? undefined : JSON.parse(varInstance);
 
 var varSourceRecord = execution.getVariable('sourceRecord');
-var marcJsonRecord = varSourceRecord == null ? {} : JSON.stringify(JSON.parse(varSourceRecord).parsedRecord.content);
+var marcJsonRecord = varSourceRecord == null ? undefined : JSON.stringify(JSON.parse(varSourceRecord).parsedRecord.content);
 
 var statisticalCodes = varStatisticalCodesResponse == null ? [] : JSON.parse(varStatisticalCodesResponse).statisticalCodes;
 
@@ -28,8 +28,10 @@ var mappedInstanceObj = JSON.parse(mappedInstance);
 
 mappedInstanceObj.id = instanceObj.id;
 mappedInstanceObj.hrid = instanceObj.hrid;
+mappedInstanceObj.instanceTypeId = instanceObj.instanceTypeId;
 mappedInstanceObj.statusId = instanceObj.statusId;
 mappedInstanceObj.statusUpdatedDate = instanceObj.statusUpdatedDate;
+mappedInstanceObj.title = instanceObj.title;
 mappedInstanceObj.discoverySuppress = false;
 
 mappedInstanceObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);

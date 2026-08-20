@@ -1,5 +1,5 @@
 var varReport = execution.getVariable('report');
-var reportObj = varReport == null ? {} : JSON.parse(varReport);
+var reportObj = varReport == null ? undefined : JSON.parse(varReport);
 
 var varInputFilePath = execution.getVariable('inputFilePath');
 var fileName = varInputFilePath == null

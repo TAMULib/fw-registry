@@ -1,5 +1,5 @@
 var varCompositePurchaseOrder = execution.getVariable('compositePurchaseOrder');
-var compositePurchaseOrderObj = varCompositePurchaseOrder == null ? {} : JSON.parse(varCompositePurchaseOrder);
+var compositePurchaseOrderObj = varCompositePurchaseOrder == null ? undefined : JSON.parse(varCompositePurchaseOrder);
 
 if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ncompositePurchaseOrder = ' + varCompositePurchaseOrder + '\n');
