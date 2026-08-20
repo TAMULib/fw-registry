@@ -1,6 +1,6 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ninstance = ' + instance + '\n');
   print('\nstatisticalCodesResponse = ' + statisticalCodesResponse + '\n');
 }
@@ -11,10 +11,6 @@ var marcJsonRecord = JSON.stringify(JSON.parse(sourceRecord).parsedRecord.conten
 
 var statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
 
-var token = execution.getVariable('X-Okapi-Token');
-
-var tenant = execution.getTenantId();
-
 var mapStatisticalCodeIds = function (statisticalCodes) {
   var statisticalCodeIds = [];
   for (var i = 0; i < statisticalCodes.length; ++i) {
@@ -23,7 +19,7 @@ var mapStatisticalCodeIds = function (statisticalCodes) {
   return statisticalCodeIds;
 };
 
-var mappedInstance = MappingUtility.mapRecordToInstance(marcJsonRecord, okapiUrl, tenant, token);
+var mappedInstance = MappingUtility.mapRecordToInstance(marcJsonRecord, execution);
 var mappedInstanceObj = JSON.parse(mappedInstance);
 
 mappedInstanceObj.id = instanceObj.id;
@@ -36,7 +32,7 @@ mappedInstanceObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
 mappedInstanceObj._version = 1;
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmappedInstance = ' + JSON.stringify(mappedInstanceObj) + '\n');
 }
 

@@ -4,7 +4,7 @@
   "description": "Requests the next purchase order.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/orders/po-number",
+    "url": "{{{gatewayUrl}}}/orders/po-number",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"

@@ -4,7 +4,7 @@
   "description": "Update the Item using the appropriate REST request.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/inventory/items/${itemId}",
+    "url": "{{{gatewayUrl}}}/inventory/items/${itemId}",
     "method": "PUT",
     "contentType": "application/json",
     "accept": "text/plain",

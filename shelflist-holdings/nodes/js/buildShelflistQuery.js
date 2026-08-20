@@ -1,5 +1,5 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
   print('emailFrom = ' + emailFrom + '\n');
   print('emailTo = ' + emailTo + '\n');
   print('libraryName = ' + libraryName + '\n');
@@ -197,7 +197,7 @@ var shelflistQuery = '\n'
        + '\nWHERE pub_rank = 1 AND author_rank = 1'
        + '\nORDER BY instance_hrid, holdings_hrid, author desc, identifier desc, begin_pub_date desc, format\n';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 

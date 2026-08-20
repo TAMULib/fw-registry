@@ -2,7 +2,7 @@ var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
 var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(record.stringValue(), ['050', '090', '245', '947', '980']));
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nfields = ' + JSON.stringify(fields) + '\n');
 }
 
@@ -75,7 +75,7 @@ if (statisticalCode === 'ybppapp' || statisticalCode === 'ybppfirm') {
   marcOrderData.vendorCode = 'ZYBP';
 }
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmarcOrderData = ' + JSON.stringify(marcOrderData) + '\n');
 }
 

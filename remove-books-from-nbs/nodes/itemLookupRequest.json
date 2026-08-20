@@ -4,7 +4,7 @@
   "description": "",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/inventory/items?query=barcode==${barcode}",
+    "url": "{{{gatewayUrl}}}/inventory/items?query=barcode==${barcode}",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"

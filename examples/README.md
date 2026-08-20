@@ -39,7 +39,6 @@ These variables are available or required when triggering the workflow:
 | ---------------- | -------------- | -----------------
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the file to compress (do not prefix with a starting slash).
 | exampleFilePath  | directory path | The full directory path on the system where the source file and the compressed file will be stored on the server (exclude trailing slash after the directory).
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 The `exampleFilePath` will have `/testFileCreate` appended before adding the `exampleFileName`.
 Given the example settings above, the full file path would therefore be `/tmp/examples/path/testFileCreate/file.txt`.
@@ -61,7 +60,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-compressfiletask-zip/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -84,7 +83,6 @@ These variables are available or required when triggering the workflow:
 | exampleDatabasePassword | string         | The password of the database you want to connect to.
 | exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.
-| logLevel                | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -103,7 +101,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -154,7 +152,6 @@ These variables are available or required when triggering the workflow:
 | exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.
 | exampleQuery            | string         | The query.
-| logLevel                | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -173,7 +170,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -193,7 +190,6 @@ These variables are available or required when triggering the workflow:
 | ---------------- | -------------- | -----------------
 | exampleEmailFrom | e-mail address | The source e-mail address to send from.
 | exampleEmailTo   | e-mail address | The destination e-mail address to send to.
-| logLevel         | [INFO,DEBUG]   | Desired log level
 
 To build and activate:
 ```shell
@@ -212,7 +208,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-emailtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO", "exampleEmailTo": "you@example.com" }'
+  --data-raw '{ "exampleEmailTo": "you@example.com" }'
 ```
 
 
@@ -233,7 +229,6 @@ These variables are available or required when triggering the workflow:
 | ---------------- | -------------- | -----------------
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 The `exampleFilePath` will have `/testFileCreate` appended before adding the `exampleFileName`.
 Given the example settings above, the full file path would therefore be `/tmp/examples/path/testFileCreate/file.txt`.
@@ -256,7 +251,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-filetask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -270,15 +265,10 @@ This `X-Okapi-Token` is then printed as the **Access Token**.
 
 This also prints the the **Access Token** during processing when `logLevel` is set to `DEBUG`.
 
-```shell
-fw config set logLevel "INFO"
-```
-
 These variables are available or required when triggering the workflow:
 
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -297,7 +287,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliologin-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{  }'
 ```
 
 
@@ -316,7 +306,6 @@ These variables are available or required when triggering the workflow:
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
 | exampleUrlPath   | URL            | The URL to send a GET request to.
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -335,7 +324,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliorequesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -388,7 +377,6 @@ These variables are available or required when triggering the workflow:
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
 | exampleUrlPath   | URL            | The URL to send a GET request to.
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -407,7 +395,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-requesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -421,7 +409,6 @@ These variables are available or required when triggering the workflow:
 
 | Variable Name      | Allowed Values | Short Description
 | ------------------ | -------------- | -----------------
-| logLevel           | [INFO,DEBUG]   | Desired log level.
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed. |
 
 ```shell
@@ -445,7 +432,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-scripttask-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -459,7 +446,6 @@ These variables are available or required when triggering the workflow:
 
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -478,7 +464,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-ruby/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```
 
 
@@ -491,15 +477,10 @@ A unit test-like behavior is performed, producing results of success or failure 
 
 This also prints the JavaScript version when `logLevel` is set to `DEBUG`.
 
-```shell
-fw config set logLevel "DEBUG"
-```
-
 These variables are available or required when triggering the workflow:
 
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
-| logLevel         | [INFO,DEBUG]   | Desired log level.
 
 To build and activate:
 ```shell
@@ -518,5 +499,5 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://localhost:9001/events/example-tokenutility-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ "logLevel": "INFO" }'
+  --data-raw '{ }'
 ```

@@ -1,6 +1,6 @@
 
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
   print('emailFrom = ' + emailFrom + '\n');
   print('emailTo = ' + emailTo + '\n');
   print('callNumber = ' + callNumber + '\n');
@@ -183,7 +183,7 @@ var shelflistQuery = '\n\n'
        + '\nWHERE ' + where
        + '\nORDER BY item_ext.hrid, item_ext.barcode, item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 

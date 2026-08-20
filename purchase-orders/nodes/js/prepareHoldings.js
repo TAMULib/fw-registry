@@ -1,7 +1,7 @@
 function main() {
   const holdingsKeys = new Set({{{holdingsRecordKeys}}});
 
-  if (logLevel === "DEBUG") {
+  if (execution.getVariable('logLevel') === "DEBUG") {
     console.log(`holdingsResponse = ${holdingsResponse}\n`);
     console.log(`holdingsType = ${holdingsType}\n`);
     console.log(`holdingsRecordKeys = [ ${Array.from(holdingsKeys)} ]\n`);
@@ -70,7 +70,7 @@ function main() {
   if (holdingsKeys.size) {
     Object.keys(holdingsObj).forEach(key => {
       if (!holdingsKeys.has(key)) {
-        if (logLevel === "DEBUG") {
+        if (execution.getVariable('logLevel') === "DEBUG") {
           console.log(`Deleting unknown holdings key ${key}.`);
         }
 
@@ -79,7 +79,7 @@ function main() {
     });
   }
 
-  if (logLevel === "DEBUG") {
+  if (execution.getVariable('logLevel') === "DEBUG") {
     console.log(`\nholdings = ${JSON.stringify(holdingsObj)}\n`);
   }
 

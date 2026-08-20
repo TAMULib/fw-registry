@@ -21,7 +21,7 @@ var field = {
 
 var marcJsonRecord = JSON.parse(record);
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmarcJsonRecord = ' + JSON.stringify(marcJsonRecord) + '\n');
 }
 
@@ -31,7 +31,7 @@ marcJsonRecord = MarcUtility.updateControlNumberField(marcJsonRecord, instanceOb
 
 var rawMarcRecord = MarcUtility.marcJsonToRawMarc(marcJsonRecord);
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nrawMarcRecord = ' + rawMarcRecord + '\n');
 }
 
@@ -59,7 +59,7 @@ var sourceRecord = {
   }
 };
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\njobExecution = ' + JSON.stringify(jobExecution) + '\n');
   print('\nsourceRecord = ' + JSON.stringify(sourceRecord) + '\n');
   print('\nmarcJsonRecord = ' + JSON.stringify(marcJsonRecord) + '\n');

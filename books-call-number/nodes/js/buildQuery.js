@@ -1,5 +1,5 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
+if (execution.getVariable("logLevel") === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
   print('\ncall number start range = ' + startRange + '\n');
   print('\ncall number end range = ' + endRange + '\n');
   print('\nlocationName = ' + locationName + '\n');
@@ -37,7 +37,7 @@ var booksCallNumberQuery =
   '\nWHERE ' + where +
   '\nORDER BY ie.effective_call_number, item_effective_location';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
 }
 

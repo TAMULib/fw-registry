@@ -1,6 +1,6 @@
 var compositePurchaseOrderObj = JSON.parse(compositePurchaseOrder);
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
 }
 
