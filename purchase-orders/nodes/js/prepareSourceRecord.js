@@ -4,7 +4,8 @@ var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 var sourceRecordId = UUID.randomUUID().toString();
 var snapshotId = UUID.randomUUID().toString();
 
-var instanceObj = JSON.parse(instance);
+var varInstance = execution.getVariable('instance');
+var instanceObj = varInstance == null ? {} : JSON.parse(varInstance);
 
 var field = {
   tag: '999',
@@ -19,7 +20,8 @@ var field = {
   }]
 };
 
-var marcJsonRecord = JSON.parse(record);
+var varRecord = execution.getVariable('record');
+var marcJsonRecord = varRecord == null ? {} : JSON.parse(varRecord);
 
 if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmarcJsonRecord = ' + JSON.stringify(marcJsonRecord) + '\n');

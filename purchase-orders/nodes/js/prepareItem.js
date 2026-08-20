@@ -1,12 +1,23 @@
-var instanceObj = JSON.parse(instance);
-var holdingsObj = JSON.parse(holdings);
-var itemObj = JSON.parse(item);
+var varInstance = execution.getVariable('instance');
+var instanceObj = varInstance == null ? {} : JSON.parse(varInstance);
 
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var varHoldings = execution.getVariable('holdings');
+var holdingsObj = varHoldings == null ? {} : JSON.parse(varHoldings);
 
-var locations = JSON.parse(locationsResponse).locations;
-var loanTypes = JSON.parse(loanTypesResponse).loantypes;
-var materialTypes = JSON.parse(materialTypesResponse).mtypes;
+var varItem = execution.getVariable('item');
+var itemObj = varItem == null ? {} : JSON.parse(varItem);
+
+var varMarcOrderData = execution.getVariable('marcOrderData');
+var marcOrderDataObj = varMarcOrderData == null ? {} : JSON.parse(marcOrderData);
+
+var varLocationsResponse = execution.getVariable('locationsResponse');
+var locations = varLocationsResponse == null ? [] : JSON.parse(varLocationsResponse).locations;
+
+var varLoanTypesResponse = execution.getVariable('loanTypesResponse');
+var loanTypes = varLoanTypesResponse == null ? [] : JSON.parse(varLoanTypesResponse).loantypes;
+
+var varMaterialTypesResponse = execution.getVariable('materialTypesResponse');
+var materialTypes = varMaterialTypesResponse == null ? [] : JSON.parse(varMaterialTypesResponse).mtypes;
 
 var findLocationIdByName = function (locationName) {
   for (var i = 0; i < locations.length; ++i) {
@@ -26,12 +37,17 @@ var findMaterialTypeIdByName = function (materialTypeName) {
   }
 };
 
-itemObj.permanentLoanTypeId = findLoanTypeIdByName(permLoanType);
-itemObj.temporaryLoanTypeId = findLoanTypeIdByName(tempLoanType);
+var varPermLoanType = execution.getVariable('permLoanType');
+itemObj.permanentLoanTypeId = findLoanTypeIdByName(varPermLoanType);
 
-itemObj.temporaryLocationId = findLocationIdByName(tempLocation);
+var varTempLoanType = execution.getVariable('tempLoanType');
+itemObj.temporaryLoanTypeId = findLoanTypeIdByName(varTempLoanType);
 
-itemObj.materialTypeId = findMaterialTypeIdByName(materialType);
+var varTempLocation = execution.getVariable('tempLocation');
+itemObj.temporaryLocationId = findLocationIdByName(varTempLocation);
+
+var varMaterialType = execution.getVariable('materialType');
+itemObj.materialTypeId = findMaterialTypeIdByName(varMaterialType);
 
 if (marcOrderDataObj.barcode) {
   itemObj.barcode = marcOrderDataObj.barcode.trim()

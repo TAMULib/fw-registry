@@ -1,21 +1,28 @@
-var itemObj = JSON.parse(itemResponse);
-var changedItemsArr = JSON.parse(changedItems);
+var varItemResponse = execution.getVariable('itemResponse');
+var itemObj = varItemResponse == null ? null : JSON.parse(itemResponse);
 
-if (!changedItemsArr) {
-  changedItemsArr = [];
-}
+var varChangedItems = execution.getVariable('changedItems');
+var changedItemsArr = varChangedItems == null ? [] : JSON.parse(varChangedItems);
 
 var extractResponseArray = function (response, key) {
   return (!response || !response[key]) ? [] : response[key];
 };
 
+var varItemNoteTypeId = execution.getVariable('itemNoteTypeId');
+var varItemNoteTypeName = execution.getVariable('itemNoteTypeName');
+var varNoteText = execution.getVariable('noteText');
+
 if (execution.getVariable('logLevel') === "DEBUG") {
-  print('\nitemResponse = ' + itemResponse + '\n');
-  print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
-  print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');
-  print('\nnoteText = ' + noteText + '\n');
+  print('\nitemResponse = ' + varItemResponse + '\n');
+  print('\nitemNoteTypeId = ' + varItemNoteTypeId + '\n');
+  print('\nitemNoteTypeName = ' + varItemNoteTypeName + '\n');
+  print('\nnoteText = ' + varNoteText + '\n');
   print('\nstaffOnly = ' + staffOnly + '\n');
   print('\nchangedItemsArr = ' + changedItemsArr + '\n');
+}
+
+if (varNoteText == null) {
+  varNoteText = '';
 }
 
 if (!!itemObj) {
@@ -26,7 +33,7 @@ if (!!itemObj) {
   if (notes.length > 0) {
     for (var i = 0; i < notes.length; i++) {
       if (!!notes[i].itemNoteTypeId && !!notes[i].note && notes[i].hasOwnProperty("staffOnly")) {
-        if (notes[i].itemNoteTypeId == itemNoteTypeId && notes[i].note.toLowerCase() == noteText.toLowerCase() && notes[i].staffOnly == staffOnlyBoolean) {
+        if (notes[i].itemNoteTypeId == varItemNoteTypeId && notes[i].note.toLowerCase() == varNoteText.toLowerCase() && notes[i].staffOnly == staffOnlyBoolean) {
           addNote = false;
           break;
         }
@@ -36,9 +43,9 @@ if (!!itemObj) {
 
   if (addNote) {
     notes.push({
-      'itemNoteTypeId': itemNoteTypeId,
-      'itemNoteTypeName': itemNoteTypeName,
-      'note': noteText,
+      'itemNoteTypeId': varItemNoteTypeId,
+      'itemNoteTypeName': varItemNoteTypeName,
+      'note': varNoteText,
       'staffOnly': staffOnlyBoolean
     });
 

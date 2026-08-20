@@ -1,8 +1,12 @@
-var reportObj = JSON.parse(report);
+var varReport = execution.getVariable('report');
+var reportObj = varReport == null ? {} : JSON.parse(varReport);
 
-var fileName = inputFilePath.indexOf('/') >= 0
-  ? inputFilePath.replace(/.*\/([^\/]+)$/i, '$1')
-  : inputFilePath.replace(/.*\\([^\\]+)$/i, '$1');
+var varInputFilePath = execution.getVariable('inputFilePath');
+var fileName = varInputFilePath == null
+  ? null
+  : inputFilePath.indexOf('/') >= 0
+    ? inputFilePath.replace(/.*\/([^\/]+)$/i, '$1')
+    : inputFilePath.replace(/.*\\([^\\]+)$/i, '$1');
 
 var successEmailSubject = 'Purchase Orders Workflow Result for ' + fileName;
 var successEmailMarkup = '<p>A total of <strong>' + reportObj.records.length + '</strong> records from <strong>' + fileName + '</strong> were successfully processed.</p>\n';
@@ -30,10 +34,10 @@ successEmailMarkup = successEmailMarkup.replace(/\t/ig, '')
 var envLogLevel = execution.getVariable('logLevel');
 
 if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
-  print('inputFilePath = ' + inputFilePath);
+  print('inputFilePath = ' + varInputFilePath);
   print('fileName = ' + fileName);
-  print('emailTo = ' + emailTo);
-  print('emailFrom = ' + emailFrom);
+  print('emailTo = ' + execution.getVariable('emailTo'));
+  print('emailFrom = ' + execution.getVariable('emailFrom'));
   print('totalRecords = ' + reportObj.records.length + '\n');
 
   if (envLogLevel === 'DEBUG') {
