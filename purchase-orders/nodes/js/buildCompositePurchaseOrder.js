@@ -33,25 +33,25 @@ var extractResponseArray = function (response, key, firstId) {
   return response[key];
 };
 
-var poNumberObj = varPoNumberResponse == null ? {} : JSON.parse(varPoNumberResponse);
+var poNumberObj = varPoNumberResponse == null ? undefined : JSON.parse(varPoNumberResponse);
 var poNumber = !!poNumberObj && !!poNumberObj.poNumber ? poNumberObj.poNumber : undefined;
 
-var vendorId = extractResponseArray(varVendorsResponse == null ? null : JSON.parse(varVendorsResponse), 'organizations', true);
+var vendorId = extractResponseArray(varVendorsResponse == null ? undefined : JSON.parse(varVendorsResponse), 'organizations', true);
 
-var expenseClassId = extractResponseArray(varExpenseClassesResponse == null ? : JSON.parse(varExpenseClassesResponse), 'expenseClasses', true);
+var expenseClassId = extractResponseArray(varExpenseClassesResponse == null ? undefined : JSON.parse(varExpenseClassesResponse), 'expenseClasses', true);
 
 var configurationEntryId = extractResponseArray(JSON.parse(configurationEntriesResponse), 'configs', true);
 
-var funds = extractResponseArray(varFundsResponse == null ? null : JSON.parse(varFundsResponse), 'funds');
+var funds = extractResponseArray(varFundsResponse == null ? undefined : JSON.parse(varFundsResponse), 'funds');
 
-var locations = extractResponseArray(varLocationsResponse == null ? null : JSON.parse(varLocationsResponse), 'locations');
+var locations = extractResponseArray(varLocationsResponse == null ? undefined : JSON.parse(varLocationsResponse), 'locations');
 
-var materialTypes = extractResponseArray(varMaterialTypesResponse == null ? null : JSON.parse(varMaterialTypesResponse), 'mtypes');
+var materialTypes = extractResponseArray(varMaterialTypesResponse == null ? undefined : JSON.parse(varMaterialTypesResponse), 'mtypes');
 
-var acquisitionMethods = extractResponseArray(varAcquisitionMethodsResponse == null ? null : JSON.parse(varAcquisitionMethodsResponse), 'acquisitionMethods');
+var acquisitionMethods = extractResponseArray(varAcquisitionMethodsResponse == null ? undefined : JSON.parse(varAcquisitionMethodsResponse), 'acquisitionMethods');
 
 var varMarcOrderData = execution.getVariable('marcOrderData');
-var marcOrderDataObj = marcOrderData == null ? {} : JSON.parse(varMarcOrderData);
+var marcOrderDataObj = marcOrderData == null ? undefined : JSON.parse(varMarcOrderData);
 
 var electronic = !!marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 
@@ -101,14 +101,14 @@ var orderLine = {
   acquisitionMethod: acquisitionMethod
 };
 
-var compositePoLines = [
+var poLines = [
   orderLine
 ];
 
 var compositePurchaseOrder = {
   id: orderId,
   approved: true,
-  compositePoLines: compositePoLines,
+  poLines: poLines,
   orderType: 'One-Time',
   poNumber: poNumber,
   reEncumber: false,
