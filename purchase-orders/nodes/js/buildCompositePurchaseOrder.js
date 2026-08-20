@@ -38,7 +38,7 @@ var poNumber = !!poNumberObj && !!poNumberObj.poNumber ? poNumberObj.poNumber : 
 
 var vendorId = extractResponseArray(varVendorsResponse == null ? null : JSON.parse(varVendorsResponse), 'organizations', true);
 
-var expenseClassId = extractResponseArray(varExpenseClassesResponse == null ? : JSON.parse(varExpenseClassesResponse), 'expenseClasses', true);
+var expenseClassId = extractResponseArray(varExpenseClassesResponse == null ? null : JSON.parse(varExpenseClassesResponse), 'expenseClasses', true);
 
 var configurationEntryId = extractResponseArray(JSON.parse(configurationEntriesResponse), 'configs', true);
 
@@ -101,14 +101,14 @@ var orderLine = {
   acquisitionMethod: acquisitionMethod
 };
 
-var compositePoLines = [
+var poLines = [
   orderLine
 ];
 
 var compositePurchaseOrder = {
   id: orderId,
   approved: true,
-  compositePoLines: compositePoLines,
+  poLines: poLines,
   orderType: 'One-Time',
   poNumber: poNumber,
   reEncumber: false,
