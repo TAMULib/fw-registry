@@ -1,7 +1,8 @@
-var compositePurchaseOrderObj = JSON.parse(compositePurchaseOrder);
+var varCompositePurchaseOrder = execution.getVariable('compositePurchaseOrder');
+var compositePurchaseOrderObj = varCompositePurchaseOrder == null ? {} : JSON.parse(varCompositePurchaseOrder);
 
 if (execution.getVariable('logLevel') === 'DEBUG') {
-  print('\ncompositePurchaseOrder = ' + compositePurchaseOrder + '\n');
+  print('\ncompositePurchaseOrder = ' + varCompositePurchaseOrder + '\n');
 }
 
 var instanceId = compositePurchaseOrderObj.compositePoLines[0].instanceId;

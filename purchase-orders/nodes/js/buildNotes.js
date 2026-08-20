@@ -1,4 +1,5 @@
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var varMarcOrderData = execution.getVariable('marcOrderData');
+var marcOrderDataObj = varMarcOrderData == null ? {} : JSON.parse(varMarcOrderData);
 
 var findNoteTypeIdByName = function (noteTypeName) {
   for (var i = 0; i < noteTypes.length; ++i) {

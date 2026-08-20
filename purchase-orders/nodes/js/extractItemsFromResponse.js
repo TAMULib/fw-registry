@@ -1,4 +1,5 @@
-var items = JSON.parse(itemsResponse).items;
+var varItemsResponse = execution.getVariable('itemsResponse');
+var items = varItemsResponse == null ? [] : JSON.parse(itemsResponse).items;
 
 if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nitemsResponse = ' + itemsResponse + '\n');

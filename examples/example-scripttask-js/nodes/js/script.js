@@ -1,9 +1,10 @@
-
 var exampleValue = "original value";
+var varExampleInjectValue = execution.getVariable('exampleInjectValue');
+
 print("\n\nOriginal value is: " + exampleValue + "\n");
 
-if ("{{exampleInjectValue}}" != "") {
-  exampleValue = "{{exampleInjectValue}}";
+if (varExampleInjectValue != null) {
+  exampleValue = varExampleInjectValue;
 }
 
 print("\nResulting value is: " + exampleValue + "\n\n");

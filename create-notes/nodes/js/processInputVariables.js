@@ -2,7 +2,9 @@ var FormatUtility = Java.type('org.folio.rest.camunda.utility.FormatUtility');
 var MappingUtility = Java.type('org.folio.rest.camunda.utility.MappingUtility');
 var UUID = Java.type('java.util.UUID');
 var StringUtils = Java.type('org.apache.commons.lang3.StringUtils');
-var idsJson = MappingUtility.mapCsvToJson(rowsCsv);
+
+var varRowsCsv = execution.getVariable('rowsCsv');
+var idsJson = MappingUtility.mapCsvToJson(varRowsCsv);
 var idsMatrix = JSON.parse(idsJson);
 var queryWrapper = {
   'noteText': null,
@@ -15,13 +17,25 @@ var idSql = null;
 var idSqlFailure = false;
 var changedItems = [];
 
+var varItemNoteTypeId = execution.getVariable('inputFilePath');
+var varNoteText = execution.getVariable('noteText');
+var varStaffOnly = execution.getVariable('staffOnly');
+
 if (execution.getVariable('logLevel') === 'DEBUG') {
-  print('\ninputFilePath = ' + inputFilePath + '\n');
+  print('\ninputFilePath = ' + execution.getVariable('inputFilePath') + '\n');
   print('\nidsJson = ' + idsJson + '\n');
-  print('\nitemNoteTypeId = ' + itemNoteTypeId + '\n');
-  print('\nitemNoteTypeName = ' + itemNoteTypeName + '\n');
-  print('\nnoteText = ' + noteText + '\n');
-  print('\nstaffOnly = ' + staffOnly + '\n');
+  print('\nitemNoteTypeId = ' + varItemNoteTypeId + '\n');
+  print('\nitemNoteTypeName = ' + execution.getVariable('itemNoteTypeName') + '\n');
+  print('\nnoteText = ' + varNoteText + '\n');
+  print('\nstaffOnly = ' + varStaffOnly + '\n');
+}
+
+if (varItemNoteTypeId == null) {
+  varItemNoteTypeId = '';
+}
+
+if (varNoteText == null) {
+  varNoteText = '';
 }
 
 if (Array.isArray(idsMatrix) && idsMatrix.length > 0) {
@@ -53,22 +67,22 @@ if (idSqlFailure) {
 }
 
 try {
-  queryWrapper.noteType = UUID.fromString(itemNoteTypeId).toString();
+  queryWrapper.noteType = UUID.fromString(varItemNoteTypeId).toString();
 } catch (err) {
-  throw new Error('Invalid Item Type UUID: ' + itemNoteTypeId + '!');
+  throw new Error('Invalid Item Type UUID: ' + varItemNoteTypeId + '!');
 }
 
 try {
-  queryWrapper.noteText = FormatUtility.sanitizeSqlCode(noteText);
+  queryWrapper.noteText = FormatUtility.sanitizeSqlCode(varNoteText);
 } catch (err) {
-  throw new Error('Failed to escape SQL in noteText: ' + noteText + '!');
+  throw new Error('Failed to escape SQL in noteText: ' + varNoteText + '!');
 }
 
-if (staffOnly !== true && staffOnly !== false && ('' + staffOnly).toLowerCase() !== 'true' && ('' + staffOnly).toLowerCase() !== 'false') {
-  throw new Error('The staffOnly variable must be either \'true\' or \'false\' but is instead \'' + staffOnly + '\'.');
+if (varStaffOnly !== true && varStaffOnly !== false && ('' + varStaffOnly).toLowerCase() !== 'true' && ('' + varStaffOnly).toLowerCase() !== 'false') {
+  throw new Error('The staffOnly variable must be either \'true\' or \'false\' but is instead \'' + varStaffOnly + '\'.');
 }
 
-queryWrapper.staffOnly = (staffOnly === true || ('' + staffOnly).toLowerCase() === 'true') ? true : false;
+queryWrapper.staffOnly = (varStaffOnly === true || ('' + varStaffOnly).toLowerCase() === 'true') ? true : false;
 
 queryWrapper.sql =  '( select item.id from folio_inventory.item item ';
 queryWrapper.sql += '  where item.jsonb ->> \'barcode\' in (' + idSql + ') and jsonb_array_length(item.jsonb -> \'notes\') = 0';
@@ -77,7 +91,7 @@ queryWrapper.sql += '  select s.id from (';
 queryWrapper.sql += '    select id, jsonb->\'notes\' as notes ';
 queryWrapper.sql += '    from folio_inventory.item item where item.jsonb ->> \'barcode\' in (' + idSql + ')';
 queryWrapper.sql += '  ) s';
-queryWrapper.sql += '  where not s.notes @> \'[{"itemNoteTypeId":"' + queryWrapper.noteType + '", "staffOnly":' + queryWrapper.staffOnly + ',"note":"' + queryWrapper.noteText + '"}]\'::jsonb';
+queryWrapper.sql += '  where not s.notes @> \'[{"varItemNoteTypeId":"' + queryWrapper.noteType + '", "staffOnly":' + queryWrapper.staffOnly + ',"note":"' + queryWrapper.noteText + '"}]\'::jsonb';
 queryWrapper.sql += ')';
 
 

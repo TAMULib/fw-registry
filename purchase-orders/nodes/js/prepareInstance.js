@@ -1,15 +1,19 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 
+var varInstance = execution.getVariable('instance');
+var varStatisticalCodesResponse = execution.getVariable('statisticalCodesResponse');
+
 if (execution.getVariable('logLevel') === 'DEBUG') {
-  print('\ninstance = ' + instance + '\n');
-  print('\nstatisticalCodesResponse = ' + statisticalCodesResponse + '\n');
+  print('\ninstance = ' + varInstance + '\n');
+  print('\nstatisticalCodesResponse = ' + varStatisticalCodesResponse + '\n');
 }
 
-var instanceObj = JSON.parse(instance);
+var instanceObj = varInstance == null ? {} : JSON.parse(varInstance);
 
-var marcJsonRecord = JSON.stringify(JSON.parse(sourceRecord).parsedRecord.content);
+var varSourceRecord = execution.getVariable('sourceRecord');
+var marcJsonRecord = varSourceRecord == null ? {} : JSON.stringify(JSON.parse(varSourceRecord).parsedRecord.content);
 
-var statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
+var statisticalCodes = varStatisticalCodesResponse == null ? [] : JSON.parse(varStatisticalCodesResponse).statisticalCodes;
 
 var mapStatisticalCodeIds = function (statisticalCodes) {
   var statisticalCodeIds = [];

@@ -3,13 +3,22 @@ var UUID = Java.type("java.util.UUID");
 var orderId = UUID.randomUUID().toString();
 var orderLineId = UUID.randomUUID().toString();
 
+var varPoNumberResponse = execution.getVariable('poNumberResponse');
+var varVendorsResponse = execution.getVariable('vendorsResponse');
+var varFundsResponse = execution.getVariable('fundsResponse');
+var varExpenseClassesResponse = execution.getVariable('expenseClassesResponse');
+var varLocationsResponse = execution.getVariable('locationsResponse');
+var varMaterialTypesResponse = execution.getVariable('materialTypesResponse');
+var varAcquisitionMethodsResponse = execution.getVariable('acquisitionMethodsResponse');
+
 if (execution.getVariable('logLevel') === 'DEBUG') {
-  print('\npoNumberResponse = ' + poNumberResponse + '\n');
-  print('\nvendorsResponse = ' + vendorsResponse + '\n');
-  print('\nfundsResponse = ' + fundsResponse + '\n');
-  print('\nexpenseClassesResponse = ' + expenseClassesResponse + '\n');
-  print('\nmaterialTypesResponse = ' + materialTypesResponse + '\n');
-  print('\nacquisitionMethodsResponse = ' + acquisitionMethodsResponse + '\n');
+  print('\npoNumberResponse = ' + varPoNumberResponse + '\n');
+  print('\nvendorsResponse = ' + varVendorsResponse + '\n');
+  print('\nfundsResponse = ' + varFundsResponse + '\n');
+  print('\nexpenseClassesResponse = ' + varExpenseClassesResponse + '\n');
+  print('\nlocationsResponse = ' + varLocationsResponse + '\n');
+  print('\nmaterialTypesResponse = ' + varMaterialTypesResponse + '\n');
+  print('\nacquisitionMethodsResponse = ' + varAcquisitionMethodsResponse + '\n');
 }
 
 var extractResponseArray = function (response, key, firstId) {
@@ -24,24 +33,25 @@ var extractResponseArray = function (response, key, firstId) {
   return response[key];
 };
 
-var poNumberObj = JSON.parse(poNumberResponse);
+var poNumberObj = varPoNumberResponse == null ? {} : JSON.parse(varPoNumberResponse);
 var poNumber = !!poNumberObj && !!poNumberObj.poNumber ? poNumberObj.poNumber : undefined;
 
-var vendorId = extractResponseArray(JSON.parse(vendorsResponse), 'organizations', true);
+var vendorId = extractResponseArray(varVendorsResponse == null ? null : JSON.parse(varVendorsResponse), 'organizations', true);
 
-var expenseClassId = extractResponseArray(JSON.parse(expenseClassesResponse), 'expenseClasses', true);
+var expenseClassId = extractResponseArray(varExpenseClassesResponse == null ? : JSON.parse(varExpenseClassesResponse), 'expenseClasses', true);
 
 var configurationEntryId = extractResponseArray(JSON.parse(configurationEntriesResponse), 'configs', true);
 
-var funds = extractResponseArray(JSON.parse(fundsResponse), 'funds');
+var funds = extractResponseArray(varFundsResponse == null ? null : JSON.parse(varFundsResponse), 'funds');
 
-var locations = extractResponseArray(JSON.parse(locationsResponse), 'locations');
+var locations = extractResponseArray(varLocationsResponse == null ? null : JSON.parse(varLocationsResponse), 'locations');
 
-var materialTypes = extractResponseArray(JSON.parse(materialTypesResponse), 'mtypes');
+var materialTypes = extractResponseArray(varMaterialTypesResponse == null ? null : JSON.parse(varMaterialTypesResponse), 'mtypes');
 
-var acquisitionMethods = extractResponseArray(JSON.parse(acquisitionMethodsResponse), 'acquisitionMethods');
+var acquisitionMethods = extractResponseArray(varAcquisitionMethodsResponse == null ? null : JSON.parse(varAcquisitionMethodsResponse), 'acquisitionMethods');
 
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var varMarcOrderData = execution.getVariable('marcOrderData');
+var marcOrderDataObj = marcOrderData == null ? {} : JSON.parse(varMarcOrderData);
 
 var electronic = !!marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf('electronic') >= 0;
 

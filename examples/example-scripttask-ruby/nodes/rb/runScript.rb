@@ -1,5 +1,4 @@
 print "\nHello World from Ruby workflow!!\n\n"
-;
 
 print "Environment Variables:\n";
 print "======================\n";

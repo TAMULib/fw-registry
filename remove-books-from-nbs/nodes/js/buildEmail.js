@@ -1,5 +1,8 @@
-var itemsRemoved = JSON.parse(itemsToRemove);
-var skippedItems = JSON.parse(itemsSkipped);
+var varItemsToRemove = execution.getVariable('itemsToRemove');
+var varSkippedItems = execution.getVariable('skippedItems');
+
+var itemsRemoved = varItemsToRemove == null ? [] : JSON.parse(varItemsToRemove);
+var skippedItems = varSkippedItems == null ? [] : JSON.parse(varSkippedItems);
 
 var emailSubject = 'Items removed from new bookshelf';
 var emailMarkup = '<p>A total of <strong>' + itemsRemoved.length + '</strong> items have been successfully processed. Attached is the CSV file of the barcodes of the items removed from the New Bookshelf. </p>\n';

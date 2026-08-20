@@ -1,15 +1,19 @@
 if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nlogLevel = ' + execution.getVariable('logLevel'));
-  print('\nusername = ' + username);
-  print('\nemailTo = ' + emailTo);
-  print('\nhegisCodes = ' + hegisCodes);
-  print('\nsysUnitCodes = ' + sysUnitCodes);
-  print('\npoType = ' + poType);
+  print('\nusername = ' + execution.getVariable('username'));
+  print('\nemailTo = ' + execution.getVariable('emailTo'));
+  print('\nhegisCodes = ' + execution.getVariable('hegisCodes'));
+  print('\nsysUnitCodes = ' + execution.getVariable('sysUnitCodes'));
+  print('\npoType = ' + execution.getVariable('poType'));
 }
 
-var hCodes = hegisCodes.length > 0 ? hegisCodes.join('|') : '';
+var varHegisCodes = execution.getVariable('hegisCodes'));
+var hCodes = varHegisCodes != null && hegisCodes.length > 0 ? hegisCodes.join('|') : '';
 
-var sysCodesArray = Array.isArray(sysUnitCodes) ? sysUnitCodes : [sysUnitCodes];
+var varSysUnitCodes = execution.getVariable('sysUnitCodes'));
+var sysCodesArray = varSysUnitCodes == null
+  ? []
+  : Array.isArray(varSysUnitCodes) ? varSysUnitCodes : [ varSysUnitCodes ];
 
 var sysCodes = sysCodesArray.length > 0 ? sysCodesArray.join('|') : '';
 

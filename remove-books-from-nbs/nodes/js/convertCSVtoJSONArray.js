@@ -1,5 +1,7 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
-var barcodesJSON = MappingUtility.mapCsvToJson(barcodesCSV);
+
+var varBarcodesCSV = execution.getVariable('barcodesCSV');
+var barcodesJSON = MappingUtility.mapCsvToJson(varBarcodesCSV);
 
 if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nbarcodesJSON = ' + barcodesJSON + '\n');
@@ -22,9 +24,5 @@ if (execution.getVariable('logLevel') === "DEBUG") {
 }
 
 execution.setVariable('barcodes', S(JSON.stringify(barcodes)));
-
-var itemsToRemove = [];
-var itemsSkipped = [];
-
-execution.setVariable('itemsToRemove', S(JSON.stringify(itemsToRemove)));
-execution.setVariable('itemsSkipped', S(JSON.stringify(itemsSkipped)));
+execution.setVariable('itemsToRemove', S(JSON.stringify([])));
+execution.setVariable('itemsSkipped', S(JSON.stringify([])));
