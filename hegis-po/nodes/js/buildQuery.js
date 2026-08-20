@@ -7,10 +7,10 @@ if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\npoType = ' + execution.getVariable('poType'));
 }
 
-var varHegisCodes = execution.getVariable('hegisCodes'));
+var varHegisCodes = execution.getVariable('hegisCodes');
 var hCodes = varHegisCodes != null && hegisCodes.length > 0 ? hegisCodes.join('|') : '';
 
-var varSysUnitCodes = execution.getVariable('sysUnitCodes'));
+var varSysUnitCodes = execution.getVariable('sysUnitCodes');
 var sysCodesArray = varSysUnitCodes == null
   ? []
   : Array.isArray(varSysUnitCodes) ? varSysUnitCodes : [ varSysUnitCodes ];
@@ -19,7 +19,7 @@ var sysCodes = sysCodesArray.length > 0 ? sysCodesArray.join('|') : '';
 
 var hegisPattern = '\'(?i)^.*hegis<(' + hCodes + ')' + '(' + sysCodes + ')>.*$\'';
 
-var poStatus = ( poType == '*' ) ? '' : ' AND po.workflow_status IN (\'Pending\', \'Open\')';
+var poStatus = ( poType == '*' ) ? '' : ' AND po.workflowStatus IN (\'Pending\', \'Open\')';
 
 var hegisPoQuery = 'WITH _payments AS ('
   + '\n\tSELECT'
