@@ -28,6 +28,15 @@ SERVER_PORT=9000 mvn clean spring-boot:run
 - Be sure to check and update the tenant header in all the curl requests documented below.
 
 
+## Reserved Variables
+
+The following is a list of reserved variables defined and controlled by `mod-camunda`:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| logLevel         | [INFO,DEBUG]   | Desired log level
+
+
 ## Variable Substitution
 
 The [Workflow](https://github.com/folio-org/mod-workflow/) JSON files are templates that are pre-processed by [fw-cli](https://github.com/TAMULib/fw-cli) using the [Handlebars template engine](https://handlebarsjs.com/). The Handlebars template engine follows the [Mustache Syntax](https://mustache.github.io/mustache.5.html). Some properties are also processed using the [Free Marker Template Utilities](https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/ui/freemarker/FreeMarkerTemplateUtils.html) by the Workflow engine called [Camunda](https://github.com/folio-org/mod-camunda/). Camunda may then perform its own pre-processing of the templates while using the [BPMN](https://www.bpmn.org/) based on the [JUEL Syntax](https://jcp.org/aboutJava/communityprocess/mrel/jsr245/index.html). See also the [JUEL Project Page](http://juel.sourceforge.net/).
@@ -43,209 +52,87 @@ The [Workflow](https://github.com/folio-org/mod-workflow/) JSON files are templa
 1. Workflow) engines other than Camunda may or may not follow the JUEL Syntax.
 
 
-## patron
+## Workflows
 
-DivIT patron workflow. (Scheduled)
-
-These variables are required when building and running the workflow:
-
-| Variable Name       | Allowed Values | Brief Description
-| ------------------- | -------------- | -----------------
-| divit-password      | string         | DivIt login password.
-| divit-url           | URL            | DivIt URL.
-| divit-user          | string         | DivIt login username.
-| gateway-url         | URL            | The FOLIO Gateway URL.
-| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only).
-
-```shell
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
-fw config set gateway-url ***
-fw config set overridePatronEmail ***
-```
-
-```shell
-fw build patron
-fw activate patron
-```
-
-
-## orcid
-
-Extract for ORCID workflow.
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| divit-password  | string         | DivIt login password.
-| divit-url       | URL            | DivIt URL.
-| divit-user      | string         | DivIt login username.
-| orcid-mail-from | e-mail address | The e-mail address of the sender.
-| orcid-mail-to   | e-mail address | The e-mail address of the recipient.
-
-```shell
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
-fw config set orcid-mail-from ***
-fw config set orcid-mail-to ***
-```
-
-```shell
-fw build orcid
-fw activate orcid
-```
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/orcid/start' \
---header 'Content-Type: application/json' \
---header 'X-Okapi-Tenant: diku' \
---data-raw '{"emailTo": "you@example.com"}'
-```
+- [Books Checked Out By Call Number](#books-checked-out-by-call-number)
+- [Ciculation Fines](#ciculation-fines)
+- [Coral Extract](#coral-extract)
+- [DivIT Patron](#divit-patron)
+- [Duplicate Instance Report](#duplicate-instance-report)
+- [Electronic Resource](#electronic-resource)
+- [Evans Pres Report](#evans-pres-report)
+- [FOLIO Create Notes](#folio-create-notes)
+- [FOLIO Create Tags](#folio-create-tags)
+- [Gobi](#gobi)
+- [HathiTrust Export](#hathitrust-export)
+- [Hegis Purchase Order](#hegis-purchase-order)
+- [Item History Update](#item-history-update)
+- [Medical Science GPS Zone](#medical-science-gps-zone)
+- [New Bookshelf Items Note](#new-bookshelf-items-note)
+- [Orcid](#Orcid)
+- [Purchase Orders](#purchase-orders)
+- [Rapid ILS Electronics Monos Report](#rapid-ils-electronics-monos-report)
+- [Rapid ILS Electronics Serials Report](#rapid-ils-electronics-serials-report)
+- [Rapid ILS Electronics Monos Report](#rapid-ils-electronics-monos-report)
+- [Rapid ILS Electronics Serials Report](#rapid-ils-electronics-serials-report)
+- [Remove Books from New Bookshelf](#remove-books-from-new-bookshelf)
+- [Shelf List Holdings Report](#shelf-list-holdings-report)
+- [Shelf List Items Report](#shelf-list-items-report)
 
 
-## gobi
+### Books Checked Out By Call Number
 
-ISBN report to GOBI workflow. (Scheduled)
+**Workflow Name**: `books-call-number`.
+
+This workflow queries checked-out books within a specific call number range, generates a list, and emails this list to the specified recipient.
 
 These variables are required when building and running the workflow:
 
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| gobi-mail-from  | e-mail address | The e-mail address of the sender.
-| gobi-mail-to    | e-mail address | The e-mail address of the recipient.
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
+| Variable Name           | Allowed Values | Brief Description
+| ----------------------- | -------------- | -----------------
+| bcnMailFrom             | e-mail address | The e-mail address of the sender.
+| bcnMailTo               | e-mail address | The e-mail address of the recipient.
+| endRange                | string         | End range of call number.
+| metadb-password         | string         | MetaDb login password.
+| metadb-url              | URL            | MetaDb URL.
+| metadb-user             | string         | MetaDb login username.
+| locationName            | string         | A JSON Array of location names from the reporting table `item_ext`.
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
+| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory).
+| startRange              | string         | Start Range of call number.
+
+This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
 
 ```shell
+fw config set bcnMailFrom ***
 fw config set metadb-url ***
 fw config set metadb-user ***
 fw config set metadb-password ***
-fw config set gobi-mail-from ***
-fw config set gobi-mail-to ***
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
 ```
+
+To build and activate:
 
 ```shell
-fw build gobi
-fw activate gobi
+fw build books-call-number
+fw activate books-call-number
 ```
 
+The user initiates the form submission using the Catalog Reports Book-Call-Number Report.
 
-## e-resource
-
-E-resource Workflow.
-
-These variables are required when building and running the workflow:
-
-| Variable Name    | Allowed Values | Brief Description
-| ---------------- | -------------- | -----------------
-| divit-password   | string         | DivIt login password.
-| divit-url        | URL            | DivIt URL.
-| divit-user       | string         | DivIt login username.
-| e-resource-view  | string         | The name of the resource view.
+Trigger the workflow using an **HTTP** request such as with **Curl**:
 
 ```shell
-fw config set e-resource-view LIBRARY_ERESOURCES
-fw config set divit-url ***
-fw config set divit-user ***
-fw config set divit-password ***
-```
-
-```shell
-fw build e-resource
-fw activate e-resource
-```
-
-```shell
-fw run e-resource
-```
-
-or
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/e-resource/start' \
---header 'Content-Type: application/json' \
---header 'X-Okapi-Tenant: diku' \
---data-raw '{}'
+curl -w '\n' --location --request POST 'http://localhost:9001/events/books-call-number/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "path": "/mnt/workflows/diku/bcn", "startRange": "a0" }'
 ```
 
 
-## purchase-orders
+### Ciculation Fines
 
-### Purchase Orders Workflow.
-
-These variables are required when building and running the workflow:
-
-| Variable Name      | Allowed Values | Brief Description
-| ------------------ | -------------- | -----------------
-| callNumberTypeId   | string         | A call number type ID to use.
-| eHoldingsType      | string         | An e-holdings type to use.
-| emailFrom          | e-mail address | The e-mail address of the sender.
-| emailTo            | e-mail address | The e-mail address of the recipient.
-| eMaterialType      | string         | An e-material type to use.
-| file               | file name      | The file path within the specified directory path representing the MARC file to process.
-| fiscalYearCode     | string         | A fiscal year code to use.
-| gateway-url        | URL            | The FOLIO Gateway URL.
-| holdingsRecordKeys | JSON string    | An array of allowed holdings record keys (if not defined, then all keys are allowed).
-| holdingsType       | string         | A holdings type to use.
-| materialType       | string         | A material type to use.
-| noteType           | string         | A Note type.
-| password           | string         | Okapi login password.
-| path               | directory path | The directory on the system where the MARC file is stored.
-| permELocation      | string         | A permanent e-location to use.
-| permLoanType       | string         | A permanent Loan type to use.
-| permLocation       | string         | A permanent location to use.
-| statisticalCode    | string         | A statistical code to use.
-| tempLoanType       | string         | A temporary Loan type to use.
-| tempLocation       | string         | A temporary location to use.
-| username           | string         | Okapi login username.
-
-The value for `holdingsRecordKeys` is generated from the [mod-inventory-storage holdingsRecord.json](https://github.com/folio-org/mod-inventory-storage/blob/master/ramls/holdings-storage/holdingsRecord.json).
-Use the `jq` program as follows to extract the array of allowed keys along with the `fw` script to set assign the `holdingsRecordKeys` value:
-
-```shell
-fw config set holdingsRecordKeys $(jq -Mc '.properties | keys' holdingsRecord.json)
-```
-
-```shell
-fw config set gateway-url ***
-```
-
-```shell
-fw build purchase-orders
-fw activate purchase-orders
-```
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/purchase-orders/start' \
---header 'Content-Type: multipart/form-data' \
---header 'X-Okapi-Tenant: diku' \
---form 'callNumberTypeId="95467209-6d7b-468b-94df-0f5d7ad2747d"' \
---form 'eHoldingsType="Unknown"' \
---form 'emailFrom="me@example.com"' \
---form 'emailTo="you@example.com"' \
---form 'eMaterialType="computer -- online resource"' \
---form 'file=@"/example.mrc"' \
---form 'fiscalYearCode="FY2021"' \
---form 'holdingsType="Monograph"' \
---form 'materialType="unmediated -- volume"' \
---form 'noteType="General note"' \
---form 'password="***"' \
---form 'path="/mnt/po"' \
---form 'permELocation="www_evans"' \
---form 'permLoanType="normal"' \
---form 'permLocation="Evans stk"' \
---form 'statisticalCode="ybppapp"' \
---form 'tempLoanType="newbook"' \
---form 'tempLocation="Evans nbs"' \
---form 'username="***"'
-```
-
-
-## circ-fines
+**Workflow Name**: `circ-fines`.
 
 Circulation Fees/Fines Daily Report. (Scheduled)
 
@@ -253,11 +140,11 @@ These variables are required when building and running the workflow:
 
 | Variable Name        | Allowed Values | Brief Description
 | -------------------- | -------------- | -----------------
+| circ-fines-mail-from | e-mail address | The e-mail address of the sender.
+| circ-fines-mail-to   | e-mail address | The e-mail address of the recipient.
 | metadb-password      | string         | MetaDB login password.
 | metadb-url           | URL            | MetaDB URL.
 | metadb-user          | string         | MetaDB login username.
-| medsci-gps-zone-from | e-mail address | The e-mail address of the sender.
-| medsci-gps-zone-to   | e-mail address | The e-mail address of the recipient.
 
 ```shell
 fw config set metadb-url ***
@@ -273,105 +160,9 @@ fw activate circ-fines
 ```
 
 
-## rapid-print-serials
+### Coral Extract
 
-Rapid ILS Print Serials Monthly Report. (Scheduled)
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-```
-
-```shell
-fw build rapid-print-serials
-fw activate rapid-print-serials
-```
-
-```shell
-fw run rapid-print-serials
-```
-
-
-## rapid-electronic-monos
-
-Rapid ILS Electronic Monos Report. (Scheduled)
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-```
-
-```shell
-fw build rapid-electronic-monos
-fw activate rapid-electronic-monos
-```
-
-```shell
-fw run rapid-electronic-monos
-```
-
-or wait for the cron job to be auto-triggered.
-
-
-## rapid-print-monos
-
-Rapid ILS Print Monos Monthly Report. (Scheduled)
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-```
-
-```shell
-fw build rapid-print-monos
-fw activate rapid-print-monos
-```
-
-```shell
-fw run rapid-print-monos
-```
-
-or wait for the cron job to be auto-triggered.
-
-
-## rapid-electronic-serials
-
-Rapid ILS Electronic Serials Monthly Report. (Scheduled)
-
-```shell
-fw build rapid-electronic-serials
-fw activate rapid-electronic-serials
-```
-
-
-## coral-extract
+**Workflow Name**: `coral-extract`.
 
 Extract Coral Data and Import it into Folio (Scheduled).
 
@@ -412,7 +203,7 @@ Ensure the two template files are located in the following path:`/mnt/workflows/
 These template files are used after the Okapi login step to build instance and holdings records. They include placeholders that are replaced at runtime using `replace()` method.
 
 
-### Template 1: instance_template.json
+#### Template 1: instance_template.json
 
 ```json
 {
@@ -466,7 +257,7 @@ var instance = JSON.parse(
 ```
 
 
-### Template 2: holdings_template.json
+#### Template 2: holdings_template.json
 
 ```json
 {
@@ -497,17 +288,17 @@ The following variables are required when building and running the workflow:
 | Variable Name   | Allowed Values | Brief Description
 | --------------- | -------------- | -----------------
 | coral-url       | URL            | Coral server URL.
-| gateway-url     | FOLIO Gateway  | The FOLIO Gateway URL.
+| gatewayUrl      | FOLIO Gateway  | The FOLIO Gateway URL.
 | metadb-password | string         | MetaDB login password.
 | metadb-url      | URL            | MetaDB URL.
 | metadb-user     | string         | MetaDB login username.
 
 ```shell
 fw config set coral-url ***
+fw config set gatewayUrl ***
+fw config set metadb-password ***
 fw config set metadb-url ***
 fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set gateway-url ***
 ```
 
 ```shell
@@ -522,9 +313,385 @@ fw run coral-extract
 or wait for the cron job to be auto-triggered.
 
 
-## medsci-gps-zone
+### DivIT Patron
 
-MedSci GPS Zone
+**Workflow Name**: `patron`.
+
+This is a scheduled workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name       | Allowed Values | Brief Description
+| ------------------- | -------------- | -----------------
+| divit-password      | string         | DivIt login password.
+| divit-url           | URL            | DivIt URL.
+| divit-user          | string         | DivIt login username.
+| gatewayUrl          | URL            | The FOLIO Gateway URL.
+| overridePatronEmail | string or null | Forcibly replace all e-mails with this (for testing and debugging only).
+
+```shell
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+fw config set gatewayUrl ***
+fw config set overridePatronEmail ***
+```
+
+```shell
+fw build patron
+fw activate patron
+```
+
+
+### Duplicate Instance Report
+
+**Workflow Name**: `duplicate-instance-report`.
+
+This is a scheduled workflow.
+
+This workflow emails a CSV report for Call Number, ISBN, LCCN, ISSN, and OCLC matches as well as a full instance duplication CSV report compressed with ZIP format.
+
+The full instance duplication CSV has the following columns. The title and author columns are wrapped in double quotes.
+
+```
+HRID, HRID2, OCLC, ISBN, ISSN, CALL_NUMBER, LCCN, TITLE, TITLE2, AUTHOR, AUTHOR2
+```
+
+Requires following path `/mnt/workflows/${tenantId}/duplicate-instance-report`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name                  | Allowed Values | Brief Description
+| ------------------------------ | -------------- | -----------------
+| metadb-url                     | URL            | MetaDB URL.
+| metadb-user                    | string         | MetaDB login username.
+| metadb-password                | string         | MetaDB login password.
+| duplicate-instance-report-from | e-mail address | The e-mail address of the report sender.
+| duplicate-instance-report-to   | e-mail address | The e-mail address of the report recipient.
+
+The scheduled event is for **12:00 AM UTC**, on the first of the month, only in January, April, July, and October.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+fw config set duplicate-instance-report-from ***
+fw config set duplicate-instance-report-to ***
+```
+
+To build and activate:
+```shell
+fw build duplicate-instance-report
+fw activate duplicate-instance-report
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run duplicate-instance-report
+```
+
+
+### Electronic Resource
+
+**Workflow Name**: `e-resource`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name    | Allowed Values | Brief Description
+| ---------------- | -------------- | -----------------
+| divit-password   | string         | DivIt login password.
+| divit-url        | URL            | DivIt URL.
+| divit-user       | string         | DivIt login username.
+| e-resource-view  | string         | The name of the resource view.
+
+```shell
+fw config set e-resource-view LIBRARY_ERESOURCES
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+```
+
+```shell
+fw build e-resource
+fw activate e-resource
+```
+
+```shell
+fw run e-resource
+```
+
+or
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/e-resource/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{}'
+```
+
+
+### Evans Pres Report
+
+**Workflow Name**: `evans-pres-repr`.
+
+This is a scheduled workflow.
+
+This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Evans Pres Repr" to a specifically configured email address `evansPresReprFrom`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name     | Allowed Values | Brief Description
+| ----------------- | -------------- | -----------------
+| evansPresReprFrom | e-mail address | The e-mail address of the sender.
+| evansPresReprTo   | e-mail address | The e-mail address of the recipient.
+| metadb-url        | URL            | MetaDB URL.
+| metadb-user       | string         | MetaDB login username.
+| metadb-password   | string         | MetaDB login password.
+
+This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
+
+The scheduled event is for **8:00AM UTC** on the first day of every month.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+fw config set evansPresReprFrom ***
+fw config set evansPresReprTo ***
+```
+
+To build and activate:
+```shell
+fw build evans-pres-repr
+fw activate evans-pres-repr
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run evans-pres-repr
+```
+
+
+### FOLIO Create Notes
+
+**Workflow Name**: `create-notes`.
+
+This workflow adds a given note, specified by the *Note Type UUID*, with the given *Note Text* message and the given *Staff Only* setting.
+If a given Note already exists on an Item then that Note is not added multiple times to the Item.
+
+This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
+
+At the end of this process, an e-mail is set to the given destination address.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| emailFrom       | e-mail address | The e-mail address of the sender.
+| emailTo         | e-mail address | The e-mail address of the recipient.
+| file            | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| gatewayUrl      | URL            | The FOLIO Gateway URL.
+| itemNoteTypeId  | UUID           | The Item Note Type UUID to be used for the Note.
+| noteText        | string         | A message used as the Note.
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+| path            | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+| staffOnly       | boolean        | Designate whether or not this is a *Staff Only* note.
+
+```shell
+fw config set gatewayUrl ***
+fw config set metadb-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+```
+
+To build and activate:
+```shell
+fw build create-notes
+fw activate create-notes
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/create-notes/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'emailFrom="me@example.com"' \
+  --form 'emailTo="you@example.com"' \
+  --form 'file=@"itemBarcodes.csv"' \
+  --form 'path="/mnt/workflows/diku/create-notes/"' \
+  --form 'itemNoteTypeId="d5684236-e4ab-4a64-97b3-2aa7a595cfc4"' \
+  --form 'noteText="This is a note text message."' \
+  --form 'staffOnly=false'
+```
+
+
+### FOLIO Create Tags
+
+**Workflow Name**: `create-tags`.
+
+Create Tags Workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name           | Allowed Values | Brief Description
+| ----------------------- | -------------- | -----------------
+| file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| gatewayUrl              | URL            | The FOLIO Gateway URL.
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
+| path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+
+```shell
+fw config set gatewayUrl ***
+```
+
+```shell
+fw build create-tags
+fw activate create-tags
+
+curl -w '\n' --location --request POST 'http://localhost:9001/events/create-tags/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: diku' \
+--form 'file=@"FOLIOTags.csv"' \
+--form 'path="/mnt/workflows/diku/create-tags"'
+```
+
+
+### Gobi
+
+**Workflow Name**: `gobi`.
+
+ISBN report to GOBI workflow. (Scheduled)
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| gobi-mail-from  | e-mail address | The e-mail address of the sender.
+| gobi-mail-to    | e-mail address | The e-mail address of the recipient.
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+fw config set gobi-mail-from ***
+fw config set gobi-mail-to ***
+```
+
+```shell
+fw build gobi
+fw activate gobi
+```
+
+
+### HathiTrust Export
+
+**Workflow Name**: `hathitrust`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build hathitrust
+fw activate hathitrust
+```
+
+```shell
+fw run hathitrust
+```
+
+
+### Hegis Purchase Order
+
+**Workflow Name**: `hegis-purchase-order`.
+
+The user initiates the form submission using the Catalog Reports Hegis Purchase Order Workflow.
+
+Requires following path `/mnt/workflows/${tenantId}/hegis-po`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name           | Allowed Values | Brief Description
+| ----------------------- | -------------- | -----------------
+| emailTo                 | e-mail address | The e-mail address of the recipient.
+| metadb-password         | string         | MetaDB login password.
+| metadb-url              | URL            | MetaDB URL.
+| metadb-user             | string         | MetaDB login username.
+| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
+| hegis                   | string         | A JSON Array of Hegis codes.
+| hegisPoEmailFrom        | e-mail address | The e-mail address of the sender.
+| poType                  | string         | The purchase order type.
+| sysUnitCodes            | string         | A JSON Array of system unit codes.
+
+```shell
+fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+fw config set hegisPoEmailFrom ***
+```
+
+To build and activate:
+```shell
+fw build hegis-po
+fw activate hegis-po
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/hegis-po/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{ "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
+```
+
+
+### Item History Update
+
+**Workflow Name**: `item-history-update`.
+
+Item History Update Workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build item-history-update
+fw activate item-history-update
+fw run item-history-update
+```
+
+
+### Medical Science GPS Zone
+
+**Workflow Name**: `medsci-gps-zone`.
 
 For the `medsci-gps-zone-file` setting, the file name (without the path part) should likely be `grad_access.txt`.
 
@@ -556,9 +723,158 @@ fw run medsci-gps-zone
 ```
 
 
-## hathitrust
+### New Bookshelf Items Note
 
-HathiTrust Export
+**Workflow Name**: `nbs-items-note`.
+
+This is a scheduled workflow.
+
+This workflows adds a special check-in note for *New Bookshelf Items* for a specific temporary location **UUID**.
+If the check-in note already exists, then the new note is not added.
+
+This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
+These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
+
+The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| gatewayUrl      | URL            | The Gateway URL.
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set gatewayUrl ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+To build and activate:
+```shell
+fw build nbs-items-note
+fw activate nbs-items-note
+```
+
+Either wait for scheduled event to occur or manually execute via:
+```shell
+fw run nbs-items-note
+```
+
+
+### Orcid
+
+**Workflow Name**: `orcid`.
+
+Extract for ORCID workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| divit-password  | string         | DivIt login password.
+| divit-url       | URL            | DivIt URL.
+| divit-user      | string         | DivIt login username.
+| orcid-mail-from | e-mail address | The e-mail address of the sender.
+| orcid-mail-to   | e-mail address | The e-mail address of the recipient.
+
+```shell
+fw config set divit-url ***
+fw config set divit-user ***
+fw config set divit-password ***
+fw config set orcid-mail-from ***
+fw config set orcid-mail-to ***
+```
+
+```shell
+fw build orcid
+fw activate orcid
+```
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/orcid/start' \
+--header 'Content-Type: application/json' \
+--header 'X-Okapi-Tenant: diku' \
+--data-raw '{"emailTo": "you@example.com"}'
+```
+
+
+### Purchase Orders
+
+**Workflow Name**: `purchase-orders`.
+
+These variables are required when building and running the workflow:
+
+| Variable Name      | Allowed Values | Brief Description
+| ------------------ | -------------- | -----------------
+| callNumberTypeId   | string         | A call number type ID to use.
+| eHoldingsType      | string         | An e-holdings type to use.
+| emailFrom          | e-mail address | The e-mail address of the sender.
+| emailTo            | e-mail address | The e-mail address of the recipient.
+| eMaterialType      | string         | An e-material type to use.
+| file               | file name      | The file path within the specified directory path representing the MARC file to process.
+| fiscalYearCode     | string         | A fiscal year code to use.
+| gatewayUrl         | URL            | The FOLIO Gateway URL.
+| holdingsRecordKeys | JSON string    | An array of allowed holdings record keys (if not defined, then all keys are allowed).
+| holdingsType       | string         | A holdings type to use.
+| materialType       | string         | A material type to use.
+| noteType           | string         | A Note type.
+| path               | directory path | The directory on the system where the MARC file is stored.
+| permELocation      | string         | A permanent e-location to use.
+| permLoanType       | string         | A permanent Loan type to use.
+| permLocation       | string         | A permanent location to use.
+| statisticalCode    | string         | A statistical code to use.
+| tempLoanType       | string         | A temporary Loan type to use.
+| tempLocation       | string         | A temporary location to use.
+
+The value for `holdingsRecordKeys` is generated from the [mod-inventory-storage holdingsRecord.json](https://github.com/folio-org/mod-inventory-storage/blob/master/ramls/holdings-storage/holdingsRecord.json).
+Use the `jq` program as follows to extract the array of allowed keys along with the `fw` script to set assign the `holdingsRecordKeys` value:
+
+```shell
+fw config set holdingsRecordKeys $(jq -Mc '.properties | keys' holdingsRecord.json)
+```
+
+```shell
+fw config set gatewayUrl ***
+```
+
+```shell
+fw build purchase-orders
+fw activate purchase-orders
+```
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/purchase-orders/start' \
+--header 'Content-Type: multipart/form-data' \
+--header 'X-Okapi-Tenant: diku' \
+--form 'callNumberTypeId="95467209-6d7b-468b-94df-0f5d7ad2747d"' \
+--form 'eHoldingsType="Unknown"' \
+--form 'emailFrom="me@example.com"' \
+--form 'emailTo="you@example.com"' \
+--form 'eMaterialType="computer -- online resource"' \
+--form 'file=@"/example.mrc"' \
+--form 'fiscalYearCode="FY2021"' \
+--form 'holdingsType="Monograph"' \
+--form 'materialType="unmediated -- volume"' \
+--form 'noteType="General note"' \
+--form 'path="/mnt/po"' \
+--form 'permELocation="www_evans"' \
+--form 'permLoanType="normal"' \
+--form 'permLocation="Evans stk"' \
+--form 'statisticalCode="ybppapp"' \
+--form 'tempLoanType="newbook"' \
+--form 'tempLocation="Evans nbs"' \
+```
+
+
+### Rapid ILS Electronics Monos Report
+
+**Workflow Name**: `rapid-electronic-monos`.
+
+This is a scheduled workflow.
 
 These variables are required when building and running the workflow:
 
@@ -575,51 +891,152 @@ fw config set metadb-password ***
 ```
 
 ```shell
-fw build hathitrust
-fw activate hathitrust
+fw build rapid-electronic-monos
+fw activate rapid-electronic-monos
 ```
 
 ```shell
-fw run hathitrust
+fw run rapid-electronic-monos
 ```
 
+or wait for the cron job to be auto-triggered.
 
-## create-tags
 
-Create Tags Workflow.
+### Rapid ILS Electronics Serials Report
+
+**Workflow Name**: `rapid-electronic-serials`.
+
+This is a scheduled workflow.
 
 These variables are required when building and running the workflow:
 
-| Variable Name           | Allowed Values | Brief Description
-| ----------------------- | -------------- | -----------------
-| file                    | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
-| gateway-url             | URL            | The FOLIO Gateway URL.
-| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
-| password                | string         | Okapi login password.
-| path                    | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
-| username                | string         | Okapi login username.
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
 
 ```shell
-fw config set gateway-url ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
 ```
 
 ```shell
-fw build create-tags
-fw activate create-tags
+fw build rapid-electronic-serials
+fw activate rapid-electronic-serials
+```
 
-curl -w '\n' --location --request POST 'http://localhost:9001/events/create-tags/start' \
---header 'Content-Type: multipart/form-data' \
---header 'X-Okapi-Tenant: diku' \
---form 'file=@"FOLIOTags.csv"' \
---form 'path="/mnt/workflows/diku/create-tags"' \
---form 'username="***"' \
---form 'password="***"'
+```shell
+fw run rapid-electronic-monos
+```
+
+or wait for the cron job to be auto-triggered.
+
+
+### Rapid ILS Print Monos Report
+
+**Workflow Name**: `rapid-print-monos`.
+
+This is a scheduled workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build rapid-print-monos
+fw activate rapid-print-monos
+```
+
+```shell
+fw run rapid-print-monos
+```
+
+or wait for the cron job to be auto-triggered.
+
+
+### Rapid ILS Print Serials Report
+
+**Workflow Name**: `rapid-print-serials`.
+
+This is a scheduled workflow.
+
+These variables are required when building and running the workflow:
+
+| Variable Name   | Allowed Values | Brief Description
+| --------------- | -------------- | -----------------
+| metadb-password | string         | MetaDB login password.
+| metadb-url      | URL            | MetaDB URL.
+| metadb-user     | string         | MetaDB login username.
+
+```shell
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set metadb-password ***
+```
+
+```shell
+fw build rapid-print-serials
+fw activate rapid-print-serials
+```
+
+```shell
+fw run rapid-print-serials
 ```
 
 
-## shelflist-holdings
+### Remove Books from New Bookshelf
 
-Shelflist (holdings level) Report Workflow.
+**Workflow Name**: `remove-books-from-nbs`.
+
+For the uploaded CSV of call numbers, remove items that have been on the new bookshelf location for more than 30 days.
+
+These variables are required when building and running the workflow:
+
+| Variable Name  | Allowed Values | Brief Description
+| -------------- | -------------- | -----------------
+| emailTo        | e-mail address | The e-mail address of the recipient.
+| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
+| gatewayUrl     | URL            | The FOLIO Gateway URL.
+| nbs-mail-from  | e-mail address | The e-mail address of the sender.
+| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
+
+```shell
+fw config set gatewayUrl ***
+fw config set nbs-mail-from ***
+```
+
+To build and activate:
+```shell
+fw build remove-books-from-nbs
+fw activate remove-books-from-nbs
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/remove-books-from-nbs/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'emailTo="you@example.com"' \
+  --form 'file=@"itemBarcodes.csv"' \
+  --form 'path="/mnt/workflows/diku/remove-books-from-nbs/"'
+```
+
+
+### Shelf List Holdings Report
+
+**Workflow Name**: `shelflist-holdings`.
 
 These variables are required when building and running the workflow:
 
@@ -664,9 +1081,9 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/shelflist-h
 ```
 
 
-## shelflist-items
+### Shelf List Items Report
 
-Shelflist (items level) Report Workflow.
+**Workflow Name**: `shelflist-items`.
 
 These variables are required when building and running the workflow:
 
@@ -707,361 +1124,4 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/shelflist-i
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{ "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
-```
-
-
-## item-history-update
-
-Item History Update Workflow.
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-```
-
-```shell
-fw build item-history-update
-fw activate item-history-update
-fw run item-history-update
-```
-
-
-## nbs-items-note
-
-
-### New Bookshelf Items Note Workflow (Scheduled)
-
-This workflows adds a special check-in note for *New Bookshelf Items* for a specific temporary location **UUID**.
-If the check-in note already exists, then the new note is not added.
-
-This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
-These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
-
-The scheduled event is for **12:00pm UTC**, which is **7:00am in CDT**.
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-| okapi           | URL            | The Okapi URL.
-| password        | string         | Okapi login password.
-| username        | string         | Okapi login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set gateway-url ***
-fw config set username ***
-fw config set password ***
-```
-
-To build and activate:
-```shell
-fw build nbs-items-note
-fw activate nbs-items-note
-```
-
-Either wait for scheduled event to occur or manually execute via:
-```shell
-fw run nbs-items-note
-```
-
-
-## create-notes
-
-
-### FOLIO Create Notes Workflow
-
-This workflow adds a given note, specified by the *Note Type UUID*, with the given *Note Text* message and the given *Staff Only* setting.
-If a given Note already exists on an Item then that Note is not added multiple times to the Item.
-
-This utilizes **MetaDB** in order to fine-tune the query in ways not normally allowed via the **FOLIO** **REST** end points.
-These fetched *Items* are then used to fetch an up to date version using the appropriate **FOLIO** **REST** end point and updates the *Items* as appropriate using the appropriate **FOLIO** **REST** end point.
-
-At the end of this process, an e-mail is set to the given destination address.
-
-These variables are required when building and running the workflow:
-
-| Variable Name   | Allowed Values | Brief Description
-| --------------- | -------------- | -----------------
-| emailFrom       | e-mail address | The e-mail address of the sender.
-| emailTo         | e-mail address | The e-mail address of the recipient.
-| file            | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
-| gateway-url     | URL            | The FOLIO Gateway URL.
-| itemNoteTypeId  | UUID           | The Item Note Type UUID to be used for the Note.
-| noteText        | string         | A message used as the Note.
-| metadb-password | string         | MetaDB login password.
-| metadb-url      | URL            | MetaDB URL.
-| metadb-user     | string         | MetaDB login username.
-| password        | string         | Okapi login password.
-| path            | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
-| staffOnly       | boolean        | Designate whether or not this is a *Staff Only* note.
-| username        | string         | Okapi login username.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set gateway-url ***
-```
-
-To build and activate:
-```shell
-fw build create-notes
-fw activate create-notes
-```
-
-Trigger the workflow using an **HTTP** request such as with **Curl**:
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/create-notes/start' \
-  --header 'Content-Type: multipart/form-data' \
-  --header 'X-Okapi-Tenant: diku' \
-  --form 'emailFrom="me@example.com"' \
-  --form 'emailTo="you@example.com"' \
-  --form 'file=@"itemBarcodes.csv"' \
-  --form 'path="/mnt/workflows/diku/create-notes/"' \
-  --form 'itemNoteTypeId="d5684236-e4ab-4a64-97b3-2aa7a595cfc4"' \
-  --form 'noteText="This is a note text message."' \
-  --form 'staffOnly=false' \
-  --form 'username="***"' \
-  --form 'password="***"'
-```
-
-
-## remove-books-from-nbs
-
-For the uploaded CSV of call numbers, remove items that have been on the new bookshelf location for more than 30 days.
-
-These variables are required when building and running the workflow:
-
-| Variable Name  | Allowed Values | Brief Description
-| -------------- | -------------- | -----------------
-| nbs-mail-from  | e-mail address | The e-mail address of the sender.
-| emailTo        | e-mail address | The e-mail address of the recipient.
-| file           | file name      | The file path within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
-| gateway-url    | URL            | The FOLIO Gateway URL.
-| password       | string         | Okapi login password.
-| path           | directory path | The system directory where the CSV file is stored on the server that also contains the `tenantPath` (include trailing slash after the directory).
-| username       | string         | Okapi login username.
-
-```shell
-fw config set nbs-mail-from ***
-fw config set gateway-url ***
-```
-
-To build and activate:
-```shell
-fw build remove-books-from-nbs
-fw activate remove-books-from-nbs
-```
-
-Trigger the workflow using an **HTTP** request such as with **Curl**:
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/remove-books-from-nbs/start' \
-  --header 'Content-Type: multipart/form-data' \
-  --header 'X-Okapi-Tenant: diku' \
-  --form 'emailTo="you@example.com"' \
-  --form 'file=@"itemBarcodes.csv"' \
-  --form 'path="/mnt/workflows/diku/remove-books-from-nbs/"' \
-  --form 'username="***"' \
-  --form 'password="***"'
-```
-
-
-## books-call-number
-
-
-### Books Checked Out By Call Number Report Workflow
-
-This workflow queries checked-out books within a specific call number range, generates a list, and emails this list to the specified recipient.
-
-These variables are required when building and running the workflow:
-
-| Variable Name           | Allowed Values | Brief Description
-| ----------------------- | -------------- | -----------------
-| bcnMailFrom             | e-mail address | The e-mail address of the sender.
-| bcnMailTo               | e-mail address | The e-mail address of the recipient.
-| endRange                | string         | End range of call number.
-| metadb-password         | string         | MetaDb login password.
-| metadb-url              | URL            | MetaDb URL.
-| metadb-user             | string         | MetaDb login username.
-| locationName            | string         | A JSON Array of location names from the reporting table `item_ext`.
-| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
-| password                | string         | Okapi login password.
-| path                    | directory path | The directory on the system where the files, like the CSV file, are stored within on the server and contain the `tenantPath` (include trailing slash after the directory).
-| startRange              | string         | Start Range of call number.
-| username                | string         | Okapi login username.
-
-This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/books-call-number* path.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set bcnMailFrom ***
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-```
-
-To build and activate:
-
-```shell
-fw build books-call-number
-fw activate books-call-number
-```
-
-The user initiates the form submission using the Catalog Reports Book-Call-Number Report.
-
-Trigger the workflow using an **HTTP** request such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/books-call-number/start' \
-  --header 'Content-Type: application/json' \
-  --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{"bcnMailTo": "recipient@tamu.edu", "endRange":"b9", "locationName": "[]", "password":"*", "path": "/mnt/workflows/diku/bcn", "startRange": "a0", "username":"*" }'
-```
-
-
-## evans-pres-repr
-
-
-### Evans Pres Repr Report Workflow (Scheduled)
-
-This workflow sends a monthly email containing a list of all items with 'temporary location' set to "Evans Pres Repr" to a specifically configured email address `evansPresReprFrom`.
-
-These variables are required when building and running the workflow:
-
-| Variable Name     | Allowed Values | Brief Description
-| ----------------- | -------------- | -----------------
-| evansPresReprFrom | e-mail address | The e-mail address of the sender.
-| evansPresReprTo   | e-mail address | The e-mail address of the recipient.
-| metadb-url        | URL            | MetaDB URL.
-| metadb-user       | string         | MetaDB login username.
-| metadb-password   | string         | MetaDB login password.
-
-This utilizes **MetaDB** to get the query result which gets written to: */mnt/workflows/tamu/evans-pres-repr* path.
-
-The scheduled event is for **8:00AM UTC** on the first day of every month.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set evansPresReprFrom ***
-fw config set evansPresReprTo ***
-```
-
-To build and activate:
-```shell
-fw build evans-pres-repr
-fw activate evans-pres-repr
-```
-
-Either wait for scheduled event to occur or manually execute via:
-```shell
-fw run evans-pres-repr
-```
-
-
-## duplicate-instance-report
-
-
-### Instance Duplication Report Workflow (Scheduled)
-
-This workflow emails a CSV report for Call Number, ISBN, LCCN, ISSN, and OCLC matches as well as a full instance duplication CSV report compressed with ZIP format.
-
-The full instance duplication CSV has the following columns. The title and author columns are wrapped in double quotes.
-
-```
-HRID, HRID2, OCLC, ISBN, ISSN, CALL_NUMBER, LCCN, TITLE, TITLE2, AUTHOR, AUTHOR2
-```
-
-Requires following path `/mnt/workflows/${tenantId}/duplicate-instance-report`.
-
-These variables are required when building and running the workflow:
-
-| Variable Name                  | Allowed Values | Brief Description
-| ------------------------------ | -------------- | -----------------
-| metadb-url                     | URL            | MetaDB URL.
-| metadb-user                    | string         | MetaDB login username.
-| metadb-password                | string         | MetaDB login password.
-| duplicate-instance-report-from | e-mail address | The e-mail address of the report sender.
-| duplicate-instance-report-to   | e-mail address | The e-mail address of the report recipient.
-
-The scheduled event is for **12:00 AM UTC**, on the first of the month, only in January, April, July, and October.
-
-```shell
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set duplicate-instance-report-from ***
-fw config set duplicate-instance-report-to ***
-```
-
-To build and activate:
-```shell
-fw build duplicate-instance-report
-fw activate duplicate-instance-report
-```
-
-Either wait for scheduled event to occur or manually execute via:
-```shell
-fw run duplicate-instance-report
-```
-
-
-## hegis-purchase-order
-
-### Hegis Purchase Order Workflow
-
-The user initiates the form submission using the Catalog Reports Hegis Purchase Order Workflow.
-
-Requires following path `/mnt/workflows/${tenantId}/hegis-po`.
-
-These variables are required when building and running the workflow:
-
-| Variable Name           | Allowed Values | Brief Description
-| ----------------------- | -------------- | -----------------
-| emailTo                 | e-mail address | The e-mail address of the recipient.
-| metadb-password         | string         | MetaDB login password.
-| metadb-url              | URL            | MetaDB URL.
-| metadb-user             | string         | MetaDB login username.
-| mis-catalog-reports-url | URL            | Catalog Reports URL (must not include a trailing slash).
-| hegis                   | string         | A JSON Array of Hegis codes.
-| hegisPoEmailFrom        | e-mail address | The e-mail address of the sender.
-| poType                  | string         | The purchase order type.
-| sysUnitCodes            | string         | A JSON Array of system unit codes.
-
-```shell
-fw config set mis-catalog-reports-url https://localhost/catalog_reports/site
-fw config set metadb-url ***
-fw config set metadb-user ***
-fw config set metadb-password ***
-fw config set hegisPoEmailFrom ***
-```
-
-To build and activate:
-```shell
-fw build hegis-po
-fw activate hegis-po
-```
-
-Trigger the workflow using an **HTTP** request such as with **Curl**:
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/hegis-po/start' \
---header 'Content-Type: application/json' \
---header 'X-Okapi-Tenant: diku' \
---data-raw '{ "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
 ```

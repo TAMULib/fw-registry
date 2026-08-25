@@ -16,6 +16,6 @@ print("- folioUser: " + execution.getVariable("folioUser"));
 print("- folioPass: " + execution.getVariable("folioPass"));
 print("- folioTenant: " + execution.getVariable("folioTenant"));
 print("- folioToken: " + execution.getVariable("folioToken"));
-print("- gatewayUrl: " + execution.getVariable("gatewayUrl"));
+print("- gatewayUrl: " + "{{{gatewayUrl}}}");
 print("- gatewayLoginPath: " + execution.getVariable("gatewayLoginPath"));
 print("- hello_world: " + execution.getVariable("helloWorld") + "\n");

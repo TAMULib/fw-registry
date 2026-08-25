@@ -2,7 +2,7 @@ var envLogLevel = execution.getVariable('logLevel');
 
 if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
   print('\nindex = ' + execution.getVariable('loopCounter'));
-  print('\tgatewayUrl = ' + execution.getVariable('gatewayUrl'));
+  print('\tgatewayUrl = ' + "{{{gatewayUrl}}}";
   print('\tpermLocation = ' + execution.getVariable('permLocation'));
   print('\ttempLocation = ' + execution.getVariable('tempLocation'));
   print('\tfiscalYearCode = ' + execution.getVariable('fiscalYearCode'));
