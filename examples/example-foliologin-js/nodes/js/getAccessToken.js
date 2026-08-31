@@ -3,12 +3,10 @@ const TokenUtility = Java.type('org.folio.rest.camunda.utility.TokenUtility');
 /**
  * Print debug message if LogLevel is set to DEBUG.
  *
- * Note: The initialize context code currently deserializes the logLevel string with quotes around it.
- *
  * @param {string} message - The message to print.
  */
 function debugLog(message) {
-  if (logLevel == '"DEBUG"') console.debug(message);
+  if (execution.getVariable('logLevel') == 'DEBUG') console.debug(message);
 }
 
 /**
@@ -16,7 +14,7 @@ function debugLog(message) {
  *
  * This requires that the `asArray` for the `headerOutputVariables` variable to be set to TRUE.
  *
- * Note: The scripts have access to all variables available and so do not specifically require the "inputVariables" to be defined.
+ * Note: The scripts have access to all variables available and so do not specifically require the 'inputVariables' to be defined.
  *
  * @param {string} name - The headers name to fetch.
  *
@@ -29,10 +27,10 @@ function getHeaders(name) {
 }
 
 (function () {
-  const setCookie = getHeaders("Set-Cookie");
-  const accessToken = TokenUtility.getAccessTokens(setCookie);
+  const setCookie = getHeaders('Set-Cookie');
+  const folioAccessToken = TokenUtility.getAccessTokens(setCookie);
 
-  debugLog(`\nDEBUG: Example FOLIO Access Token: ${accessToken}.`);
+  debugLog(`\nDEBUG: Example FOLIO Access Token: ${folioAccessToken}.`);
 
-  execution.setVariable('X-Okapi-Token', accessToken);
+  execution.setVariable('X-Okapi-Token', folioAccessToken);
 }());

@@ -1,21 +1,36 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
-  print('emailFrom = ' + emailFrom + '\n');
-  print('emailTo = ' + emailTo + '\n');
-  print('libraryName = ' + libraryName + '\n');
-  print('locationDiscoveryDisplayName = ' + locationDiscoveryDisplayName + '\n');
-  print('locationName = ' + locationName + '\n');
-  print('language = ' + language + '\n');
-  print('resourceType = ' + resourceType + '\n');
-  print('format = ' + format + '\n');
-  print('batchId = ' + batchId + '\n');
-  print('issuance = ' + issuance + '\n');
-  print('suppressInstance = ' + suppressInstance + '\n');
-  print('suppressHoldings = ' + suppressHoldings + '\n');
-  print('createdDateStart = ' + createdDateStart + '\n');
-  print('createdDateEnd = ' + createdDateEnd + '\n');
-  print('updatedDateStart = ' + updatedDateStart + '\n');
-  print('updatedDateEnd = ' + updatedDateEnd + '\n');
+var varLibraryName = execution.getVariable('libraryName');
+var varLocationDiscoveryDisplayName = execution.getVariable('locationDiscoveryDisplayName');
+var varLocationName = execution.getVariable('locationName');
+var varLanguage = execution.getVariable('language');
+var varResourceType = execution.getVariable('resourceType');
+var varFormat = execution.getVariable('format');
+var varBatchId = execution.getVariable('batchId');
+var varIssuance = execution.getVariable('issuance');
+var varSuppressInstance = execution.getVariable('suppressInstance');
+var varSuppressHoldings = execution.getVariable('suppressHoldings');
+var varCreatedDateStart = execution.getVariable('createdDateStart');
+var varCreatedDateEnd = execution.getVariable('createdDateEnd');
+var varUpdatedDateStart = execution.getVariable('updatedDateStart');
+var varUpdatedDateEnd = execution.getVariable('updatedDateEnd');
+
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
+  print('emailFrom = ' + execution.getVariable('emailFrom') + '\n');
+  print('emailTo = ' + execution.getVariable('emailTo') + '\n');
+  print('libraryName = ' + varLibraryName + '\n');
+  print('locationDiscoveryDisplayName = ' + varLocationDiscoveryDisplayName + '\n');
+  print('locationName = ' + varLocationName + '\n');
+  print('language = ' + varLanguage + '\n');
+  print('resourceType = ' + varResourceType + '\n');
+  print('format = ' + varFormat + '\n');
+  print('batchId = ' + varBatchId + '\n');
+  print('issuance = ' + varIssuance + '\n');
+  print('suppressInstance = ' + varSuppressInstance + '\n');
+  print('suppressHoldings = ' + varSuppressHoldings + '\n');
+  print('createdDateStart = ' + varCreatedDateStart + '\n');
+  print('createdDateEnd = ' + varCreatedDateEnd + '\n');
+  print('updatedDateStart = ' + varUpdatedDateStart + '\n');
+  print('updatedDateEnd = ' + varUpdatedDateEnd + '\n');
 }
 
 var from = 'folio_inventory.holdings_record__t__ holdings_ext'
@@ -34,7 +49,7 @@ var from = 'folio_inventory.holdings_record__t__ holdings_ext'
 
 var where = 'TRUE';
 
-var libraryNameArray = JSON.parse(libraryName);
+var libraryNameArray = varLibraryName == null ? [] : JSON.parse(varLibraryName);
 
 var normalizeArray = function (array) {
   var index = array.indexOf('All');
@@ -53,7 +68,7 @@ if (libraryNameArray) {
   }
 }
 
-var locationDiscoveryDisplayNameArray = JSON.parse(locationDiscoveryDisplayName);
+var locationDiscoveryDisplayNameArray = varLocationDiscoveryDisplayName == null ? [] : JSON.parse(varLocationDiscoveryDisplayName);
 
 if (locationDiscoveryDisplayNameArray) {
   normalizeArray(locationDiscoveryDisplayNameArray);
@@ -65,7 +80,7 @@ if (locationDiscoveryDisplayNameArray) {
   }
 }
 
-var locationNameArray = JSON.parse(locationName);
+var locationNameArray = varLocationName == null ? [] : JSON.parse(varLocationName);
 
 if (locationNameArray) {
   normalizeArray(locationNameArray);
@@ -75,7 +90,7 @@ if (locationNameArray) {
   }
 }
 
-var languageArray = JSON.parse(language);
+var languageArray = varLanguage == null ? [] : JSON.parse(varLanguage);
 
 if (languageArray) {
   normalizeArray(languageArray);
@@ -86,7 +101,7 @@ if (languageArray) {
   }
 }
 
-var resourceTypeArray = JSON.parse(resourceType);
+var resourceTypeArray = varResourceType == null ? [] : JSON.parse(varResourceType);
 
 if (resourceTypeArray) {
   normalizeArray(resourceTypeArray);
@@ -96,7 +111,7 @@ if (resourceTypeArray) {
   }
 }
 
-var formatArray = JSON.parse(format);
+var formatArray = varFormat == null ? [] : JSON.parse(varFormat);
 
 if (formatArray) {
   normalizeArray(formatArray);
@@ -106,37 +121,37 @@ if (formatArray) {
   }
 }
 
-if (batchId != '') {
+if (varBatchId != null && varBatchId != '') {
   where += '\n\t\tAND stat_codes.statistical_code_type_name = \'batch_id\''
          + '\n\t\tAND stat_codes.statistical_code_name = \'' + batchId + '\'';
 }
 
-if (issuance != '') {
-  where += '\n\t\tAND fd_instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+if (varIssuance != null && varIssuance != '') {
+  where += '\n\t\tAND fd_instance_ext.mode_of_issuance_name = \'' + varIssuance + '\'';
 }
 
-if (suppressInstance) {
-  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (suppressInstance === 't' ? 'true' : 'false');
+if (varSuppressInstance != null) {
+  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (varSuppressInstance === 't' ? 'true' : 'false');
 }
 
-if (suppressHoldings) {
-  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (suppressHoldings === 't' ? 'true' : 'false');
+if (varSuppressHoldings != null) {
+  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (varSuppressHoldings === 't' ? 'true' : 'false');
 }
 
-if (createdDateStart != '') {
-  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
+if (varCreatedDateStart != null && varCreatedDateStart != '') {
+  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + varCreatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
-if (createdDateEnd != '') {
-  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
+if (varCreatedDateEnd != null && varCreatedDateEnd != '') {
+  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + varCreatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
-if (updatedDateStart != '') {
-  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
+if (varUpdatedDateStart != null && varUpdatedDateStart != '') {
+  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + varUpdatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
-if (updatedDateEnd != '') {
-  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
+if (varUpdatedDateEnd != null && varUpdatedDateEnd != '') {
+  where += '\n\t\tAND cast(to_timestamp(fd_instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + varUpdatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 var shelflistQuery = '\n'
@@ -197,7 +212,7 @@ var shelflistQuery = '\n'
        + '\nWHERE pub_rank = 1 AND author_rank = 1'
        + '\nORDER BY instance_hrid, holdings_hrid, author desc, identifier desc, begin_pub_date desc, format\n';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 

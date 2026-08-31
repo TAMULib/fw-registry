@@ -1,4 +1,5 @@
-var itemObj = JSON.parse(itemResponse);
+var varItemResponse = execution.getVariable('itemResponse');
+var itemObj = varItemResponse == null ? {} : JSON.parse(varItemResponse);
 
 var extractResponseArray = function (response, key) {
   return (!response || !response[key]) ? [] : response[key];

@@ -1,21 +1,25 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel);
-  print('\nusername = ' + username);
-  print('\nemailTo = ' + emailTo);
-  print('\nhegisCodes = ' + hegisCodes);
-  print('\nsysUnitCodes = ' + sysUnitCodes);
-  print('\npoType = ' + poType);
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel'));
+  print('\nusername = ' + execution.getVariable('username'));
+  print('\nemailTo = ' + execution.getVariable('emailTo'));
+  print('\nhegisCodes = ' + execution.getVariable('hegisCodes'));
+  print('\nsysUnitCodes = ' + execution.getVariable('sysUnitCodes'));
+  print('\npoType = ' + execution.getVariable('poType'));
 }
 
-var hCodes = hegisCodes.length > 0 ? hegisCodes.join('|') : '';
+var varHegisCodes = execution.getVariable('hegisCodes');
+var hCodes = varHegisCodes != null && hegisCodes.length > 0 ? hegisCodes.join('|') : '';
 
-var sysCodesArray = Array.isArray(sysUnitCodes) ? sysUnitCodes : [sysUnitCodes];
+var varSysUnitCodes = execution.getVariable('sysUnitCodes');
+var sysCodesArray = varSysUnitCodes == null
+  ? []
+  : Array.isArray(varSysUnitCodes) ? varSysUnitCodes : [ varSysUnitCodes ];
 
 var sysCodes = sysCodesArray.length > 0 ? sysCodesArray.join('|') : '';
 
 var hegisPattern = '\'(?i)^.*hegis<(' + hCodes + ')' + '(' + sysCodes + ')>.*$\'';
 
-var poStatus = ( poType == '*' ) ? '' : ' AND po.workflow_status IN (\'Pending\', \'Open\')';
+var poStatus = ( poType == '*' ) ? '' : ' AND po.workflowStatus IN (\'Pending\', \'Open\')';
 
 var hegisPoQuery = 'WITH _payments AS ('
   + '\n\tSELECT'
@@ -83,7 +87,7 @@ var hegisPoQuery = 'WITH _payments AS ('
   + poStatus
   + '\nORDER BY po.jsonb ->> \'poNumber\', poi.title;';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\n\n\n hegisPoQuery = ' + hegisPoQuery + '\n\n\n');
 }
 

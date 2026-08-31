@@ -1,7 +1,8 @@
 var Spin = Java.type("org.camunda.spin.Spin");
 var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
-var records = MarcUtility.splitRawMarcToMarcJsonRecords(marc);
+var varMarc = execution.getVariable('marc');
+var records = MarcUtility.splitRawMarcToMarcJsonRecords(varMarc);
 
 var reportObj = {
   records: []

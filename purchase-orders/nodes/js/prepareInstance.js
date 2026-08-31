@@ -1,19 +1,19 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
 
-if (logLevel === 'DEBUG') {
-  print('\ninstance = ' + instance + '\n');
-  print('\nstatisticalCodesResponse = ' + statisticalCodesResponse + '\n');
+var varInstance = execution.getVariable('instance');
+var varStatisticalCodesResponse = execution.getVariable('statisticalCodesResponse');
+
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\ninstance = ' + varInstance + '\n');
+  print('\nstatisticalCodesResponse = ' + varStatisticalCodesResponse + '\n');
 }
 
-var instanceObj = JSON.parse(instance);
+var instanceObj = varInstance == null ? undefined : JSON.parse(varInstance);
 
-var marcJsonRecord = JSON.stringify(JSON.parse(sourceRecord).parsedRecord.content);
+var varSourceRecord = execution.getVariable('sourceRecord');
+var marcJsonRecord = varSourceRecord == null ? undefined : JSON.stringify(JSON.parse(varSourceRecord).parsedRecord.content);
 
-var statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
-
-var token = execution.getVariable('X-Okapi-Token');
-
-var tenant = execution.getTenantId();
+var statisticalCodes = varStatisticalCodesResponse == null ? [] : JSON.parse(varStatisticalCodesResponse).statisticalCodes;
 
 var mapStatisticalCodeIds = function (statisticalCodes) {
   var statisticalCodeIds = [];
@@ -23,20 +23,22 @@ var mapStatisticalCodeIds = function (statisticalCodes) {
   return statisticalCodeIds;
 };
 
-var mappedInstance = MappingUtility.mapRecordToInstance(marcJsonRecord, okapiUrl, tenant, token);
+var mappedInstance = MappingUtility.mapRecordToInstance(marcJsonRecord, execution);
 var mappedInstanceObj = JSON.parse(mappedInstance);
 
 mappedInstanceObj.id = instanceObj.id;
 mappedInstanceObj.hrid = instanceObj.hrid;
+mappedInstanceObj.instanceTypeId = instanceObj.instanceTypeId;
 mappedInstanceObj.statusId = instanceObj.statusId;
 mappedInstanceObj.statusUpdatedDate = instanceObj.statusUpdatedDate;
+mappedInstanceObj.title = instanceObj.title;
 mappedInstanceObj.discoverySuppress = false;
 
 mappedInstanceObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
 
 mappedInstanceObj._version = 1;
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nmappedInstance = ' + JSON.stringify(mappedInstanceObj) + '\n');
 }
 

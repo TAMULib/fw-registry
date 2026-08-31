@@ -1,17 +1,19 @@
-if (logLevel === 'INFO' || logLevel === 'DEBUG') {
-  print('\nindex = ' + loopCounter);
-  print('\tokapiUrl = ' + okapiUrl);
-  print('\tpermLocation = ' + permLocation);
-  print('\ttempLocation = ' + tempLocation);
-  print('\tfiscalYearCode = ' + fiscalYearCode);
-  print('\tpermLoanType = ' + permLoanType);
-  print('\ttempLoanType = ' + tempLoanType);
-  print('\tnoteType = ' + noteType);
-  print('\tmaterialType = ' + materialType);
+var envLogLevel = execution.getVariable('logLevel');
 
-  print('\tpermELocation = ' + permELocation);
-  print('\teMaterialType = ' + eMaterialType);
-  print('\teHoldingsType = ' + eHoldingsType + '\n');
+if (envLogLevel === 'INFO' || envLogLevel === 'DEBUG') {
+  print('\nindex = ' + execution.getVariable('loopCounter'));
+  print('\tgatewayUrl = ' + "{{{gatewayUrl}}}";
+  print('\tpermLocation = ' + execution.getVariable('permLocation'));
+  print('\ttempLocation = ' + execution.getVariable('tempLocation'));
+  print('\tfiscalYearCode = ' + execution.getVariable('fiscalYearCode'));
+  print('\tpermLoanType = ' + execution.getVariable('permLoanType'));
+  print('\ttempLoanType = ' + execution.getVariable('tempLoanType'));
+  print('\tnoteType = ' + execution.getVariable('noteType'));
+  print('\tmaterialType = ' + execution.getVariable('materialType'));
+
+  print('\tpermELocation = ' + execution.getVariable('permELocation'));
+  print('\teMaterialType = ' + execution.getVariable('eMaterialType'));
+  print('\teHoldingsType = ' + execution.getVariable('eHoldingsType') + '\n');
 
   print('\npurchase order workflow complete\n');
 }

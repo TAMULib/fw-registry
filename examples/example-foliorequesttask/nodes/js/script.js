@@ -1,1 +1,3 @@
-console.log(`Response: ${reqResponse}`);
+var varReqResponse = execution.getVariable('reqResponse');
+
+console.log(`Response: ${varReqResponse}`);

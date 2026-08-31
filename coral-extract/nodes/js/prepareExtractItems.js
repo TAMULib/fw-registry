@@ -5,7 +5,8 @@ var safe = function (str) {
 };
 
 var buildExtractItems = function () {
-  var lines = coralExtractResponse.replace(/\n$/i, '').split('\n');
+  var varCoralExtractResponse = execution.getVariable('coralExtractResponse');
+  var lines = varCoralExtractResponse == null ? [] : varCoralExtractResponse.replace(/\n$/i, '').split('\n');
   var parts;
   var items = [];
   var coralIds = {};

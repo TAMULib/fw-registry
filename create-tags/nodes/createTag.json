@@ -4,7 +4,7 @@
   "description": "create tag",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/tags",
+    "url": "{{{gatewayUrl}}}/tags",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

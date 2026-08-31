@@ -1,23 +1,38 @@
+var varCallNumber = execution.getVariable('callNumber');
+var varLibraryName = execution.getVariable('libraryName');
+var varLocationDiscoveryDisplayName = execution.getVariable('locationDiscoveryDisplayName');
+var varLocationName = execution.getVariable('locationName');
+var varLoanType = execution.getVariable('loanType');
+var varMaterialType = execution.getVariable('materialType');
+var varItemStatus = execution.getVariable('itemStatus');
+var varIssuance = execution.getVariable('issuance');
+var varSuppressInstance = execution.getVariable('suppressInstance');
+var varSuppressHoldings = execution.getVariable('suppressHoldings');
+var varSuppressItem = execution.getVariable('suppressItem');
+var varCreatedDateStart = execution.getVariable('createdDateStart');
+var varCreatedDateEnd = execution.getVariable('createdDateEnd');
+var varUpdatedDateStart = execution.getVariable('updatedDateStart');
+var varUpdatedDateEnd = execution.getVariable('updatedDateEnd');
 
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
-  print('emailFrom = ' + emailFrom + '\n');
-  print('emailTo = ' + emailTo + '\n');
-  print('callNumber = ' + callNumber + '\n');
-  print('libraryName = ' + libraryName + '\n');
-  print('locationDiscoveryDisplayName = ' + locationDiscoveryDisplayName + '\n');
-  print('locationName = ' + locationName + '\n');
-  print('loanType = ' + loanType + '\n');
-  print('materialType = ' + materialType + '\n');
-  print('itemStatus = ' + itemStatus + '\n');
-  print('issuance = ' + issuance + '\n');
-  print('suppressInstance = ' + suppressInstance + '\n');
-  print('suppressHoldings = ' + suppressHoldings + '\n');
-  print('suppressItem = ' + suppressItem + '\n');
-  print('createdDateStart = ' + createdDateStart + '\n');
-  print('createdDateEnd = ' + createdDateEnd + '\n');
-  print('updatedDateStart = ' + updatedDateStart + '\n');
-  print('updatedDateEnd = ' + updatedDateEnd + '\n');
+if (execution.getVariable('logLevel') === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
+  print('emailFrom = ' + execution.getVariable('emailFrom') + '\n');
+  print('emailTo = ' + execution.getVariable('emailTo') + '\n');
+  print('callNumber = ' + varCallNumber + '\n');
+  print('libraryName = ' + varLibraryName + '\n');
+  print('locationDiscoveryDisplayName = ' + varLocationDiscoveryDisplayName + '\n');
+  print('locationName = ' + varLocationName + '\n');
+  print('loanType = ' + varLoanType + '\n');
+  print('materialType = ' + varMaterialType + '\n');
+  print('itemStatus = ' + varItemStatus + '\n');
+  print('issuance = ' + varIssuance + '\n');
+  print('suppressInstance = ' + varSuppressInstance + '\n');
+  print('suppressHoldings = ' + varSuppressHoldings + '\n');
+  print('suppressItem = ' + varSuppressItem + '\n');
+  print('createdDateStart = ' + varCreatedDateStart + '\n');
+  print('createdDateEnd = ' + varCreatedDateEnd + '\n');
+  print('updatedDateStart = ' + varUpdatedDateStart + '\n');
+  print('updatedDateEnd = ' + varUpdatedDateEnd + '\n');
 }
 
 var cte = 'WITH oclc_identifiers AS ('
@@ -40,7 +55,7 @@ var from = 'folio_inventory.item__t item_ext'
 
 var where = 'TRUE';
 
-var libraryNameArray = JSON.parse(libraryName);
+var libraryNameArray = varLibraryName == null ? [] : JSON.parse(varLibraryName);
 
 var normalizeArray = function (array) {
   var index = array.indexOf('All');
@@ -59,7 +74,7 @@ if (libraryNameArray) {
   }
 }
 
-var locationDiscoveryDisplayNameArray = JSON.parse(locationDiscoveryDisplayName);
+var locationDiscoveryDisplayNameArray = varLocationDiscoveryDisplayName == null ? [] : JSON.parse(varLocationDiscoveryDisplayName);
 
 if (locationDiscoveryDisplayNameArray) {
   normalizeArray(locationDiscoveryDisplayNameArray);
@@ -71,7 +86,7 @@ if (locationDiscoveryDisplayNameArray) {
   }
 }
 
-var locationNameArray = JSON.parse(locationName);
+var locationNameArray = varLocationName == null ? [] : JSON.parse(varLocationName);
 
 if (locationNameArray) {
   normalizeArray(locationNameArray);
@@ -81,7 +96,7 @@ if (locationNameArray) {
   }
 }
 
-var loanTypeArray = JSON.parse(loanType);
+var loanTypeArray = varLoanType == null ? [] : JSON.parse(varLoanType);
 
 if (loanTypeArray) {
   normalizeArray(loanTypeArray);
@@ -91,7 +106,7 @@ if (loanTypeArray) {
   }
 }
 
-var materialTypeArray = JSON.parse(materialType);
+var materialTypeArray = varMaterialType == null ? [] : JSON.parse(varMaterialType);
 
 if (materialTypeArray) {
   normalizeArray(materialTypeArray);
@@ -101,7 +116,7 @@ if (materialTypeArray) {
   }
 }
 
-var itemStatusArray = JSON.parse(itemStatus);
+var itemStatusArray = varItemStatus == null ? [] : JSON.parse(varItemStatus);
 
 if (itemStatusArray) {
   normalizeArray(itemStatusArray);
@@ -111,40 +126,40 @@ if (itemStatusArray) {
   }
 }
 
-if (callNumber) {
-  where += '\n\t\tAND fd_item_ext.effective_call_number = \'' + callNumber + '\'';
+if (varCallNumber != null) {
+  where += '\n\t\tAND fd_item_ext.effective_call_number = \'' + varCallNumber + '\'';
 }
 
-if (issuance != '') {
-  where += '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + issuance + '\'';
+if (varIssuance != null && varIssuance != '') {
+  where += '\n\t\tAND instance_ext.mode_of_issuance_name = \'' + varIssuance + '\'';
 }
 
-if (suppressInstance) {
-  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (suppressInstance === 't' ? 'true' : 'false');
+if (varSuppressInstance != null) {
+  where += '\n\t\tAND instance_ext.discovery_suppress = ' + (varSuppressInstance === 't' ? 'true' : 'false');
 }
 
-if (suppressHoldings) {
-  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (suppressHoldings === 't' ? 'true' : 'false');
+if (varSuppressHoldings != null) {
+  where += '\n\t\tAND holdings_ext.discovery_suppress = ' + (varSuppressHoldings === 't' ? 'true' : 'false');
 }
 
-if (suppressItem) {
-  where += '\n\t\tAND item_ext.discovery_suppress = ' + (suppressItem === 't' ? 'true' : 'false');
+if (varSuppressItem != null) {
+  where += '\n\t\tAND item_ext.discovery_suppress = ' + (varSuppressItem === 't' ? 'true' : 'false');
 }
 
-if (createdDateStart != '') {
-  where += '\n\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + createdDateStart + '\', \'YYYY-MM-DD\')';
+if (varCreatedDateStart != null && varCreatedDateStart != '') {
+  where += '\n\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + varCreatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
-if (createdDateEnd != '') {
-  where += '\n\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + createdDateEnd + '\', \'YYYY-MM-DD\')';
+if (varCreatedDateEnd != null && varCreatedDateEnd != '') {
+  where += '\n\tAND cast(to_timestamp(instance_ext.record_created_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + varCreatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
-if (updatedDateStart != '') {
-  where += '\n\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + updatedDateStart + '\', \'YYYY-MM-DD\')';
+if (varUpdatedDateStart != null && varUpdatedDateStart != '') {
+  where += '\n\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) >= to_date(\'' + varUpdatedDateStart + '\', \'YYYY-MM-DD\')';
 }
 
-if (updatedDateEnd != '') {
-  where += '\n\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + updatedDateEnd + '\', \'YYYY-MM-DD\')';
+if (varUpdatedDateEnd != null && varUpdatedDateEnd != '') {
+  where += '\n\tAND cast(to_timestamp(instance_ext.updated_date::text,\'YYYY-MM-DD\') AT TIME ZONE \'America/Chicago\' AS DATE) <= to_date(\'' + varUpdatedDateEnd + '\', \'YYYY-MM-DD\')';
 }
 
 var shelflistQuery = '\n\n'
@@ -183,7 +198,7 @@ var shelflistQuery = '\n\n'
        + '\nWHERE ' + where
        + '\nORDER BY item_ext.hrid, item_ext.barcode, item_effective_location, shelving_order, enumeration, chronology, holdings_hrid\n';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nshelflistQuery = ' + shelflistQuery);
 }
 

@@ -4,7 +4,7 @@
   "description": "Retrieves the vendor details by code.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/organizations-storage/organizations?limit=1&offset=0&query=((code='${marcOrderData.vendorCode}'))",
+    "url": "{{{gatewayUrl}}}/organizations-storage/organizations?limit=1&offset=0&query=((code='${marcOrderData.vendorCode}'))",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"

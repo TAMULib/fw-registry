@@ -4,7 +4,7 @@
   "description": "Create source record",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/source-storage/records",
+    "url": "{{{gatewayUrl}}}/source-storage/records",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",

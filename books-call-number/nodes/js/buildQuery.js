@@ -1,20 +1,24 @@
-if (logLevel === 'DEBUG') {
-  print('\nlogLevel = ' + logLevel + '\n');
-  print('\ncall number start range = ' + startRange + '\n');
-  print('\ncall number end range = ' + endRange + '\n');
-  print('\nlocationName = ' + locationName + '\n');
+var varStartRange = execution.getVariable('startRange');
+var varEndRange = execution.getVariable('endRange');
+var varLocationName = execution.getVariable('locationName');
+
+if (execution.getVariable("logLevel") === 'DEBUG') {
+  print('\nlogLevel = ' + execution.getVariable('logLevel') + '\n');
+  print('\ncall number start range = ' + varStartRange + '\n');
+  print('\ncall number end range = ' + varEndRange + '\n');
+  print('\nlocationName = ' + varLocationName + '\n');
 }
 
 var where = 'TRUE';
 
-var locationNameArray = JSON.parse(locationName);
+var locationNameArray = varLocationName == null ? [] : JSON.parse(varLocationName);
 
-if (!!startRange) {
-  where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + startRange + '\')';
+if (varStartRange != null && varStartRange != '') {
+  where = '\n\t\tUPPER(ie.effective_call_number) >= UPPER(\'' + varStartRange + '\')';
 }
 
-if (endRange) {
-  where += '\n\t\tAND UPPER(ie.effective_call_number) <= RPAD(UPPER(\'' + endRange + '\'), max_len, \'ÿ\')';
+if (varEndRange != null && varEndRange != '') {
+  where += '\n\t\tAND UPPER(ie.effective_call_number) <= RPAD(UPPER(\'' + varEndRange + '\'), max_len, \'ÿ\')';
 }
 
 where += '\n\t\tAND ie.status_name = \'Checked out\'';
@@ -37,7 +41,7 @@ var booksCallNumberQuery =
   '\nWHERE ' + where +
   '\nORDER BY ie.effective_call_number, item_effective_location';
 
-if (logLevel === 'DEBUG') {
+if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nbooksCallNumberQuery = ' + booksCallNumberQuery);
 }
 
