@@ -1,0 +1,10 @@
+{
+  "id": "1494afb3-980c-4c74-b05e-ff30d53a4557",
+  "name": "Disconnect MetaDB",
+  "description": "Disconnect from the MetaDB",
+  "deserializeAs": "DatabaseDisconnectTask",
+  "inputVariables": [],
+  "outputVariable": {},
+  "designation": "metadb",
+  "asyncBefore": true
+}

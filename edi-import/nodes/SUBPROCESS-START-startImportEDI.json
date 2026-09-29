@@ -1,0 +1,8 @@
+{
+  "id": "8d4b2809-6992-45b8-b687-a8dd649f0a22",
+  "name": "Start Import EDI Subprocess",
+  "description": "Start the Import EDI Subprocess",
+  "type": "NONE",
+  "deserializeAs": "StartEvent",
+  "asyncBefore": true
+}

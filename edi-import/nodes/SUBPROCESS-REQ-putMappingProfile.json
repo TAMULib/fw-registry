@@ -1,0 +1,31 @@
+{
+  "id": "3437aa0f-434a-4f88-a16b-f63e5cf6c459",
+  "name": "Put Mapping Profile",
+  "description": "Update the mapping profile with this invoice's FOLIO account number.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{{okapi-url}}}/data-import-profiles/mappingProfiles/${mappingProfileId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "${mappingProfilePutBody}"
+  },
+  "inputVariables": [
+    {
+      "key": "mappingProfileId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "mappingProfilePutBody",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "mappingProfilePutResponse",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}
