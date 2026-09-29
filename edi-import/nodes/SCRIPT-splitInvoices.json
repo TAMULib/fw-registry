@@ -1,0 +1,8 @@
+{
+  "id": "189ce254-e098-4a8b-9a9b-e30c234dc80e",
+  "name": "Split Invoices",
+  "description": "Split Invoices and add FOLIO Account Numbers.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "splitInvoices.js"
+}

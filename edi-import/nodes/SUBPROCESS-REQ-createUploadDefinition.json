@@ -1,0 +1,25 @@
+{
+  "id": "5a40d70a-f064-460d-9cf1-61cc07b9ad32",
+  "name": "Create Upload Definition",
+  "description": "Create a Data Import upload definition for this invoice file.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{{okapi-url}}}/data-import/uploadDefinitions",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{\"fileDefinitions\":[{\"name\":\"${invoiceFileName}\"}]}"
+  },
+  "inputVariables": [
+    {
+      "key": "invoiceFileName",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "uploadDefinitionResponse",
+    "type": "PROCESS"
+  },
+  "asyncBefore": true
+}
