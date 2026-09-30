@@ -4,12 +4,17 @@
   "description": "Retrieves the fund by code.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}/finance/funds?limit=1&offset=0&query=(code==\"${marcOrderData.fundCode}\")",
+    "url": "{{{gatewayUrl}}}/finance/funds?limit=1&offset=0&query=(code==\"${fundCode}\")",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [
+    {
+      "key": "fundCode",
+      "type": "PROCESS",
+      "spin": false
+    },
     {
       "key": "marcOrderData",
       "type": "PROCESS",
