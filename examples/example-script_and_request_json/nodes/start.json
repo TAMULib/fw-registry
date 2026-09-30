@@ -4,5 +4,5 @@
   "description": "Start of Example Script then Request Workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
-  "expression": "/events/example-script_and_request/start"
+  "expression": "/events/example-script_and_request_json/start"
 }
