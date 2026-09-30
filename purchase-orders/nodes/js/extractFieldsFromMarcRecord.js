@@ -1,13 +1,13 @@
-var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
+const MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
-var varRecord = execution.getVariable('record');
-var fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(varRecord.stringValue(), [ '050', '090', '245', '947', '980' ]));
+const varRecord = execution.getVariable('record');
+const fields = JSON.parse(MarcUtility.getFieldsFromMarcJson(varRecord.stringValue(), [ '050', '090', '245', '947', '980' ]));
 
 if (execution.getVariable('logLevel') === 'DEBUG') {
   print('\nfields = ' + JSON.stringify(fields) + '\n');
 }
 
-var getSubfield = function (fields, tag, code) {
+const getSubfield = function (fields, tag, code) {
   for (var i = 0; i < fields.length; ++i) {
     if (fields[i].tag === tag) {
       for (var j = 0; j < fields[i].subfields.length; ++j) {
@@ -19,7 +19,7 @@ var getSubfield = function (fields, tag, code) {
   }
 };
 
-var formalizeEnum = function (value) {
+const formalizeEnum = function (value) {
   var words = value.split(' ');
   for (var i = 0; i < words.length; i++) {
     words[i] = words[i][0].toUpperCase() + words[i].substr(1);
@@ -27,7 +27,7 @@ var formalizeEnum = function (value) {
   return words.join(' ');
 };
 
-var title = getSubfield(fields, '245', 'a');
+let title = getSubfield(fields, '245', 'a');
 if (title.endsWith(' :')) {
   title += ' ' + getSubfield(fields, '245', 'b');
 }
@@ -35,8 +35,8 @@ if (title.endsWith(' /')) {
   title += ' ' + getSubfield(fields, '245', 'c');
 }
 
-var callNumber = undefined;
-var a050 = getSubfield(fields, '050', 'a');
+let callNumber = undefined;
+const a050 = getSubfield(fields, '050', 'a');
 if (a050) {
   callNumber = a050 + ' ' + getSubfield(fields, '050', 'b');
 } else {
@@ -46,7 +46,7 @@ if (a050) {
   }
 }
 
-var marcOrderData = {
+const marcOrderData = {
   title: title,
   callNumber: callNumber,
   barcode: getSubfield(fields, '947', 'a'),
@@ -70,7 +70,7 @@ var marcOrderData = {
   notes: []
 };
 
-var varStatisticalCode = execution.getVariable('statisticalCode');
+const varStatisticalCode = execution.getVariable('statisticalCode');
 
 if (varStatisticalCode === 'ybppapp' || varStatisticalCode === 'ybppfirm') {
   marcOrderData.billTo = 'AcqMono Conventional';
@@ -78,8 +78,14 @@ if (varStatisticalCode === 'ybppapp' || varStatisticalCode === 'ybppfirm') {
   marcOrderData.vendorCode = 'ZYBP';
 }
 
+const marcOrderJson = JSON.stringify(marcOrderData);
+
 if (execution.getVariable('logLevel') === 'DEBUG') {
-  print('\nmarcOrderData = ' + JSON.stringify(marcOrderData) + '\n');
+  print(`\nmarcOrderData = ${marcOrderJson}\n`);
 }
 
-execution.setVariable('marcOrderData', S(JSON.stringify(marcOrderData)));
+execution.setVariable('billTo', `${marcOrderData?.billTo}`);
+execution.setVariable('fundCode', `${marcOrderData?.fundCode}`);
+execution.setVariable('expenseClass', `${marcOrderData?.expenseClass}`);
+execution.setVariable('marcOrderData', S(marcOrderJson));
+execution.setVariable('vendorCode', `${marcOrderData?.vendorCode}`);

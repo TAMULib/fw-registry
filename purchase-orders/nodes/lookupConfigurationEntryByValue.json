@@ -4,12 +4,17 @@
   "description": "Retrieves the configuration entry by value name.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${marcOrderData.billTo}\\\"*\")",
+    "url": "{{{gatewayUrl}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${billTo}\\\"*\")",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [
+    {
+      "key": "billTo",
+      "type": "PROCESS",
+      "spin": false
+    },
     {
       "key": "marcOrderData",
       "type": "PROCESS",
