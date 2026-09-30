@@ -1,0 +1,6 @@
+{
+  "id": "26c9259b-1690-4caf-895e-871bfd86862e",
+  "name": "End",
+  "description": "End of Example Script then Request (Array) Workflow.",
+  "deserializeAs": "EndEvent"
+}
