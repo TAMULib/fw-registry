@@ -1,9 +1,9 @@
 {
-  "id": "bf5e8947-ea7b-44b6-886b-85923630fbf2",
-  "name": "Example Javascript ScriptTask Start Trigger.",
-  "description": "A REST Post end point for the Example Javascript ScriptTask.",
+  "id": "7f00e3a9-5454-405a-b44a-ff0f13673d31",
+  "name": "Example Script then Request (JSON) Workflow Start Trigger.",
+  "description": "A REST Post end point for the Example Script and Request (JSON).",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
-  "pathPattern": "/events/example-scripttask-js/start"
+  "pathPattern": "/events/example-script_and_request_json/start"
 }

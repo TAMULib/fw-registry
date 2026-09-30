@@ -1,7 +1,7 @@
 {
   "id": "28088de9-2851-432d-9759-079a3f3d86bc",
   "name": "Start",
-  "description": "Start of Example Script then Request Workflow.",
+  "description": "Start of Example Script then Request (JSON) Workflow.",
   "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-script_and_request_json/start"
