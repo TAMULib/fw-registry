@@ -313,13 +313,13 @@ These variables are required when **building** the workflow:
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
 | folioLoginPath   | URL Path       | The FOLIO login path.
-| gatewayUrl       | Gateway URL    | The FOLIO gateway URL.
+| exampleGateway   | Gateway URL    | The FOLIO gateway URL.
 | exampleLoginPass | String         | The FOLIO pass word.
 | exampleLoginUser | String         | The FOLIO user name.
 
 ```shell
 fw config set folioLoginPath "authn/login-with-expiry"
-fw config set gatewayUrl "https://kong:8000"
+fw config set exampleGateway "https://kong:8000"
 fw config set exampleLoginPass ***
 fw config set exampleLoginUser ***
 ```
@@ -581,11 +581,9 @@ These variables are available or required when **building** the workflow:
 | Variable Name      | Allowed Values | Short Description
 | ------------------ | -------------- | -----------------
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed.
-| gatewayUrl         | Gateway URL    | The FOLIO gateway URL.
 
 ```shell
 fw config set exampleInjectValue "Custom Value"
-fw config set gatewayUrl "https://kong:8000"
 ```
 
 These variables are available or required when **triggering** the workflow:
