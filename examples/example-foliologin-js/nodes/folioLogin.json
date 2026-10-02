@@ -9,15 +9,15 @@
     "contentType": "application/json",
     "accept": "application/json",
     "sendEmptyBody": false,
-    "bodyTemplate": "{\"username\": \"{{{username}}}\", \"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"{{{exampleLoginUser}}}\", \"password\": \"{{{exampleLoginPass}}}\"}"
   },
   "inputVariables": [
     {
-      "key": "username",
+      "key": "exampleLoginUser",
       "type": "PROCESS"
     },
     {
-      "key": "password",
+      "key": "exampleLoginPass",
       "type": "PROCESS"
     }
   ],
