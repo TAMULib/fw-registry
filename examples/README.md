@@ -12,7 +12,7 @@ If using the `fw-cli`, then these examples require that the `wd` (Working Direct
 This documentation's `curl` examples are based on the expectation that `mod-workflow` is started on port `9001` (via something like `SERVER_PORT=9001`).
 
 Such as:
-```shell
+```sh
 fw config set wd fw-registry/examples
 ```
 
@@ -53,7 +53,7 @@ These variables are required when **building** the workflow:
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the file to compress (do not prefix with a starting slash).
 | exampleFilePath  | directory path | The full directory path on the system where the source file and the compressed file will be stored on the server (exclude trailing slash after the directory).
 
-```shell
+```sh
 fw config set exampleFilePath "/tmp/examples/path"
 fw config set exampleFileName "file.txt"
 ```
@@ -67,23 +67,22 @@ The `exampleFilePath` will have `/testFileCreate` appended before adding the `ex
 Given the example settings above, the full file path would therefore be `/tmp/examples/path/testFileCreate/file.txt`.
 
 To build and activate:
-```shell
-fw build example-compressfiletask-zip
-fw activate example-compressfiletask-zip
+```sh
+fw deploy example-compressfiletask-zip
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-compressfiletask-zip
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-compressfiletask-zip/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-compressfiletask-zip/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -101,7 +100,7 @@ These variables are required when **building** the workflow:
 | exampleDatabaseURI      | URL            | The URI of the database you want to connect to.
 | exampleDatabaseUser     | string         | The user name of the database you want to connect to.
 
-```shell
+```sh
 fw config set exampleDatabasePassword ***
 fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/my_database"
 fw config set exampleDatabaseUser "user"
@@ -113,23 +112,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-databaseconnectiontask
-fw activate example-databaseconnectiontask
+```sh
+fw deploy example-databaseconnectiontask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-databaseconnectiontask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databaseconnectiontask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-databaseconnectiontask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -139,7 +137,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-dat
 
 This workflow connects to a database / server, queries the database, prints the response via Ruby scripting language, and disconnects from the database / server.
 
-```shell
+```sh
 fw config set exampleDatabasePassword "examples"
 fw config set exampleDatabaseURI "jdbc:postgresql://localhost:5432/examples"
 fw config set exampleDatabaseUser "examples"
@@ -171,7 +169,7 @@ CREATE DATABASE examples OWNER examples;
 ```
 
 Connect to the database:
-```shell
+```sh
 psql -U examples examples
 ```
 
@@ -187,23 +185,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-databasequerytask
-fw activate example-databasequerytask
+```sh
+fw deploy example-databasequerytask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-databasequerytask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-databasequerytask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-databasequerytask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -219,7 +216,7 @@ These variables are required when **building** the workflow:
 | ---------------- | -------------- | -----------------
 | exampleEmailFrom | e-mail address | The source e-mail address to send from.
 
-```shell
+```sh
 fw config set exampleEmailFrom "user@example.com"
 ```
 
@@ -230,22 +227,21 @@ These variables are available or required when **triggering** the workflow:
 | exampleEmailTo | e-mail address | The destination e-mail address to send to.
 
 To build and activate:
-```shell
-fw build example-emailtask
-fw activate example-emailtask
+```sh
+fw deploy example-emailtask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-emailtask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-emailtask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-emailtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
+  --header 'X-Okapi-Token TOKEN_HERE' \
   --data-raw '{ "exampleEmailTo": "you@example.com" }'
 ```
 
@@ -263,7 +259,7 @@ These variables are required when **building** the workflow:
 | exampleFileName  | file name      | The name of the file within the specified directory path representing the CSV file to process (do not prefix with a starting slash).
 | exampleFilePath  | directory path | The full directory path on the system where the CSV file will be stored on the server (exclude trailing slash after the directory).
 
-```shell
+```sh
 fw config set exampleFileName "file.txt"
 fw config set exampleFilePath "/tmp/examples/path"
 ```
@@ -278,23 +274,22 @@ Given the example settings above, the full file path would therefore be `/tmp/ex
 
 
 To build and activate:
-```shell
-fw build example-filetask
-fw activate example-filetask
+```sh
+fw deploy example-filetask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-filetask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-filetask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-filetask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -317,7 +312,7 @@ These variables are required when **building** the workflow:
 | exampleLoginPass | String         | The FOLIO pass word.
 | exampleLoginUser | String         | The FOLIO user name.
 
-```shell
+```sh
 fw config set folioLoginPath "authn/login-with-expiry"
 fw config set exampleGateway "https://kong:8000"
 fw config set exampleLoginPass ***
@@ -330,23 +325,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-foliologin-js
-fw activate example-foliologin-js
+```sh
+fw deploy example-foliologin-js
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-foliologin-js
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliologin-js/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-foliologin-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{  }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -362,7 +356,7 @@ These variables are required when **building** the workflow:
 | --------------------- | -------------- | -----------------
 | exampleFolioUrlPath   | URL            | The FOLIO URL to send a GET request to.
 
-```shell
+```sh
 fw config set exampleFolioUrlPath "http://www.example.com"
 ```
 
@@ -372,23 +366,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-foliorequesttask
-fw activate example-foliorequesttask
+```sh
+fw deploy example-foliorequesttask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-foliorequesttask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-foliorequesttask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-foliorequesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -418,29 +411,29 @@ These variables are available or required when **triggering** the workflow:
 | Variable Name    | Allowed Values | Short Description
 | ---------------- | -------------- | -----------------
 
-```shell
+```sh
 fw config set exampleUrlPath ***
 ```
 
 No variables are required when triggering the workflow.
 
 To build and activate:
-```shell
-fw build example-inputtask
-fw activate example-inputtask
+```sh
+fw deploy example-inputtask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-inputtask
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inputtask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-inputtask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -450,7 +443,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-inp
 
 This workflows sends a **GET** request to a given resource and prints the response using Ruby scripting language.
 
-```shell
+```sh
 fw config set exampleNormalUrlPath "http://www.example.com"
 ```
 
@@ -466,23 +459,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-requesttask
-fw activate example-requesttask
+```sh
+fw deploy example-requesttask
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-requesttask
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-requesttask/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-requesttask/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -492,7 +484,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-req
 
 This workflows sends a **PUT** request to a given resource using a **JavaScript** array created via a **ScriptTask**.
 
-```shell
+```sh
 fw config set exampleNormalUrlPath "http://www.example.com"
 ```
 
@@ -508,23 +500,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-script_and_request_array
-fw activate example-script_and_request_array
+```sh
+fw deploy example-script_and_request_array
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-script_and_request_array
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-script_and_request_array/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-script_and_request_array/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -534,7 +525,7 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-scr
 
 This workflows sends a **PUT** request to a given resource using a **JavaScript** object created via a **ScriptTask**.
 
-```shell
+```sh
 fw config set exampleNormalUrlPath "http://www.example.com"
 ```
 
@@ -550,23 +541,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-script_and_request_object
-fw activate example-script_and_request_object
+```sh
+fw deploy example-script_and_request_object
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-script_and_request_object
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-script_and_request_object/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-script_and_request_object/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -582,7 +572,7 @@ These variables are available or required when **building** the workflow:
 | ------------------ | -------------- | -----------------
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed.
 
-```shell
+```sh
 fw config set exampleInjectValue "Custom Value"
 ```
 
@@ -592,23 +582,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-scripttask-js
-fw activate example-scripttask-js
+```sh
+fw deploy example-scripttask-js
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-scripttask-js
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-scripttask-js/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-scripttask-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -629,23 +618,22 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-scripttask-ruby
-fw activate example-scripttask-ruby
+```sh
+fw deploy example-scripttask-ruby
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-scripttask-ruby
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl --location --request POST 'http://localhost:9001/mod-workflow/events/example-scripttask-ruby/start' \
+```sh
+curl --location --request POST 'http://gateway/mod-workflow/events/example-scripttask-ruby/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
 
 
@@ -669,21 +657,20 @@ These variables are available or required when **triggering** the workflow:
 | ---------------- | -------------- | -----------------
 
 To build and activate:
-```shell
-fw build example-tokenutility-js
-fw activate example-tokenutility-js
+```sh
+fw deploy example-tokenutility-js
 ```
 
-To manually execute via:
-```shell
+To manually execute:
+```sh
 fw run example-tokenutility-js
 ```
 
 Trigger the workflow using an **HTTP** request, such as with **Curl**:
-
-```shell
-curl -w '\n' --location --request POST 'http://localhost:9001/events/example-tokenutility-js/start' \
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/example-tokenutility-js/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --data-raw '{ }'
+  --header 'X-Okapi-Token TOKEN_HERE' \
+  --data-raw '{}'
 ```
