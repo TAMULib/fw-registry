@@ -33,6 +33,8 @@ The `wd` variable in the `fw-cli` configuration should then look something like 
 - [Example FOLIO Request Task](#example-folio-request-task)
 - [Example Input Task](#example-input-task)
 - [Example Request Task](#example-request-task)
+- [Example Script Request Task (Array)](#example-script-request-task-array)
+- [Example Script Request Task (Object)](#example-script-request-task-object)
 - [Example Script Task (JavaScript)](#example-script-task-javascript)
 - [Example Script Task (Ruby)](#example-script-task-ruby)
 - [Example Token Utility (JavaScript)](#example-token-utility-javascript)
@@ -308,18 +310,18 @@ This also prints the the **Access Token** during processing when `logLevel` is s
 
 These variables are required when **building** the workflow:
 
-| Variable Name  | Allowed Values | Short Description
-| -------------- | -------------- | -----------------
-| folioLoginPath | URL Path       | The FOLIO login path.
-| gatewayUrl     | Gateway URL    | The FOLIO gateway URL.
-| password       | String         | The FOLIO pass word.
-| username       | String         | The FOLIO user name.
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+| folioLoginPath   | URL Path       | The FOLIO login path.
+| exampleGateway   | Gateway URL    | The FOLIO gateway URL.
+| exampleLoginPass | String         | The FOLIO pass word.
+| exampleLoginUser | String         | The FOLIO user name.
 
 ```shell
 fw config set folioLoginPath "authn/login-with-expiry"
-fw config set gatewayUrl "https://kong:8000"
-fw config set password ***
-fw config set username ***
+fw config set exampleGateway "https://kong:8000"
+fw config set exampleLoginPass ***
+fw config set exampleLoginUser ***
 ```
 
 These variables are available or required when **triggering** the workflow:
@@ -484,6 +486,90 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/example-req
 ```
 
 
+### Example Script Request Task (Array)
+
+**Workflow Name**: `example-script_and_request_array`.
+
+This workflows sends a **PUT** request to a given resource using a **JavaScript** array created via a **ScriptTask**.
+
+```shell
+fw config set exampleNormalUrlPath "http://www.example.com"
+```
+
+These variables are required when **building** the workflow:
+
+| Variable Name        | Allowed Values | Short Description
+| -------------------- | -------------- | -----------------
+| exampleNormalUrlPath | URL            | The URL to send a PUT request to.
+
+These variables are available or required when **triggering** the workflow:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+
+To build and activate:
+```shell
+fw build example-script_and_request_array
+fw activate example-script_and_request_array
+```
+
+To manually execute via:
+```shell
+fw run example-script_and_request_array
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-script_and_request_array/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ }'
+```
+
+
+### Example Script Request Task (Object)
+
+**Workflow Name**: `example-script_and_request_object`.
+
+This workflows sends a **PUT** request to a given resource using a **JavaScript** object created via a **ScriptTask**.
+
+```shell
+fw config set exampleNormalUrlPath "http://www.example.com"
+```
+
+These variables are required when **building** the workflow:
+
+| Variable Name        | Allowed Values | Short Description
+| -------------------- | -------------- | -----------------
+| exampleNormalUrlPath | URL            | The URL to send a PUT request to.
+
+These variables are available or required when **triggering** the workflow:
+
+| Variable Name    | Allowed Values | Short Description
+| ---------------- | -------------- | -----------------
+
+To build and activate:
+```shell
+fw build example-script_and_request_object
+fw activate example-script_and_request_object
+```
+
+To manually execute via:
+```shell
+fw run example-script_and_request_object
+```
+
+Trigger the workflow using an **HTTP** request, such as with **Curl**:
+
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/example-script_and_request_object/start' \
+  --header 'Content-Type: application/json' \
+  --header 'X-Okapi-Tenant: diku' \
+  --data-raw '{ }'
+```
+
+
 ### Example Script Task (JavaScript)
 
 **Workflow Name**: `example-scripttask-js`.
@@ -495,11 +581,9 @@ These variables are available or required when **building** the workflow:
 | Variable Name      | Allowed Values | Short Description
 | ------------------ | -------------- | -----------------
 | exampleInjectValue | String or null | When empty, original value is printed. When non-empty, the value of this is printed.
-| gatewayUrl         | Gateway URL    | The FOLIO gateway URL.
 
 ```shell
 fw config set exampleInjectValue "Custom Value"
-fw config set gatewayUrl "https://kong:8000"
 ```
 
 These variables are available or required when **triggering** the workflow:
