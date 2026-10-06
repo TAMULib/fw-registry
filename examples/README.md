@@ -305,16 +305,16 @@ This also prints the the **Access Token** during processing when `logLevel` is s
 
 These variables are required when **building** the workflow:
 
-| Variable Name    | Allowed Values | Short Description
-| ---------------- | -------------- | -----------------
-| folioLoginPath   | URL Path       | The FOLIO login path.
-| exampleGateway   | Gateway URL    | The FOLIO gateway URL.
-| exampleLoginPass | String         | The FOLIO pass word.
-| exampleLoginUser | String         | The FOLIO user name.
+| Variable Name     | Allowed Values | Short Description
+| ----------------- | -------------- | -----------------
+| exampleLoginPath  | URL Path       | The FOLIO login path.
+| exampleGatewayUrl | Gateway URL    | The FOLIO gateway URL.
+| exampleLoginPass  | String         | The FOLIO pass word.
+| exampleLoginUser  | String         | The FOLIO user name.
 
 ```sh
-fw config set folioLoginPath "authn/login-with-expiry"
 fw config set exampleGateway "https://kong:8000"
+fw config set exampleLoginPath "authn/login-with-expiry"
 fw config set exampleLoginPass ***
 fw config set exampleLoginUser ***
 ```

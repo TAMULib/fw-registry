@@ -4,7 +4,7 @@
   "description": "Log into FOLIO, obtaining the appropriate tokens.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{exampleGateway}}}{{{folioLoginPath}}}",
+    "url": "{{{exampleGatewayUrl}}}{{{exampleLoginPath}}}",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
