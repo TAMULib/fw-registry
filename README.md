@@ -22,6 +22,14 @@ cd mod-camunda
 SERVER_PORT=9000 mvn clean spring-boot:run
 ```
 
+The environment variable for the `FOLIO_TOKEN` needs to be populated for the `curl` requests described within this read me file.
+This can be accomplished using the following (this requires the `jq` program):
+
+```sh
+fw login &&
+export FOLIO_TOKEN="$(fw -C | jq .cliFolioToken -r)"
+```
+
 
 ### Warnings
 
@@ -121,7 +129,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/books-call-number/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --data-raw '{ "bcnMailTo": "you@example.com", "endRange":"b9", "locationName": "[]", "path": "/mnt/workflows/diku/bcn", "startRange": "a0" }'
 ```
 
@@ -430,7 +438,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/e-resource/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --data-raw '{}'
 ```
 
@@ -521,7 +529,7 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/create-notes/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --form 'emailFrom="me@example.com"' \
   --form 'emailTo="you@example.com"' \
   --form 'file=@"itemBarcodes.csv"' \
@@ -561,7 +569,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/create-tags/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --form 'file=@"FOLIOTags.csv"' \
   --form 'path="/mnt/workflows/diku/create-tags"'
 ```
@@ -671,7 +679,7 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/hegis-po/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --data-raw '{ "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
 ```
 
@@ -817,7 +825,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/orcid/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --data-raw '{ "emailTo": "you@example.com" }'
 ```
 
@@ -868,7 +876,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/purchase-orders/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --form 'callNumberTypeId="95467209-6d7b-468b-94df-0f5d7ad2747d"' \
   --form 'eHoldingsType="Unknown"' \
   --form 'emailFrom="me@example.com"' \
@@ -1046,7 +1054,7 @@ Trigger the workflow using an **HTTP** request such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/remove-books-from-nbs/start' \
   --header 'Content-Type: multipart/form-data' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --form 'emailTo="you@example.com"' \
   --form 'file=@"itemBarcodes.csv"' \
   --form 'path="/mnt/workflows/diku/remove-books-from-nbs/"'
@@ -1099,7 +1107,7 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/shelflist-holdings/start' \
   --header 'Content-Type: application/json' \
   --header 'X-Okapi-Tenant: diku' \
-  --header 'X-Okapi-Token TOKEN_HERE' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
   --data-raw '{ "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "language": "[]", "resourceType": "[]", "format": "[]", "batchId": "", "issuance": "", "suppressInstance": false, "suppressHoldings": false, "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 ```
 
@@ -1147,6 +1155,6 @@ Trigger the workflow using an **HTTP** request, such as with **Curl**:
 curl -w '\n' --location --request POST 'http://gateway/events/shelflist-items/start' \
 --header 'Content-Type: application/json' \
 --header 'X-Okapi-Tenant: diku' \
---header 'X-Okapi-Token TOKEN_HERE' \
+--header "X-Okapi-Token ${FOLIO_TOKEN}" \
 --data-raw '{ "emailFrom": "me@example.com", "emailTo": "you@example.com", "libraryName": "[\"Example Library\"]", "locationDiscoveryDisplayName": "[]", "locationName": "[]", "loanType": "[]", "materialType": "[]", "itemStatus": "[]", "createdDateStart": "", "createdDateEnd": "", "updatedDateStart": "", "updatedDateEnd": "" }'
 ```
