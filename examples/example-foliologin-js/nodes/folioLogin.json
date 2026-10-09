@@ -4,20 +4,20 @@
   "description": "Log into FOLIO, obtaining the appropriate tokens.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}{{{folioLoginPath}}}",
+    "url": "{{{exampleGatewayUrl}}}{{{exampleLoginPath}}}",
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
     "sendEmptyBody": false,
-    "bodyTemplate": "{\"username\": \"{{{username}}}\", \"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"{{{exampleLoginUser}}}\", \"password\": \"{{{exampleLoginPass}}}\"}"
   },
   "inputVariables": [
     {
-      "key": "username",
+      "key": "exampleLoginUser",
       "type": "PROCESS"
     },
     {
-      "key": "password",
+      "key": "exampleLoginPass",
       "type": "PROCESS"
     }
   ],

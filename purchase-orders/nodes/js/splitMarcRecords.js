@@ -1,4 +1,3 @@
-var Spin = Java.type("org.camunda.spin.Spin");
 var MarcUtility = Java.type("org.folio.rest.camunda.utility.MarcUtility");
 
 var varMarc = execution.getVariable('marc');
@@ -8,5 +7,5 @@ var reportObj = {
   records: []
 };
 
-execution.setVariableLocal('records', S(Spin.JSON(records)));
+execution.setVariableLocal('records', S(JSON.stringify(records)));
 execution.setVariable('report', S(JSON.stringify(reportObj)));

@@ -4,12 +4,17 @@
   "description": "Retrieves the expense class by name.",
   "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${marcOrderData.expenseClass}\")",
+    "url": "{{{gatewayUrl}}}/finance/expense-classes?limit=1&offset=0&query=(name==\"${expenseClass}\")",
     "method": "GET",
     "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [
+    {
+      "key": "expenseClass",
+      "type": "PROCESS",
+      "spin": false
+    },
     {
       "key": "marcOrderData",
       "type": "PROCESS",
