@@ -1,7 +1,16 @@
 // Pull the upload-definition id and file id from the create-upload-definition
 // response, and prepare the EDI payload that gets uploaded next.
 var invoice = JSON.parse(inv);
-var response = JSON.parse(uploadDefinitionResponse);
+var responseValue = execution.getVariable('uploadDefinitionResponse');
+var responseJson;
+if (typeof responseValue === 'string') {
+  responseJson = responseValue;
+} else {
+  // Request responses can be Java Maps; their toString() is not JSON.
+  var ObjectMapper = Java.type('com.fasterxml.jackson.databind.ObjectMapper');
+  responseJson = new ObjectMapper().writeValueAsString(responseValue);
+}
+var response = JSON.parse(responseJson);
 
 // The response may be the bare upload definition or wrapped under uploadDefinition.
 var uploadDefinition = response.fileDefinitions
