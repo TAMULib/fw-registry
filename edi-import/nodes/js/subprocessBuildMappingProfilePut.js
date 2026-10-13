@@ -40,7 +40,16 @@ function setAccountFieldByName(profile, value) {
   return false;
 }
 
-var fetched = JSON.parse(mappingProfileResponse);
+var response = execution.getVariable('mappingProfileResponse');
+var responseJson;
+if (typeof response === 'string') {
+  responseJson = response;
+} else {
+  // Request responses can be Java Maps; their toString() is not JSON.
+  var ObjectMapper = Java.type('com.fasterxml.jackson.databind.ObjectMapper');
+  responseJson = new ObjectMapper().writeValueAsString(response);
+}
+var fetched = JSON.parse(responseJson);
 // GET may return the bare profile or a wrapper; normalize to the profile object.
 var profile = (fetched && fetched.profile) ? fetched.profile : fetched;
 
