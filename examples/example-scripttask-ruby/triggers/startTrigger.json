@@ -2,8 +2,6 @@
   "id": "f72268ba-83ae-4253-9a4d-791a4bb107c7",
   "name": "Example Ruby ScriptTask Start Trigger.",
   "description": "A REST Post end point for the Example Ruby ScriptTask.",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/example-scripttask-ruby/start"
 }

@@ -1,8 +1,6 @@
 {
   "id": "478d4468-289e-48c1-90ca-6a09bcbc252b",
   "name": "Build Holdings",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildHoldings.js"
 }

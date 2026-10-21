@@ -5,25 +5,21 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "isbnCount",
-      "type": "PROCESS"
+      "key": "isbnCount"
     }
   ],
-  "outputVariable": {},
   "mailFrom": "{{{duplicate-instance-report-from}}}",
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The instances with matching ISBN report has completed, see the results attached.\n${isbnCount} instance matches found.",
   "mailMarkup": "<p>The instances with matching ISBN report has completed, see the results attached.</p><br/>${isbnCount} instance matches found.",
   "mailSubject": "Matching ISBN Instances Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/isbn-${timestamp}.csv",
-  "includeAttachment": "${isbnCount}",
+  "includeAttachment": "${(isbnCount > 0) ? then('true', 'false')}",
   "asyncBefore": true
 }

@@ -2,7 +2,6 @@
   "id": "e1d7e04f-f167-40a0-8ad3-590436d99f62",
   "name": "Start",
   "description": "Start of Example EmailTask Workflow.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-emailtask/start"
 }

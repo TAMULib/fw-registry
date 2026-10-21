@@ -6,8 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/source-storage/records",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${sourceRecord}"
   },
@@ -23,7 +21,8 @@
   "outputVariable": {
     "key": "sourceRecord",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

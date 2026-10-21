@@ -1,8 +1,6 @@
 {
   "id": "c721b954-3ad7-416d-be0a-52066d1f85c1",
   "name": "Build Upsert Query",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildUpsertQuery.js"
 }

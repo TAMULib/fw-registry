@@ -5,21 +5,17 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/statistical-codes?limit=99&query=(code==\"${statisticalCode}\")",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "statisticalCode",
-      "type": "PROCESS"
+      "key": "statisticalCode"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "statisticalCodesResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

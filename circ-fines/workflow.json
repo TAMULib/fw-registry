@@ -1,15 +1,6 @@
 {
   "id": "680b927d-58f3-4794-b9a3-1d32c7ca917a",
   "name": "Circulation Daily Fees/Fines Paid Workflow",
-  "description": "",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/83d11a53-28a5-442a-8f55-37b2635999be",
     "/databaseConnectionTask/475bfb6b-cbc5-4d0a-a04f-7096efb7847d",
@@ -18,6 +9,5 @@
     "/fileTask/297af5e3-fb35-440a-a9e8-2a8a011ed9d6",
     "/databaseDisconnectTask/b8e0b363-9661-42d9-9669-26a93d5b68c5",
     "/endEvent/9fed70f7-e5e0-422d-972c-98513c7caefe"
-  ],
-  "initialContext": {}
+  ]
 }

@@ -2,14 +2,6 @@
   "id": "6122f375-c6cf-450d-92b0-59ae13a4408e",
   "name": "New Bookshelf Items Note",
   "description": "Navigate through each Item in 'Evans nbs', adding an 'Inventory Item Circulation Note' on 'Check in'.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/cdd600ba-e209-429c-a60f-f42632bfe5c3",
     "/databaseConnectionTask/7f7b1d38-a006-4dca-a9b2-d2fbb17c5dda",
@@ -18,6 +10,5 @@
     "/databaseDisconnectTask/b8aef7d8-9d8a-4c6d-b66e-eb942b1e8626",
     "/subprocess/5a24ffbc-468d-4eca-90c7-21e9158f208e",
     "/endEvent/6509ec72-5065-4757-8f5c-4aec865725f0"
-  ],
-  "initialContext": {}
+  ]
 }

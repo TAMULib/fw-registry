@@ -12,7 +12,6 @@
   ],
   "loopRef": {
     "dataInputRefExpression": "${tags.elements()}",
-    "inputDataName": "tag",
-    "parallel": false
+    "inputDataName": "tag"
   }
 }

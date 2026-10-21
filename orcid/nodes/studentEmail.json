@@ -1,23 +1,18 @@
 {
   "id": "81bbfd26-008b-45ee-93a9-10a116c44c37",
   "name": "Send Student Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "{{{orcid-mail-from}}}",
   "mailSubject": "ORCID list for Students",

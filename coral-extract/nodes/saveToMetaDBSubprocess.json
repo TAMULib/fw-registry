@@ -12,14 +12,13 @@
   "inputVariables": [
     {
       "key": "extractItems",
-      "type": "PROCESS",
-      "spin": true
+      "spin": true,
+      "asJson": false
     }
   ],
   "loopRef": {
     "dataInputRefExpression": "${extractItems.elements()}",
-    "inputDataName": "extractItem",
-    "parallel": false
+    "inputDataName": "extractItem"
   }
 }
 

@@ -2,14 +2,6 @@
   "id": "e1615440-67f6-11eb-b7ce-65b004d2db88",
   "name": "GOBI ISBN Report Workflow",
   "description": "Generate and email ISBN report",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/e16069e0-67f6-11eb-b7ce-65b004d2db88",
     "/databaseConnectionTask/58ca607d-2720-4448-91d6-16271c94ca46",
@@ -20,6 +12,5 @@
     "/fileTask/dec0f324-6566-460e-9ca9-79114ff1e1c0",
     "/databaseDisconnectTask/9d4de4b5-6648-40c5-a7e9-060ed6d4de65",
     "/endEvent/e16090f0-67f6-11eb-b7ce-65b004d2db88"
-  ],
-  "initialContext": {}
+  ]
 }

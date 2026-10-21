@@ -6,24 +6,21 @@
   "request": {
     "url": "{{{gatewayUrl}}}/notes",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${note}"
   },
   "inputVariables": [
     {
       "key": "note",
-      "type": "PROCESS",
       "spin": true,
       "asJson": true
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "note",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

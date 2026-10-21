@@ -5,15 +5,12 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/evans-pres-repr/evans-pres-repr-${timestamp}.csv",
   "op": "DELETE",
   "asyncBefore": true

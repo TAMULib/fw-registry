@@ -1,19 +1,15 @@
 {
   "id": "61ff3d3f-446c-481d-bb39-8c5fa8bdbaf5",
   "name": "Delete ISBN TSV",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true

@@ -1,19 +1,15 @@
 {
   "id": "6ea7dc02-6b3d-4330-8015-d028fe71a904",
   "name": "Delete Authorization List",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/medsci-gps-zone/grad_access_${timestamp}.txt",
   "op": "DELETE",
   "asyncBefore": true

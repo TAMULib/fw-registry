@@ -5,21 +5,17 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/item-storage/items?query=(holdingsRecordId==\"${holdingsRecordId}\")",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "holdingsRecordId",
-      "type": "PROCESS"
+      "key": "holdingsRecordId"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "itemsResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

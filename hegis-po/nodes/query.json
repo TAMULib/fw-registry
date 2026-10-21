@@ -9,12 +9,10 @@
       "type": "LOCAL"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
   "outputPath": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",

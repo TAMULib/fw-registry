@@ -2,14 +2,6 @@
   "id": "2ee5b878-f034-4e71-aee2-116c72d69fd6",
   "name": "Export to HathiTrust Workflow",
   "description": "HathiTrust workflow to create multiple files for HathiTrust upload",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/b5cd771e-33f1-481e-b6d2-417867852258",
     "/scriptTask/8934be78-e86a-4faf-b96d-2877593b2a6d",
@@ -19,6 +11,5 @@
     "/moveToNode/0f3a5886-44b8-4ad3-a083-cfa550c63eb8",
     "/databaseDisconnectTask/c59fc586-132c-4b52-ac22-6968bd413f33",
     "/endEvent/ab5ec79d-48b0-4218-8a69-e662c8259abd"
-  ],
-  "initialContext": {}
+  ]
 }

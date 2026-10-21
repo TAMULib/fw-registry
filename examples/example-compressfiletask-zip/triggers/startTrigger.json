@@ -2,8 +2,6 @@
   "id": "b69213a9-e4be-4761-890f-eb26d5968732",
   "name": "CompressFileTask Start Trigger",
   "description": "REST POST end point.",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/example-compressfiletask-zip/start"
 }

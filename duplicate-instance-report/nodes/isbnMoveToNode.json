@@ -1,7 +1,6 @@
 {
   "id": "408a6624-8be4-4bdf-8688-75c23a730187",
   "name": "ISBN",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
   "nodes": [

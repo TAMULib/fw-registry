@@ -3,6 +3,5 @@
   "name": "Extract Items from Response",
   "description": "Extract items from the itemsresponse object.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "extractItemsFromResponse.js"
 }

@@ -6,8 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/source-storage/snapshots",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${jobExecution}"
   },
@@ -23,7 +21,8 @@
   "outputVariable": {
     "key": "jobExecution",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

@@ -5,8 +5,7 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
       "key": "email",
@@ -15,15 +14,12 @@
       "asJson": true
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "{{{nbs-mail-from}}}",
   "mailSubject": "${email.subject}",

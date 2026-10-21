@@ -3,6 +3,5 @@
   "name": "Debug Logger",
   "description": "Logs information based on log level.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "logger.js"
 }

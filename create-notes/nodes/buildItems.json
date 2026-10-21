@@ -3,6 +3,5 @@
   "name": "Build Items",
   "description": "Build Items array from the MetaDB response.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildItems.js"
 }

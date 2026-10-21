@@ -6,8 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/orders/composite-orders",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${compositePurchaseOrder}"
   },
@@ -23,7 +21,8 @@
   "outputVariable": {
     "key": "compositePurchaseOrder",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

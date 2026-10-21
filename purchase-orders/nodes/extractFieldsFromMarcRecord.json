@@ -3,6 +3,5 @@
   "name": "Extract Fields From MARC Record",
   "description": "Extracts fields from MARC record and generates MARC order data object.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "extractFieldsFromMarcRecord.js"
 }

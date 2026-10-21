@@ -5,18 +5,14 @@
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "isbnCount",
-    "type": "PROCESS",
-    "spin": false
+    "key": "isbnCount"
   },
   "designation": "metadb",
   "outputPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/isbn-${timestamp}.csv",

@@ -1,7 +1,6 @@
 {
   "id": "22e0d129-81f8-432c-92c8-2361a2eac470",
   "name": "Multi Part Monographs Query Move To",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_1d1eee3a_0451_4b50_821f_0cd8602f9eb3",
   "nodes": [

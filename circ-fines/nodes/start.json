@@ -1,7 +1,6 @@
 {
   "id": "83d11a53-28a5-442a-8f55-37b2635999be",
   "name": "Start",
-  "description": "",
   "type": "SCHEDULED",
   "deserializeAs": "StartEvent",
   "expression": "0 0 14 * * ?"

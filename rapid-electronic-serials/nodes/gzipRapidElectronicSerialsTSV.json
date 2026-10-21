@@ -1,7 +1,6 @@
 {
   "id": "d40b8866-3810-4c0e-94a4-f83779a53501",
   "name": "Gzip Rapid ILS Electronic Serials",
-  "description": "",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
@@ -9,17 +8,14 @@
       "type": "LOCAL"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "tenantId",
-    "type": "PROCESS"
+    "key": "tenantId"
   },
   "source": "${sfxFile}",
   "destination": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_serials.txt.gz",
   "format": "GZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

@@ -1,15 +1,12 @@
 {
   "id": "304e4191-c7a8-423c-8318-59920a5d0843",
   "name": "Query Rapid ILS Print Monos",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/rapid/rapid_print_monos.txt",
   "resultType": "TSV",
   "designation": "metadb",

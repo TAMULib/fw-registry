@@ -2,14 +2,6 @@
   "id": "1d66dfe9-95ef-4ad6-bb3a-b20953c19674",
   "name": "Remove Books From Evans New Bookshelf",
   "description": "Removes books from Evans new bookshelf by list of barcodes.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/bf7143c2-b5f1-4de1-98bd-06c4429cf069",
     "/fileTask/7e95d7c3-6a22-4708-8294-ce3a46aa33f5",
@@ -23,6 +15,5 @@
     "/fileTask/d3ad0b52-bb37-4884-8ef8-4b54898d4f83",
     "/fileTask/493e55ab-12da-4537-946f-bd7d4ece9c51",
     "/endEvent/997e56ba-3821-4422-b491-e89ba8a5739d"
-  ],
-  "initialContext": {}
+  ]
 }

@@ -1,7 +1,5 @@
 {
   "id": "853a70bb-6cff-4a3f-9ba8-30776d39c98b",
   "name": "Join",
-  "description": "",
-  "deserializeAs": "ParallelGateway",
-  "nodes": []
+  "deserializeAs": "ParallelGateway"
 }

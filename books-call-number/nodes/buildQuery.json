@@ -3,6 +3,5 @@
   "name": "Build Query",
   "description": "Build Query using input parameters - startRange and endRange.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildQuery.js"
 }

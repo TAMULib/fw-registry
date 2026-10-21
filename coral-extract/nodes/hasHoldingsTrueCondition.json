@@ -1,7 +1,6 @@
 {
   "id": "19890de6-a14f-4181-a88f-15038fa61c0a",
   "name": "Has Instance",
-  "description": "",
   "deserializeAs": "Condition",
   "expression": "${holdingsResponse.prop('holdingsRecords').elements().size() > 0}",
   "answer": "yes"
