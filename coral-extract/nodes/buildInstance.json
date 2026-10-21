@@ -1,8 +1,6 @@
 {
   "id": "a20f3e19-9e0d-451d-af57-171f4fc05b66",
   "name": "Build Instance",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildInstance.js"
 }

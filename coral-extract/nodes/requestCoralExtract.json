@@ -5,11 +5,9 @@
   "deserializeAs": "RequestTask",
   "request": {
     "url": "{{{coral-url}}}/folio_utilities/coral_extract.php",
-    "method": "GET",
     "sendEmptyBody": false,
     "accept": "text/plain"
   },
-  "inputVariables": [],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "coralExtractResponse",

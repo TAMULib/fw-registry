@@ -5,11 +5,9 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "inputFilePath",
-      "type": "PROCESS"
+      "key": "inputFilePath"
     }
   ],
-  "outputVariable": {},
   "path": "${inputFilePath}",
   "op": "DELETE",
   "asyncBefore": true

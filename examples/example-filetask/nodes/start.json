@@ -2,7 +2,6 @@
   "id": "ebb2c6ae-b116-4b93-a579-9ae7ff82e98c",
   "name": "Start",
   "description": "Start of Example FileTask workflow.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-filetask/start"
 }

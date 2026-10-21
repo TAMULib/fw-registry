@@ -1,9 +1,6 @@
 {
   "id": "4b371b22-e451-46b0-a732-b883de1ca551",
   "name": "MedSci GPS Zone Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/medsci-gps-zone/start"
 }

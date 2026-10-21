@@ -1,8 +1,6 @@
 {
   "id": "c91a5787-c10f-4cec-ac13-88af74c066b8",
   "name": "Join",
-  "description": "",
   "deserializeAs": "InclusiveGateway",
-  "direction": "CONVERGING",
-  "nodes": []
+  "direction": "CONVERGING"
 }

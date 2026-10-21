@@ -1,8 +1,6 @@
 {
   "id": "70533257-6cb8-4975-aadb-1324c8adf04e",
   "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/create-tags/start"
 }

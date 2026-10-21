@@ -1,7 +1,6 @@
 {
   "id": "1d1eee3a-0451-4b50-821f-0cd8602f9eb3",
   "name": "Fork",
-  "description": "",
   "deserializeAs": "ParallelGateway",
   "nodes": [
     "/databaseQueryTask/5067b81f-545d-42f8-a6b3-22eadd747886",

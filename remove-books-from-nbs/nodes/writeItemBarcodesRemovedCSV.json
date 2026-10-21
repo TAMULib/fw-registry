@@ -6,20 +6,16 @@
   "inputVariables": [
     {
       "key": "barcodesOfItemsRemoved",
-      "type": "PROCESS",
       "spin": true,
       "asJson": true
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "target": "barcodesOfItemsRemoved",
   "path": "/mnt/workflows/${tenantId}/remove-books-from-nbs/barcodesOfItemsRemoved-${timestamp}.csv",
   "op": "WRITE",

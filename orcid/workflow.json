@@ -2,14 +2,6 @@
   "id": "d85748c0-6722-11eb-a782-4d1a319181c0",
   "name": "Orcid Email Workflow",
   "description": "Generate and email Orcid report",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/d856ac80-6722-11eb-a782-4d1a319181c0",
     "/databaseConnectionTask/09d67cf1-875c-40e8-922a-4df5f13b7062",
@@ -17,6 +9,5 @@
     "/moveToNode/31a26bee-cae8-41f1-b5ec-32eee568fb48",
     "/databaseDisconnectTask/82edabb3-d5e0-4f14-b192-bf66aaefdab9",
     "/endEvent/d856d390-6722-11eb-a782-4d1a319181c0"
-  ],
-  "initialContext": {}
+  ]
 }

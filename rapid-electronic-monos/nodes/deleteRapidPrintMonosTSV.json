@@ -1,15 +1,12 @@
 {
   "id": "ccf2d526-90e7-48f3-9d65-2ae968262b86",
   "name": "Delete Rapid Electronic Monos TSV",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_monos.txt",
   "op": "DELETE",
   "asyncBefore": true

@@ -1,7 +1,6 @@
 {
   "id": "0f3a5886-44b8-4ad3-a083-cfa550c63eb8",
   "name": "Single Part Monographs Query Move To",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_1d1eee3a_0451_4b50_821f_0cd8602f9eb3",
   "nodes": [

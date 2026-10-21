@@ -1,7 +1,6 @@
 {
   "id": "b4e72925-19a4-47ed-8f31-e32cf8905123",
   "name": "LCCN",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
   "nodes": [

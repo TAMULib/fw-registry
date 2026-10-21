@@ -1,7 +1,6 @@
 {
   "id": "dc531f98-f5ce-4b29-a152-6904457808e6",
   "name": "Has No Holdings",
-  "description": "",
   "deserializeAs": "Condition",
   "expression": "${holdingsResponse.prop('holdingsRecords').elements().size() == 0}",
   "answer": "no"

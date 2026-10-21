@@ -1,9 +1,6 @@
 {
   "id": "b30f50e8-945e-4fab-a3c6-90800c17dea6",
   "name": "E-resource Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/e-resource/start"
 }

@@ -1,19 +1,15 @@
 {
   "id": "3c7600b2-deee-4de2-9033-de87c2126920",
   "name": "Single Part Monographs Query",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "date",
-      "type": "PROCESS"
+      "key": "date"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/hathitrust/tamu_single-part_${date}.tsv",
   "resultType": "TSV",
   "designation": "metadb",

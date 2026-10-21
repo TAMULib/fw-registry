@@ -36,8 +36,7 @@
   ],
   "loopRef": {
     "dataInputRefExpression": "${records.elements()}",
-    "inputDataName": "record",
-    "parallel": false
+    "inputDataName": "record"
   }
 }
 

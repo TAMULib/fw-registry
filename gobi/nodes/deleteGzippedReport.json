@@ -1,19 +1,15 @@
 {
   "id": "dec0f324-6566-460e-9ca9-79114ff1e1c0",
   "name": "Delete ISBN Gzip TSV",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv.gz",
   "op": "DELETE",
   "asyncBefore": true

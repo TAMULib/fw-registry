@@ -1,13 +1,11 @@
 {
   "id": "8fc342de-6683-473a-ac52-9656b51095cf",
   "name": "List SFX Utility Output Files",
-  "description": "",
   "deserializeAs": "FileTask",
-  "inputVariables": [],
   "outputVariable": {
     "key": "sfxListing",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "path": "/mnt/nfstmp/sfx/scratch",
   "op": "LIST",

@@ -1,8 +1,6 @@
 {
   "id": "f52b03c9-c886-47b5-a377-4bb3b7d72f3b",
   "name": "Convert Tags CSV to JSON Array",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "convertCSVToJsonArray.js"
 }

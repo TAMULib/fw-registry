@@ -1,23 +1,18 @@
 {
   "id": "dcf2e6bb-7726-4fbd-ad39-f9009372beb0",
   "name": "Send Fast Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "{{{orcid-mail-from}}}",
   "mailSubject": "ORCID list for Faculty and Staff",

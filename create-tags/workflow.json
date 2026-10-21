@@ -2,14 +2,6 @@
   "id": "c4266665-b1d2-4131-9ba4-e626dac85436",
   "name": "Create Tags Workflow",
   "description": "A workflow for creating tags in FOLIO",
-  "versionTag": "1.0",
-  "historyTimeToLive": 0,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/70533257-6cb8-4975-aadb-1324c8adf04e",
     "/fileTask/bc912058-7b71-4b50-8bf9-751d37a133cb",
@@ -17,6 +9,5 @@
     "/subprocess/3a50b86e-e20c-4c12-8183-88844785df8b",
     "/fileTask/4d37e26e-5e83-445c-95e7-0c95a63ccf67",
     "/endEvent/1fdf4eea-c393-4f9b-b900-d79f70e3aa34"
-  ],
-  "initialContext": {}
+  ]
 }

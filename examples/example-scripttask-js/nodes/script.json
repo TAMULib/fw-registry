@@ -3,6 +3,5 @@
   "name": "Run Script",
   "description": "Check to see how variable substitution works while running in Javascript.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "script.js"
 }

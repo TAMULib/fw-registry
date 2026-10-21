@@ -2,8 +2,6 @@
   "id": "86281d26-2ad4-4053-a18f-9a2f001ea9f4",
   "name": "Example EmailTask Trigger",
   "description": "A REST Post end point for Example EmailTask.",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/example-emailtask/start"
 }

@@ -1,24 +1,20 @@
 {
   "id": "a756bd71-98d3-49b1-ad56-2cdb12c700df",
   "name": "Send Authorization List Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "mailTo": "{{{medsci-gps-zone-to}}}",
   "mailFrom": "{{{medsci-gps-zone-from}}}",
   "mailSubject": "Grad access list",
   "mailText": "Grad access list is attached.",
   "attachmentPath": "/mnt/workflows/${tenantId}/medsci-gps-zone/grad_access_${timestamp}.txt",
-  "includeAttachment": "true",
+  "includeAttachment": true,
   "asyncBefore": true
 }

@@ -1,15 +1,12 @@
 {
   "id": "48e1de32-6507-4a89-97a3-d950b9b02058",
   "name": "Query Rapid ILS Print Serials",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/rapid/rapid_print_serials.txt",
   "resultType": "TSV",
   "designation": "metadb",

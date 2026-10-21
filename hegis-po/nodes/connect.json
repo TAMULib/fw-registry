@@ -3,8 +3,6 @@
   "name": "Connect to MetaDB Database",
   "description": "Connect to MetaDB database.",
   "deserializeAs": "DatabaseConnectionTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "metadb",
   "url": "{{{metadb-url}}}",
   "username": "{{{metadb-user}}}",

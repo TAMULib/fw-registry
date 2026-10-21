@@ -12,7 +12,6 @@
   ],
   "loopRef": {
     "dataInputRefExpression": "${barcodes.elements()}",
-    "inputDataName": "barcode",
-    "parallel": false
+    "inputDataName": "barcode"
   }
 }

@@ -2,7 +2,6 @@
   "id": "da9acc1f-cff3-4df0-ba1d-b14b032f9f3c",
   "name": "Start",
   "description": "Start workflow to connect, query, and disconnect from a database.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-databasequerytask/start"
 }

@@ -1,7 +1,6 @@
 {
   "id": "3b2668b9-58aa-447e-b907-40cee663a3ea",
   "name": "ISSN",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
   "nodes": [

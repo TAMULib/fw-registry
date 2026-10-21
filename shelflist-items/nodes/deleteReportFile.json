@@ -1,19 +1,15 @@
 {
   "id": "26fe1703-dfdc-4867-a702-3aee9b43c248",
   "name": "Delete Shelftlist (items level) Report file",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/shelflist-items/shelflist-items-report-${timestamp}.csv",
   "op": "DELETE",
   "asyncBefore": true

@@ -1,8 +1,6 @@
 {
   "id": "d856ac80-6722-11eb-a782-4d1a319181c0",
   "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/orcid/start"
 }

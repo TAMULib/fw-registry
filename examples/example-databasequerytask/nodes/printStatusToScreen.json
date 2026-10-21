@@ -5,8 +5,7 @@
   "deserializeAs": "ScriptTask",
   "scriptFormat": "ruby",
   "inputVariables":[{
-    "key": "exampleQueryResult",
-    "type": "PROCESS"
+    "key": "exampleQueryResult"
   }],
   "code": "printStatusToScreen.rb"
 }

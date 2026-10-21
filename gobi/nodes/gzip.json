@@ -1,22 +1,17 @@
 {
   "id": "7e48309d-efbb-42c0-9494-793ec2346ff5",
   "name": "Gzip ISBN TSV",
-  "description": "",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "source": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv",
   "destination": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv.gz",
   "format": "GZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

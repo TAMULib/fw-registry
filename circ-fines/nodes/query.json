@@ -1,21 +1,17 @@
 {
   "id": "b3edd0b1-9611-4973-ad53-9f0e9f0f9e1e",
   "name": "Query Daily Fees/Fines Paid from MetaDb",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "count",
-    "type": "PROCESS"
+    "key": "count"
   },
   "outputPath": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",
   "resultType": "TSV",

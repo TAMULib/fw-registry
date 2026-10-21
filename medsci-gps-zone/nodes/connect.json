@@ -1,10 +1,7 @@
 {
   "id": "931b27b4-d37d-4400-9593-8f028805a6cc",
   "name": "Connect to DivIT",
-  "description": "",
   "deserializeAs": "DatabaseConnectionTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "divit",
   "url": "{{{divit-url}}}",
   "username": "{{{divit-user}}}",

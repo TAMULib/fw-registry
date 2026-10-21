@@ -1,15 +1,12 @@
 {
   "id": "fb3ae3a3-4b6e-4ac4-a81d-40f7c58230e2",
   "name": "Query Rapid ILS Electronic Monos",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_monos.txt",
   "resultType": "TSV",
   "designation": "metadb",

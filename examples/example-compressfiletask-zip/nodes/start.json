@@ -2,7 +2,6 @@
   "id": "61b70f62-c772-42ad-a12e-3ae04cea2355",
   "name": "Start",
   "description": "Start of the CompressFileTask workflow.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-compressfiletask-zip/start"
 }

@@ -2,18 +2,9 @@
   "id": "6780cd32-a445-4fe0-990f-dcc9913ce99e",
   "name": "Example Ruby ScriptTask",
   "description": "An example ScriptTask Workflow using Ruby.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/1940f6af-b7db-41fa-855b-2b56c48e9561",
     "/scriptTask/7e88f88d-19be-41ba-a20e-dfc27e78dcec",
     "/endEvent/a25c2fd3-cbbc-4604-b2aa-8f2565a6c76f"
-  ],
-  "initialContext": {}
+  ]
 }

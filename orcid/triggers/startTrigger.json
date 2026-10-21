@@ -1,9 +1,6 @@
 {
   "id": "d85721b0-6722-11eb-a782-4d1a319181c0",
   "name": "ORCID Email Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/orcid/start"
 }

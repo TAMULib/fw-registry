@@ -6,7 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/inventory/items/${itemId}",
     "method": "PUT",
-    "contentType": "application/json",
     "accept": "text/plain",
     "sendEmptyBody": false,
     "bodyTemplate": "${updatedItem}"
@@ -14,16 +13,12 @@
   "inputVariables": [
     {
       "key": "updatedItem",
-      "type": "PROCESS",
       "spin": true,
       "asJson": true
     },
     {
-      "key": "itemId",
-      "type": "PROCESS"
+      "key": "itemId"
     }
   ],
-  "headerOutputVariables": [],
-  "outputVariable": {},
   "asyncBefore": true
 }

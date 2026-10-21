@@ -6,8 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/user-import",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${userImportCollection}"
   },
@@ -19,11 +17,11 @@
       "asJson": true
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "postUserImportResponse",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

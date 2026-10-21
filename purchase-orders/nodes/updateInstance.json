@@ -6,28 +6,23 @@
   "request": {
     "url": "{{{gatewayUrl}}}/inventory/instances/${instanceId}",
     "method": "PUT",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${instance}"
   },
   "inputVariables": [
     {
-      "key": "instanceId",
-      "type": "PROCESS"
+      "key": "instanceId"
     },
     {
       "key": "instance",
-      "type": "PROCESS",
       "spin": true,
       "asJson": true
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "instance",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

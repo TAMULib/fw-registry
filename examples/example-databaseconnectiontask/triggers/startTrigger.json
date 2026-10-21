@@ -2,8 +2,6 @@
   "id": "875ddfd2-5ab3-4cd6-94d3-145d941388bd",
   "name": "Example DatabaseTask Start Trigger",
   "description": "REST POST end point.",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/example-databaseconnectiontask/start"
 }

@@ -1,21 +1,11 @@
 {
   "id": "76b00a95-2182-49a4-bda4-fdd8ddae7a04",
   "name": "Rapid ILS Electronic Serials Workflow",
-  "description": "",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/137f454b-cf93-4f93-bcef-a8a4b4c47801",
     "/fileTask/8fc342de-6683-473a-ac52-9656b51095cf",
     "/scriptTask/caccff66-fdbe-4377-b2e4-118da0edc67e",
     "/compressFileTask/d40b8866-3810-4c0e-94a4-f83779a53501",
     "/endEvent/8cd64c09-c3c5-48cc-abcb-ff3b33098eac"
-  ],
-  "initialContext": {}
+  ]
 }

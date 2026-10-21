@@ -1,7 +1,6 @@
 {
   "id": "1b895fb7-dd6d-4bea-adad-f39264f8db24",
   "name": "Single Part Monographs Query Connect To",
-  "description": "",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_853a70bb_6cff_4a3f_9ba8_30776d39c98b"
 }

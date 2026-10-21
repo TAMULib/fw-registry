@@ -1,25 +1,21 @@
 {
   "id": "f21bcb7c-283c-4a16-9411-fcc526a4ed6f",
   "name": "Lookup item by barcode",
-  "description": "",
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/inventory/items?query=barcode==${barcode}",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "barcode",
-      "type": "PROCESS"
+      "key": "barcode"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "itemsResponse",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }
