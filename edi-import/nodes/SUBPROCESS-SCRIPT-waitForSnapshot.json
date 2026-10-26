@@ -1,0 +1,9 @@
+{
+  "id": "283503ec-5bdc-4026-8c88-eb2176a3dd18",
+  "name": "Wait For Import Start",
+  "description": "Wait until Data Import has snapshotted the job profile before the next invoice updates the mapping profile.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "subprocessWaitForSnapshot.js",
+  "asyncBefore": true
+}
