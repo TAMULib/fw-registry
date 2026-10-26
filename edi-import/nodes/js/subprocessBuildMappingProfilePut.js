@@ -25,36 +25,37 @@ function setByPath(obj, path, value) {
   return true;
 }
 
-// Fallback: find the account-number field within mappingDetails.mappingFields[].
+// Default target: the invoice line "accountNumber" rule, nested under the
+// "invoiceLines" repeatable field (mappingFields[].subfields[].fields[]). The
+// top-level accountingCode/accountNo rules are deliberately not touched.
 function setAccountFieldByName(profile, value) {
   var md = profile && profile.mappingDetails;
   if (md && Array.isArray(md.mappingFields)) {
     for (var i = 0; i < md.mappingFields.length; i++) {
       var field = md.mappingFields[i];
-      if (field && typeof field.name === 'string' && /account/i.test(field.name)) {
-        field.value = value;
-        return true;
+      if (field && field.name === 'invoiceLines' && Array.isArray(field.subfields)) {
+        for (var j = 0; j < field.subfields.length; j++) {
+          var fields = field.subfields[j].fields || [];
+          for (var k = 0; k < fields.length; k++) {
+            if (fields[k].name === 'accountNumber') {
+              fields[k].value = value;
+              return true;
+            }
+          }
+        }
       }
     }
   }
   return false;
 }
 
-var response = execution.getVariable('mappingProfileResponse');
-var responseJson;
-if (typeof response === 'string') {
-  responseJson = response;
-} else {
-  // Request responses can be Java Maps; their toString() is not JSON.
-  var ObjectMapper = Java.type('com.fasterxml.jackson.databind.ObjectMapper');
-  responseJson = new ObjectMapper().writeValueAsString(response);
-}
 var fetched = JSON.parse(responseJson);
 // GET may return the bare profile or a wrapper; normalize to the profile object.
 var profile = (fetched && fetched.profile) ? fetched.profile : fetched;
 
 var invoice = JSON.parse(inv);
-var accountValue = invoice.account_number || ''; // blank when unmatched (still imported)
+// Mapping expressions treat quoted text as a literal; blank means no mapping.
+var accountValue = invoice.account_number ? '"' + invoice.account_number + '"' : '';
 
 var path = execution.hasVariable('mappingProfileAccountNumberPath')
   ? String(execution.getVariable('mappingProfileAccountNumberPath') || '').trim()

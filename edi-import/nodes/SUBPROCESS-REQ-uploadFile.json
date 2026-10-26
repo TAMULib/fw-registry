@@ -27,7 +27,8 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "uploadDefinitionUploaded",
-    "type": "PROCESS"
+    "type": "PROCESS",
+    "spin": true
   },
   "asyncBefore": true
 }
