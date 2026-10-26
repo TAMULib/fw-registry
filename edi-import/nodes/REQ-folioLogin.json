@@ -8,7 +8,7 @@
     "method": "POST",
     "contentType": "application/json",
     "accept": "application/json",
-    "bodyTemplate": "{\"username\": \"{{{username}}}\", \"password\": \"{{{password}}}\"}"
+    "bodyTemplate": "{\"username\": \"${username}\",\"password\": \"${password}\"}"
   },
   "inputVariables": [
     {

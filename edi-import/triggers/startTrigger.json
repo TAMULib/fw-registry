@@ -1,7 +1,7 @@
 {
   "id": "50473c0d-c693-4af4-a08b-4571a1ce3941",
-  "name": "EDI Import Workflow Start Trigger.",
-  "description": "A REST Post end point for the EDI Import ScriptTask.",
+  "name": "EDI Import Start Trigger",
+  "description": "Triggers the EDI import workflow via POST request",
   "type": "MESSAGE_CORRELATE",
   "method": "POST",
   "deserializeAs": "EventTrigger",
