@@ -2,14 +2,6 @@
   "id": "ac424618-75da-401a-a86a-9eabab68905b",
   "name": "FOLIO Create Notes Workflow",
   "description": "Conditionally navigate through each Items or Holdings adding a Note as needed.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/06bc4aa2-a00a-4532-80c9-a4b5fe4499ae",
     "/fileTask/f7b1f4cf-4d39-478a-b77a-75dbc58f263b",
@@ -23,6 +15,5 @@
     "/emailTask/7457e2f9-ebab-4973-ad10-595ae9d60bb7",
     "/fileTask/7d51b48f-6c81-48da-aefd-b94f9295fb86",
     "/endEvent/18129c76-c0fe-484f-a758-6ad20d9f7c9f"
-  ],
-  "initialContext": {}
+  ]
 }

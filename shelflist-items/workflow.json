@@ -2,14 +2,6 @@
   "id": "4df7d530-156f-4c85-b08d-007d690f8488",
   "name": "Shelftlist (items level) Report Workflow",
   "description": "Build and email Shelflist (items level) report",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/8334ffed-e14b-45e4-b9b3-40596de50e10",
     "/scriptTask/967382d8-d5c1-4332-825d-aec8a4c71b1d",
@@ -19,6 +11,5 @@
     "/compressFileTask/9243a5bc-cb16-4519-9107-2fbac8768393",
     "/emailTask/f888e0c9-1e17-48b7-8539-10113bcedc98",
     "/endEvent/c0820883-7921-4a05-8b3a-2c9d12fb3cdf"
-  ],
-  "initialContext": {}
+  ]
 }

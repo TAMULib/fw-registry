@@ -5,18 +5,13 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "source": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.csv",
   "destination": "/mnt/workflows/${tenantId}/hegis-po/hegis-purchase-order-report-${timestamp}.zip",
-  "format": "ZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

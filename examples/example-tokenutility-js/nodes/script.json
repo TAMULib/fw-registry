@@ -3,7 +3,5 @@
   "name": "Run Script",
   "description": "Execute the TokenUtility functions using JavaScript and print the result, failing on errors.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
-  "code": "script.js",
-  "inputVariables": []
+  "code": "script.js"
 }

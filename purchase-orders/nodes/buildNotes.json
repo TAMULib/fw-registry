@@ -3,6 +3,5 @@
   "name": "Build Notes",
   "description": "Builds note object by processing the MARC order data.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildNotes.js"
 }

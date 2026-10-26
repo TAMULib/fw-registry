@@ -2,20 +2,11 @@
   "id": "c9a9f4c8-fc51-4e76-8026-9b17c89c8941",
   "name": "Example Compress (ZIP) File",
   "description": "Create a file at a given path and compress (ZIP) the file.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": true,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/61b70f62-c772-42ad-a12e-3ae04cea2355",
     "/scriptTask/49fef1c7-aa46-4a32-ac88-9a765e54c810",
     "/fileTask/dda767ef-0258-4637-9326-19456ffec544",
     "/compressFileTask/da2288da-2304-4695-87bc-649453bb1d93",
     "/endEvent/1f2f5247-d970-4dfd-b0fc-0ac57112f7c1"
-  ],
-  "initialContext": {}
+  ]
 }

@@ -3,7 +3,6 @@
   "name": "Prepare Instance",
   "description": "Executes script to prepare instance object.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareInstance.js",
   "asyncBefore": true
 }

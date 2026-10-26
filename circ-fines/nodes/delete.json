@@ -1,19 +1,15 @@
 {
   "id": "297af5e3-fb35-440a-a9e8-2a8a011ed9d6",
   "name": "Delete Daily Fees/Fines Paid TSV",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true

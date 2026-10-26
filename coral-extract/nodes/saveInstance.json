@@ -1,12 +1,10 @@
 {
   "id": "f84bb551-2aa2-4e0c-ac5b-03f302013817",
   "name": "Save Instance",
-  "description": "",
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/instance-storage/instances",
     "method": "POST",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${instance}"
   },
@@ -21,8 +19,8 @@
   "outputVariable": {
     "key": "instance",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
-  "headerOutputVariables": [],
   "asyncBefore": true
 }

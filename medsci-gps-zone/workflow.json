@@ -1,15 +1,6 @@
 {
   "id": "ad4f94cc-efd4-4cc4-9d53-f96e79f2d9d4",
   "name": "MedSci GPS Zone Workflow",
-  "description": "",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/51ca1e76-10e8-4d27-b617-850af49947d9",
     "/databaseConnectionTask/931b27b4-d37d-4400-9593-8f028805a6cc",
@@ -18,6 +9,5 @@
     "/emailTask/a756bd71-98d3-49b1-ad56-2cdb12c700df",
     "/fileTask/6ea7dc02-6b3d-4330-8015-d028fe71a904",
     "/endEvent/b24bea03-b419-4b4c-a516-0c4f6ba20814"
-  ],
-  "initialContext": {}
+  ]
 }

@@ -5,19 +5,15 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "{{{hegisPoEmailFrom}}}",
   "mailSubject": "TAMU Hegis Purchase Order Report",

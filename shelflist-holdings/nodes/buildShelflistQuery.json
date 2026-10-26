@@ -1,8 +1,6 @@
 {
   "id": "1c93c66c-c707-47fd-9eee-9f4602aa8fdd",
   "name": "Build Shelflist Query",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildShelflistQuery.js"
 }

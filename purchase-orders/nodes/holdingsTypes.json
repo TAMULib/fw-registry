@@ -5,16 +5,12 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/holdings-types?limit=999",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
-  "inputVariables": [],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdingsTypesResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

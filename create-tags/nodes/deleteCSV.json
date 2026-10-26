@@ -1,15 +1,12 @@
 {
   "id": "4d37e26e-5e83-445c-95e7-0c95a63ccf67",
   "name": "Delete Tags CSV input file",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "inputFilePath",
-      "type": "PROCESS"
+      "key": "inputFilePath"
     }
   ],
-  "outputVariable": {},
   "path": "${inputFilePath}",
   "op": "DELETE",
   "asyncBefore": true

@@ -1,8 +1,6 @@
 {
   "id": "b52f3c45-2ec3-45af-970a-a88048f6d1d2",
   "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/e-resource/start"
 }

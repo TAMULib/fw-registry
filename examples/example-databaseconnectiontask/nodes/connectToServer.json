@@ -3,8 +3,6 @@
   "name": "Connect to Database",
   "description": "Connect to a given database.",
   "deserializeAs": "DatabaseConnectionTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "example_db",
   "url": "{{{exampleDatabaseURI}}}",
   "username": "{{{exampleDatabaseUser}}}",

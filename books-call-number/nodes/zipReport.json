@@ -5,18 +5,13 @@
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-    "key": "timestamp",
-    "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "path",
-      "type": "PROCESS"
+      "key": "path"
     }
   ],
-  "outputVariable": {},
   "source": "${path}/checked-out-books-report-${timestamp}.csv",
   "destination": "${path}/checked-out-books-report-${timestamp}.zip",
-  "format": "ZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

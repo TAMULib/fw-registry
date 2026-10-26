@@ -2,7 +2,6 @@
   "id": "06bc4aa2-a00a-4532-80c9-a4b5fe4499ae",
   "name": "Start",
   "description": "Start Workflow to a given Note to Holdings (exclusive) or Items read in from a CSV file of IDs.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/create-notes/start"
 }

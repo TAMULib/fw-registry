@@ -3,16 +3,12 @@
   "name": "Send GET Request",
   "description": "Send GET request to a given server.",
   "deserializeAs": "RequestTask",
-  "inputVariables": [
-  ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "reqResponse",
     "type": "LOCAL"
   },
   "request": {
     "url": "{{{exampleNormalUrlPath}}}",
-    "method": "GET",
     "sendEmptyBody": false,
     "accept": "text/html"
   },

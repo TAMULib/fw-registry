@@ -3,6 +3,5 @@
   "name": "Build Composite Purchase Order",
   "description": "Builds a composite purchase order by extracting data from data response.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "buildCompositePurchaseOrder.js"
 }

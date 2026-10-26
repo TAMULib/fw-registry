@@ -2,7 +2,6 @@
   "id": "3671f78e-9812-4da5-85d1-25c5c0551e85",
   "name": "Start",
   "description": "Start of Example RequestTask workflow.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-requesttask/start"
 }

@@ -1,19 +1,15 @@
 {
   "id": "5067b81f-545d-42f8-a6b3-22eadd747886",
   "name": "Serials Query",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "date",
-      "type": "PROCESS"
+      "key": "date"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/hathitrust/tamu_serials_${date}.tsv",
   "resultType": "TSV",
   "designation": "metadb",

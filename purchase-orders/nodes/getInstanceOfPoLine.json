@@ -5,21 +5,17 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/inventory/instances/${instanceId}",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "instanceId",
-      "type": "PROCESS"
+      "key": "instanceId"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "instance",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

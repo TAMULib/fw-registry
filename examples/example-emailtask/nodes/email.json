@@ -5,17 +5,13 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "exampleEmailTo",
-      "type": "PROCESS"
+      "key": "exampleEmailTo"
     }
   ],
-  "outputVariable": {},
-  "includeAttachment": false,
   "mailTo": "${exampleEmailTo}",
   "mailFrom": "{{{exampleEmailFrom}}}",
   "mailMarkup": "<p> Text for Email </p>",
   "mailSubject": "Example Email subject",
   "mailText": "Email Test 123",
-  "asyncBefore": true,
-  "asyncAfter": false
+  "asyncBefore": true
 }

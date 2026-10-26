@@ -1,8 +1,6 @@
 {
   "id": "8934be78-e86a-4faf-b96d-2877593b2a6d",
   "name": "Add Date",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "date.js"
 }

@@ -2,19 +2,10 @@
   "id": "6487be3e-e38d-495c-a9ed-92a49fe1942d",
   "name": "Example FileTask",
   "description": "Example workflow that creates a file in the specified path.",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": true,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/ebb2c6ae-b116-4b93-a579-9ae7ff82e98c",
     "/scriptTask/2c1ff822-aeb1-4850-b27c-ee74cfe3daa5",
     "/fileTask/e3ce8683-b324-407a-95be-0f2c55481102",
     "/endEvent/22c719ee-ca61-4d16-90b9-9cff8b314daa"
-  ],
-  "initialContext": {}
+  ]
 }

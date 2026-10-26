@@ -3,6 +3,5 @@
   "name": "Show Access Token",
   "description": "Print the FOLIO Access Token from the X-Okapi-Token variable.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "showAccessToken.js"
 }

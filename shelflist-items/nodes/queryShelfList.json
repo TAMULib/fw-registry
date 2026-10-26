@@ -1,7 +1,6 @@
 {
   "id": "4765e1b2-ff7f-42af-ae0c-680ded6faa33",
   "name": "Query Shelflist (items level)",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
@@ -9,12 +8,10 @@
       "type": "LOCAL"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
   "outputPath": "/mnt/workflows/${tenantId}/shelflist-items/shelflist-items-report-${timestamp}.csv",

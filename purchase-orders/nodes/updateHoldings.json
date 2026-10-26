@@ -6,19 +6,16 @@
   "request": {
     "url": "{{{gatewayUrl}}}/holdings-storage/holdings/${holdingsRecordId}",
     "method": "PUT",
-    "contentType": "application/json",
     "accept": "text/plain",
     "sendEmptyBody": false,
     "bodyTemplate": "${holdings}"
   },
   "inputVariables": [
     {
-      "key": "holdingsRecordId",
-      "type": "PROCESS"
+      "key": "holdingsRecordId"
     },
     {
       "key": "holdings",
-      "type": "PROCESS",
       "spin": true,
       "asJson": true
     }
@@ -26,8 +23,8 @@
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdings",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

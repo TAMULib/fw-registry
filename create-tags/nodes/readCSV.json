@@ -1,20 +1,16 @@
 {
   "id": "bc912058-7b71-4b50-8bf9-751d37a133cb",
   "name": "Read Tags CSV input file",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "inputFilePath",
-      "type": "PROCESS"
+      "key": "inputFilePath"
     }
   ],
   "outputVariable": {
     "key": "tagsCSV",
-    "type": "PROCESS",
     "asTransient": true
   },
   "path": "${inputFilePath}",
-  "op": "READ",
   "asyncBefore": true
 }

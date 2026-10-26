@@ -2,8 +2,6 @@
   "id": "01587845-82ef-455e-b660-2ea422ac2b64",
   "name": "Example FileTask Start Trigger",
   "description": "REST POST end point.",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/example-filetask/start"
 }

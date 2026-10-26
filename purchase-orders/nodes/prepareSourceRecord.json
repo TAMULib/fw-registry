@@ -3,6 +3,5 @@
   "name": "Prepare Source Record",
   "description": "Executes script to prepare the source record.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareSourceRecord.js"
 }

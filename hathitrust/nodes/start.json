@@ -1,8 +1,6 @@
 {
   "id": "b5cd771e-33f1-481e-b6d2-417867852258",
   "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/hathitrust/start"
 }

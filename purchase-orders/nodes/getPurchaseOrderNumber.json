@@ -5,16 +5,12 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/orders/po-number",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
-  "inputVariables": [],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "poNumberResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

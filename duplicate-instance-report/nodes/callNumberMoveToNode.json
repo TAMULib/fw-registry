@@ -1,7 +1,6 @@
 {
   "id": "42c50baa-7d73-48ad-bd9b-53ffd6cd6eda",
   "name": "CALL NUMBER",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_aea23b81_06b1_4795_8bab_ea562a854c83",
   "nodes": [

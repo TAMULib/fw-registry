@@ -5,20 +5,18 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
-      "key": "emailFrom",
-      "type": "PROCESS"
+      "key": "emailFrom"
     },
     {
       "key": "successEmail",
       "type": "LOCAL",
-      "spin": true
+      "spin": true,
+      "asJson": false
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "${emailFrom}",
   "mailSubject": "${successEmail.subject}",

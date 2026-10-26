@@ -1,7 +1,6 @@
 {
   "id": "2d8737c3-d944-46e3-ae58-7dfcb08a703c",
   "name": "Multi Part Monographs Connect To",
-  "description": "",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_853a70bb_6cff_4a3f_9ba8_30776d39c98b"
 }

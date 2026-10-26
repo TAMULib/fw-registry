@@ -13,11 +13,9 @@
     "/folioRequestTask/b4887237-d835-4712-a645-7fae45062fcc",
     "/endEvent/0956649b-0717-4ea6-802a-45c15e62ad73"
   ],
-  "inputVariables": [],
   "loopRef": {
     "dataInputRefExpression": "${coralItems.elements()}",
-    "inputDataName": "coralItem",
-    "parallel": false
+    "inputDataName": "coralItem"
   }
 }
 

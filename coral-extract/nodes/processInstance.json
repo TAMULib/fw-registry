@@ -1,8 +1,6 @@
 {
   "id": "5fc4c7d7-92de-4fbc-b4c4-5495b98b89ea",
   "name": "Process Instance",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "processInstance.js"
 }

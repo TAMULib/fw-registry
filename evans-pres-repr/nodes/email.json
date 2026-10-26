@@ -5,19 +5,15 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "count",
-      "type": "PROCESS"
+      "key": "count"
     }
   ],
-  "outputVariable": {},
   "mailTo": "{{{evansPresReprTo}}}",
   "mailFrom": "{{{evansPresReprFrom}}}",
   "mailSubject": "Evans Pres Repr Report",

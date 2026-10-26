@@ -1,28 +1,23 @@
 {
   "id": "2ecaaadf-a184-49c6-bbc9-75f9d5652e79",
   "name": "Send Query Daily Fees/Fines Paid Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "count",
-      "type": "PROCESS"
+      "key": "count"
     }
   ],
-  "outputVariable": {},
   "mailTo": "{{{circ-fines-mail-to}}}",
   "mailFrom": "{{{circ-fines-mail-from}}}",
   "mailSubject": "Daily Fees/Fines Paid Report",
   "mailText": "${(count > 0)?then('Daily Fees/Fines Paid TSV file attached', 'No results to report')}",
   "attachmentPath": "/mnt/workflows/${tenantId}/circ-fines/feefines-report-${timestamp}.tsv",
-  "includeAttachment": "${(count > 0)?then('true', 'false')}",
+  "includeAttachment": "${(count > 0) ? then('true', 'false')}",
   "asyncBefore": true
 }

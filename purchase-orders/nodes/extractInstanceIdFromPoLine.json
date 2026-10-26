@@ -3,6 +3,5 @@
   "name": "Extract Instance Id From PO Line",
   "description": "Extracts instance id from purchase order object.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "extractInstanceIdFromPoLine.js"
 }

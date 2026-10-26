@@ -1,8 +1,6 @@
 {
   "id": "caccff66-fdbe-4377-b2e4-118da0edc67e",
   "name": "Find Latest SFX Output File",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "findLatestFile.js"
 }

@@ -6,8 +6,6 @@
   "request": {
     "url": "{{{gatewayUrl}}}/tags",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "${tag}"
   },
@@ -19,11 +17,11 @@
       "asJson": true
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "tag",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

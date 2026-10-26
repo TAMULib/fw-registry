@@ -3,9 +3,6 @@
   "name": "Disconnect MetaDB",
   "description": "Disconnect from  MetaDB database.",
   "deserializeAs": "DatabaseDisconnectTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "metadb",
-  "asyncBefore": true,
-  "asyncAfter": false
+  "asyncBefore": true
 }

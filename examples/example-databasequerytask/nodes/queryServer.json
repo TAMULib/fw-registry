@@ -3,10 +3,8 @@
   "name": "Query Database",
   "description": "Execute the query on the database.",
   "deserializeAs": "DatabaseQueryTask",
-  "inputVariables": [],
   "outputVariable": {
-    "key": "exampleQueryResult",
-    "type": "PROCESS"
+    "key": "exampleQueryResult"
   },
   "designation": "example_db",
   "query": "{{{exampleQuery}}}",

@@ -1,21 +1,17 @@
 {
   "id": "67ecdcc0-ed76-4140-9904-678c58a1adcb",
   "name": "Gzip Rapid ILS Print Serials",
-  "description": "",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "tenantId",
-    "type": "PROCESS"
+    "key": "tenantId"
   },
   "source": "/mnt/workflows/${tenantId}/rapid/rapid_print_serials.txt",
   "destination": "/mnt/workflows/${tenantId}/rapid/rapid_print_serials.txt.gz",
   "format": "GZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

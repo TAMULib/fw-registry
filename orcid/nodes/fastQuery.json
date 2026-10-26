@@ -1,19 +1,15 @@
 {
   "id": "be4b87a9-e8c1-45d0-b264-04cca5d9ff32",
   "name": "Query Faculity and Staff Orcid Ids",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/orcid/fast-${timestamp}.tsv",
   "resultType": "TSV",
   "designation": "divit",

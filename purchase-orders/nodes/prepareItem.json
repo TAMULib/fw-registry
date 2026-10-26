@@ -3,6 +3,5 @@
   "name": "Prepare Item",
   "description": "Executes script to prepare item data.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareItem.js"
 }

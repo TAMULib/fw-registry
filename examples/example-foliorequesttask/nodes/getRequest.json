@@ -3,16 +3,12 @@
   "name": "Send GET FOLIO Request",
   "description": "Send GET request to a given server.",
   "deserializeAs": "FolioRequestTask",
-  "inputVariables": [
-  ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "reqResponse",
     "type": "LOCAL"
   },
   "request": {
     "url": "{{{exampleFolioUrlPath}}}",
-    "method": "GET",
     "sendEmptyBody": false,
     "accept": "text/html"
   },

@@ -1,21 +1,17 @@
 {
   "id": "c54408a4-230b-479b-82fb-23121035e196",
   "name": "Gzip Rapid ILS Electronic Monos",
-  "description": "",
   "deserializeAs": "CompressFileTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "tenantId",
-    "type": "PROCESS"
+    "key": "tenantId"
   },
   "source": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_monos.txt",
   "destination": "/mnt/workflows/${tenantId}/rapid/rapid_electronic_monos.txt.gz",
   "format": "GZIP",
-  "container": "NONE",
   "asyncBefore": true
 }

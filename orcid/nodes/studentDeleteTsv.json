@@ -1,19 +1,15 @@
 {
   "id": "6fbed16f-34c5-40c4-bca7-62d780761032",
   "name": "Delete Student TSV",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "path": "/mnt/workflows/${tenantId}/orcid/student-${timestamp}.tsv",
   "op": "DELETE",
   "asyncBefore": true

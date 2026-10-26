@@ -1,7 +1,6 @@
 {
   "id": "97f64167-be93-4b9b-80cd-f3e51545b25b",
   "name": "End Tag Create Subprocess",
-  "description": "",
   "type": "NONE",
   "deserializeAs": "EndEvent",
   "asyncBefore": true

@@ -11,21 +11,19 @@
   },
   "inputVariables": [
     {
-      "key": "expenseClass",
-      "type": "PROCESS",
-      "spin": false
+      "key": "expenseClass"
     },
     {
       "key": "marcOrderData",
-      "type": "PROCESS",
-      "spin": true
+      "spin": true,
+      "asJson": false
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "expenseClassesResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

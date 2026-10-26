@@ -3,8 +3,6 @@
   "name": "Connect DivIT",
   "description": "Connect to DivIT database.",
   "deserializeAs": "DatabaseConnectionTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "divit",
   "url": "{{{divit-url}}}",
   "username": "{{{divit-user}}}",

@@ -1,19 +1,15 @@
 {
   "id": "d01b2444-ad34-474c-8a52-863ebc27ca31",
   "name": "Send GOBI Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "mailTo": "{{{gobi-mail-to}}}",
   "mailFrom": "{{{gobi-mail-from}}}",
   "mailSubject": "TAMU ISBN Report",

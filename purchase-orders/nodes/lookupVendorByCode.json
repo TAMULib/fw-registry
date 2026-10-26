@@ -5,27 +5,22 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/organizations-storage/organizations?limit=1&offset=0&query=((code='${vendorCode}'))",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
       "key": "marcOrderData",
-      "type": "PROCESS",
-      "spin": true
+      "spin": true,
+      "asJson": false
     },
     {
-      "key": "vendorCode",
-      "type": "PROCESS",
-      "spin": false
+      "key": "vendorCode"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "vendorsResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }
