@@ -52,17 +52,27 @@ const findInvoiceNumber = segments => {
   return null;
 };
 
-// Match: the invoice account number is a SUBSTRING of the FOLIO account number
-// (digit-normalized). Falls back to the extracted account_digits column.
+// Match: the invoice account number must EQUAL the FOLIO account's digits
+// (account_digits, or all digits of acctno). Only when there is no exact match
+// fall back to a substring match. A match is used only when it is unique; an
+// ambiguous match is treated as unmatched rather than guessing.
 const matchFolioAccount = invoiceAcct => {
   const needle = onlyDigits(invoiceAcct);
   if (!needle) {
     return null;
   }
-  return folioAccounts.find(a =>
+  const exact = folioAccounts.filter(a =>
+    onlyDigits(a.account_digits) === needle ||
+    onlyDigits(a.acctno) === needle
+  );
+  if (exact.length) {
+    return exact.length === 1 ? exact[0] : null;
+  }
+  const partial = folioAccounts.filter(a =>
     onlyDigits(a.acctno).indexOf(needle) >= 0 ||
     onlyDigits(a.account_digits).indexOf(needle) >= 0
-  ) || null;
+  );
+  return partial.length === 1 ? partial[0] : null;
 };
 
 const report = { total: splitInvoices.length, selected: [], skipped: [], matched: [], unmatched: [] };
