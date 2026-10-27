@@ -10,12 +10,10 @@ const OTHER_COOKIE = "other=value; Max-Age=604800; Expires=Fri, 29 Sep 2025 14:2
 /**
  * Print debug message if LogLevel is set to DEBUG.
  *
- * Note: The initialize context code currently deserializes the logLevel string with quotes around it.
- *
  * @param {string} message - The message to print.
  */
 function debugLog(message) {
-  if (logLevel == '"DEBUG"') console.debug(message);
+  if (execution.getVariable('logLevel') == 'DEBUG') console.debug(message);
 }
 
 /**

@@ -1,7 +1,9 @@
 var MappingUtility = Java.type("org.folio.rest.camunda.utility.MappingUtility");
-var tagsJSON = MappingUtility.mapCsvToJson(tagsCSV);
 
-if (logLevel === "DEBUG") {
+var varTagsCSV = execution.getVariable('tagsCSV');
+var tagsJSON = MappingUtility.mapCsvToJson(varTagsCSV);
+
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\ntags = ' + tagsJSON + '\n');
 }
 

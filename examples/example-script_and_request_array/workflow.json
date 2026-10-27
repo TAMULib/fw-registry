@@ -1,0 +1,20 @@
+{
+  "id": "fef8e221-66ce-4274-83db-e241b5107f68",
+  "name": "Example Script then Request (Array)",
+  "description": "An example ScriptTask building JSON Array and then sending via a HTTP PUT request.",
+  "versionTag": "1.0",
+  "historyTimeToLive": 90,
+  "deploymentId": null,
+  "active": false,
+  "setup": {
+    "asyncBefore": false,
+    "asyncAfter": false
+  },
+  "nodes": [
+    "/startEvent/a2d47d50-b93e-46e9-b487-9e0447234b5b",
+    "/scriptTask/7dc1af8a-78d6-4e29-8cf1-a96977032a6b",
+    "/requestTask/255e8c45-1cd1-44e5-a64c-8cdd534d7883",
+    "/endEvent/26c9259b-1690-4caf-895e-871bfd86862e"
+  ],
+  "initialContext": {}
+}

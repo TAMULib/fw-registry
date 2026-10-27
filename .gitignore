@@ -4,3 +4,6 @@
 # ...except these
 !.gitignore
 !.gitkeep
+
+configs/*
+!configs/release.json

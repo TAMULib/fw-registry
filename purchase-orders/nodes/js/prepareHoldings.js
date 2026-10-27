@@ -1,31 +1,38 @@
 function main() {
   const holdingsKeys = new Set({{{holdingsRecordKeys}}});
 
-  if (logLevel === "DEBUG") {
-    console.log(`holdingsResponse = ${holdingsResponse}\n`);
-    console.log(`holdingsType = ${holdingsType}\n`);
+  const varHoldingsResponse = execution.getVariable('holdingsResponse');
+  const varHoldingsType = execution.getVariable('holdingsType');
+
+  if (execution.getVariable('logLevel') === "DEBUG") {
+    console.log(`holdingsResponse = ${varHoldingsResponse}\n`);
+    console.log(`holdingsType = ${varHoldingsType}\n`);
     console.log(`holdingsRecordKeys = [ ${Array.from(holdingsKeys)} ]\n`);
   }
 
-  const holdingsResponseObj = JSON.parse(holdingsResponse);
+  const holdingsResponseObj = varHoldingsResponse == null ? undefined : JSON.parse(varHoldingsResponse);
 
   if ((holdingsResponseObj?.totalRecords || 0) == 0) {
-    throw new Error(`Holdings Response has no holdings! Response: ${holdingsResponse}.`);
+    throw new Error(`Holdings Response has no holdings! Response: ${varHoldingsResponse}.`);
   }
 
-  if (holdingsResponseObj.length > 1 ) {
-    console.log(`WARNING: The holdings response returned more than one holdings. Response: ${holdingsResponse}.\n`);
+  if (holdingsResponseObj.length > 1) {
+    console.log(`WARNING: The holdings response returned more than one holdings. Response: ${varHoldingsResponse}.\n`);
   }
 
   const holdingsObj = holdingsResponseObj.holdingsRecords[0];
 
-  const marcOrderDataObj = JSON.parse(marcOrderData);
+  const varMarcOrderData = execution.getVariable('marcOrderData');
+  const marcOrderDataObj = varMarcOrderData == null ? undefined : JSON.parse(varMarcOrderData);
 
-  const statisticalCodes = JSON.parse(statisticalCodesResponse).statisticalCodes;
+  const varStatisticalCodesResponse = execution.getVariable('statisticalCodesResponse');
+  const statisticalCodes = varStatisticalCodesResponse == null ? [] : JSON.parse(varStatisticalCodesResponse).statisticalCodes;
 
-  const holdingsTypes = JSON.parse(holdingsTypesResponse).holdingsTypes;
+  const varHoldingsTypesResponse = execution.getVariable('holdingsTypesResponse');
+  const holdingsTypes = varHoldingsTypesResponse == null ? [] : JSON.parse(varHoldingsTypesResponse).holdingsTypes;
 
-  const locations = JSON.parse(locationsResponse).locations;
+  const varLocationsResponse = execution.getVariable('locationsResponse');
+  const locations = varLocationsResponse == null ? [] : JSON.parse(varLocationsResponse).locations;
 
   const findHoldingsTypeIdByName = function (holdingsTypeName) {
     for (let i = 0; i < holdingsTypes.length; ++i) {
@@ -52,13 +59,18 @@ function main() {
   const electronic = marcOrderDataObj.electronicIndicator && marcOrderDataObj.electronicIndicator.toLowerCase().indexOf("electronic") >= 0;
 
   if (electronic) {
-    holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(eHoldingsType);
+    const varEHoldingsType = execution.getVariable('eHoldingsType');
+    holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(varEHoldingsType);
   } else {
-    holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(holdingsType);
-    holdingsObj.permanentLocationId = findLocationIdByName(permLocation);
+    const varPermLocation = execution.getVariable('permLocation');
+
+    holdingsObj.holdingsTypeId = findHoldingsTypeIdByName(varHoldingsType);
+    holdingsObj.permanentLocationId = findLocationIdByName(varPermLocation);
   }
 
   holdingsObj.callNumber = marcOrderDataObj.callNumber;
+
+  const varCallNumberTypeId = execution.getVariable('callNumberTypeId');
   holdingsObj.callNumberTypeId = callNumberTypeId;
 
   holdingsObj.statisticalCodeIds = mapStatisticalCodeIds(statisticalCodes);
@@ -70,7 +82,7 @@ function main() {
   if (holdingsKeys.size) {
     Object.keys(holdingsObj).forEach(key => {
       if (!holdingsKeys.has(key)) {
-        if (logLevel === "DEBUG") {
+        if (execution.getVariable('logLevel') === "DEBUG") {
           console.log(`Deleting unknown holdings key ${key}.`);
         }
 
@@ -79,7 +91,7 @@ function main() {
     });
   }
 
-  if (logLevel === "DEBUG") {
+  if (execution.getVariable('logLevel') === "DEBUG") {
     console.log(`\nholdings = ${JSON.stringify(holdingsObj)}\n`);
   }
 

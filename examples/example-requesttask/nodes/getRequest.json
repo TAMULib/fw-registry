@@ -11,8 +11,9 @@
     "type": "LOCAL"
   },
   "request": {
-    "url": "{{{exampleUrlPath}}}",
+    "url": "{{{exampleNormalUrlPath}}}",
     "method": "GET",
+    "sendEmptyBody": false,
     "accept": "text/html"
   },
   "asyncBefore": true

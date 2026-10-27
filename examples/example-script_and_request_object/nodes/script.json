@@ -1,0 +1,8 @@
+{
+  "id": "d67bac82-6645-443f-a133-71ebf08ec19a",
+  "name": "Run Script",
+  "description": "Build the JSON",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "script.js"
+}

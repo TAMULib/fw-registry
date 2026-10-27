@@ -1,4 +1,5 @@
-var listing = JSON.parse(sfxListing);
+var varSfxListing = execution.getVariable('sfxListing');
+var listing = varSfxListing == null ? [] : JSON.parse(varSfxListing);
 
 var regex = /^.*e-collection-TAMUCS..*$/g;
 

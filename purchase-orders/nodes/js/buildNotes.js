@@ -1,4 +1,5 @@
-var marcOrderDataObj = JSON.parse(marcOrderData);
+var varMarcOrderData = execution.getVariable('marcOrderData');
+var marcOrderDataObj = varMarcOrderData == null ? undefined : JSON.parse(varMarcOrderData);
 
 var findNoteTypeIdByName = function (noteTypeName) {
   for (var i = 0; i < noteTypes.length; ++i) {
@@ -17,7 +18,7 @@ if (marcOrderDataObj.notes && marcOrderDataObj.notes.length) {
     notes.push({
       links: [{
         type: 'poLine',
-        id: compositePurchaseOrderObj.compositePoLines[0].id
+        id: compositePurchaseOrderObj.poLines[0].id
       }],
       typeId: findNoteTypeIdByName(noteType),
       domain: 'orders',

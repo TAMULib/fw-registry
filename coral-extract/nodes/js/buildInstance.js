@@ -5,7 +5,8 @@ var safe = function (str) {
   return StringEscapeUtils.escapeJson(str);
 };
 
-var item = JSON.parse(coralItem);
+var varCoralItem = execution.getVariable('coralItem');
+var item = varCoralItem == null ? {} : JSON.parse(varCoralItem);
 var instanceId = UUID.randomUUID().toString();
 
 var instance = JSON.parse(

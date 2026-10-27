@@ -77,9 +77,14 @@ function tranform(patrons) {
   return users;
 }
 
-var employees = tranform(JSON.parse(employeePatrons));
-var students = tranform(JSON.parse(studentPatrons));
-var others = tranform(JSON.parse(otherPatrons));
+var varEmployeePatrons = execution.getVariable('employeePatrons');
+var employees = varEmployeePatrons == null ? [] : tranform(JSON.parse(varEmployeePatrons));
+
+var varStudentPatrons = execution.getVariable('studentPatrons');
+var students = varStudentPatrons == null ? [] : tranform(JSON.parse(varStudentPatrons));
+
+var varOtherPatrons = execution.getVariable('otherPatrons');
+var others = varOtherPatrons == null ? [] : tranform(JSON.parse(varOtherPatrons));
 
 var users = employees.concat(students).concat(others);
 

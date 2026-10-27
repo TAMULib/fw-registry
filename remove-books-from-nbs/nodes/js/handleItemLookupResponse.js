@@ -1,16 +1,19 @@
-var itemsToRemoveArray = JSON.parse(itemsToRemove);
-var itemsSkippedArray = JSON.parse(itemsSkipped);
+var varItemsToRemove = execution.getVariable('itemsToRemove');
+var varItemsSkipped = execution.getVariable('itemsSkipped');
+var varItemsResponse = execution.getVariable('itemsResponse');
+
+var itemsToRemoveArray = varItemsToRemove == null ? [] : JSON.parse(varItemsToRemove);
+var itemsSkippedArray = varItemsSkipped == null ? [] : JSON.parse(varItemsSkipped);
 
 
-if (logLevel === "DEBUG") {
-  print('\nitemsResponse = ' + itemsResponse + '\n');
+if (execution.getVariable('logLevel') === "DEBUG") {
+  print('\nitemsResponse = ' + varItemsResponse + '\n');
 }
 
-var responseItems = JSON.parse(itemsResponse).items;
+var responseItems = varItemsResponse == null ? [] : JSON.parse(varItemsResponse).items;
 
 if (responseItems.length > 0) {
   var item = responseItems[0];
-
   var updated = Date.parse(item.metadata.updatedDate);
   var now = new Date().getTime();
   var duration = (now - updated) / 1000 / 60 / 60 / 24;
@@ -24,7 +27,7 @@ if (responseItems.length > 0) {
   }
 }
 
-if (logLevel === "DEBUG") {
+if (execution.getVariable('logLevel') === "DEBUG") {
   print('\nitemsToRemove = ' + JSON.stringify(itemsToRemoveArray) + '\n');
   print('\nitemsSkipped = ' + JSON.stringify(itemsSkippedArray) + '\n');
 }

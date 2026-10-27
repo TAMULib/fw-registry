@@ -1,0 +1,9 @@
+{
+  "id": "fa94f82b-7e34-49b6-985e-8ef6e3a568b4",
+  "name": "Example Script then Request (Array) Workflow Start Trigger.",
+  "description": "A REST Post end point for the Example Script and Request (Array).",
+  "type": "MESSAGE_CORRELATE",
+  "method": "POST",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/example-script_and_request_array/start"
+}

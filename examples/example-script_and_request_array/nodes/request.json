@@ -1,0 +1,33 @@
+{
+  "id": "255e8c45-1cd1-44e5-a64c-8cdd534d7883",
+  "name": "PUT Item",
+  "description": "Example request task to PUT an item.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{{exampleNormalUrlPath}}}/${itemId}",
+    "method": "PUT",
+    "contentType": "application/json",
+    "accept": "text/plain",
+    "sendEmptyBody": false,
+    "bodyTemplate": "${item}"
+  },
+  "inputVariables": [
+    {
+      "key": "itemId",
+      "type": "LOCAL"
+    },
+    {
+      "key": "item",
+      "type": "LOCAL",
+      "spin": true,
+      "asJson": true
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "item",
+    "type": "LOCAL",
+    "spin": true
+  },
+  "asyncBefore": true
+}

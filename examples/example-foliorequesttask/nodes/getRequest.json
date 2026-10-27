@@ -1,0 +1,20 @@
+{
+  "id": "4b9553ae-ff25-4dce-a608-498a1af6aab0",
+  "name": "Send GET FOLIO Request",
+  "description": "Send GET request to a given server.",
+  "deserializeAs": "FolioRequestTask",
+  "inputVariables": [
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {
+    "key": "reqResponse",
+    "type": "LOCAL"
+  },
+  "request": {
+    "url": "{{{exampleFolioUrlPath}}}",
+    "method": "GET",
+    "sendEmptyBody": false,
+    "accept": "text/html"
+  },
+  "asyncBefore": true
+}

@@ -1,4 +1,5 @@
-var itemsArr = JSON.parse(metadbResponse);
+var varMetadbResponse = execution.getVariable('metadbResponse');
+var itemsArr = JSON.parse(varMetadbResponse);
 
 if (!Array.isArray(itemsArr)) {
   itemsArr = [];

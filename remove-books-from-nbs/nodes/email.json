@@ -11,7 +11,8 @@
     {
       "key": "email",
       "type": "LOCAL",
-      "spin": true
+      "spin": true,
+      "asJson": true
     },
     {
       "key": "timestamp",
