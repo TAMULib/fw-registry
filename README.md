@@ -67,6 +67,7 @@ The [Workflow](https://github.com/folio-org/mod-workflow/) JSON files are templa
 - [Coral Extract](#coral-extract)
 - [DivIT Patron](#divit-patron)
 - [Duplicate Instance Report](#duplicate-instance-report)
+- [EDI Import](#edi-import)
 - [Electronic Resource](#electronic-resource)
 - [Evans Pres Report](#evans-pres-report)
 - [FOLIO Create Notes](#folio-create-notes)
@@ -400,6 +401,64 @@ fw deploy duplicate-instance-report
 To manually execute:
 ```sh
 fw run duplicate-instance-report
+```
+
+
+### EDI Import
+
+**Workflow Name**: `edi-import`.
+
+This workflow imports an **EDIFACT** invoice file into **FOLIO** using **Data Import**.
+
+The file is split into one file per invoice.
+Each invoice's account number (`RFF+API` under `NAD+BY`) is matched against the vendor's **FOLIO** account numbers, fetched from **MetaDB**.
+For each invoice, the given *Mapping Profile* is updated with the matched account number, the invoice is uploaded, and **Data Import** is started using the given *Job Profile*.
+The workflow waits for each **Data Import** job to start before updating the *Mapping Profile* for the next invoice.
+
+At the end of this process, an e-mail is sent to the given destination address and the input file is deleted.
+
+These variables are required when building and running the workflow:
+
+| Variable Name    | Allowed Values | Brief Description
+| ---------------- | -------------- | -----------------
+| emailFrom        | e-mail address | The e-mail address of the sender.
+| emailTo          | e-mail address | The e-mail address of the recipient.
+| file             | file name      | The EDI invoice file to process.
+| gatewayUrl       | URL            | The FOLIO Gateway URL.
+| invoiceNumbers   | string         | (Optional) Space or comma separated invoice numbers to import; all invoices are imported when not given.
+| jobProfileId     | UUID           | The Data Import Job Profile UUID.
+| jobProfileName   | string         | The Data Import Job Profile name.
+| mappingProfileId | UUID           | The Data Import invoice Mapping Profile UUID used by the Job Profile.
+| metadb-password  | string         | MetaDB login password.
+| metadb-url       | URL            | MetaDB URL.
+| metadb-user      | string         | MetaDB login username.
+| path             | directory path | The system directory where the EDI file is stored on the server that also contains the `tenantPath`.
+
+```sh
+fw config set gatewayUrl ***
+fw config set metadb-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+```
+
+To build and activate:
+```sh
+fw deploy edi-import
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```sh
+curl -w '\n' --location --request POST 'http://gateway/events/edi-import/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --header "X-Okapi-Token ${FOLIO_TOKEN}" \
+  --form 'emailFrom="me@example.com"' \
+  --form 'emailTo="you@example.com"' \
+  --form 'file=@"invoices.edi"' \
+  --form 'path="/mnt/workflows/diku/edi-import"' \
+  --form 'jobProfileId="2fdefaf6-e43c-41a9-89c9-61ce2ea3c38c"' \
+  --form 'jobProfileName="Example EDI Invoice Job Profile"' \
+  --form 'mappingProfileId="ca71f940-b493-4b85-b3c8-5a1c2c411e21"'
 ```
 
 

@@ -14,33 +14,40 @@ var HttpResponse = Java.type('java.net.http.HttpResponse');
 var Duration = Java.type('java.time.Duration');
 var URI = Java.type('java.net.URI');
 var Thread = Java.type('java.lang.Thread');
+var FolioTokenCache = Java.type('org.folio.rest.camunda.cache.FolioTokenCache');
+var MappingUtilityContext = Java.type('org.folio.rest.camunda.utility.MappingUtilityContext');
 
 var POLL_INTERVAL_MS = 2000;
 var TIMEOUT_MS = 5 * 60 * 1000;
 
 var uploadDefinitionId = execution.getVariable('uploadDefinitionId');
-var token = execution.getVariable('X-Okapi-Token');
 var tenant = execution.getTenantId();
+var tokenCache = MappingUtilityContext.getBean(FolioTokenCache.class);
 var invoice = JSON.parse(inv);
 
 var client = HttpClient.newBuilder()
   .version(HttpClient.Version.HTTP_1_1)
   .connectTimeout(Duration.ofSeconds(30))
   .build();
-var request = HttpRequest.newBuilder()
-  .uri(URI.create('{{{okapi-url}}}/data-import/uploadDefinitions/' + uploadDefinitionId))
-  .timeout(Duration.ofSeconds(30))
-  .header('x-okapi-tenant', tenant)
-  .header('x-okapi-token', token)
-  .header('Accept', 'application/json')
-  .GET()
-  .build();
+
+// Uses the engine's FOLIO token, the same one FolioRequestTask nodes use; it is
+// refreshed when near expiry, so fetch it for each poll.
+function buildRequest() {
+  return HttpRequest.newBuilder()
+    .uri(URI.create('{{{gatewayUrl}}}/data-import/uploadDefinitions/' + uploadDefinitionId))
+    .timeout(Duration.ofSeconds(30))
+    .header('X-Okapi-Tenant', tenant)
+    .header('X-Okapi-Token', tokenCache.verifyTokens(execution))
+    .header('Accept', 'application/json')
+    .GET()
+    .build();
+}
 
 var deadline = Date.now() + TIMEOUT_MS;
 var status = null;
 
 while (true) {
-  var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+  var response = client.send(buildRequest(), HttpResponse.BodyHandlers.ofString());
   var code = response.statusCode();
 
   if (code === 200) {

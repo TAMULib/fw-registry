@@ -2,10 +2,11 @@
   "id": "5a40d70a-f064-460d-9cf1-61cc07b9ad32",
   "name": "Create Upload Definition",
   "description": "Create a Data Import upload definition for this invoice file.",
-  "deserializeAs": "RequestTask",
+  "deserializeAs": "FolioRequestTask",
   "request": {
-    "url": "{{{okapi-url}}}/data-import/uploadDefinitions",
+    "url": "{{{gatewayUrl}}}/data-import/uploadDefinitions",
     "method": "POST",
+    "sendEmptyBody": false,
     "contentType": "application/json",
     "accept": "application/json",
     "bodyTemplate": "{\"fileDefinitions\":[{\"name\":\"${invoiceFileName}\"}]}"
