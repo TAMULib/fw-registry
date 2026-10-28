@@ -23,6 +23,16 @@ if (unmatched.length) {
   markup += '</ul>';
 }
 
+var serviceChargesAdded = report.serviceChargesAdded || [];
+if (serviceChargesAdded.length) {
+  markup += '<p>A <strong>$0.00 Service Charge</strong> was added to invoice lines that had none:</p><ul>';
+  for (var j = 0; j < serviceChargesAdded.length; j++) {
+    markup += '<li>Invoice ' + serviceChargesAdded[j].invoice_number
+      + ' (' + serviceChargesAdded[j].lines + ' line(s))</li>';
+  }
+  markup += '</ul>';
+}
+
 if (skipped.length) {
   markup += '<p>Skipped (not selected by invoiceNumbers): ' + skipped.join(', ') + '</p>';
 }
