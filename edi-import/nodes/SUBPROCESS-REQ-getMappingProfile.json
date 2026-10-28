@@ -2,11 +2,10 @@
   "id": "4f84db63-8526-4846-a69b-5711fb20447e",
   "name": "Get Mapping Profile",
   "description": "Retrieve the Data Import mapping profile to be updated for this invoice.",
-  "deserializeAs": "FolioRequestTask",
+  "deserializeAs": "RequestTask",
   "request": {
-    "url": "{{{gatewayUrl}}}/data-import-profiles/mappingProfiles/${mappingProfileId}",
+    "url": "{{{okapi-url}}}/data-import-profiles/mappingProfiles/${mappingProfileId}",
     "method": "GET",
-    "sendEmptyBody": false,
     "accept": "application/json"
   },
   "inputVariables": [

@@ -415,6 +415,8 @@ Each invoice's account number (`RFF+API` under `NAD+BY`) is matched against the 
 For each invoice, the given *Mapping Profile* is updated with the matched account number, the invoice is uploaded, and **Data Import** is started using the given *Job Profile*.
 The workflow waits for each **Data Import** job to start before updating the *Mapping Profile* for the next invoice.
 
+This workflow logs into **FOLIO** itself and uses `RequestTask` nodes, so that it runs on `mod-workflow` versions without `FolioRequestTask` support.
+
 At the end of this process, an e-mail is sent to the given destination address and the input file is deleted.
 
 These variables are required when building and running the workflow:
@@ -424,7 +426,6 @@ These variables are required when building and running the workflow:
 | emailFrom        | e-mail address | The e-mail address of the sender.
 | emailTo          | e-mail address | The e-mail address of the recipient.
 | file             | file name      | The EDI invoice file to process.
-| gatewayUrl       | URL            | The FOLIO Gateway URL.
 | invoiceNumbers   | string         | (Optional) Space or comma separated invoice numbers to import; all invoices are imported when not given.
 | jobProfileId     | UUID           | The Data Import Job Profile UUID.
 | jobProfileName   | string         | The Data Import Job Profile name.
@@ -432,18 +433,24 @@ These variables are required when building and running the workflow:
 | metadb-password  | string         | MetaDB login password.
 | metadb-url       | URL            | MetaDB URL.
 | metadb-user      | string         | MetaDB login username.
+| okapi-url        | URL            | The Okapi URL.
+| password         | string         | Okapi login password.
 | path             | directory path | The system directory where the EDI file is stored on the server that also contains the `tenantPath`.
+| username         | string         | Okapi login username.
 
 ```sh
-fw config set gatewayUrl ***
 fw config set metadb-password ***
 fw config set metadb-url ***
 fw config set metadb-user ***
+fw config set okapi-url ***
+fw config set password ***
+fw config set username ***
 ```
 
 To build and activate:
 ```sh
-fw deploy edi-import
+fw build edi-import
+fw activate edi-import
 ```
 
 Trigger the workflow using an **HTTP** request such as with **Curl**:
