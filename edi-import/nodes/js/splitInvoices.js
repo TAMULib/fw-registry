@@ -75,7 +75,55 @@ const matchFolioAccount = invoiceAcct => {
   return partial.length === 1 ? partial[0] : null;
 };
 
-const report = { total: splitInvoices.length, selected: [], skipped: [], matched: [], unmatched: [] };
+// The invoice mapping profile maps a "Service Charge" line adjustment from MOA+8.
+// Data Import fails on lines without MOA+8 (the adjustment is created with no
+// type), so give every line that lacks a service charge one of 0, using the same
+// ALC/MOA+8 pair the vendor sends. Lines that already have MOA+8 are untouched.
+const isMoa8 = seg => seg.tag === 'MOA' && firstElement(seg.elements[0]) === '8';
+const addMissingServiceCharges = parsed => {
+  const segments = parsed.segments;
+  const out = [];
+  let added = 0;
+  let inLine = false;
+  let lineHasCharge = false;
+
+  const closeLine = () => {
+    if (inLine && !lineHasCharge) {
+      out.push({ tag: 'ALC', elements: ['C', '', '', '', ['G74', '', '28']] });
+      out.push({ tag: 'MOA', elements: [['8', '0']] });
+      added++;
+    }
+    inLine = false;
+  };
+
+  segments.forEach(seg => {
+    if (seg.tag === 'LIN' || seg.tag === 'UNS' || seg.tag === 'UNT') {
+      closeLine();
+    }
+    if (seg.tag === 'LIN') {
+      inLine = true;
+      lineHasCharge = false;
+    } else if (inLine && isMoa8(seg)) {
+      lineHasCharge = true;
+    }
+    out.push(seg);
+  });
+
+  if (!added) {
+    return { segments: segments, added: 0 };
+  }
+
+  // UNT holds the number of segments from UNH to UNT inclusive.
+  const unh = out.findIndex(seg => seg.tag === 'UNH');
+  const unt = out.findIndex(seg => seg.tag === 'UNT');
+  if (unh >= 0 && unt > unh) {
+    out[unt] = { tag: 'UNT', elements: [String(unt - unh + 1)].concat(out[unt].elements.slice(1)) };
+  }
+
+  return { segments: out, added: added };
+};
+
+const report = { total: splitInvoices.length, selected: [], skipped: [], matched: [], unmatched: [], serviceChargesAdded: [] };
 const invoices = [];
 
 splitInvoices.forEach((inv, index) => {
@@ -92,6 +140,8 @@ splitInvoices.forEach((inv, index) => {
     return;
   }
 
+  const charged = addMissingServiceCharges(parsed);
+
   invoices.push({
     invoice_number: invoiceNumber,
     invoice_account_number: invoiceAcct,
@@ -104,10 +154,15 @@ splitInvoices.forEach((inv, index) => {
       fileExt: '.edi',
       includeAccountInFilename: true
     }),
-    edi: inv.edi
+    edi: charged.added
+      ? serializeEdifact({ seps: parsed.seps, segments: charged.segments, hasUNA: parsed.hasUNA }, { keepUNA: true })
+      : inv.edi
   });
 
   report.selected.push(invoiceNumber);
+  if (charged.added) {
+    report.serviceChargesAdded.push({ invoice_number: invoiceNumber, lines: charged.added });
+  }
   if (folioAcctNo) {
     report.matched.push({ invoice_number: invoiceNumber, account_number: folioAcctNo });
   } else {
