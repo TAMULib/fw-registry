@@ -22,7 +22,8 @@ var fileDefinition = (uploadDefinition.fileDefinitions && uploadDefinition.fileD
 execution.setVariable('uploadDefinitionId', uploadDefinition.id);
 execution.setVariable('fileId', fileDefinition.id);
 
-// The EDI payload to upload. The engine's RequestTask serializes this string body
-// using the request contentType (application/octet-stream). If the runtime instead
-// requires an actual byte[]/Base64 payload, convert it here (see plan Risk 1).
-execution.setVariable('invoiceUploadBody', invoice.edi);
+// The EDI payload to upload. It is set as a transient variable because Camunda
+// cannot persist string variables longer than 4000 characters; the Upload EDI File
+// node runs in the same transaction (no asyncBefore) so it can still read it.
+var Variables = Java.type('org.camunda.bpm.engine.variable.Variables');
+execution.setVariable('invoiceUploadBody', Variables.stringValue(invoice.edi, true));
