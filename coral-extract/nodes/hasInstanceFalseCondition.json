@@ -1,7 +1,6 @@
 {
   "id": "6f4f3e9b-c1f3-404d-b141-3ea1ade5c102",
   "name": "Has No Instance",
-  "description": "",
   "deserializeAs": "Condition",
   "expression": "${instanceResponse.prop('instances').elements().size() == 0}",
   "answer": "no"

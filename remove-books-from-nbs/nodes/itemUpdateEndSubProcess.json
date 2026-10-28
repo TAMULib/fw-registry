@@ -1,7 +1,6 @@
 {
   "id": "a92cdf8e-76e2-4bb3-becb-66f675f0d499",
   "name": "End NBS Items Update",
-  "description": "",
   "type": "NONE",
   "deserializeAs": "EndEvent",
   "asyncBefore": true

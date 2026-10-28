@@ -5,15 +5,11 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "exampleFileData",
-      "type": "PROCESS",
-      "spin": false
+      "key": "exampleFileData"
     }
   ],
-  "outputVariable": {},
   "path": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
   "op": "WRITE",
   "target": "exampleFileData",
-  "asyncAfter": false,
   "asyncBefore": true
 }

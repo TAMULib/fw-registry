@@ -6,20 +6,17 @@
   "request": {
     "url": "{{{gatewayUrl}}}/holdings-storage/holdings?query=(instanceId==\"${instanceId}\")",
     "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "instanceId",
-      "type": "PROCESS"
+      "key": "instanceId"
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "holdingsResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

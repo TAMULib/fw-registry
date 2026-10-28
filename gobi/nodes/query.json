@@ -1,19 +1,15 @@
 {
   "id": "384f28b6-0916-44ff-a98a-80542d96e79a",
   "name": "Query ISBN from MetaDB",
-  "description": "",
   "deserializeAs": "DatabaseQueryTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
-  "outputVariable": {},
   "outputPath": "/mnt/workflows/${tenantId}/gobi/isbn-report-${timestamp}.tsv",
   "resultType": "TSV",
   "designation": "metadb",

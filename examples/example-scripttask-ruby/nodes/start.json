@@ -2,7 +2,6 @@
   "id": "1940f6af-b7db-41fa-855b-2b56c48e9561",
   "name": "Start",
   "description": "Start of Example Ruby ScriptTask Workflow.",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/example-scripttask-ruby/start"
 }

@@ -1,6 +1,5 @@
 {
   "id": "1fdf4eea-c393-4f9b-b900-d79f70e3aa34",
   "name": "End",
-  "description": "",
   "deserializeAs": "EndEvent"
 }

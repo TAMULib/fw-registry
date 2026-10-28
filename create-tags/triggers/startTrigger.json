@@ -1,9 +1,6 @@
 {
   "id": "1c84dac5-6a26-4bcd-a89d-328920b0032f",
   "name": "Create Tags Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/create-tags/start"
 }

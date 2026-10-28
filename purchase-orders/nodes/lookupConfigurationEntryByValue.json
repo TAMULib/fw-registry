@@ -5,27 +5,23 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/configurations/entries?query=(value==\"*\\\"name\\\":\\\"${billTo}\\\"*\")",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
-      "key": "billTo",
-      "type": "PROCESS",
-      "spin": false
+      "key": "billTo"
     },
     {
       "key": "marcOrderData",
-      "type": "PROCESS",
-      "spin": true
+      "spin": true,
+      "asJson": false
     }
   ],
   "headerOutputVariables": [],
   "outputVariable": {
     "key": "configurationEntriesResponse",
-    "type": "PROCESS",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

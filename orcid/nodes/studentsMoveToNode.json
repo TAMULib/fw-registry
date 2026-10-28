@@ -1,7 +1,6 @@
 {
   "id": "31a26bee-cae8-41f1-b5ec-32eee568fb48",
   "name": "Students",
-  "description": "",
   "deserializeAs": "MoveToNode",
   "gatewayId": "parallel_gateway_26ce092f_7e6d_4d37_b3a4_9ab6667848a3",
   "nodes": [

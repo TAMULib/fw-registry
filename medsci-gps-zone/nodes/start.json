@@ -1,8 +1,6 @@
 {
   "id": "51ca1e76-10e8-4d27-b617-850af49947d9",
   "name": "Start",
-  "description": "",
-  "type": "MESSAGE_CORRELATION",
   "deserializeAs": "StartEvent",
   "expression": "/events/medsci-gps-zone/start"
 }

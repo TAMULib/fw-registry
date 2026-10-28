@@ -3,6 +3,5 @@
   "name": "Post-Process Record",
   "description": "Executes script to post-process and update records using report and instance data.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "postProcessRecord.js"
 }

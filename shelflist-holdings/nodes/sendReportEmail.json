@@ -1,23 +1,18 @@
 {
   "id": "0c544406-aa8b-4c91-b022-35dc4becd1fc",
   "name": "Send Shelflist (holdings level) Report Email",
-  "description": "",
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "emailTo",
-      "type": "PROCESS"
+      "key": "emailTo"
     },
     {
-      "key": "emailFrom",
-      "type": "PROCESS"
+      "key": "emailFrom"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     }
   ],
-  "outputVariable": {},
   "mailTo": "${emailTo}",
   "mailFrom": "${emailFrom}",
   "mailSubject": "Shelflist (holdings level) Report",

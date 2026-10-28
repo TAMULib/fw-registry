@@ -1,7 +1,6 @@
 {
   "id": "62d1eb0c-928f-4c33-9171-f0c3b4c97946",
   "name": "Complete Students",
-  "description": "",
   "deserializeAs": "ConnectTo",
   "nodeId": "parallel_gateway_e607c8e7_4622_4ebd_a2c0_baa29dac3a4c"
 }

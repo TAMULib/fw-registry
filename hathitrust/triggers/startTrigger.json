@@ -1,9 +1,6 @@
 {
   "id": "2693b87e-2325-4288-85f3-7dfa465b7c06",
   "name": "HathiTrust Export Start Trigger",
-  "description": "",
-  "type": "MESSAGE_CORRELATE",
-  "method": "POST",
   "deserializeAs": "EventTrigger",
   "pathPattern": "/events/hathitrust/start"
 }

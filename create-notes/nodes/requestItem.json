@@ -5,22 +5,20 @@
   "deserializeAs": "FolioRequestTask",
   "request": {
     "url": "{{{gatewayUrl}}}/inventory/items/${item.id}",
-    "method": "GET",
-    "sendEmptyBody": false,
-    "accept": "application/json"
+    "sendEmptyBody": false
   },
   "inputVariables": [
     {
       "key": "item",
-      "type": "PROCESS",
-      "spin": true
+      "spin": true,
+      "asJson": false
     }
   ],
-  "headerOutputVariables": [],
   "outputVariable": {
     "key": "itemResponse",
     "type": "LOCAL",
-    "spin": true
+    "spin": true,
+    "asJson": false
   },
   "asyncBefore": true
 }

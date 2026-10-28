@@ -3,6 +3,5 @@
   "name": "Run Script",
   "description": "Run script to display the request response.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "script.js"
 }

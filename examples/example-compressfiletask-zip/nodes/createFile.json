@@ -6,14 +6,11 @@
   "inputVariables": [
     {
       "key": "exampleFileData",
-      "type": "LOCAL",
-      "spin": false
+      "type": "LOCAL"
     }
   ],
-  "outputVariable": {},
   "path": "{{{exampleFilePath}}}/testFileCreate/{{{exampleFileName}}}",
   "op": "WRITE",
   "target": "exampleFileData",
-  "asyncAfter": false,
   "asyncBefore": true
 }

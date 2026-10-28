@@ -1,8 +1,6 @@
 {
   "id": "9d7bcd5f-9216-4afb-9635-47c86c5d11a3",
   "name": "Prepare Initial Data",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareExtractItems.js"
 }

@@ -1,10 +1,7 @@
 {
   "id": "82edabb3-d5e0-4f14-b192-bf66aaefdab9",
   "name": "Disconnect DivIT",
-  "description": "",
   "deserializeAs": "DatabaseDisconnectTask",
-  "inputVariables": [],
-  "outputVariable": {},
   "designation": "divit",
   "asyncBefore": true
 }

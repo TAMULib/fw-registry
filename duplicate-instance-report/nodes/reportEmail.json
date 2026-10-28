@@ -5,25 +5,21 @@
   "deserializeAs": "EmailTask",
   "inputVariables": [
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     },
     {
-      "key": "count",
-      "type": "PROCESS"
+      "key": "count"
     }
   ],
-  "outputVariable": {},
   "mailFrom": "{{{duplicate-instance-report-from}}}",
   "mailTo": "{{{duplicate-instance-report-to}}}",
   "mailText": "The Instance Duplication Report has completed, see the results attached.\n${count} instance matches found.",
   "mailMarkup": "<p>The Instance Duplication Report has completed, see the results attached.</p><br/>${count} instance matches found.",
   "mailSubject": "Instance Duplication Report - MetaDB {{{metadb-url}}}",
   "attachmentPath": "/mnt/workflows/${tenantId}/duplicate-instance-report/instance-duplication-report-${timestamp}.zip",
-  "includeAttachment": "${count}",
+  "includeAttachment": "${(count > 0) ? then('true', 'false')}",
   "asyncBefore": true
 }

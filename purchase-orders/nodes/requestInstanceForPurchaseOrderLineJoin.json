@@ -2,6 +2,5 @@
   "id": "aab7aa95-9c03-424f-ad66-9af83b191213",
   "name": "Request Instance For Purchase Order Line Join",
   "description": "Joins instance nodes for a purchase order line.",
-  "deserializeAs": "ParallelGateway",
-  "nodes": []
+  "deserializeAs": "ParallelGateway"
 }

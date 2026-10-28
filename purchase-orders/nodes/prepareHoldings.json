@@ -3,6 +3,5 @@
   "name": "Prepare Holdings Record",
   "description": "Executes script to build holdings record.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareHoldings.js"
 }

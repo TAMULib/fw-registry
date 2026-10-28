@@ -2,14 +2,6 @@
   "id": "df9d9b70-665a-11eb-b9fd-afcd4d476de5",
   "name": "DivIT Patron Workflow",
   "description": "Nightly DivIt Patron Workflow",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/df9cff30-665a-11eb-b9fd-afcd4d476de5",
     "/databaseConnectionTask/55f9f79f-5ac4-4ec9-ba64-e596dae956b6",
@@ -20,6 +12,5 @@
     "/scriptTask/96286fc0-6663-11eb-b98e-f1ccdde4a279",
     "/folioRequestTask/ad5d92dd-605e-4660-aa43-144691283a57",
     "/endEvent/df9d2640-665a-11eb-b9fd-afcd4d476de5"
-  ],
-  "initialContext": {}
+  ]
 }

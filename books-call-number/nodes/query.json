@@ -9,12 +9,10 @@
       "type": "LOCAL"
     },
     {
-      "key": "timestamp",
-      "type": "PROCESS"
+      "key": "timestamp"
     },
     {
-      "key": "path",
-      "type": "PROCESS"
+      "key": "path"
     }
   ],
   "designation": "metadb",

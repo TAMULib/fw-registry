@@ -3,6 +3,5 @@
   "name": "Run Script",
   "description": "Build the JSON",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "script.js"
 }

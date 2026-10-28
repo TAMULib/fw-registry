@@ -1,7 +1,6 @@
 {
   "id": "a46ffa35-8a4c-49c1-a187-a5896bdb07c2",
   "name": "Start Tag Create Subprocess",
-  "description": "",
   "type": "NONE",
   "deserializeAs": "StartEvent",
   "asyncBefore": true

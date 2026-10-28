@@ -1,15 +1,6 @@
 {
   "id": "e45271f6-b882-4b6d-801d-2a5243bdab52",
   "name": "Extract Coral Items Workflow",
-  "description": "",
-  "versionTag": "1.0",
-  "historyTimeToLive": 90,
-  "deploymentId": null,
-  "active": false,
-  "setup": {
-    "asyncBefore": false,
-    "asyncAfter": false
-  },
   "nodes": [
     "/startEvent/7dac827f-890e-45bc-b5be-13baecc9dc2f",
     "/requestTask/6bd576bb-ec21-4fb4-a7fd-ea01b8e76863",
@@ -23,6 +14,5 @@
     "/databaseDisconnectTask/e3a30113-53ee-46ce-8404-1ffbb3f53bec",
     "/subprocess/a74c0421-5d97-4608-bb85-eb14adebd23d",
     "/endEvent/8c9e268e-6302-44c9-8bdf-4f5830c26deb"
-  ],
-  "initialContext": {}
+  ]
 }

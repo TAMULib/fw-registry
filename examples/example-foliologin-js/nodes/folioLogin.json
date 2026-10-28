@@ -6,19 +6,15 @@
   "request": {
     "url": "{{{exampleGatewayUrl}}}{{{exampleLoginPath}}}",
     "method": "POST",
-    "contentType": "application/json",
-    "accept": "application/json",
     "sendEmptyBody": false,
     "bodyTemplate": "{\"username\": \"{{{exampleLoginUser}}}\", \"password\": \"{{{exampleLoginPass}}}\"}"
   },
   "inputVariables": [
     {
-      "key": "exampleLoginUser",
-      "type": "PROCESS"
+      "key": "exampleLoginUser"
     },
     {
-      "key": "exampleLoginPass",
-      "type": "PROCESS"
+      "key": "exampleLoginPass"
     }
   ],
   "headerOutputVariables": [

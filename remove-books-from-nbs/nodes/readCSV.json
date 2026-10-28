@@ -5,16 +5,13 @@
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "inputFilePath",
-      "type": "PROCESS"
+      "key": "inputFilePath"
     }
   ],
   "outputVariable": {
     "key": "barcodesCSV",
-    "type": "PROCESS",
     "asTransient": true
   },
   "path": "${inputFilePath}",
-  "op": "READ",
   "asyncBefore": true
 }

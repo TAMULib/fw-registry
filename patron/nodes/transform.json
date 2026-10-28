@@ -3,6 +3,5 @@
   "name": "Transform Results",
   "description": "Transforms the database results into processable objects.",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "transform.js"
 }

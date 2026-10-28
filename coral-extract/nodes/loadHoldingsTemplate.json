@@ -1,19 +1,15 @@
 {
   "id": "fdd14bfd-5ff4-488f-9309-38d35d5ed40c",
   "name": "Load Holdings Template Data",
-  "description": "",
   "deserializeAs": "FileTask",
   "inputVariables": [
     {
-      "key": "tenantId",
-      "type": "PROCESS"
+      "key": "tenantId"
     }
   ],
   "outputVariable": {
-    "key": "holdingsTemplate",
-    "type": "PROCESS"
+    "key": "holdingsTemplate"
   },
   "path": "/mnt/workflows/${tenantId}/coral-extract/holdings_template.json",
-  "op": "READ",
   "asyncBefore": true
 }

@@ -12,7 +12,6 @@
   ],
   "loopRef": {
     "dataInputRefExpression": "${items.elements()}",
-    "inputDataName": "item",
-    "parallel": false
+    "inputDataName": "item"
   }
 }

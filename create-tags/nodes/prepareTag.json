@@ -1,8 +1,6 @@
 {
   "id": "eca6ddb2-67f1-400e-a303-4989782ccf5f",
   "name": "Log Tag from Tags",
-  "description": "",
   "deserializeAs": "ScriptTask",
-  "scriptFormat": "javascript",
   "code": "prepareTag.js"
 }
