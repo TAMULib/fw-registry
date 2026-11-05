@@ -15,8 +15,7 @@
     {
       "key": "successEmail",
       "type": "LOCAL",
-      "spin": true,
-      "asJson": true
+      "spin": true
     }
   ],
   "outputVariable": {},
