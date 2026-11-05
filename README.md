@@ -1078,3 +1078,66 @@ curl -w '\n' --location --request POST 'http://localhost:9001/events/hegis-po/st
 --header 'X-Okapi-Tenant: diku' \
 --data-raw '{ "logLevel": "DEBUG", "emailTo": "you@example.com", "hegis": "[\"Example Hegis Code\"]", "sysUnitCodes": "[\"Example System Unit Code\"]", "poType": "[\"Example Purchase Order Type\"]" }'
 ```
+
+## edi-import
+
+### EDI Import Workflow
+
+**Workflow Name**: `edi-import`.
+
+This workflow imports an **EDIFACT** invoice file into **FOLIO** using **Data Import**.
+
+The file is split into one file per invoice.
+Each invoice's account number (`RFF+API` under `NAD+BY`) is matched against the vendor's **FOLIO** account numbers, fetched from **MetaDB**.
+For each invoice, the given *Mapping Profile* is updated with the matched account number, the invoice is uploaded, and **Data Import** is started using the given *Job Profile*.
+The workflow waits for each **Data Import** job to start before updating the *Mapping Profile* for the next invoice.
+
+At the end of this process, an e-mail is sent to the given destination address and the input file is deleted.
+
+These variables are required when building and running the workflow:
+
+| Variable Name    | Allowed Values | Brief Description
+| ---------------- | -------------- | -----------------
+| emailFrom        | e-mail address | The e-mail address of the sender.
+| emailTo          | e-mail address | The e-mail address of the recipient.
+| file             | file name      | The EDI invoice file to process.
+| invoiceNumbers   | string         | (Optional) Space or comma separated invoice numbers to import; all invoices are imported when not given.
+| jobProfileId     | UUID           | The Data Import Job Profile UUID.
+| jobProfileName   | string         | The Data Import Job Profile name.
+| mappingProfileId | UUID           | The Data Import invoice Mapping Profile UUID used by the Job Profile.
+| metadb-password  | string         | MetaDB login password.
+| metadb-url       | URL            | MetaDB URL.
+| metadb-user      | string         | MetaDB login username.
+| okapi-url        | URL            | The Okapi URL.
+| password         | string         | Okapi login password.
+| path             | directory path | The system directory where the EDI file is stored on the server that also contains the `tenantPath`.
+| username         | string         | Okapi login username.
+
+```shell
+fw config set metadb-password ***
+fw config set metadb-url ***
+fw config set metadb-user ***
+fw config set okapi-url ***
+fw config set password ***
+fw config set username ***
+```
+
+To build and activate:
+```shell
+fw build edi-import
+fw activate edi-import
+```
+
+Trigger the workflow using an **HTTP** request such as with **Curl**:
+```shell
+curl -w '\n' --location --request POST 'http://localhost:9001/events/edi-import/start' \
+  --header 'Content-Type: multipart/form-data' \
+  --header 'X-Okapi-Tenant: diku' \
+  --form 'emailFrom="me@example.com"' \
+  --form 'emailTo="you@example.com"' \
+  --form 'file=@"invoices.edi"' \
+  --form 'path="/mnt/workflows/diku/edi-import"' \
+  --form 'jobProfileId="2fdefaf6-e43c-41a9-89c9-61ce2ea3c38c"' \
+  --form 'jobProfileName="Example EDI Invoice Job Profile"' \
+  --form 'mappingProfileId="ca71f940-b493-4b85-b3c8-5a1c2c411e21"'
+```
