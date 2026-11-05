@@ -1,0 +1,36 @@
+{
+  "id": "845cd0fa-9ba7-4aa9-8d8d-1a5d023228e3",
+  "name": "Process Files",
+  "description": "Start Data Import processing for the uploaded invoice using the job profile.",
+  "deserializeAs": "RequestTask",
+  "request": {
+    "url": "{{{okapi-url}}}/data-import/uploadDefinitions/${uploadDefinitionId}/processFiles",
+    "method": "POST",
+    "contentType": "application/json",
+    "accept": "application/json",
+    "bodyTemplate": "{\"uploadDefinition\": ${uploadDefinitionUploaded}, \"jobProfileInfo\": {\"id\": \"${jobProfileId}\", \"name\": \"${jobProfileName}\", \"dataType\": \"EDIFACT\"}}"
+  },
+  "inputVariables": [
+    {
+      "key": "uploadDefinitionId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "uploadDefinitionUploaded",
+      "type": "PROCESS",
+      "spin": true,
+      "asJson": true
+    },
+    {
+      "key": "jobProfileId",
+      "type": "PROCESS"
+    },
+    {
+      "key": "jobProfileName",
+      "type": "PROCESS"
+    }
+  ],
+  "headerOutputVariables": [],
+  "outputVariable": {},
+  "asyncBefore": true
+}

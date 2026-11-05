@@ -1,0 +1,8 @@
+{
+  "id": "e346211f-3e49-4d3e-acdd-211ff50a7fec",
+  "name": "Build Success Email",
+  "description": "Build the after-action summary email from the EDI import report.",
+  "deserializeAs": "ScriptTask",
+  "scriptFormat": "javascript",
+  "code": "buildSuccessEmail.js"
+}

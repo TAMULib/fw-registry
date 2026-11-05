@@ -1,0 +1,8 @@
+{
+  "id": "fda22fc8-2285-4827-87c8-9a89974090a0",
+  "name": "End Import EDI Subprocess",
+  "description": "",
+  "type": "NONE",
+  "deserializeAs": "EndEvent",
+  "asyncBefore": true
+}
