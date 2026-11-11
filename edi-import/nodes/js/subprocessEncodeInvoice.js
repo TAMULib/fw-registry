@@ -25,8 +25,6 @@ var fileDefinition = (uploadDefinition.fileDefinitions && uploadDefinition.fileD
 execution.setVariable('uploadDefinitionId', uploadDefinition.id);
 execution.setVariable('fileId', fileDefinition.id);
 
-// The EDI payload to upload. It is set as a transient variable because Camunda
-// cannot persist string variables longer than 4000 characters; the Upload EDI File
 /**
  * The EDI payload to upload. It is set as a transient variable because Camunda
  * cannot persist string variables longer than 4000 characters; the Upload EDI File

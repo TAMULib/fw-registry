@@ -1,10 +1,12 @@
-// Build the PUT body that stamps this invoice's FOLIO account number onto the
-// Data Import mapping profile fetched by the previous node.
-//
-// Risk 2 (see plan): converter-storage's PUT /mappingProfiles/{id} expects a
-// MappingProfileUpdateDto wrapper { profile, addedRelations, deletedRelations }.
-// If the target tenant rejects that and wants the bare profile, set USE_UPDATE_DTO
-// to false below.
+/**
+ * Build the PUT body that stamps this invoice's FOLIO account number onto the
+ * Data Import mapping profile fetched by the previous node.
+ *
+ * Risk 2 (see plan): converter-storage's PUT /mappingProfiles/{id} expects a
+ * MappingProfileUpdateDto wrapper { profile, addedRelations, deletedRelations }.
+ * If the target tenant rejects that and wants the bare profile, set USE_UPDATE_DTO
+ * to false below.
+ */
 var USE_UPDATE_DTO = true;
 
 // Set a value at a dot/bracket path, e.g. "mappingDetails.mappingFields[3].value".
@@ -25,9 +27,11 @@ function setByPath(obj, path, value) {
   return true;
 }
 
-// Default target: the invoice line "accountNumber" rule, nested under the
-// "invoiceLines" repeatable field (mappingFields[].subfields[].fields[]). The
-// top-level accountingCode/accountNo rules are deliberately not touched.
+/**
+ * Default target: the invoice line "accountNumber" rule, nested under the
+ * "invoiceLines" repeatable field (mappingFields[].subfields[].fields[]). The
+ * top-level accountingCode/accountNo rules are deliberately not touched.
+ */
 function setAccountFieldByName(profile, value) {
   var md = profile && profile.mappingDetails;
   if (md && Array.isArray(md.mappingFields)) {
