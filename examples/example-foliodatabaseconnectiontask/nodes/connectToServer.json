@@ -1,0 +1,11 @@
+{
+  "id": "58306abc-9f44-4dd5-bbf8-3a0172a94cd3",
+  "name": "Connect to FOLIO Database",
+  "description": "Connect to a given FOLIO database.",
+  "deserializeAs": "FolioDatabaseConnectionTask",
+  "designation": "example_db",
+  "url": "{{{exampleFolioDatabaseURI}}}",
+  "username": "{{{exampleFolioDatabaseUser}}}",
+  "password": "{{{exampleFolioDatabasePassword}}}",
+  "asyncBefore": true
+}

@@ -1,0 +1,7 @@
+{
+  "id": "2410f247-fcaa-4631-9ef6-a6115c3f46b2",
+  "name": "Start",
+  "description": "Start workflow to connect and disconnect from a FOLIO database.",
+  "deserializeAs": "StartEvent",
+  "expression": "/events/example-databaseconnectiontask/start"
+}

@@ -1,0 +1,7 @@
+{
+  "id": "36faef19-2c97-4a62-aa7a-5553bd29582f",
+  "name": "Example FolioDatabaseConnectionTask Start Trigger",
+  "description": "REST POST end point.",
+  "deserializeAs": "EventTrigger",
+  "pathPattern": "/events/example-databaseconnectiontask/start"
+}

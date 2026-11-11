@@ -1,0 +1,11 @@
+{
+  "id": "64344618-05eb-4193-a2cf-d2f25fd136d6",
+  "name": "Example FolioDatabaseConnectionTask",
+  "description": "Example workflow that connects and then disconnects from specifically a FOLIO database with specialized automatic handling of data.",
+  "nodes": [
+    "/startEvent/2410f247-fcaa-4631-9ef6-a6115c3f46b2",
+    "/databaseConnectionTask/58306abc-9f44-4dd5-bbf8-3a0172a94cd3",
+    "/databaseDisconnectTask/2f1cf692-2469-4f33-a89e-7de8aeb25c4d",
+    "/endEvent/14074373-fa50-4386-b528-3b98d9b069f8"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "id": "2f1cf692-2469-4f33-a89e-7de8aeb25c4d",
+  "name": "Disconnect from FOLIO Database",
+  "description": "Disconnect from a given FOLIO database.",
+  "deserializeAs": "DatabaseDisconnectTask",
+  "designation": "example_db",
+  "asyncBefore": true
+}
