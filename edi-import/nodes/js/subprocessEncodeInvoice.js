@@ -1,5 +1,8 @@
 // Pull the upload-definition id and file id from the create-upload-definition
-// response, and prepare the EDI payload that gets uploaded next.
+/*
+ * Pull the upload-definition id and file id from the create-upload-definition
+ * response, and prepare the EDI payload that gets uploaded next.
+ */
 var invoice = JSON.parse(inv);
 var responseValue = execution.getVariable('uploadDefinitionResponse');
 var responseJson;
