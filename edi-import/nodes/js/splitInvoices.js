@@ -2,7 +2,12 @@ const EDIFACT_DEFAULT_SEPS=Object.freeze({component:":",element:"+",decimal:".",
 
 // Split the raw EDIFACT input into one self-contained invoice message each.
 // buildEDIOutput returns [{ account_number, edi }] where account_number is the
-// invoice's account number parsed from the EDI (RFF+API under NAD+BY).
+/*
+ * Split the raw EDIFACT input into one self-contained invoice message each.
+ * 
+ * buildEDIOutput returns [{ account_number, edi }] where account_number is the
+ * invoice's account number parsed from the EDI (RFF+API under NAD+BY).
+ */
 const splitInvoices = buildEDIOutput(inputFile);
 
 // FOLIO Harrassowitz accounts from MetaDB: [{ acctname, acctno, account_digits }].
