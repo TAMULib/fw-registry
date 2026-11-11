@@ -24,6 +24,10 @@ execution.setVariable('fileId', fileDefinition.id);
 
 // The EDI payload to upload. It is set as a transient variable because Camunda
 // cannot persist string variables longer than 4000 characters; the Upload EDI File
-// node runs in the same transaction (no asyncBefore) so it can still read it.
+/**
+ * The EDI payload to upload. It is set as a transient variable because Camunda
+ * cannot persist string variables longer than 4000 characters; the Upload EDI File
+ * node runs in the same transaction (no asyncBefore) so it can still read it.
+ */
 var Variables = Java.type('org.camunda.bpm.engine.variable.Variables');
 execution.setVariable('invoiceUploadBody', Variables.stringValue(invoice.edi, true));
