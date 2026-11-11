@@ -1,13 +1,15 @@
-// Wait until Data Import has snapshotted the job profile for this invoice before
-// the loop moves on and PUTs the next invoice's account number into the shared
-// mapping profile.
-//
-// processFiles returns 204 immediately and does the work in the background. In
-// mod-data-import (Sunflower 3.3.x) the job profile, and with it the profile
-// snapshot, is attached to the job execution(s) BEFORE the upload definition is
-// marked COMPLETED, in both the split and non-split code paths. Once the upload
-// definition is COMPLETED the import runs from its own snapshot, so the mapping
-// profile can safely be changed.
+/*
+ * Wait until Data Import has snapshotted the job profile for this invoice before
+ * the loop moves on and PUTs the next invoice's account number into the shared
+ * mapping profile.
+ *
+ * processFiles returns 204 immediately and does the work in the background. In
+ * mod-data-import (Sunflower 3.3.x) the job profile, and with it the profile
+ * snapshot, is attached to the job execution(s) BEFORE the upload definition is
+ * marked COMPLETED, in both the split and non-split code paths. Once the upload
+ * definition is COMPLETED the import runs from its own snapshot, so the mapping
+ * profile can safely be changed.
+ */
 var HttpClient = Java.type('java.net.http.HttpClient');
 var HttpRequest = Java.type('java.net.http.HttpRequest');
 var HttpResponse = Java.type('java.net.http.HttpResponse');
