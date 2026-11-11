@@ -28,7 +28,11 @@ if (invoiceNumbersRaw !== null && String(invoiceNumbersRaw).trim() !== '') {
 
 const onlyDigits = s => String(s == null ? '' : s).replace(/\D/g, '');
 
-// A split invoice's edi keeps the UNB header, so UNH is not segment[0]. The
+/*
+ * A split invoice's edi keeps the UNB header, so UNH is not segment[0]. The
+ * document invoice number lives in the BGM segment (BGM+<type>+<number>); fall
+ * back to the UNH message reference, then to a positional label.
+ */
 // document invoice number lives in the BGM segment (BGM+<type>+<number>); fall
 // back to the UNH message reference, then to a positional label.
 const firstElement = v => (Array.isArray(v) ? v[0] : v);
