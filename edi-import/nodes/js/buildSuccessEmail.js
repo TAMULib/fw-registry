@@ -1,10 +1,8 @@
-/*
+/**
  * Build the after-action summary email from the report assembled in splitInvoices.js.
  * processFiles is asynchronous, so this reports invoices SUBMITTED for import (and
  * which had no FOLIO account match), not confirmed-imported counts (see plan Risk 3).
- */```
-// processFiles is asynchronous, so this reports invoices SUBMITTED for import (and
-// which had no FOLIO account match), not confirmed-imported counts (see plan Risk 3).
+ */
 var report = JSON.parse(ediImportReport);
 
 var selectedCount = report.selected ? report.selected.length : 0;
